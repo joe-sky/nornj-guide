@@ -150,6 +150,21 @@ console.log(html);
 ```
 传入多个参数后，NornJ模板函数在运行时会按顺序检测每个数据对象是否有和模板中对应的值。如果检测到前面的参数有对应值，那么就会停止继续检测后面的参数是否有该对应值，如例中(1)处所示；如果靠前面的参数中没有对应值，那么就按顺序寻找后面的参数中是否存在，如例中(2)处所示。
 
+## 渲染<Component.subComponent />形式的组件
+
+类似于`JSX`，`NornJ`模板中组件的标签名也可以使用`Component.subComponent`的形式：
+
+```html
+<ant-Form>
+  <ant-Form.Item label="id">
+    ...
+  </ant-Form.Item>
+  <ant-Form.Item label="name">
+    ...
+  </ant-Form.Item>
+<ant-Form />
+```
+
 ## 使用标签模板字符串的方式定义模板
 以`nj`为前置标签的模板字符串可以直接像模板函数一样执行，就和执行使用`compileH`方法编译出来的模板函数的效果相同，如下所示：
 
