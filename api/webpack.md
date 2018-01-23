@@ -108,4 +108,29 @@ class TestComponent extends Component {
 3. 每个html模板文件中只能有一个`name="main"`的`template`标签定义为主模板，如例中(1)处。
 4. 没有设置`name`属性的`template`标签会自动生成`name="main"`属性，如例中(3)处所示。
 5. `template`标签还可以设置`local`属性，这样它就只能在当前html文件内被其他模板使用，如例中(6)处。
+
+## 在html文件中引入图片
+
+目前`nornj-loader`配合webpack时还暂时不支持直接在独立html中用相对路径引入图片，如需引入相对路径图片可以这样做：
+
+testImg.nj.html：
+
+```html
+<template name="importImg">
+  <img src={imgSrc} />
+</template>
+```
+
+testImg.js：
+
+```js
+import tmpls from './testImg.nj.html';
+
+@registerTmpl('TestImg')
+class TestImg extends Component {
+  render() {
+    return tmpls.importImg({ imgSrc: require('../../images/test.png') });  //在js文件中使用require方法引入相对路径图片，再传到模板中
+  }
+}
+```
 {% endraw %}
