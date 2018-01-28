@@ -18,6 +18,7 @@
 * [内置过滤器](built-inFilter.md)
 * [扩展标签](extensionTag.md)
 * [内置扩展标签](built-inExtensionTag.md)
+* [行内扩展标签](inlineExtensionTag.md)
 * [模板注释](comment.md)
 * [标签模板字符串(es6)语法](templateString.md)
 * [React开发中与JSX的不同点](react.md)
