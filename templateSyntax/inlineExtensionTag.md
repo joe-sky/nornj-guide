@@ -5,7 +5,7 @@
 
 ### show
 
-类似于与`Vue`的`v-show`指令，`#show`用于切换元素是否显示，原理为修改style：
+类似于`Vue`的`v-show`指令，`#show`用于切换元素是否显示，原理为修改style：
 
 ```js
 const html = nj`
