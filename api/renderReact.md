@@ -210,7 +210,7 @@ class TestComponent extends Component {
 
 除了可以使用`registerComponent`或`registerTmpl`全局注册组件之外，还可以用以下几种方式直接在模板函数中局部使用`React`组件：
 
-1. 在nj标签的模板字符中的标签名中，用`${}`的方式嵌入组件：
+(1) 在nj标签的模板字符中的标签名中，用`${}`的方式嵌入组件：
 
 ```js
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -222,7 +222,7 @@ nj`
 </${Button}>`();
 ```
 
-2. 在模板函数的参数中，直接传入组件对象：
+(2) 在模板函数的参数中，直接传入组件对象：
 
 ```js
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -237,7 +237,7 @@ nj`
 });
 ```
 
-3. 使用模板函数中的`components`参数传入组件，`components`参数只能写在模板函数的第一个参数中，需传入一个以组件名为key的对象：
+(3) 使用模板函数中的`components`参数传入组件，`components`参数只能写在模板函数的第一个参数中，需传入一个以组件名为key的对象：
 
 ```js
 import Icon from 'react-native-vector-icons/FontAwesome';
