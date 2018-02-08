@@ -19,8 +19,8 @@
 | *              | 等同于js中的"*"运算符      | ```{{ value *(foo) }}```或```{{ value * foo }}```                      |                           |
 | /              | 等同于js中的"/"运算符      | ```{{ value /(foo) }}```或```{{ value / foo }}```                      |                           |
 | %              | 等同于js中的"%"运算符      | ```{{ value %(foo) }}```或```{{ value % foo }}```                      |                           |
-| **             | 乘方运算，等同于js中的Math.pow方法      | ```{{ value **(2) }}```或```{{ value ** 2 }}```                      |                           |
-| //             | 开平方运算，等同于js中的Math.sqrt方法      | <code>{{ value &#124; // }}</code>或```{{ //(value) }}```                      |                          |
+| **             | 乘方运算      | ```{{ value **(2) }}```或```{{ value ** 2 }}```                      |                           |
+| //             | 除法运算后再取整数      | ```{{ value //(2) }}```或```{{ value // 2 }}```                      |                          |
 | ?              | 等同于js中的三目运算符"?:"  | ```{{ value ?(foo, bar) }}```或```{{ value ? foo }}```                | 只传foo一个参数时，如value值为false则返回undefined                           |
 | !              | 等同于js中的"!"运算符      | <code>{{ value &#124; ! }}</code>或```{{ !(value) }}```  |                           |
 | &&             | 等同于js中的"&&"运算符     | ```{{ value &&(foo) }}```或```{{ value && foo }}```                     |                           |
@@ -28,7 +28,7 @@
 | int            | 转换为int值                | <code>{{ value &#124; int }}</code>                     |                           |  
 | float          | 转换为float值              | <code>{{ value &#124; float }}</code>                   |                           |
 | bool           | 转换为bool值               | <code>{{ value &#124; bool }}</code>                    |                           |
-| obj与:         | 生成对象                   | ```{{ obj('a' : 1, 'b' : 2) }}```或```<img :style="{ width: 10, height: 20 }">```          |                           |
+| obj与:         | 生成对象                   | ```{{ obj('a' : 1, 'b' : 2) }}```或```{{ { a: 1, b: 2 } }}```          |                           |
 | list           | 生成数组                   | ```{{ list(1, 2, 3) }}```或```{{ [1, 2, 3] }}```                    |                           |
 | reg            | 生成正则表达式             | ```{{ reg('^[abc]$', 'i').test('A') }}```     | 与js的new RegExp(pattern, flags)相同     |
 | css            | 将css字符串转换为对象       | ```{{ css('margin-left:5px;overflow:hidden;') }}```<br>转换为：```{ marginLeft: '5px', overflow: 'hidden' }```  | 主要用于React开发          |
