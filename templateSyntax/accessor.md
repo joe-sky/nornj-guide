@@ -6,7 +6,7 @@
 ```js
 const html = nj`<div>{{#prop}}</div'>`({
   info: 'accessor property.',
-  prop: () => {  //每个访问器属性都是一个函数，值即为函数的返回值
+  prop: ctx => {  //每个访问器属性都是一个函数，值即为函数的返回值
     return 'This is a ' + ctx.getData('info')
   }
 });
