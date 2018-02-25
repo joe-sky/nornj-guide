@@ -1,0 +1,5 @@
+/* CSS for website */
+.page-wrapper h1,
+.page-wrapper h2 {
+  border-bottom: 1px solid #eeeeee;
+}

@@ -1,0 +1,537 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>模板全局配置 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="webpack.html" />
+    
+    
+    <link rel="prev" href="renderReact.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../templateSyntax/">
+            
+                <a href="../templateSyntax/">
+            
+                    
+                    模板语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../templateSyntax/variable.html">
+            
+                <a href="../templateSyntax/variable.html">
+            
+                    
+                    插值变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../templateSyntax/accessor.html">
+            
+                <a href="../templateSyntax/accessor.html">
+            
+                    
+                    访问器属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../templateSyntax/filter.html">
+            
+                <a href="../templateSyntax/filter.html">
+            
+                    
+                    过滤器与表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../templateSyntax/built-inFilter.html">
+            
+                <a href="../templateSyntax/built-inFilter.html">
+            
+                    
+                    内置过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../templateSyntax/extensionTag.html">
+            
+                <a href="../templateSyntax/extensionTag.html">
+            
+                    
+                    扩展标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../templateSyntax/built-inExtensionTag.html">
+            
+                <a href="../templateSyntax/built-inExtensionTag.html">
+            
+                    
+                    内置扩展标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../templateSyntax/inlineExtensionTag.html">
+            
+                <a href="../templateSyntax/inlineExtensionTag.html">
+            
+                    
+                    行内扩展标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../templateSyntax/comment.html">
+            
+                <a href="../templateSyntax/comment.html">
+            
+                    
+                    模板注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../templateSyntax/templateString.html">
+            
+                <a href="../templateSyntax/templateString.html">
+            
+                    
+                    标签模板字符串(es6)语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../templateSyntax/react.html">
+            
+                <a href="../templateSyntax/react.html">
+            
+                    
+                    React开发中与JSX的不同点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="renderString.html">
+            
+                <a href="renderString.html">
+            
+                    
+                    编译模板并输出html字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="renderReact.html">
+            
+                <a href="renderReact.html">
+            
+                    
+                    编译模板并输出React组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    模板全局配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="webpack.html">
+            
+                <a href="webpack.html">
+            
+                    
+                    配合Webpack在html文件中构建模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >模板全局配置</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6A21;&#x677F;&#x5168;&#x5C40;&#x914D;&#x7F6E;"><a name="&#x6A21;&#x677F;&#x5168;&#x5C40;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x6A21;&#x677F;&#x5168;&#x5C40;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6A21;&#x677F;&#x5168;&#x5C40;&#x914D;&#x7F6E;</h1>
+<p><code>NornJ</code>&#x6A21;&#x677F;&#x53EF;&#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x6765;&#x5B9A;&#x5236;&#x4E00;&#x4E9B;&#x529F;&#x80FD;&#xFF0C;&#x5982;&#x63D2;&#x503C;&#x53D8;&#x91CF;&#x7684;&#x89C4;&#x5219;&#x7B49;&#x3002;</p>
+<ul>
+<li>&#x901A;&#x8FC7;<code>nj.config</code>API&#x53EF;&#x8BBE;&#x5B9A;&#x5404;&#x79CD;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#xFF0C;&#x5177;&#x4F53;&#x6709;&#xFF1A;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x4F5C;&#x7528;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">delimiters</td>
+<td style="text-align:left">&#x4FEE;&#x6539;&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x89C4;&#x5219;</td>
+</tr>
+<tr>
+<td style="text-align:left">outputH</td>
+<td style="text-align:left"><code>nj</code>&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x8FD4;&#x56DE;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x662F;&#x5426;&#x9ED8;&#x8BA4;&#x6309;<code>hyperscript</code>&#x5F62;&#x5F0F;&#x8F93;&#x51FA;(&#x5373;&#x914D;&#x5408;<code>React</code>&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;)&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>false</code>&#x3002;&#x5F15;&#x5165;<code>nornj-react</code>&#x5305;&#x540E;&#x8BE5;&#x503C;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x4E3A;<code>true</code>&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">createElement</td>
+<td style="text-align:left"><code>hyperscript</code>&#x5F62;&#x5F0F;&#x7684;&#x521B;&#x5EFA;&#x5143;&#x7D20;&#x65B9;&#x6CD5;(&#x5373;&#x4E3A;<code>React</code>&#x4E2D;&#x7684;<code>React.createElement</code>)&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;null&#x3002;&#x5F15;&#x5165;<code>nornj-react</code>&#x5305;&#x540E;&#x8BE5;&#x503C;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x4E3A;<code>React.createElement</code>&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">includeParser</td>
+<td style="text-align:left">&#x6A21;&#x677F;&#x4E2D;&#x89E3;&#x6790;<code>&lt;#include&gt;</code>&#x6807;&#x7B7E;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E0D;&#x6DFB;&#x52A0;&#x5230;<code>nj</code>&#x5BF9;&#x8C61;&#x4E2D;&#x3002;&#x53EF;&#x4EE5;&#x4ECE;<code>nornj/tools/includeParser</code>&#x83B7;&#x53D6;&#x5230;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x53E6;&#x5916;&#x5728;<code>nornj-loader</code>&#x5185;&#x90E8;&#x4F1A;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x5B83;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left">textMode</td>
+<td style="text-align:left">&#x662F;&#x5426;&#x4F7F;&#x7528;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x89E3;&#x6790;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;<code>false</code>&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h1 id="&#x4FEE;&#x6539;&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x89C4;&#x5219;"><a name="&#x4FEE;&#x6539;&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x89C4;&#x5219;" class="plugin-anchor" href="#&#x4FEE;&#x6539;&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4FEE;&#x6539;&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x89C4;&#x5219;</h1>
+<p>&#x76EE;&#x524D;&#x53EF;&#x4FEE;&#x6539;&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x6709;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
+
+nj.config({
+  delimiters: {
+    start: <span class="hljs-string">&apos;{%&apos;</span>,      <span class="hljs-comment">//&#x63D2;&#x503C;&#x53D8;&#x91CF;&#x5F00;&#x59CB;&#x5B57;&#x7B26;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&quot;{{&quot;</span>
+    end: <span class="hljs-string">&apos;%}&apos;</span>,        <span class="hljs-comment">//&#x63D2;&#x503C;&#x53D8;&#x91CF;&#x7ED3;&#x675F;&#x5B57;&#x7B26;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&quot;}}&quot;</span>
+    extension: <span class="hljs-string">&apos;$&apos;</span>,   <span class="hljs-comment">//&#x6269;&#x5C55;&#x6807;&#x7B7E;&#x524D;&#x7F6E;&#x5B57;&#x7B26;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&quot;#&quot;</span>
+    prop: <span class="hljs-string">&apos;@-&apos;</span>,       <span class="hljs-comment">//&#x53C2;&#x6570;&#x6807;&#x7B7E;&#x524D;&#x7F6E;&#x5B57;&#x7B26;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&quot;@&quot;</span>
+    comment: <span class="hljs-string">&apos;##&apos;</span>     <span class="hljs-comment">//&#x6A21;&#x677F;&#x6CE8;&#x91CA;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&lt;!--#...#--&gt;&#x8BED;&#x6CD5;&#x4E2D;&#x7684;&quot;#&quot;</span>
+  }
+});
+
+<span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`
+&lt;div id=test1&gt;
+  &lt;@-name&gt;test1&lt;/@-name&gt;
+  this the test demo{%no%}.
+  &lt;$if {%hasNo%}&gt;
+    &lt;i&gt;test{%no%} is {{&apos;running&apos;}} in client side&lt;/i&gt;
+    &lt;!--##Something that needs to be commented out##--&gt;
+  &lt;/$if&gt;
+&lt;/div&gt;`</span>();
+</code></pre>
+<p>&#x5982;&#x4E0A;&#x4F8B;&#xFF0C;&#x53EF;&#x5C06;&#x6A21;&#x677F;&#x89C4;&#x5219;&#x66FF;&#x6362;&#x4E3A;&#x975E;&#x9ED8;&#x8BA4;&#x89C4;&#x5219;&#x7684;&#x5176;&#x4ED6;&#x5B57;&#x7B26;&#x3002;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7528;<code>NornJ</code>&#x6A21;&#x677F;&#x5728;<code>node.js</code>&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8F93;&#x51FA;&#x8981;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x8FD0;&#x884C;&#x7684;<code>NornJ</code>&#x6A21;&#x677F;&#xFF0C;&#x56E0;&#x4E3A;&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x4E0D;&#x540C;&#xFF0C;&#x6240;&#x4EE5;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6A21;&#x677F;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x51B2;&#x7A81;&#x3002;</p>
+<h1 id="&#x4F7F;&#x7528;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x89E3;&#x6790;"><a name="&#x4F7F;&#x7528;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x89E3;&#x6790;" class="plugin-anchor" href="#&#x4F7F;&#x7528;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x89E3;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x89E3;&#x6790;</h1>
+<p><code>NornJ</code>&#x5728;&#x89E3;&#x6790;html&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#x9ED8;&#x8BA4;&#x5168;&#x5C40;&#x4F7F;&#x7528;<code>&#x975E;&#x6587;&#x672C;&#x6A21;&#x5F0F;</code>&#x89E3;&#x6790;&#xFF0C;&#x89E3;&#x6790;&#x65B9;&#x5F0F;&#x548C;html&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>   test1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{&apos;test2&apos;}    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x6A21;&#x677F;&#x4F1A;&#x89E3;&#x6790;&#x4E3A;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#xFF0C;&#x5373;&#x4F1A;&#x5FFD;&#x7565;&#x591A;&#x4F59;&#x7684;&#x7A7A;&#x683C;&#x53CA;&#x6362;&#x884C;&#x7B26;&#x7B49;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>test1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>test2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>&#x4F46;&#x6709;&#x65F6;&#x5019;&#x4E0D;&#x9700;&#x8981;&#x53BB;&#x9664;&#x591A;&#x4F59;&#x7A7A;&#x683C;&#xFF0C;&#x8FD9;&#x5728;&#x7ED9;&#x666E;&#x901A;&#x7684;&#x6587;&#x672C;&#x505A;&#x66FF;&#x6362;&#x53C2;&#x6570;&#x65F6;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5168;&#x5C40;&#x5F00;&#x542F;<code>&#x6587;&#x672C;&#x6A21;&#x5F0F;</code>&#xFF1A;</p>
+<pre><code class="lang-js">nj.config({
+  textMode: <span class="hljs-literal">true</span>
+});
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x5C31;&#x4F1A;&#x89E3;&#x6790;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>   test1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>test2    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>&#x6709;&#x4E9B;&#x6807;&#x7B7E;&#x65E0;&#x8BBA;&#x662F;&#x5426;&#x5168;&#x5C40;&#x5F00;&#x542F;<code>&#x6587;&#x672C;&#x6A21;&#x5F0F;</code>&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x90FD;&#x4F1A;&#x4F7F;&#x7528;<code>&#x6587;&#x672C;&#x6A21;&#x5F0F;</code>&#x89E3;&#x6790;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#x51E0;&#x4E2A;&#x6807;&#x7B7E;&#xFF1A;</p>
+<ul>
+<li>style</li>
+<li>script</li>
+<li>textarea</li>
+<li>xmp</li>
+<li>nj-text&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7279;&#x6B8A;&#x6807;&#x7B7E;&#xFF0C;&#x89E3;&#x6790;&#x65F6;&#x53EA;&#x751F;&#x6210;&#x5B83;&#x7684;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">nj-text</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>   test1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{&apos;test2&apos;}    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">nj-text</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>&#x89E3;&#x6790;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>   test1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>test2    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="renderReact.html" class="navigation navigation-prev " aria-label="Previous page: 编译模板并输出React组件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="webpack.html" class="navigation navigation-next " aria-label="Next page: 配合Webpack在html文件中构建模板">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"模板全局配置","level":"1.5","depth":1,"next":{"title":"配合Webpack在html文件中构建模板","level":"1.6","depth":1,"path":"api/webpack.md","ref":"api/webpack.md","articles":[]},"previous":{"title":"编译模板并输出React组件","level":"1.4","depth":1,"path":"api/renderReact.md","ref":"api/renderReact.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors"],"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/config.md","mtime":"2018-01-14T09:47:39.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-02-25T16:44:54.826Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
