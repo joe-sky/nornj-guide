@@ -13,8 +13,8 @@
 ## 目录
 
 * [插值变量](variable.md)
-* [计算属性](computed.md)
-* [过滤器](filter.md)
+* [访问器属性](accessor.md)
+* [过滤器与表达式](filter.md)
 * [内置过滤器](built-inFilter.md)
 * [扩展标签](extensionTag.md)
 * [内置扩展标签](built-inExtensionTag.md)
