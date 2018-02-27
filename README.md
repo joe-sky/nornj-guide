@@ -200,7 +200,7 @@ npm install nornj
 
 MIT
 
-[npm-image]: http://img.shields.io/npm/v/nornj.svg
-[downloads-image]: http://img.shields.io/npm/dm/nornj.svg
+[npm-image]: https://img.shields.io/npm/v/nornj.svg
+[downloads-image]: https://img.shields.io/npm/dm/nornj.svg
 [npm-url]: https://www.npmjs.org/package/nornj
 {% endraw %}
