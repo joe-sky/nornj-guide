@@ -33,7 +33,7 @@
 </div>
 ```
 
-1. else标签须定义在if标签(或each标签等)内，格式如例中(1)处所示。
+1. else标签须定义在if标签内，格式如例中(1)处所示。
 2. 在执行模板函数时，如if标签的参数计算结果为false，则会输出if标签内的else标签子节点，如例中(2)处所示。
 
 ### elseif
@@ -296,40 +296,39 @@ console.log(html);  //输出：<div id="123" name="123"></div>
 
 ### obj
 
-`NornJ`模板的插值变量内虽然不支持放入原生复杂js类型(如对象与数组)，但可以使用扩展标签来在模板中直接定义复杂类型。obj标签可以定义js对象，例如：
+使用`obj`标签可以在模板中生成js对象，例如：
 
 ```html
 <!--test.nj.html-->
 <#testExpr>
-  <@param>
-    <#obj id=testId name={{testName}} />
-  </@param>
+  <#obj id="testId" name={{testName}} />
 </#testExpr>
 ```
 
 ```js
 import tmpl from 'test.nj.html';
 
-nj.registerExtension('testExpr', (options) => {
-  const { param } = options.props;
-  return param.id + '_' + param.name;
+const html = tmpl({
+  testName: 'testName',
+  testExpr: options => {
+    const obj = options.result();
+    return obj.id + '_' + obj.name;
+  }
 });
 
-console.log(nj.render(tmpl, {  //输出：testId_testName
-  testName: 'testName'
-}));
+console.log(html);  //输出：testId_testName
 ```
 
 ### list
 
-使用`list`标签可以在模板中表示js数组：
+使用`list`标签可以在模板中生成js数组：
 
 ```js
 const html = nj`
 <div>
-  <@id useString>
+  <@@id>
     <#list {{1}} {{2}} {{3}} {{4}} {{5}} />
-  </@id>
+  </@@id>
 </div>`();
 
 console.log(html);  //输出：<div id="12345"></div>
@@ -390,7 +389,7 @@ class App extends React.Component {
 
 ### tmpl
 
-tmpl标签相当于惰性渲染的子模板，可指定在适当的时机去渲染它们。在`React`开发中使用方式如下：
+`tmpl`标签即为`React`组件或扩展标签的子模板函数，可指定在适当的时机去渲染它们，可以实现类似于`Vue`中的`slot`分发机制。在`React`开发中使用方式如下：
 
 ```js
 class TestComp extends React.Component {
@@ -409,15 +408,15 @@ class TestComp extends React.Component {
 }
 
 let html = renderToStaticMarkup(nj`
-  <TestComp>
-    <#tmpl>
-      <i class=icon-refresh>{text}</i>
-    </#tmpl>
-    <#tmpl name="tmpl2">
-      <i class=icon-home>{text}</i>
-    </#tmpl>
-  </TestComp>
-  `());
+<TestComp>
+  <#tmpl>
+    <i class=icon-refresh>{text}</i>
+  </#tmpl>
+  <#tmpl name="tmpl2">
+    <i class=icon-home>{text}</i>
+  </#tmpl>
+</TestComp>
+`());
 
 console.log(html);
 /*输出：

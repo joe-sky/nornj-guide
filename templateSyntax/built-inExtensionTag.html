@@ -380,7 +380,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <ol>
-<li>else&#x6807;&#x7B7E;&#x987B;&#x5B9A;&#x4E49;&#x5728;if&#x6807;&#x7B7E;(&#x6216;each&#x6807;&#x7B7E;&#x7B49;)&#x5185;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x4F8B;&#x4E2D;(1)&#x5904;&#x6240;&#x793A;&#x3002;</li>
+<li>else&#x6807;&#x7B7E;&#x987B;&#x5B9A;&#x4E49;&#x5728;if&#x6807;&#x7B7E;&#x5185;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x4F8B;&#x4E2D;(1)&#x5904;&#x6240;&#x793A;&#x3002;</li>
 <li>&#x5728;&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x5982;if&#x6807;&#x7B7E;&#x7684;&#x53C2;&#x6570;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x4E3A;false&#xFF0C;&#x5219;&#x4F1A;&#x8F93;&#x51FA;if&#x6807;&#x7B7E;&#x5185;&#x7684;else&#x6807;&#x7B7E;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(2)&#x5904;&#x6240;&#x793A;&#x3002;</li>
 </ol>
 <h3 id="elseif"><a name="elseif" class="plugin-anchor" href="#elseif"><i class="fa fa-link" aria-hidden="true"></i></a>elseif</h3>
@@ -614,32 +614,31 @@ this is a props block demo.
 <span class="hljs-built_in">console</span>.log(html);  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div id=&quot;123&quot; name=&quot;123&quot;&gt;&lt;/div&gt;</span>
 </code></pre>
 <h3 id="obj"><a name="obj" class="plugin-anchor" href="#obj"><i class="fa fa-link" aria-hidden="true"></i></a>obj</h3>
-<p><code>NornJ</code>&#x6A21;&#x677F;&#x7684;&#x63D2;&#x503C;&#x53D8;&#x91CF;&#x5185;&#x867D;&#x7136;&#x4E0D;&#x652F;&#x6301;&#x653E;&#x5165;&#x539F;&#x751F;&#x590D;&#x6742;js&#x7C7B;&#x578B;(&#x5982;&#x5BF9;&#x8C61;&#x4E0E;&#x6570;&#x7EC4;)&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6269;&#x5C55;&#x6807;&#x7B7E;&#x6765;&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x76F4;&#x63A5;&#x5B9A;&#x4E49;&#x590D;&#x6742;&#x7C7B;&#x578B;&#x3002;obj&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;js&#x5BF9;&#x8C61;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<p>&#x4F7F;&#x7528;<code>obj</code>&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x751F;&#x6210;js&#x5BF9;&#x8C61;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
 <pre><code class="lang-html"><span class="hljs-comment">&lt;!--test.nj.html--&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">#testExpr</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">@param</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">#obj</span> <span class="hljs-attr">id</span>=<span class="hljs-string">testId</span> <span class="hljs-attr">name</span>=<span class="hljs-string">{{testName}}</span> /&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">@param</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">#obj</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;testId&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">{{testName}}</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">#testExpr</span>&gt;</span>
 </code></pre>
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> tmpl <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;test.nj.html&apos;</span>;
 
-nj.registerExtension(<span class="hljs-string">&apos;testExpr&apos;</span>, (options) =&gt; {
-  <span class="hljs-keyword">const</span> { param } = options.props;
-  <span class="hljs-keyword">return</span> param.id + <span class="hljs-string">&apos;_&apos;</span> + param.name;
+<span class="hljs-keyword">const</span> html = tmpl({
+  testName: <span class="hljs-string">&apos;testName&apos;</span>,
+  testExpr: options =&gt; {
+    <span class="hljs-keyword">const</span> obj = options.result();
+    <span class="hljs-keyword">return</span> obj.id + <span class="hljs-string">&apos;_&apos;</span> + obj.name;
+  }
 });
 
-<span class="hljs-built_in">console</span>.log(nj.render(tmpl, {  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;testId_testName</span>
-  testName: <span class="hljs-string">&apos;testName&apos;</span>
-}));
+<span class="hljs-built_in">console</span>.log(html);  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;testId_testName</span>
 </code></pre>
 <h3 id="list"><a name="list" class="plugin-anchor" href="#list"><i class="fa fa-link" aria-hidden="true"></i></a>list</h3>
-<p>&#x4F7F;&#x7528;<code>list</code>&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x8868;&#x793A;js&#x6570;&#x7EC4;&#xFF1A;</p>
+<p>&#x4F7F;&#x7528;<code>list</code>&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x751F;&#x6210;js&#x6570;&#x7EC4;&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`
 &lt;div&gt;
-  &lt;@id useString&gt;
+  &lt;@@id&gt;
     &lt;#list {{1}} {{2}} {{3}} {{4}} {{5}} /&gt;
-  &lt;/@id&gt;
+  &lt;/@@id&gt;
 &lt;/div&gt;`</span>();
 
 <span class="hljs-built_in">console</span>.log(html);  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div id=&quot;12345&quot;&gt;&lt;/div&gt;</span>
@@ -691,7 +690,7 @@ class App extends React.Component {
 }
 </code></pre>
 <h3 id="tmpl"><a name="tmpl" class="plugin-anchor" href="#tmpl"><i class="fa fa-link" aria-hidden="true"></i></a>tmpl</h3>
-<p>tmpl&#x6807;&#x7B7E;&#x76F8;&#x5F53;&#x4E8E;&#x60F0;&#x6027;&#x6E32;&#x67D3;&#x7684;&#x5B50;&#x6A21;&#x677F;&#xFF0C;&#x53EF;&#x6307;&#x5B9A;&#x5728;&#x9002;&#x5F53;&#x7684;&#x65F6;&#x673A;&#x53BB;&#x6E32;&#x67D3;&#x5B83;&#x4EEC;&#x3002;&#x5728;<code>React</code>&#x5F00;&#x53D1;&#x4E2D;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><code>tmpl</code>&#x6807;&#x7B7E;&#x5373;&#x4E3A;<code>React</code>&#x7EC4;&#x4EF6;&#x6216;&#x6269;&#x5C55;&#x6807;&#x7B7E;&#x7684;&#x5B50;&#x6A21;&#x677F;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x6307;&#x5B9A;&#x5728;&#x9002;&#x5F53;&#x7684;&#x65F6;&#x673A;&#x53BB;&#x6E32;&#x67D3;&#x5B83;&#x4EEC;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7C7B;&#x4F3C;&#x4E8E;<code>Vue</code>&#x4E2D;&#x7684;<code>slot</code>&#x5206;&#x53D1;&#x673A;&#x5236;&#x3002;&#x5728;<code>React</code>&#x5F00;&#x53D1;&#x4E2D;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComp</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
   render() {
     <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
@@ -708,15 +707,15 @@ class App extends React.Component {
 }
 
 <span class="hljs-keyword">let</span> html = renderToStaticMarkup(nj<span class="hljs-string">`
-  &lt;TestComp&gt;
-    &lt;#tmpl&gt;
-      &lt;i class=icon-refresh&gt;{text}&lt;/i&gt;
-    &lt;/#tmpl&gt;
-    &lt;#tmpl name=&quot;tmpl2&quot;&gt;
-      &lt;i class=icon-home&gt;{text}&lt;/i&gt;
-    &lt;/#tmpl&gt;
-  &lt;/TestComp&gt;
-  `</span>());
+&lt;TestComp&gt;
+  &lt;#tmpl&gt;
+    &lt;i class=icon-refresh&gt;{text}&lt;/i&gt;
+  &lt;/#tmpl&gt;
+  &lt;#tmpl name=&quot;tmpl2&quot;&gt;
+    &lt;i class=icon-home&gt;{text}&lt;/i&gt;
+  &lt;/#tmpl&gt;
+&lt;/TestComp&gt;
+`</span>());
 
 <span class="hljs-built_in">console</span>.log(html);
 <span class="hljs-comment">/*&#x8F93;&#x51FA;&#xFF1A;
@@ -788,7 +787,7 @@ render() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"内置扩展标签","level":"1.2.6","depth":2,"next":{"title":"行内扩展标签","level":"1.2.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},"previous":{"title":"扩展标签","level":"1.2.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors"],"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/built-inExtensionTag.md","mtime":"2018-01-14T09:37:01.337Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-02-26T01:29:43.844Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"内置扩展标签","level":"1.2.6","depth":2,"next":{"title":"行内扩展标签","level":"1.2.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},"previous":{"title":"扩展标签","level":"1.2.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors"],"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/built-inExtensionTag.md","mtime":"2018-02-27T01:48:31.365Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-02-27T01:50:36.553Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
