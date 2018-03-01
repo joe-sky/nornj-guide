@@ -46,10 +46,10 @@ const html = nj`
   100
   <#elseif {{num > 50}}>
     50
-  </#else>
+  </#elseif>
   <#elseif {{num > 20}}>
     20
-  </#else>
+  </#elseif>
   <#else>
     0
   </#else>
