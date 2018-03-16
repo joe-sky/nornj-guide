@@ -508,18 +508,20 @@
 &lt;/div&gt;
 */</span>
 </code></pre>
-<ol>
-<li>each&#x6807;&#x7B7E;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;js&#x6570;&#x7EC4;&#x683C;&#x5F0F;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(1)&#x5904;&#x7684;&quot;{{items}}&quot;&#x53C2;&#x6570;&#x3002;</li>
-<li>each&#x6807;&#x7B7E;&#x4F1A;&#x904D;&#x5386;&#x53C2;&#x6570;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5C06;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x6570;&#x636E;&#x90FD;&#x6267;&#x884C;&#x6E32;&#x67D3;&#x3002;&#x5728;&#x904D;&#x5386;&#x6BCF;&#x4E2A;&#x6570;&#x7EC4;&#x9879;&#x65F6;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528;&#x6BCF;&#x9879;&#x7684;&#x6570;&#x636E;&#x4F5C;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x4E0A;&#x4E0B;&#x6587;&#x3002;&#x5982;&#x4F8B;&#x4E2D;(2)&#x5904;&#x6240;&#x793A;&#xFF0C;&quot;{{no}}&quot;&#x53C2;&#x6570;&#x4E3A;items&#x6570;&#x7EC4;&#x5185;&#x5404;&#x9879;&#x7684;no&#x503C;&#x3002;</li>
-<li>&#x5728;&#x904D;&#x5386;&#x6BCF;&#x4E2A;&#x6570;&#x7EC4;&#x9879;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7236;&#x7EA7;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(3)&#x5904;&#x6240;&#x793A;&#xFF0C;&quot;{{../no}}&quot;&#x8868;&#x793A;&#x83B7;&#x53D6;&#x4E0E;items&#x53C2;&#x6570;&#x540C;&#x4E00;&#x7EA7;&#x7684;no&#x503C;&#x3002;&#x548C;&#x4E00;&#x822C;&#x7684;&#x76EE;&#x5F55;&#x63CF;&#x8FF0;&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;&#xFF0C;&quot;../&quot;&#x53EF;&#x4EE5;&#x5199;&#x591A;&#x6B21;&#xFF0C;&#x6BCF;&#x6B21;&#x4EE3;&#x8868;&#x5411;&#x4E0A;&#x9000;&#x4E00;&#x7EA7;&#x4E0A;&#x4E0B;&#x6587;&#x3002;</li>
-<li>&#x5728;each&#x6807;&#x7B7E;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;empty&#x6807;&#x7B7E;&#xFF0C;&#x5982;&quot;{{items}}&quot;&#x53C2;&#x6570;&#x4E3A;null&#x3001;false&#x6216;&#x7A7A;&#x6570;&#x7EC4;&#x65F6;&#xFF0C;&#x5219;&#x4F1A;&#x6267;&#x884C;empty&#x6807;&#x7B7E;&#x5185;&#x7684;&#x6A21;&#x677F;&#x3002;&#x5982;&#x4F8B;&#x4E2D;(4)&#x5904;&#x6240;&#x793A;&#xFF0C;empty&#x6807;&#x7B7E;&#x5185;&#x7684;&#x6A21;&#x677F;&#x5E76;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&quot;{{no}}&quot;&#x53C2;&#x6570;&#x4E3A;items&#x53C2;&#x6570;&#x540C;&#x4E00;&#x7EA7;&#x7684;no&#x503C;&#x3002;</li>
-<li>each&#x6807;&#x7B7E;&#x5185;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&quot;{{this}}&quot;&#x63D2;&#x503C;&#x53D8;&#x91CF;&#xFF0C;&#x8868;&#x793A;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x9879;&#x503C;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(5)&#x5904;&#x6240;&#x793A;&#x3002;</li>
-<li>each&#x6807;&#x7B7E;&#x5185;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&quot;{{@index}}&quot;&#x63D2;&#x503C;&#x53D8;&#x91CF;&#xFF0C;&#x8868;&#x793A;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x9879;&#x7D22;&#x5F15;&#x503C;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(6)&#x5904;&#x6240;&#x793A;&#x3002;</li>
-<li>each&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;moreValues&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x66F4;&#x591A;&#x5185;&#x7F6E;&#x53C2;&#x6570;&#xFF1A;</li>
-</ol>
-<p>(1)@first&#xFF1A;&#x662F;&#x5426;&#x4E3A;&#x7B2C;&#x4E00;&#x9879;
-(2)@last&#xFF1A;&#x662F;&#x5426;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x9879;
-(3)@length&#xFF1A;&#x6B63;&#x5728;&#x904D;&#x5386;&#x7684;&#x6570;&#x636E;&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x9879;&#x6570;</p>
+<ul>
+<li>each&#x6807;&#x7B7E;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;js&#x6570;&#x7EC4;&#x683C;&#x5F0F;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(1)&#x5904;&#x7684;<code>{{items}}</code>&#x53C2;&#x6570;&#x3002;</li>
+<li>each&#x6807;&#x7B7E;&#x4F1A;&#x904D;&#x5386;&#x53C2;&#x6570;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5C06;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x6570;&#x636E;&#x90FD;&#x6267;&#x884C;&#x6E32;&#x67D3;&#x3002;&#x5728;&#x904D;&#x5386;&#x6BCF;&#x4E2A;&#x6570;&#x7EC4;&#x9879;&#x65F6;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528;&#x6BCF;&#x9879;&#x7684;&#x6570;&#x636E;&#x4F5C;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x4E0A;&#x4E0B;&#x6587;&#x3002;&#x5982;&#x4F8B;&#x4E2D;(2)&#x5904;&#x6240;&#x793A;&#xFF0C;<code>{{no}}</code>&#x53C2;&#x6570;&#x4E3A;items&#x6570;&#x7EC4;&#x5185;&#x5404;&#x9879;&#x7684;no&#x503C;&#x3002;</li>
+<li>&#x5728;&#x904D;&#x5386;&#x6BCF;&#x4E2A;&#x6570;&#x7EC4;&#x9879;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7236;&#x7EA7;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(3)&#x5904;&#x6240;&#x793A;&#xFF0C;<code>{{../no}}</code>&#x8868;&#x793A;&#x83B7;&#x53D6;&#x4E0E;items&#x53C2;&#x6570;&#x540C;&#x4E00;&#x7EA7;&#x7684;no&#x503C;&#x3002;&#x548C;&#x4E00;&#x822C;&#x7684;&#x76EE;&#x5F55;&#x63CF;&#x8FF0;&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;&#xFF0C;&quot;../&quot;&#x53EF;&#x4EE5;&#x5199;&#x591A;&#x6B21;&#xFF0C;&#x6BCF;&#x6B21;&#x4EE3;&#x8868;&#x5411;&#x4E0A;&#x9000;&#x4E00;&#x7EA7;&#x4E0A;&#x4E0B;&#x6587;&#x3002;</li>
+<li>&#x5728;each&#x6807;&#x7B7E;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;empty&#x6807;&#x7B7E;&#xFF0C;&#x5982;<code>{{items}}</code>&#x53C2;&#x6570;&#x4E3A;null&#x3001;false&#x6216;&#x7A7A;&#x6570;&#x7EC4;&#x65F6;&#xFF0C;&#x5219;&#x4F1A;&#x6267;&#x884C;empty&#x6807;&#x7B7E;&#x5185;&#x7684;&#x6A21;&#x677F;&#x3002;&#x5982;&#x4F8B;&#x4E2D;(4)&#x5904;&#x6240;&#x793A;&#xFF0C;empty&#x6807;&#x7B7E;&#x5185;&#x7684;&#x6A21;&#x677F;&#x5E76;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;<code>{{no}}</code>&#x53C2;&#x6570;&#x4E3A;items&#x53C2;&#x6570;&#x540C;&#x4E00;&#x7EA7;&#x7684;no&#x503C;&#x3002;</li>
+<li>each&#x6807;&#x7B7E;&#x5185;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>{{this}}</code>&#x63D2;&#x503C;&#x53D8;&#x91CF;&#xFF0C;&#x8868;&#x793A;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x9879;&#x503C;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(5)&#x5904;&#x6240;&#x793A;&#x3002;</li>
+<li>each&#x6807;&#x7B7E;&#x5185;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>{{@index}}</code>&#x63D2;&#x503C;&#x53D8;&#x91CF;&#xFF0C;&#x8868;&#x793A;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x9879;&#x7D22;&#x5F15;&#x503C;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(6)&#x5904;&#x6240;&#x793A;&#x3002;</li>
+<li>each&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;<code>moreValues</code>&#x53C2;&#x6570;&#xFF0C;&#x5982;(7)&#x5904;&#x6240;&#x793A;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x66F4;&#x591A;&#x5185;&#x7F6E;&#x53C2;&#x6570;&#xFF1A;<ul>
+<li>@first&#xFF1A;&#x662F;&#x5426;&#x4E3A;&#x7B2C;&#x4E00;&#x9879;</li>
+<li>@last&#xFF1A;&#x662F;&#x5426;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x9879;</li>
+<li>@length&#xFF1A;&#x6B63;&#x5728;&#x904D;&#x5386;&#x7684;&#x6570;&#x636E;&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x9879;&#x6570;</li>
+</ul>
+</li>
+</ul>
 <h3 id="for"><a name="for" class="plugin-anchor" href="#for"><i class="fa fa-link" aria-hidden="true"></i></a>for</h3>
 <p>for&#x6807;&#x7B7E;&#x4E0E;each&#x6807;&#x7B7E;&#x6BD4;&#x8F83;&#x7C7B;&#x4F3C;&#xFF0C;&#x5B83;&#x4F20;&#x5165;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8FD9;&#x4E2A;&#x533A;&#x95F4;&#x4E2D;&#x5FAA;&#x73AF;&#x3002;<code>@index</code>&#x4E3A;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x7684;&#x7D22;&#x5F15;&#x503C;&#xFF0C;&#x4ECE;0&#x5F00;&#x59CB;&#x3002;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`
@@ -588,17 +590,15 @@ this is a props block demo.
 &lt;/div&gt;
 */</span>
 </code></pre>
-<ol>
+<ul>
 <li>&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x53EF;&#x4EE5;&#x6709;&#x4EFB;&#x610F;&#x591A;&#x4E2A;props&#x6807;&#x7B7E;&#x5B50;&#x8282;&#x70B9;&#x3002;props&#x6807;&#x7B7E;&#x5185;&#x90E8;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4EFB;&#x610F;&#x4E2A;prop&#x6807;&#x7B7E;&#xFF0C;&#x6BCF;&#x4E2A;prop&#x6807;&#x7B7E;&#x4E3A;&#x8BE5;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x53C2;&#x6570;&#x3002;</li>
 <li>prop&#x6807;&#x7B7E;&#x5F00;&#x59CB;&#x6807;&#x7B7E;&#x5185;&#x7684;&#x53C2;&#x6570;&#x4E3A;&#x8282;&#x70B9;&#x53C2;&#x6570;&#x540D;&#x79F0;&#x3002;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x66FF;&#x6362;&#x53C2;&#x6570;&#x90FD;&#x53EF;&#x4EE5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x52A0;&#x8FC7;&#x6EE4;&#x5668;&#x3002;&#x5982;&#x4F8B;&#x4E2D;(1)&#x3001;(2)&#x5904;&#x6240;&#x793A;&#x3002;</li>
 <li>prop&#x6807;&#x7B7E;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x4E3A;&#x8282;&#x70B9;&#x53C2;&#x6570;&#x503C;&#x3002;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x5219;&#x8282;&#x70B9;&#x53C2;&#x6570;&#x503C;&#x4E3A;&#x8FD9;&#x4E9B;&#x5B50;&#x8282;&#x70B9;&#x503C;&#x8FDE;&#x6210;&#x7684;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5982;&#x4F8B;&#x4E2D;(3)&#x5904;&#x6240;&#x793A;&#x3002;</li>
 <li>prop&#x6807;&#x7B7E;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;each&#x6807;&#x7B7E;&#x7B49;&#x5176;&#x4ED6;&#x6269;&#x5C55;&#x6807;&#x7B7E;&#x5305;&#x88F9;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x751F;&#x6210;&#x591A;&#x4E2A;&#x8282;&#x70B9;&#x53C2;&#x6570;&#x3002;&#x5982;&#x4F8B;&#x4E2D;(4)&#x5904;&#x6240;&#x793A;&#x3002;</li>
 <li>&#x4F7F;&#x7528;prop&#x6807;&#x7B7E;&#x5B9A;&#x4E49;&#x8282;&#x70B9;&#x53C2;&#x6570;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x4F1A;&#x4F4E;&#x4E8E;&#x76F4;&#x63A5;&#x5B9A;&#x4E49;&#x5728;&#x8282;&#x70B9;&#x7684;&#x5F00;&#x59CB;&#x6807;&#x7B7E;&#x5185;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(1)&#x5904;&#x7684;name&#x5C5E;&#x6027;&#x5C31;&#x88AB;&#x8282;&#x70B9;&#x6807;&#x7B7E;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;name&#x5C5E;&#x6027;&#x8986;&#x76D6;&#x4E86;&#x3002;</li>
-<li><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>&lt;@propName&gt;propValue&lt;/@propName&gt;</code>&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x5F62;&#x5F0F;&#x4EE3;&#x66FF;prop&#x6807;&#x7B7E;&#xFF0C;&#x8FD9;&#x6837;&#x5199;&#x4F1A;&#x66F4;&#x7B80;&#x5355;&#x4E00;&#x4E9B;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(5)&#x3001;(6)&#x5904;&#x6240;&#x793A;&#x3002;</p>
-</li>
-<li><p>&#x5982;&#x679C;prop&#x6807;&#x7B7E;&#x6CA1;&#x6709;&#x88AB;&#x5305;&#x88F9;&#x5176;&#x4ED6;&#x6269;&#x5C55;&#x6807;&#x7B7E;&#x65F6;&#xFF0C;props&#x4E5F;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x4E0D;&#x5199;&#xFF1A;</p>
-</li>
-</ol>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>&lt;@propName&gt;propValue&lt;/@propName&gt;</code>&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x5F62;&#x5F0F;&#x4EE3;&#x66FF;prop&#x6807;&#x7B7E;&#xFF0C;&#x8FD9;&#x6837;&#x5199;&#x4F1A;&#x66F4;&#x7B80;&#x5355;&#x4E00;&#x4E9B;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(5)&#x3001;(6)&#x5904;&#x6240;&#x793A;&#x3002;</li>
+<li>&#x5982;&#x679C;prop&#x6807;&#x7B7E;&#x6CA1;&#x6709;&#x88AB;&#x5305;&#x88F9;&#x5176;&#x4ED6;&#x6269;&#x5C55;&#x6807;&#x7B7E;&#x65F6;&#xFF0C;props&#x4E5F;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x4E0D;&#x5199;&#xFF1A;</li>
+</ul>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">@name</span>&gt;</span>foo<span class="hljs-tag">&lt;/<span class="hljs-name">@name</span>&gt;</span>
   this is a props block demo.
@@ -753,25 +753,25 @@ class App extends React.Component {
 &lt;/div&gt;
 */</span>
 </code></pre>
-<ol>
+<ul>
 <li>&#x4F7F;&#x7528;<code>NornJ</code>&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x6BCF;&#x4E2A;React&#x7EC4;&#x4EF6;&#x65F6;&#x90FD;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4EFB;&#x610F;&#x591A;&#x4E2A;tmpl&#x6807;&#x7B7E;&#x4F5C;&#x4E3A;&#x5B50;&#x8282;&#x70B9;&#xFF1B;&#x5728;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x53EF;&#x4EE5;&#x7528;<code>this.props.tmpls[x]</code>&#x7684;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x5230;&#x5B83;&#x4EEC;&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#x4E2D;&#x6240;&#x793A;&#x3002;</li>
 <li>&#x53EF;&#x4EE5;&#x5C06;<code>this.props.tmpls[x]</code>&#x4F5C;&#x4E3A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x53C2;&#x6570;(&#x5373;{#param}&#x7684;&#x5F62;&#x5F0F;)&#x4F20;&#x5165;&#x5230;<code>NornJ</code>&#x6A21;&#x677F;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x6E32;&#x67D3;tmpl&#x6807;&#x7B7E;&#x5185;&#x7684;&#x6A21;&#x677F;&#x4E86;&#x3002;</li>
-<li>&#x8FD8;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6267;&#x884C;<code>this.props.tmpls[x]</code>&#x65B9;&#x6CD5;&#x6765;&#x6E32;&#x67D3;tmpl&#x6807;&#x7B7E;&#x5185;&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#xFF1A;<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComp</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
-render() {
- <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
-   &lt;div&gt;
-     {tmpl}
-     {tmpl2}
-   &lt;/div&gt;
- `</span>({
-  tmpl: <span class="hljs-keyword">this</span>.props.tmpls[<span class="hljs-number">0</span>]({ text: <span class="hljs-string">&apos;test&apos;</span> }),  <span class="hljs-comment">//&#x7528;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;</span>
-  tmpl2: <span class="hljs-keyword">this</span>.props.tmpls.tmpl2({ text: <span class="hljs-string">&apos;test&apos;</span> })  <span class="hljs-comment">//&#x7528;tmpl&#x6807;&#x7B7E;&#x7684;name&#x5C5E;&#x6027;&#x83B7;&#x53D6;</span>
- });
-}
+<li>&#x8FD8;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x6267;&#x884C;<code>this.props.tmpls[x]</code>&#x65B9;&#x6CD5;&#x6765;&#x6E32;&#x67D3;tmpl&#x6807;&#x7B7E;&#x5185;&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComp</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
+      &lt;div&gt;
+        {tmpl}
+        {tmpl2}
+      &lt;/div&gt;
+    `</span>({
+     tmpl: <span class="hljs-keyword">this</span>.props.tmpls[<span class="hljs-number">0</span>]({ text: <span class="hljs-string">&apos;test&apos;</span> }),  <span class="hljs-comment">//&#x7528;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;</span>
+     tmpl2: <span class="hljs-keyword">this</span>.props.tmpls.tmpl2({ text: <span class="hljs-string">&apos;test&apos;</span> })  <span class="hljs-comment">//&#x7528;tmpl&#x6807;&#x7B7E;&#x7684;name&#x5C5E;&#x6027;&#x83B7;&#x53D6;</span>
+    });
+  }
 }
 </code></pre>
-</li>
-</ol>
 
                                 
                                 </section>
@@ -815,7 +815,7 @@ render() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"内置扩展标签","level":"1.2.6","depth":2,"next":{"title":"行内扩展标签","level":"1.2.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},"previous":{"title":"扩展标签","level":"1.2.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors"],"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/built-inExtensionTag.md","mtime":"2018-03-16T01:29:58.681Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-16T01:30:32.994Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"内置扩展标签","level":"1.2.6","depth":2,"next":{"title":"行内扩展标签","level":"1.2.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},"previous":{"title":"扩展标签","level":"1.2.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors"],"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/built-inExtensionTag.md","mtime":"2018-03-16T01:39:59.202Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-16T01:40:09.822Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
