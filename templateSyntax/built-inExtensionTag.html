@@ -355,6 +355,22 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5185;&#x7F6E;&#x6269;&#x5C55;&#x6807;&#x7B7E;"><a name="&#x5185;&#x7F6E;&#x6269;&#x5C55;&#x6807;&#x7B7E;" class="plugin-anchor" href="#&#x5185;&#x7F6E;&#x6269;&#x5C55;&#x6807;&#x7B7E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x7F6E;&#x6269;&#x5C55;&#x6807;&#x7B7E;</h1>
+<h2 id="&#x76EE;&#x5F55;"><a name="&#x76EE;&#x5F55;" class="plugin-anchor" href="#&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76EE;&#x5F55;</h2>
+<ul>
+<li><a href="#if">if</a></li>
+<li><a href="#else">else</a></li>
+<li><a href="#elseif">elseif</a></li>
+<li><a href="#switch">switch</a></li>
+<li><a href="#unless">unless</a></li>
+<li><a href="#each">each</a></li>
+<li><a href="#for">for</a></li>
+<li><a href="#props&#x4E0E;prop">props&#x4E0E;prop</a></li>
+<li><a href="#strProp">strProp</a></li>
+<li><a href="#obj">obj</a></li>
+<li><a href="#list">list</a></li>
+<li><a href="#fn">fn</a></li>
+<li><a href="#tmpl">tmpl</a></li>
+</ul>
 <h3 id="if"><a name="if" class="plugin-anchor" href="#if"><i class="fa fa-link" aria-hidden="true"></i></a>if</h3>
 <p>&#x4F8B;&#xFF1A;</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -507,12 +523,12 @@
 <li>@length&#xFF1A;&#x6B63;&#x5728;&#x904D;&#x5386;&#x7684;&#x6570;&#x636E;&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x9879;&#x6570;</li>
 </ol>
 <h3 id="for"><a name="for" class="plugin-anchor" href="#for"><i class="fa fa-link" aria-hidden="true"></i></a>for</h3>
-<p>for&#x6807;&#x7B7E;&#x4E0E;each&#x6807;&#x7B7E;&#x6BD4;&#x8F83;&#x7C7B;&#x4F3C;&#xFF0C;&#x5B83;&#x4F20;&#x5165;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8FD9;&#x4E2A;&#x533A;&#x95F4;&#x4E2D;&#x5FAA;&#x73AF;&#xFF1A;</p>
+<p>for&#x6807;&#x7B7E;&#x4E0E;each&#x6807;&#x7B7E;&#x6BD4;&#x8F83;&#x7C7B;&#x4F3C;&#xFF0C;&#x5B83;&#x4F20;&#x5165;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8FD9;&#x4E2A;&#x533A;&#x95F4;&#x4E2D;&#x5FAA;&#x73AF;&#x3002;<code>@index</code>&#x4E3A;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x7684;&#x7D22;&#x5F15;&#x503C;&#xFF0C;&#x4ECE;0&#x5F00;&#x59CB;&#x3002;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`
-&lt;#for {1} {end}&gt;
-  &lt;div&gt;{info}{@index}&lt;/div&gt;
+&lt;#for {{0}} {{list.length}}&gt;
+  &lt;div&gt;{{info + list[@index]}}&lt;/div&gt;
 &lt;/#for&gt;
-`</span>({ end: <span class="hljs-number">5</span>, info: <span class="hljs-string">&apos;test&apos;</span> });
+`</span>({ list: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>], info: <span class="hljs-string">&apos;test&apos;</span> });
 
 <span class="hljs-built_in">console</span>.log(html);
 <span class="hljs-comment">/*&#x8F93;&#x51FA;&#xFF1A;
@@ -521,6 +537,20 @@
 &lt;div&gt;test3&lt;/div&gt;
 &lt;div&gt;test4&lt;/div&gt;
 &lt;div&gt;test5&lt;/div&gt;
+*/</span>
+</code></pre>
+<p>&#x5982;&#x4E0A;&#x4F8B;&#xFF0C;for&#x6807;&#x7B7E;&#x9ED8;&#x8BA4;&#x662F;&#x4E0D;&#x4F1A;&#x5FAA;&#x73AF;&#x5230;&#x7ED3;&#x675F;&#x503C;&#x7684;&#xFF0C;&#x5373;&#x4E3A;<code>start &lt; end</code>&#x3002;&#x5728;&#x6DFB;&#x52A0;<code>loopLast</code>&#x53C2;&#x6570;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x6539;&#x4E3A;<code>start &lt;= end</code>&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`
+&lt;#for {{start}} {{end}} loopLast&gt;
+  &lt;div&gt;{{info}}&lt;/div&gt;
+&lt;/#for&gt;
+`</span>({ start: <span class="hljs-number">1</span>, end: <span class="hljs-number">3</span>, info: <span class="hljs-string">&apos;test&apos;</span> });
+
+<span class="hljs-built_in">console</span>.log(html);
+<span class="hljs-comment">/*&#x8F93;&#x51FA;&#xFF1A;
+&lt;div&gt;test&lt;/div&gt;
+&lt;div&gt;test&lt;/div&gt;
+&lt;div&gt;test&lt;/div&gt;  &#x4E0D;&#x52A0;loopLast&#x53C2;&#x6570;&#x65F6;&#x6B64;&#x884C;&#x4E0D;&#x4F1A;&#x6E32;&#x67D3;
 */</span>
 </code></pre>
 <h3 id="props&#x4E0E;prop"><a name="props&#x4E0E;prop" class="plugin-anchor" href="#props&#x4E0E;prop"><i class="fa fa-link" aria-hidden="true"></i></a>props&#x4E0E;prop</h3>
@@ -787,7 +817,7 @@ render() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"内置扩展标签","level":"1.2.6","depth":2,"next":{"title":"行内扩展标签","level":"1.2.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},"previous":{"title":"扩展标签","level":"1.2.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors"],"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/built-inExtensionTag.md","mtime":"2018-03-05T11:06:04.945Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-06T05:29:03.625Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"内置扩展标签","level":"1.2.6","depth":2,"next":{"title":"行内扩展标签","level":"1.2.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},"previous":{"title":"扩展标签","level":"1.2.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors"],"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/built-inExtensionTag.md","mtime":"2018-03-16T01:12:35.137Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-16T01:13:21.957Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
