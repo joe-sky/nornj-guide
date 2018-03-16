@@ -1,6 +1,22 @@
 {% raw %}
 # 内置扩展标签
 
+## 目录
+
+* [if](#if)
+* [else](#else)
+* [elseif](#elseif)
+* [switch](#switch)
+* [unless](#unless)
+* [each](#each)
+* [for](#for)
+* [props与prop](#props与prop)
+* [strProp](#strProp)
+* [obj](#obj)
+* [list](#list)
+* [fn](#fn)
+* [tmpl](#tmpl)
+
 ### if
 
 例：
@@ -176,14 +192,14 @@ console.log(html2);
 
 ### for
 
-for标签与each标签比较类似，它传入开始和结束两个整数值，然后在这个区间中循环：
+for标签与each标签比较类似，它传入开始和结束两个整数值，然后在这个区间中循环。`@index`为每次循环的索引值，从0开始。示例如下：
 
 ```js
 const html = nj`
-<#for {1} {end}>
-  <div>{info}{@index}</div>
+<#for {{0}} {{list.length}}>
+  <div>{{info + list[@index]}}</div>
 </#for>
-`({ end: 5, info: 'test' });
+`({ list: [1, 2, 3, 4, 5], info: 'test' });
 
 console.log(html);
 /*输出：
@@ -192,6 +208,23 @@ console.log(html);
 <div>test3</div>
 <div>test4</div>
 <div>test5</div>
+*/
+```
+
+如上例，for标签默认是不会循环到结束值的，即为`start < end`。在添加`loopLast`参数后，就会改为`start <= end`：
+
+```js
+const html = nj`
+<#for {{start}} {{end}} loopLast>
+  <div>{{info}}</div>
+</#for>
+`({ start: 1, end: 3, info: 'test' });
+
+console.log(html);
+/*输出：
+<div>test</div>
+<div>test</div>
+<div>test</div>  不加loopLast参数时此行不会渲染
 */
 ```
 
