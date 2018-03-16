@@ -189,6 +189,10 @@ npm install nornj
 * [nornj-loader(Webpack loader)](https://github.com/joe-sky/nornj-loader)
 * [nornj-cli(脚手架工具)](https://github.com/joe-sky/nornj-cli)
 
+## 语法高亮插件
+
+* [nornj-highlight(vscode语法高亮插件)](https://github.com/joe-sky/nornj-highlight)
+
 ## 示例项目
 
 * [react-redux-nornj-todomvc](https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc)
