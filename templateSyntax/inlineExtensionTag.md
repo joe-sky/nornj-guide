@@ -1,7 +1,25 @@
 {% raw %}
 # 行内扩展标签
 
-`行内扩展标签`即为定义在html元素开标签内的`NornJ`扩展标签，语法为`<element #exTag="value">`。内置的`行内扩展标签`如下：
+`行内扩展标签`即为定义在html元素开标签内的`NornJ`扩展标签，语法为`<element #exTag="value">`。它实际上是扩展标签的语法糖写法：
+
+```html
+<div #show="{false}"></div>
+```
+
+完全等价于：
+
+```html
+<div>
+  <#props>
+    <#show>
+      {false}
+    </#show>
+  </#props>
+</div>
+```
+
+内置的`行内扩展标签`如下：
 
 ### show
 
