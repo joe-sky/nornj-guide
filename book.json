@@ -1,4 +1,13 @@
 {
-  "gitbook" : "3.2.2",
-  "plugins" : [ "anchors" ]
+  "gitbook": "3.2.2",
+  "plugins": ["anchors", "jsfiddle"],
+  "pluginsConfig": {
+    "jsfiddle": {
+      "type": "script",
+      "tabs": ["result", "js", "css", "html"],
+      "height": "500",
+      "width": "500",
+      "fontColor": "00FF00"
+    }
+  }
 }
