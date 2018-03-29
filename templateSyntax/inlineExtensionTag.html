@@ -367,7 +367,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">#props</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>&#x5185;&#x7F6E;&#x7684;<code>&#x884C;&#x5185;&#x6269;&#x5C55;&#x6807;&#x7B7E;</code>&#x5982;&#x4E0B;&#xFF1A;</p>
+<h2 id="&#x5185;&#x7F6E;&#x884C;&#x5185;&#x6269;&#x5C55;&#x6807;&#x7B7E;"><a name="&#x5185;&#x7F6E;&#x884C;&#x5185;&#x6269;&#x5C55;&#x6807;&#x7B7E;" class="plugin-anchor" href="#&#x5185;&#x7F6E;&#x884C;&#x5185;&#x6269;&#x5C55;&#x6807;&#x7B7E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x7F6E;&#x884C;&#x5185;&#x6269;&#x5C55;&#x6807;&#x7B7E;</h2>
 <h3 id="show"><a name="show" class="plugin-anchor" href="#show"><i class="fa fa-link" aria-hidden="true"></i></a>show</h3>
 <p>&#x7C7B;&#x4F3C;&#x4E8E;<code>Vue</code>&#x7684;<code>v-show</code>&#x6307;&#x4EE4;&#xFF0C;<code>#show</code>&#x7528;&#x4E8E;&#x5207;&#x6362;&#x5143;&#x7D20;&#x662F;&#x5426;&#x663E;&#x793A;&#xFF0C;&#x539F;&#x7406;&#x4E3A;&#x4FEE;&#x6539;style&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`
@@ -377,6 +377,98 @@
 `</span>({ isShow: <span class="hljs-literal">false</span> });
 
 <span class="hljs-built_in">console</span>.log(html);  <span class="hljs-comment">//&lt;div style=&quot;display:none&quot;&gt;test inline extension tag&lt;/div&gt;</span>
+</code></pre>
+<h2 id="&#x5916;&#x90E8;&#x884C;&#x5185;&#x6269;&#x5C55;&#x6807;&#x7B7E;"><a name="&#x5916;&#x90E8;&#x884C;&#x5185;&#x6269;&#x5C55;&#x6807;&#x7B7E;" class="plugin-anchor" href="#&#x5916;&#x90E8;&#x884C;&#x5185;&#x6269;&#x5C55;&#x6807;&#x7B7E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5916;&#x90E8;&#x884C;&#x5185;&#x6269;&#x5C55;&#x6807;&#x7B7E;</h2>
+<h3 id="mobx-model"><a name="mobx-model" class="plugin-anchor" href="#mobx-model"><i class="fa fa-link" aria-hidden="true"></i></a>mobx-model</h3>
+<p>&#x7C7B;&#x4F3C;&#x4E8E;<code>Vue</code>&#x7684;<code>v-model</code>&#x6307;&#x4EE4;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>#mobx-model</code>&#x914D;&#x5408;<code>Mobx</code>&#x5728;<code>&lt;input&gt;</code>&#x53CA;<code>&lt;textarea&gt;</code>&#x7B49;&#x8868;&#x5355;&#x5143;&#x7D20;&#x4E0A;&#x521B;&#x5EFA;<code>&#x53CC;&#x5411;&#x6570;&#x636E;&#x7ED1;&#x5B9A;</code>&#xFF0C;&#x5B83;&#x4F1A;&#x6839;&#x636E;&#x63A7;&#x4EF6;&#x7C7B;&#x578B;&#x81EA;&#x52A8;&#x9009;&#x53D6;&#x6B63;&#x786E;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x66F4;&#x65B0;&#x5143;&#x7D20;&#x3002;&#x5728;&#x7EBF;&#x793A;&#x4F8B;&#xFF1A;</p>
+<p><a href="https://jsfiddle.net/joe_sky/wwrLuns2/" target="_blank">source code</a></p>
+<ul>
+<li>&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> { observable } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;mobx&apos;</span>;
+<span class="hljs-keyword">import</span> nj <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  @observable inputValue = <span class="hljs-string">&apos;&apos;</span>;
+
+  render() {
+    <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
+      &lt;input #mobx-model={inputValue} /&gt;
+    `</span>(<span class="hljs-keyword">this</span>);
+  }
+}
+</code></pre>
+<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;&#x65E0;&#x9700;&#x7F16;&#x5199;<code>&lt;input&gt;</code>&#x6807;&#x7B7E;&#x7684;<code>onChange</code>&#x4E8B;&#x4EF6;&#xFF0C;<code>@observable</code>&#x7684;<code>inputValue&#x53D8;&#x91CF;</code>&#x5DF2;&#x81EA;&#x52A8;&#x548C;<code>&lt;input&gt;</code>&#x6807;&#x7B7E;&#x5EFA;&#x7ACB;&#x4E86;<code>&#x53CC;&#x5411;&#x6570;&#x636E;&#x7ED1;&#x5B9A;</code>&#x7684;&#x5173;&#x7CFB;&#x3002;</p>
+<ul>
+<li>&#x5B9E;&#x8D28;&#x4E0A;&#xFF0C;<code>#mobx-model</code>&#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x548C;<code>v-model</code>&#x5F88;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E0B;&#x9762;&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x5F62;&#x5F0F;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  @observable inputValue = <span class="hljs-string">&apos;&apos;</span>;
+  @autobind
+  onChange(e) {
+    <span class="hljs-keyword">this</span>.inputValue = e.target.value;
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
+      &lt;input value={inputValue} /&gt;
+    `</span>(<span class="hljs-keyword">this</span>);
+  }
+}
+</code></pre>
+<ul>
+<li><code>beforeChange</code>&#x548C;<code>afterChange</code>&#x4E8B;&#x4EF6;</li>
+</ul>
+<p>&#x7531;&#x4E8E;<code>#mobx-model</code>&#x9ED8;&#x8BA4;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x4E86;&#x7EC4;&#x4EF6;&#x7684;<code>onChange</code>&#x4E8B;&#x4EF6;&#xFF0C;&#x4F46;&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x8FD8;&#x662F;&#x9700;&#x8981;&#x5728;<code>onChange</code>&#x4E2D;&#x505A;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7684;&#x64CD;&#x4F5C;&#x3002;<code>#mobx-model</code>&#x63D0;&#x4F9B;&#x4E86;<code>beforeChange</code>&#x548C;<code>afterChange</code>&#x4E8B;&#x4EF6;&#x89E3;&#x51B3;&#x4E0A;&#x8FF0;&#x95EE;&#x9898;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  @observable inputValue = <span class="hljs-string">&apos;1&apos;</span>;
+  @autobind
+  beforeChange(prevValue, params) {
+    <span class="hljs-built_in">console</span>.log(prevValue);               <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;1</span>
+    <span class="hljs-built_in">console</span>.log(params[<span class="hljs-number">0</span>].target.value);  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;12</span>
+
+    <span class="hljs-comment">//&#x6B64;&#x5904;&#x5982;&#x679C;return false&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x963B;&#x6B62;onChange&#x548C;afterChange&#x4E8B;&#x4EF6;&#x7684;&#x6267;&#x884C;</span>
+    <span class="hljs-comment">//return false;</span>
+  }
+
+  @autobind
+  afterChange(nextValue, params) {
+    <span class="hljs-built_in">console</span>.log(nextValue);               <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;12</span>
+    <span class="hljs-built_in">console</span>.log(params[<span class="hljs-number">0</span>].target.value);  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;12</span>
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
+      &lt;input :#mobx-model=&quot;inputValue options: { beforeChange: beforeChange, afterChange: afterChange }&quot; /&gt;
+    `</span>(<span class="hljs-keyword">this</span>);
+  }
+}
+</code></pre>
+<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;<code>beforeChange</code>&#x548C;<code>afterChange</code>&#x4E8B;&#x4EF6;&#x5747;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5206;&#x522B;&#x4E3A;<code>&#x5F53;&#x524D;@observable&#x53D8;&#x91CF;&#x7684;&#x503C;</code>&#x548C;<code>onChange&#x4E8B;&#x4EF6;&#x539F;&#x751F;&#x7684;&#x53C2;&#x6570;&#x5217;&#x8868;</code>&#x3002;&#x5982;&#x7528;&#x6237;&#x5728;<code>&lt;input&gt;</code>(&#x521D;&#x59CB;&#x503C;&#x4E3A;<code>1</code>)&#x4E2D;&#x7EE7;&#x7EED;&#x5F55;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;<code>2</code>&#xFF0C;&#x5219;&#x4F1A;&#x6309;&#x7167;&#x4E0A;&#x4F8B;&#x4E2D;&#x6240;&#x793A;&#x6253;&#x5370;&#x76F8;&#x5E94;&#x4FE1;&#x606F;&#x3002;</p>
+<!--* 使用`action`更新`@observable`变量-->
+<ul>
+<li>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;<code>#mobx-model</code>&#x6807;&#x7B7E;&#x662F;&#x4E00;&#x4E2A;<code>NornJ&#x5916;&#x90E8;&#x6269;&#x5C55;</code>&#xFF0C;&#x9700;&#x8981;&#x6309;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x5F15;&#x5165;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;nornj-react/mobx/extension/mobx-model&apos;</span>;
+</code></pre>
+<p>&#x53E6;&#x5916;&#x5982;&#x679C;&#x4F7F;&#x7528;<code>nornj-loader</code>&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5728;<code>Webpack</code>&#x7684;&#x914D;&#x7F6E;&#x4E2D;&#x5F15;&#x5165;<code>&#x76F8;&#x5E94;&#x7684;&#x6269;&#x5C55;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</code>&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>: {
+  rules: [
+    {
+      test: <span class="hljs-regexp">/\.t.html(\?[\s\S]+)*$/</span>,
+      use: [{
+        loader: <span class="hljs-string">&apos;nornj-loader&apos;</span>,
+        options: {
+          outputH: <span class="hljs-literal">true</span>,
+          delimiters: <span class="hljs-string">&apos;react&apos;</span>,
+          extensionConfig: <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;nornj-react/mobx/extensionConfig&apos;</span>)
+        }
+      }]
+    },
+    ...
+  ]
+}
 </code></pre>
 
                                 
@@ -421,7 +513,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"行内扩展标签","level":"1.2.7","depth":2,"next":{"title":"模板注释","level":"1.2.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},"previous":{"title":"内置扩展标签","level":"1.2.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors"],"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/inlineExtensionTag.md","mtime":"2018-03-23T01:44:59.797Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-23T01:45:14.046Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"行内扩展标签","level":"1.2.7","depth":2,"next":{"title":"模板注释","level":"1.2.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},"previous":{"title":"内置扩展标签","level":"1.2.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle"],"pluginsConfig":{"jsfiddle":{"type":"script","tabs":["result","js","css","html"],"height":"500","width":"500","fontColor":"00FF00"},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/inlineExtensionTag.md","mtime":"2018-03-29T12:59:07.947Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-29T12:59:16.299Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -429,6 +521,10 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-jsfiddle/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
