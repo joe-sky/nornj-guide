@@ -4,7 +4,7 @@
   "pluginsConfig": {
     "jsfiddle": {
       "type": "script",
-      "tabs": ["result", "js", "css", "html"],
+      "tabs": ["result", "html", "js", "css"],
       "height": "500",
       "width": "500",
       "fontColor": "00FF00"
