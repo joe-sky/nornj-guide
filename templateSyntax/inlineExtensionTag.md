@@ -21,7 +21,7 @@
 
 ## 内置行内扩展标签
 
-## 目录
+### 目录
 
 * [show](#show)
 * [mobx-model](#mobx-model)
@@ -226,4 +226,34 @@ class TestComponent extends Component {
   }
 }
 ```
+
+### 目前mobx-model和mst-model支持的控件列表
+
+`#mobx-model`目前是按照控件名称来自动选择相应的方式更新数据：
+
+| 控件名称        | 控件来源                  | 备注                     |
+|:---------------|:-------------------------|:-------------------------|
+| `<input>`      | 原生                      | 目前只支持`<input>`，`<input type="radio">`等暂时不支持 |
+| `<textarea>`   | 原生                      |                         |
+| `<select>`     | 原生                      |                         |
+| `<ant-input>`  | Ant Design                |                         |
+| `<ant-input.textarea>`<br>`<ant-textarea>`  | Ant Design                |                         |
+| `<ant-checkbox>`  | Ant Design                |                         |
+| `<ant-checkbox.group>`<br>`<ant-checkboxgroup>`  | Ant Design                |                         |
+| `<ant-radio.group>`  | Ant Design                |                         |
+| `<ant-switch>`  | Ant Design                |                         |
+| `<ant-cascader>`  | Ant Design                |                         |
+| `<ant-datepicker>`<br>`<ant-datepicker.monthpicker>`<br>`<ant-datepicker.weekpicker>`<br>`<ant-datepicker.rangepicker>`<br>`<ant-monthpicker>`<br>`<ant-weekpicker>`<br>`<ant-rangepicker>`  | Ant Design                |                         |
+| `<el-input>`   | Element-React                |                         |
+| `<el-select>`   | Element-React                |                         |
+| `<el-datepicker>`   | Element-React                |                         |
+| `<el-daterangepicker>`   | Element-React                |                         |
+| `<el-timeselect>`   | Element-React                |                         |
+| `<el-timepicker>`   | Element-React                |                         |
+| `<el-timerangepicker>`   | Element-React                |                         |
+| `<el-switch>`   | Element-React                |                         |
+| `<el-checkbox>`   | Element-React                |                         |
+| `<el-checkbox.group>`   | Element-React                |                         |
+| `<el-radio.group>`   | Element-React                |                         |
+| `<el-cascader>`   | Element-React                | &nbsp;                        |
 {% endraw %}
