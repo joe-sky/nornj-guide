@@ -45,9 +45,11 @@ console.log(html);  //<div style="display:none">test inline extension tag</div>
 
 类似于`Vue`的`v-model`指令，可以使用`#mobx-model`配合`Mobx`在`<input>`及`<textarea>`等表单元素上创建`双向数据绑定`，它会根据控件类型自动选取正确的方法来更新元素。
 
-* 在线示例
+* 在线示例(jsfiddle)
 
 [source code](https://jsfiddle.net/joe_sky/wwrLuns2/)
+
+* [在线示例(codepen)](https://codepen.io/joe_sky/pen/mxKdrj)
 
 * 基本使用方法
 
@@ -68,7 +70,7 @@ class TestComponent extends Component {
 }
 ```
 
-如上所示，无需编写`<input>`标签的`onChange`事件，`inputValue`变量已自动和`<input>`标签建立了`双向数据绑定`的关系。
+如上所示，无需编写`<input>`标签的`onChange`事件，`inputValue`变量已自动和`<input>`标签建立了`双向数据绑定`的关系。[点这里](https://github.com/joe-sky/nornj-cli/blob/master/docs/guides/antDesign.md#%E8%A1%A8%E5%8D%95%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)是一个`#mobx-model`结合表单组件的示例页面。
 
 * 实质上，`#mobx-model`的实现原理和`v-model`很类似，上述示例其实就是下面的语法糖形式：
 
