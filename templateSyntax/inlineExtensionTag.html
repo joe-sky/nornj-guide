@@ -546,12 +546,12 @@ configure({enforceActions: <span class="hljs-literal">true</span>});
 }
 </code></pre>
 <h3 id="&#x76EE;&#x524D;mobx-model&#x548C;mst-model&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x5217;&#x8868;"><a name="&#x76EE;&#x524D;mobx-model&#x548C;mst-model&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x5217;&#x8868;" class="plugin-anchor" href="#&#x76EE;&#x524D;mobx-model&#x548C;mst-model&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x5217;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76EE;&#x524D;mobx-model&#x548C;mst-model&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x5217;&#x8868;</h3>
-<p><code>#mobx-model</code>&#x76EE;&#x524D;&#x662F;&#x6309;&#x7167;&#x63A7;&#x4EF6;&#x540D;&#x79F0;&#x6765;&#x81EA;&#x52A8;&#x9009;&#x62E9;&#x76F8;&#x5E94;&#x7684;&#x65B9;&#x5F0F;&#x66F4;&#x65B0;&#x6570;&#x636E;&#xFF1A;</p>
+<p><code>#mobx-model</code>&#x76EE;&#x524D;&#x6682;&#x65F6;&#x662F;&#x53EA;&#x80FD;&#x6309;&#x7167;&#x63A7;&#x4EF6;&#x540D;&#x79F0;&#x6765;&#x81EA;&#x52A8;&#x9009;&#x62E9;&#x76F8;&#x5E94;&#x7684;&#x65B9;&#x5F0F;&#x66F4;&#x65B0;&#x6570;&#x636E;&#xFF0C;&#x65E5;&#x540E;&#x4F1A;&#x589E;&#x52A0;&#x66F4;&#x591A;&#x7684;&#x65B9;&#x5F0F;(&#x5982;&#x6839;&#x636E;type&#x5C5E;&#x6027;&#x6216;&#x5BF9;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x7279;&#x6B8A;&#x53C2;&#x6570;&#x914D;&#x7F6E;)&#xFF0C;&#x656C;&#x8BF7;&#x671F;&#x5F85;&#x3002;</p>
 <table>
 <thead>
 <tr>
 <th style="text-align:left">&#x63A7;&#x4EF6;&#x540D;&#x79F0;</th>
-<th style="text-align:left">&#x63A7;&#x4EF6;&#x6765;&#x6E90;</th>
+<th style="text-align:left">&#x63A7;&#x4EF6;&#x7C7B;&#x578B;</th>
 <th style="text-align:left">&#x5907;&#x6CE8;</th>
 </tr>
 </thead>
@@ -559,7 +559,7 @@ configure({enforceActions: <span class="hljs-literal">true</span>});
 <tr>
 <td style="text-align:left"><code>&lt;input&gt;</code></td>
 <td style="text-align:left">&#x539F;&#x751F;</td>
-<td style="text-align:left">&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;<code>&lt;input&gt;</code>&#xFF0C;<code>&lt;input type=&quot;radio&quot;&gt;</code>&#x7B49;&#x6682;&#x65F6;&#x4E0D;&#x652F;&#x6301;</td>
+<td style="text-align:left"><code>&lt;input type=&quot;checkbox&quot;&gt;</code>&#x548C;<code>&lt;input type=&quot;radio&quot;&gt;</code>&#x6682;&#x65F6;&#x4E0D;&#x652F;&#x6301;</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>&lt;textarea&gt;</code></td>
@@ -569,7 +569,7 @@ configure({enforceActions: <span class="hljs-literal">true</span>});
 <tr>
 <td style="text-align:left"><code>&lt;select&gt;</code></td>
 <td style="text-align:left">&#x539F;&#x751F;</td>
-<td style="text-align:left"></td>
+<td style="text-align:left"><code>&lt;select multiple&gt;</code>&#x6682;&#x65F6;&#x4E0D;&#x652F;&#x6301;</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>&lt;ant-input&gt;</code></td>
@@ -602,6 +602,11 @@ configure({enforceActions: <span class="hljs-literal">true</span>});
 <td style="text-align:left"></td>
 </tr>
 <tr>
+<td style="text-align:left"><code>&lt;ant-select&gt;</code></td>
+<td style="text-align:left">Ant Design</td>
+<td style="text-align:left"><code>&lt;ant-select mode=&quot;multiple&quot;&gt;</code>&#x6682;&#x65F6;&#x4E0D;&#x652F;&#x6301;</td>
+</tr>
+<tr>
 <td style="text-align:left"><code>&lt;ant-cascader&gt;</code></td>
 <td style="text-align:left">Ant Design</td>
 <td style="text-align:left"></td>
@@ -619,7 +624,7 @@ configure({enforceActions: <span class="hljs-literal">true</span>});
 <tr>
 <td style="text-align:left"><code>&lt;el-select&gt;</code></td>
 <td style="text-align:left">Element-React</td>
-<td style="text-align:left"></td>
+<td style="text-align:left"><code>&lt;el-select multiple&gt;</code>&#x6682;&#x65F6;&#x4E0D;&#x652F;&#x6301;</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>&lt;el-datepicker&gt;</code></td>
@@ -716,7 +721,7 @@ configure({enforceActions: <span class="hljs-literal">true</span>});
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"行内扩展标签","level":"1.2.7","depth":2,"next":{"title":"模板注释","level":"1.2.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},"previous":{"title":"内置扩展标签","level":"1.2.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle"],"pluginsConfig":{"jsfiddle":{"type":"script","tabs":["result","html","js","css"],"height":"500","width":"500","fontColor":"00FF00"},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/inlineExtensionTag.md","mtime":"2018-03-30T07:03:37.086Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-30T09:17:27.776Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"行内扩展标签","level":"1.2.7","depth":2,"next":{"title":"模板注释","level":"1.2.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},"previous":{"title":"内置扩展标签","level":"1.2.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle"],"pluginsConfig":{"jsfiddle":{"type":"script","tabs":["result","html","js","css"],"height":"500","width":"500","fontColor":"00FF00"},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/inlineExtensionTag.md","mtime":"2018-04-02T04:37:57.928Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-02T04:39:01.623Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

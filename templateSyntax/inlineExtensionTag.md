@@ -229,23 +229,24 @@ class TestComponent extends Component {
 
 ### 目前mobx-model和mst-model支持的控件列表
 
-`#mobx-model`目前是按照控件名称来自动选择相应的方式更新数据：
+`#mobx-model`目前暂时是只能按照控件名称来自动选择相应的方式更新数据，日后会增加更多的方式(如根据type属性或对组件进行特殊参数配置)，敬请期待。
 
-| 控件名称        | 控件来源                  | 备注                     |
+| 控件名称        | 控件类型                  | 备注                     |
 |:---------------|:-------------------------|:-------------------------|
-| `<input>`      | 原生                      | 目前只支持`<input>`，`<input type="radio">`等暂时不支持 |
+| `<input>`      | 原生                      | `<input type="checkbox">`和`<input type="radio">`暂时不支持 |
 | `<textarea>`   | 原生                      |                         |
-| `<select>`     | 原生                      |                         |
+| `<select>`     | 原生                      | `<select multiple>`暂时不支持 |
 | `<ant-input>`  | Ant Design                |                         |
 | `<ant-input.textarea>`<br>`<ant-textarea>`  | Ant Design                |                         |
 | `<ant-checkbox>`  | Ant Design                |                         |
 | `<ant-checkbox.group>`<br>`<ant-checkboxgroup>`  | Ant Design                |                         |
 | `<ant-radio.group>`  | Ant Design                |                         |
 | `<ant-switch>`  | Ant Design                |                         |
+| `<ant-select>`  | Ant Design                | `<ant-select mode="multiple">`暂时不支持                        |
 | `<ant-cascader>`  | Ant Design                |                         |
 | `<ant-datepicker>`<br>`<ant-datepicker.monthpicker>`<br>`<ant-datepicker.weekpicker>`<br>`<ant-datepicker.rangepicker>`<br>`<ant-monthpicker>`<br>`<ant-weekpicker>`<br>`<ant-rangepicker>`  | Ant Design                |                         |
 | `<el-input>`   | Element-React                |                         |
-| `<el-select>`   | Element-React                |                         |
+| `<el-select>`   | Element-React                | `<el-select multiple>`暂时不支持 |
 | `<el-datepicker>`   | Element-React                |                         |
 | `<el-daterangepicker>`   | Element-React                |                         |
 | `<el-timeselect>`   | Element-React                |                         |
