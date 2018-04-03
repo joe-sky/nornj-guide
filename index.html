@@ -362,7 +362,7 @@
     Hello World!
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>`();
 </code></pre>
-<p><code>NornJ</code>&#x662F;&#x4E00;&#x4E2A;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x9AD8;&#xFF0C;&#x8BED;&#x6CD5;&#x53EF;&#x8BFB;&#x6027;&#x597D;&#xFF0C;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x8D85;&#x5F3A;&#xFF0C;&#x9002;&#x7528;&#x573A;&#x666F;&#x4E30;&#x5BCC;&#x7684;javascript&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x3002;</p>
+<p><code>NornJ</code>&#x662F;&#x4E00;&#x4E2A;<code>&#x6E32;&#x67D3;&#x9AD8;&#x6548;</code>&#xFF0C;<code>&#x53EF;&#x8BFB;&#x6027;&#x597D;</code>&#xFF0C;<code>&#x6269;&#x5C55;&#x5BB9;&#x6613;</code>&#xFF0C;<code>&#x9002;&#x7528;&#x6027;&#x5E7F;</code>&#x7684;javascript&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x3002;</p>
 <p><a href="https://www.npmjs.org/package/nornj" target="_blank"><img src="https://img.shields.io/npm/v/nornj.svg" alt="NPM Version"></a>
 <a href="https://travis-ci.org/joe-sky/nornj" target="_blank">
 <img src="https://travis-ci.org/joe-sky/nornj.svg?branch=master" alt="Travis CI Status">
@@ -372,7 +372,7 @@
 </a>
 <a href="https://www.npmjs.org/package/nornj" target="_blank"><img src="https://img.shields.io/npm/dm/nornj.svg" alt="NPM Downloads"></a></p>
 <h2 id="&#x6982;&#x8FF0;"><a name="&#x6982;&#x8FF0;" class="plugin-anchor" href="#&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6982;&#x8FF0;</h2>
-<p><code>NornJ</code>&#x662F;&#x4E00;&#x6B3E;&#x540C;&#x65F6;&#x652F;&#x6301;&#x6E32;&#x67D3;<code>html(&#x6216;xml)&#x5B57;&#x7B26;&#x4E32;</code>&#x548C;<code>HyperScript</code>&#x7684;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x3002;</p>
+<p><code>NornJ</code>&#x662F;&#x4E00;&#x6B3E;&#x540C;&#x65F6;&#x652F;&#x6301;&#x6E32;&#x67D3;<code>&#x7EAF;&#x5B57;&#x7B26;&#x4E32;(html)</code>&#x548C;<code>HyperScript(React vdom)</code>&#x7684;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x3002;</p>
 <blockquote>
 <p>&#x4EC0;&#x4E48;&#x662F;<code>HyperScript</code>?</p>
 </blockquote>
@@ -384,29 +384,51 @@
                            |
                            |
            +-------------------------------+
+           |           render to           |
            |                               |
-           |                               |
- +------------------+      +--------------------------------+
- &#xA6; html(xml) string &#xA6;      &#xA6; HyperScript(React virtual dom) &#xA6;
- +------------------+      +--------------------------------+
-</code></pre><p>&#x6545;<code>NornJ</code>&#x4E0D;&#x4F46;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;<code>Express</code>&#x670D;&#x52A1;&#x5668;&#x7684;&#x754C;&#x9762;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;<code>JSX</code>&#x4F5C;&#x4E3A;<code>React</code>&#x7684;&#x754C;&#x9762;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x3002;&#x5B83;&#x7684;&#x8BED;&#x6CD5;&#x548C;<code>JSX</code>&#x5E76;&#x4E0D;&#x4E92;&#x76F8;&#x6392;&#x65A5;&#xFF0C;&#x53EF;&#x5171;&#x5B58;&#x4E00;&#x8D77;&#x8FD0;&#x884C;&#x3002;</p>
+ +-------------------+     +--------------------------------+
+ &#xA6; pure string(html) &#xA6;     &#xA6; HyperScript(React virtual dom) &#xA6;
+ +-------------------+     +--------------------------------+
+</code></pre><p>&#x56E0;&#x6B64;&#xFF0C;<code>NornJ</code>&#x4E0D;&#x4F46;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;<code>Express</code>&#x53CA;<code>Koa</code>&#x670D;&#x52A1;&#x5668;&#x7684;&#x754C;&#x9762;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;<code>JSX</code>&#x4F5C;&#x4E3A;<code>React</code>&#x7684;&#x754C;&#x9762;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x3002;&#x5B83;&#x7684;&#x8BED;&#x6CD5;&#x548C;<code>JSX</code>&#x5E76;&#x4E0D;&#x4E92;&#x76F8;&#x6392;&#x65A5;&#xFF0C;&#x53EF;&#x5171;&#x5B58;&#x4E00;&#x8D77;&#x8FD0;&#x884C;&#x3002;</p>
 <h2 id="&#x6A21;&#x677F;&#x57FA;&#x672C;&#x793A;&#x4F8B;"><a name="&#x6A21;&#x677F;&#x57FA;&#x672C;&#x793A;&#x4F8B;" class="plugin-anchor" href="#&#x6A21;&#x677F;&#x57FA;&#x672C;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6A21;&#x677F;&#x57FA;&#x672C;&#x793A;&#x4F8B;</h2>
+<ul>
+<li>&#x5728;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;</li>
+</ul>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;partial&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">#if</span> {{<span class="hljs-attr">i</span> &gt;</span> 0 || (i <span class="hljs-tag">&lt;<span class="hljs-name">=</span> <span class="hljs-attr">-10</span>)}}&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">test</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">{{click}}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">test</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">{{click}}</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">#if</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {{<span class="hljs-attr">msgs</span>}}&gt;</span>
-      this the test demo Hello {{msg | format}}
+    <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {{<span class="hljs-attr">1</span> <span class="hljs-attr">..</span> <span class="hljs-attr">20</span>}}&gt;</span>                               <span class="hljs-comment">&lt;!-- &quot;..&quot;&#x662F;&#x8303;&#x56F4;&#x8FD0;&#x7B97;&#x7B26; --&gt;</span>
+      this the test demo Hello {{@index ** 2 | int}}  <span class="hljs-comment">&lt;!-- &quot;**&quot;&#x662F;&#x4E58;&#x65B9;&#x8FD0;&#x7B97;&#x7B26; --&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">#each</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">#include</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;partial&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">#include</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;partial&quot;</span> /&gt;</span>                       <span class="hljs-comment">&lt;!-- &#x5BFC;&#x5165;&#x5176;&#x4ED6;&#x6A21;&#x677F; --&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 </code></pre>
-<p>&#x5982;&#x4E0A;&#x4F8B;&#xFF0C;<code>NornJ</code>&#x7684;&#x8BED;&#x6CD5;&#x5728;&#x53EF;&#x4EE5;&#x5C55;&#x73B0;&#x4E00;&#x5B9A;&#x903B;&#x8F91;&#x6027;&#x7684;&#x540C;&#x65F6;&#x7ED3;&#x6784;&#x4E0E;html&#x51E0;&#x4E4E;&#x4E00;&#x81F4;&#xFF0C;&#x800C;&#x4E14;<code>if</code>&#x3001;<code>each</code>&#x3001;<code>&gt;</code>&#x3001;<code>&lt;=</code>&#x7B49;&#x90FD;&#x662F;&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x7684;&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#xFF01;^_^</p>
+<p>&#x53EF;&#x89C1;&#xFF0C;<code>NornJ</code>&#x7684;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#x5728;&#x5C3D;&#x91CF;&#x4E0E;html&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x66F4;&#x6709;&#x4E30;&#x5BCC;&#x7684;&#x6269;&#x5C55;&#x8BED;&#x6CD5;&#x53BB;&#x5B9E;&#x73B0;&#x5404;&#x79CD;&#x903B;&#x8F91;&#xFF1B;&#x4E14;&#x62E5;&#x6709;<code>..</code>&#x3001;<code>**</code>&#x7B49;js&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x800C;&#x4E14;&#x5B83;&#x4EEC;&#x8FD8;&#x662F;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x6269;&#x5C55;&#x7684;^_^!</p>
+<ul>
+<li>&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x50CF;JSX&#x90A3;&#x6837;&#x7F16;&#x5199;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> partial = nj<span class="hljs-string">`
+  &lt;#if <span class="hljs-subst">${i &gt; 0 || (i &lt;= -10)}</span>&gt;                        &lt;!-- &#x53EF;&#x7528;&#x76F4;&#x63A5;&#x5D4C;&#x5165;js&#x8868;&#x8FBE;&#x5F0F; --&gt;
+    &lt;input id=test onclick={{click}}&gt;
+  &lt;/#if&gt;
+`</span>;
+
+<span class="hljs-keyword">const</span> template = nj<span class="hljs-string">`
+  &lt;div&gt;
+    &lt;#each {{1 .. 20}}&gt;
+      this the test demo Hello {{@index ** 2 | int}}
+    &lt;/#each&gt;
+    #<span class="hljs-subst">${partial}</span>                                       &lt;!-- &#x5BFC;&#x5165;&#x5176;&#x4ED6;&#x6A21;&#x677F; --&gt;
+  &lt;/div&gt;
+`</span>;
+</code></pre>
+<p><code>NornJ</code>&#x4E5F;&#x540C;&#x65F6;&#x652F;&#x6301;&#x50CF;<code>JSX</code>&#x90A3;&#x6837;&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x81EA;&#x7531;&#x5730;&#x7F16;&#x5199;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;<code>ES2015+</code>&#x63D0;&#x4F9B;&#x7684;<code>tagged template string</code>&#x8BED;&#x6CD5;&#xFF1B;&#x5E76;&#x4E14;&#x51E0;&#x4E4E;&#x6240;&#x6709;JSX&#x652F;&#x6301;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5B83;&#x4E5F;&#x90FD;&#x662F;&#x652F;&#x6301;&#x7684;^_^!</p>
 <h2 id="&#x5728;&#x7EBF;&#x6F14;&#x793A;&#x5730;&#x5740;"><a name="&#x5728;&#x7EBF;&#x6F14;&#x793A;&#x5730;&#x5740;" class="plugin-anchor" href="#&#x5728;&#x7EBF;&#x6F14;&#x793A;&#x5730;&#x5740;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;&#x7EBF;&#x6F14;&#x793A;&#x5730;&#x5740;</h2>
 <ul>
 <li><a href="https://jsfiddle.net/joe_sky/n5n9tutj/" target="_blank">&#x5728;&#x7EBF;Playground(jsfiddle)</a></li>
@@ -416,7 +438,7 @@
 <p>&#x4F20;&#x7EDF;js&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x5982;<code>Handlebars</code>&#x3001;<code>EJS</code>&#x3001;<code>Nunjucks</code>&#x7B49;&#x901A;&#x5E38;&#x53EA;&#x652F;&#x6301;&#x6E32;&#x67D3;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;<code>NornJ</code>&#x4E0E;&#x5B83;&#x4EEC;&#x76F8;&#x6BD4;&#xFF0C;&#x76F8;&#x540C;&#x70B9;&#x548C;&#x4E0D;&#x540C;&#x70B9;&#x90FD;&#x6709;&#xFF1A;</p>
 <ul>
 <li>&#x652F;&#x6301;&#x6E32;&#x67D3;<code>React</code>&#x7684;<code>virtual dom</code>&#x5BF9;&#x8C61;&#xFF0C;&#x4F5C;&#x4E3A;<code>JSX</code>&#x7684;&#x66FF;&#x4EE3;&#x6A21;&#x677F;&#x8BED;&#x8A00;&#x3002;</li>
-<li>&#x652F;&#x6301;&#x6E32;&#x67D3;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6545;&#x5B83;&#x4E5F;&#x53EF;&#x4EE5;&#x50CF;&#x4F20;&#x7EDF;js&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x4E00;&#x6837;&#x652F;&#x6301;<code>Backbone</code>&#x6216;<code>Express</code>&#x7B49;&#x6E32;&#x67D3;html&#xFF1B;&#x4E5F;&#x652F;&#x6301;&#x4E3A;&#x5404;&#x7C7B;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x63D0;&#x4F9B;&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x3002;</li>
+<li>&#x652F;&#x6301;&#x6E32;&#x67D3;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6545;&#x5B83;&#x4E5F;&#x53EF;&#x4EE5;&#x50CF;&#x4F20;&#x7EDF;js&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x4E00;&#x6837;&#x652F;&#x6301;<code>Express</code>&#x6216;<code>Koa</code>&#x7B49;&#x6E32;&#x67D3;html&#xFF1B;&#x4E5F;&#x652F;&#x6301;&#x4E3A;&#x5404;&#x7C7B;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x63D0;&#x4F9B;&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x3002;</li>
 <li>&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x7B80;&#x5355;&#x4E14;&#x4E30;&#x5BCC;&#xFF0C;&#x5728;&#x53C2;&#x8003;&#x81EA;<code>Handlebars</code>&#x3001;<code>Nunjucks</code>&#x3001;<code>Vue</code>&#x7B49;&#x8457;&#x540D;&#x9879;&#x76EE;&#x7684;&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x4E5F;&#x6709;&#x5F88;&#x591A;&#x81EA;&#x5DF1;&#x72EC;&#x7279;&#x7684;&#x8BED;&#x6CD5;&#x3002;</li>
 <li>&#x8BED;&#x6CD5;&#x62E5;&#x6709;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#x7684;&#x53EF;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;<code>&#x8FD0;&#x7B97;&#x7B26;</code>&#x53CA;<code>&#x8BED;&#x53E5;</code>&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x7684;&#x3002;</li>
 <li>&#x5B83;&#x6709;&#x591A;&#x79CD;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x9002;&#x5E94;&#x4E0D;&#x540C;&#x573A;&#x666F;&#xFF1A;<ul>
@@ -425,11 +447,11 @@
 <li>&#x8FD8;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x7528;<code>ES6&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;</code>&#x8BED;&#x6CD5;&#x76F4;&#x63A5;&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;&#x3002;</li>
 </ul>
 </li>
-<li>&#x6E32;&#x67D3;&#x6548;&#x7387;&#x51FA;&#x8272;&#xFF0C;&#x4E0D;&#x900A;&#x4E8E;<code>Handlebars</code>&#x3001;<code>JSX</code>&#x7B49;&#x4E3B;&#x6D41;&#x6A21;&#x677F;&#x3002;</li>
+<li>&#x9AD8;&#x6548;&#x6E32;&#x67D3;&#xFF0C;&#x51E0;&#x4E4E;&#x4E0D;&#x900A;&#x4E8E;<code>Handlebars</code>&#x3001;<code>JSX</code>&#x7B49;&#x4E3B;&#x6D41;&#x6A21;&#x677F;&#x3002;</li>
 <li>&#x5B83;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x652F;&#x6301;<code>&#x6A21;&#x677F;&#x9884;&#x7F16;&#x8BD1;</code>&#xFF0C;&#x4E14;&#x53BB;&#x9664;&#x7F16;&#x8BD1;&#x5668;&#x7684;runtime&#x7248;&#x4EC5;<code>4kb(gzip)</code>&#x5927;&#x5C0F;&#x3002;</li>
 </ul>
 <h2 id="&#x4E0E;react&#x914D;&#x5408;&#x793A;&#x4F8B;"><a name="&#x4E0E;react&#x914D;&#x5408;&#x793A;&#x4F8B;" class="plugin-anchor" href="#&#x4E0E;react&#x914D;&#x5408;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0E;React&#x914D;&#x5408;&#x793A;&#x4F8B;</h2>
-<p>NornJ&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;JSX&#x8F93;&#x51FA;React&#x7EC4;&#x4EF6;&#xFF0C;&#x7528;&#x5B83;&#x53EF;&#x4EE5;&#x5C06;React&#x7EC4;&#x4EF6;&#x7684;&#x8868;&#x73B0;&#x4E0E;&#x903B;&#x8F91;&#x66F4;&#x4F18;&#x96C5;&#x5730;&#x5B9E;&#x73B0;&#x89E3;&#x85D5;&#xFF1A;</p>
+<p><code>NornJ</code>&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;JSX&#x8F93;&#x51FA;React&#x7EC4;&#x4EF6;&#xFF0C;&#x7528;&#x5B83;&#x53EF;&#x4EE5;&#x5C06;React&#x7EC4;&#x4EF6;&#x7684;&#x8868;&#x73B0;&#x4E0E;&#x903B;&#x8F91;&#x66F4;&#x4F18;&#x96C5;&#x5730;&#x5B9E;&#x73B0;&#x89E3;&#x85D5;&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
 <span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom&apos;</span>;
 <span class="hljs-keyword">import</span> nj <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
@@ -465,16 +487,8 @@ render(nj<span class="hljs-string">`&lt;TestComponent no=100 /&gt;`</span>(), <s
 &lt;/div&gt;
 */</span>
 </code></pre>
-<p>&#x8FD8;&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;ReactDOM.render&#x6765;&#x5728;html&#x5185;&#x6E32;&#x67D3;React&#x7EC4;&#x4EF6;&#xFF1A;</p>
-<pre><code class="lang-html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/nornj&quot;</span> <span class="hljs-attr">autoRender</span>&gt;</span><span class="handlebars"><span class="xml">
-    <span class="hljs-tag">&lt;<span class="hljs-name">TestComponent</span> <span class="hljs-attr">no</span>=<span class="hljs-string">&quot;100&quot;</span> /&gt;</span>
-  </span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-</code></pre>
 <h2 id="&#x5728;es5&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528;"><a name="&#x5728;es5&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x5728;es5&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;ES5&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528;</h2>
-<p>&#x9664;&#x4E86;&#x4F7F;&#x7528;ES6&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x5916;&#xFF0C;<code>NornJ</code>&#x4E5F;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x5728;es5&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;</p>
+<p><code>NornJ</code>&#x4E5F;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x5728;es5&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;template&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/nornj&quot;</span>&gt;</span><span class="handlebars"><span class="xml">
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
     this the test demo Hello </span><span class="hljs-template-variable">{{msg}}</span><span class="xml">
@@ -503,22 +517,28 @@ render(nj<span class="hljs-string">`&lt;TestComponent no=100 /&gt;`</span>(), <s
 <p>&#x4F7F;&#x7528;npm&#x5B89;&#x88C5;:</p>
 <pre><code class="lang-sh">npm install nornj
 </code></pre>
-<h2 id="&#x76F8;&#x5173;&#x9879;&#x76EE;"><a name="&#x76F8;&#x5173;&#x9879;&#x76EE;" class="plugin-anchor" href="#&#x76F8;&#x5173;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76F8;&#x5173;&#x9879;&#x76EE;</h2>
+<h2 id="&#x76F8;&#x5173;&#x9879;&#x76EE;&#x53CA;&#x5DE5;&#x5177;"><a name="&#x76F8;&#x5173;&#x9879;&#x76EE;&#x53CA;&#x5DE5;&#x5177;" class="plugin-anchor" href="#&#x76F8;&#x5173;&#x9879;&#x76EE;&#x53CA;&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76F8;&#x5173;&#x9879;&#x76EE;&#x53CA;&#x5DE5;&#x5177;</h2>
 <ul>
 <li><a href="https://github.com/joe-sky/nornj-react" target="_blank">nornj-react(React&#x9002;&#x914D;&#x5E93;)</a></li>
 <li><a href="https://github.com/joe-sky/nornj-loader" target="_blank">nornj-loader(Webpack loader)</a></li>
 <li><a href="https://github.com/joe-sky/nornj-cli" target="_blank">nornj-cli(&#x811A;&#x624B;&#x67B6;&#x5DE5;&#x5177;)</a></li>
+<li><a href="https://github.com/qingqinxl1/koa-nornj" target="_blank">koa-nornj(koa&#x9002;&#x914D;&#x5E93;)</a></li>
+<li><a href="https://github.com/yuhongda/babel-plugin-nornj-loader" target="_blank">babel-plugin-nornj-loader(babel&#x63D2;&#x4EF6;)</a></li>
+<li><a href="https://github.com/joe-sky/nornj/blob/master/tools/expressEngine.js" target="_blank">express&#x9002;&#x914D;&#x5668;</a></li>
+<li><a href="https://github.com/joe-sky/nornj/blob/master/tools/metroTransformer.js" target="_blank">react-native transformer</a></li>
 </ul>
 <h2 id="&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x63D2;&#x4EF6;"><a name="&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x63D2;&#x4EF6;" class="plugin-anchor" href="#&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x63D2;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x63D2;&#x4EF6;</h2>
 <ul>
-<li><a href="https://github.com/joe-sky/nornj-highlight" target="_blank">nornj-highlight(vscode&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x63D2;&#x4EF6;)</a></li>
+<li><a href="https://github.com/joe-sky/nornj-highlight" target="_blank">nornj-highlight(vscode)</a></li>
+<li><a href="https://github.com/zyj1022/language-nornj" target="_blank">language-nornj(atom)</a></li>
 </ul>
 <h2 id="&#x793A;&#x4F8B;&#x9879;&#x76EE;"><a name="&#x793A;&#x4F8B;&#x9879;&#x76EE;" class="plugin-anchor" href="#&#x793A;&#x4F8B;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;&#x9879;&#x76EE;</h2>
 <ul>
-<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc" target="_blank">react-redux-nornj-todomvc</a></li>
-<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc-es5" target="_blank">react-redux-nornj-todomvc-es5</a></li>
-<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/backbone-marionette-nornj-todomvc" target="_blank">backbone-marionette-nornj-todomvc</a></li>
-<li><a href="https://github.com/joe-sky/nornj-react-native-counter" target="_blank">nornj-react-native-counter</a></li>
+<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc" target="_blank">react + redux + react-router + nornj + webpack4&#x7684;todomvc</a></li>
+<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc-es5" target="_blank">react + redux + react-router + nornj&#x7684;todomvc(&#x65E0;&#x9700;webpack&#x6253;&#x5305;)</a></li>
+<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/backbone-marionette-nornj-todomvc" target="_blank">backbone + marionette + nornj&#x7684;todomvc</a></li>
+<li><a href="https://github.com/joe-sky/nornj-react-native-counter" target="_blank">react-native + styled-components + nornj&#x7684;&#x8BA1;&#x6570;&#x5668;</a></li>
+<li><a href="https://github.com/joe-sky/nornj-cli/tree/master/templates/react-mst" target="_blank">react + mobx + react-router + nornj&#x7684;&#x9879;&#x76EE;&#x811A;&#x624B;&#x67B6;</a></li>
 </ul>
 <h2 id="&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;"><a name="&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;" class="plugin-anchor" href="#&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;</h2>
 <ul>
@@ -565,7 +585,7 @@ render(nj<span class="hljs-string">`&lt;TestComponent no=100 /&gt;`</span>(), <s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"概述","level":"1.1","depth":1,"next":{"title":"模板语法","level":"1.2","depth":1,"path":"templateSyntax/index.md","ref":"templateSyntax/index.md","articles":[{"title":"插值变量","level":"1.2.1","depth":2,"path":"templateSyntax/variable.md","ref":"templateSyntax/variable.md","articles":[]},{"title":"访问器属性","level":"1.2.2","depth":2,"path":"templateSyntax/accessor.md","ref":"templateSyntax/accessor.md","articles":[]},{"title":"过滤器与表达式","level":"1.2.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},{"title":"内置过滤器","level":"1.2.4","depth":2,"path":"templateSyntax/built-inFilter.md","ref":"templateSyntax/built-inFilter.md","articles":[]},{"title":"扩展标签","level":"1.2.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},{"title":"内置扩展标签","level":"1.2.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},{"title":"行内扩展标签","level":"1.2.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},{"title":"模板注释","level":"1.2.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},{"title":"标签模板字符串(es6)语法","level":"1.2.9","depth":2,"path":"templateSyntax/templateString.md","ref":"templateSyntax/templateString.md","articles":[]},{"title":"React开发中与JSX的不同点","level":"1.2.10","depth":2,"path":"templateSyntax/react.md","ref":"templateSyntax/react.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle"],"pluginsConfig":{"jsfiddle":{"type":"script","tabs":["result","html","js","css"],"height":"500","width":"500","fontColor":"00FF00"},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-03-29T10:27:16.511Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-02T09:35:32.784Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"概述","level":"1.1","depth":1,"next":{"title":"模板语法","level":"1.2","depth":1,"path":"templateSyntax/index.md","ref":"templateSyntax/index.md","articles":[{"title":"插值变量","level":"1.2.1","depth":2,"path":"templateSyntax/variable.md","ref":"templateSyntax/variable.md","articles":[]},{"title":"访问器属性","level":"1.2.2","depth":2,"path":"templateSyntax/accessor.md","ref":"templateSyntax/accessor.md","articles":[]},{"title":"过滤器与表达式","level":"1.2.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},{"title":"内置过滤器","level":"1.2.4","depth":2,"path":"templateSyntax/built-inFilter.md","ref":"templateSyntax/built-inFilter.md","articles":[]},{"title":"扩展标签","level":"1.2.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},{"title":"内置扩展标签","level":"1.2.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},{"title":"行内扩展标签","level":"1.2.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},{"title":"模板注释","level":"1.2.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},{"title":"标签模板字符串(es6)语法","level":"1.2.9","depth":2,"path":"templateSyntax/templateString.md","ref":"templateSyntax/templateString.md","articles":[]},{"title":"React开发中与JSX的不同点","level":"1.2.10","depth":2,"path":"templateSyntax/react.md","ref":"templateSyntax/react.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle"],"pluginsConfig":{"jsfiddle":{"type":"script","tabs":["result","html","js","css"],"height":"500","width":"500","fontColor":"00FF00"},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-04-03T11:23:04.444Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-03T11:24:06.004Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
