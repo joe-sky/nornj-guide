@@ -402,20 +402,22 @@
 
 <span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {{<span class="hljs-attr">1</span> <span class="hljs-attr">..</span> <span class="hljs-attr">20</span>}}&gt;</span>                               <span class="hljs-comment">&lt;!-- &quot;..&quot;&#x662F;&#x8303;&#x56F4;&#x8FD0;&#x7B97;&#x7B26; --&gt;</span>
-      this the test demo Hello {{@index ** 2 | int}}  <span class="hljs-comment">&lt;!-- &quot;**&quot;&#x662F;&#x4E58;&#x65B9;&#x8FD0;&#x7B97;&#x7B26; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {{<span class="hljs-attr">1</span> <span class="hljs-attr">..</span> <span class="hljs-attr">20</span>}}&gt;</span>
+      this the test demo Hello {{@index ** 2 | int}}
     <span class="hljs-tag">&lt;/<span class="hljs-name">#each</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">#include</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;partial&quot;</span> /&gt;</span>                       <span class="hljs-comment">&lt;!-- &#x5BFC;&#x5165;&#x5176;&#x4ED6;&#x6A21;&#x677F; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">#include</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;partial&quot;</span> /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 </code></pre>
-<p>&#x53EF;&#x89C1;&#xFF0C;<code>NornJ</code>&#x7684;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#x5728;&#x5C3D;&#x91CF;&#x4E0E;html&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x66F4;&#x6709;&#x4E30;&#x5BCC;&#x7684;&#x6269;&#x5C55;&#x8BED;&#x6CD5;&#x53BB;&#x5B9E;&#x73B0;&#x5404;&#x79CD;&#x903B;&#x8F91;&#xFF1B;&#x4E14;&#x62E5;&#x6709;<code>..</code>&#x3001;<code>**</code>&#x7B49;js&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x800C;&#x4E14;&#x5B83;&#x4EEC;&#x8FD8;&#x662F;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x6269;&#x5C55;&#x7684;^_^!</p>
+<p>&#x5982;&#x4E0A;&#xFF0C;<code>NornJ</code>&#x7684;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#x5728;&#x5C3D;&#x91CF;&#x4E0E;html&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x66F4;&#x6709;&#x4E30;&#x5BCC;&#x7684;&#x6269;&#x5C55;&#x8BED;&#x6CD5;&#x53BB;&#x5B9E;&#x73B0;&#x5404;&#x79CD;&#x903B;&#x8F91;&#xFF1B;&#x4E14;&#x62E5;&#x6709;<code>..</code>&#x3001;<code>**</code>&#x7B49;js&#x539F;&#x751F;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x6269;&#x5C55;&#x5904;&#x66F4;&#x591A;&#x7684;&#x65B0;&#x8BED;&#x53E5;&#x4E0E;&#x8FD0;&#x7B97;&#x7B26;!</p>
 <ul>
 <li>&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x50CF;JSX&#x90A3;&#x6837;&#x7F16;&#x5199;</li>
 </ul>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> partial = nj<span class="hljs-string">`
-  &lt;#if <span class="hljs-subst">${i &gt; 0 || (i &lt;= -10)}</span>&gt;                        &lt;!-- &#x53EF;&#x76F4;&#x63A5;&#x5D4C;&#x5165;js&#x8868;&#x8FBE;&#x5F0F; --&gt;
-    &lt;input id=test onclick={{click}}&gt;
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> props = { id: <span class="hljs-string">&apos;test&apos;</span>, name: <span class="hljs-string">&apos;test&apos;</span> };
+
+<span class="hljs-keyword">const</span> partial = nj<span class="hljs-string">`
+  &lt;#if <span class="hljs-subst">${i &gt; 0 || (i &lt;= -10)}</span>&gt;
+    &lt;input onclick={{click}} ...<span class="hljs-subst">${props}</span>&gt;
   &lt;/#if&gt;
 `</span>;
 
@@ -424,15 +426,31 @@
     &lt;#each {{1 .. 20}}&gt;
       this the test demo Hello {{@index ** 2 | int}}
     &lt;/#each&gt;
-    #<span class="hljs-subst">${partial}</span>                                       &lt;!-- &#x5BFC;&#x5165;&#x5176;&#x4ED6;&#x6A21;&#x677F; --&gt;
+    #<span class="hljs-subst">${partial}</span>
   &lt;/div&gt;
 `</span>;
 </code></pre>
-<p><code>NornJ</code>&#x4E5F;&#x540C;&#x65F6;&#x652F;&#x6301;&#x50CF;<code>JSX</code>&#x90A3;&#x6837;&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x81EA;&#x7531;&#x5730;&#x7F16;&#x5199;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;<code>ES2015+</code>&#x63D0;&#x4F9B;&#x7684;<code>tagged template string</code>&#x8BED;&#x6CD5;&#xFF1B;&#x5E76;&#x4E14;&#x51E0;&#x4E4E;&#x6240;&#x6709;JSX&#x652F;&#x6301;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5B83;&#x4E5F;&#x90FD;&#x662F;&#x652F;&#x6301;&#x7684;^_^!</p>
+<p><code>NornJ</code>&#x4E5F;&#x540C;&#x65F6;&#x652F;&#x6301;&#x50CF;<code>JSX</code>&#x90A3;&#x6837;&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x81EA;&#x7531;&#x5730;&#x7F16;&#x5199;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;<code>ES2015+</code>&#x63D0;&#x4F9B;&#x7684;<code>tagged template string</code>&#x8BED;&#x6CD5;&#xFF1B;&#x5E76;&#x4E14;&#x51E0;&#x4E4E;&#x6240;&#x6709;JSX&#x652F;&#x6301;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5B83;&#x4E5F;&#x90FD;&#x662F;&#x652F;&#x6301;&#x7684;!</p>
+<h2 id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="plugin-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5;</h2>
+<pre><code class="lang-sh">npm install nornj
+</code></pre>
 <h2 id="&#x5728;&#x7EBF;&#x6F14;&#x793A;&#x5730;&#x5740;"><a name="&#x5728;&#x7EBF;&#x6F14;&#x793A;&#x5730;&#x5740;" class="plugin-anchor" href="#&#x5728;&#x7EBF;&#x6F14;&#x793A;&#x5730;&#x5740;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;&#x7EBF;&#x6F14;&#x793A;&#x5730;&#x5740;</h2>
 <ul>
 <li><a href="https://jsfiddle.net/joe_sky/n5n9tutj/" target="_blank">&#x5728;&#x7EBF;Playground(jsfiddle)</a></li>
 <li><a href="https://codepen.io/joe_sky/pen/ooPNbj" target="_blank">&#x5728;&#x7EBF;Playground(codepen)</a></li>
+</ul>
+<h2 id="&#x9879;&#x76EE;&#x811A;&#x624B;&#x67B6;"><a name="&#x9879;&#x76EE;&#x811A;&#x624B;&#x67B6;" class="plugin-anchor" href="#&#x9879;&#x76EE;&#x811A;&#x624B;&#x67B6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9879;&#x76EE;&#x811A;&#x624B;&#x67B6;</h2>
+<ul>
+<li><a href="https://github.com/joe-sky/nornj-cli" target="_blank">nornj-cli</a></li>
+</ul>
+<p>&#x8BE5;&#x811A;&#x624B;&#x67B6;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;&#x4E8E;<code>vue-cli</code>&#xFF0C;&#x76EE;&#x524D;&#x53EF;&#x521B;&#x5EFA;&#x5B8C;&#x6574;&#x7684;&#x57FA;&#x4E8E;<code>react + mobx</code>&#x7684;&#x9879;&#x76EE;&#x6A21;&#x677F;&#xFF0C;&#x5E76;&#x6709;<a href="https://github.com/joe-sky/nornj-cli/blob/master/docs/guides/overview.md" target="_blank">&#x5FEB;&#x901F;&#x4E0A;&#x624B;&#x6587;&#x6863;</a>&#x3002;</p>
+<h2 id="&#x793A;&#x4F8B;&#x9879;&#x76EE;"><a name="&#x793A;&#x4F8B;&#x9879;&#x76EE;" class="plugin-anchor" href="#&#x793A;&#x4F8B;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;&#x9879;&#x76EE;</h2>
+<ul>
+<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc" target="_blank">todomvc[react + redux + react-router + nornj + webpack4]</a></li>
+<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc-es5" target="_blank">todomvc(&#x65E0;&#x9700;webpack&#x6253;&#x5305;)[react + redux + react-router + nornj]</a></li>
+<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/backbone-marionette-nornj-todomvc" target="_blank">todomvc[backbone + marionette + nornj]</a></li>
+<li><a href="https://github.com/joe-sky/nornj-react-native-counter" target="_blank">&#x8BA1;&#x6570;&#x5668;&#x793A;&#x4F8B;[react-native + styled-components + nornj]</a></li>
+<li><a href="https://github.com/joe-sky/nornj-cli/tree/master/templates/react-mst" target="_blank">&#x9879;&#x76EE;&#x811A;&#x624B;&#x67B6;[react + mobx + react-router + nornj]</a></li>
 </ul>
 <h2 id="&#x7279;&#x8272;"><a name="&#x7279;&#x8272;" class="plugin-anchor" href="#&#x7279;&#x8272;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7279;&#x8272;</h2>
 <p>&#x4F20;&#x7EDF;js&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x5982;<code>Handlebars</code>&#x3001;<code>EJS</code>&#x3001;<code>Nunjucks</code>&#x7B49;&#x901A;&#x5E38;&#x53EA;&#x652F;&#x6301;&#x6E32;&#x67D3;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;<code>NornJ</code>&#x4E0E;&#x5B83;&#x4EEC;&#x76F8;&#x6BD4;&#xFF0C;&#x76F8;&#x540C;&#x70B9;&#x548C;&#x4E0D;&#x540C;&#x70B9;&#x90FD;&#x6709;&#xFF1A;</p>
@@ -513,10 +531,6 @@ render(nj<span class="hljs-string">`&lt;TestComponent no=100 /&gt;`</span>(), <s
 &lt;/div&gt;
 */</span>
 </code></pre>
-<h2 id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="plugin-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5;</h2>
-<p>&#x4F7F;&#x7528;npm&#x5B89;&#x88C5;:</p>
-<pre><code class="lang-sh">npm install nornj
-</code></pre>
 <h2 id="&#x76F8;&#x5173;&#x9879;&#x76EE;&#x53CA;&#x5DE5;&#x5177;"><a name="&#x76F8;&#x5173;&#x9879;&#x76EE;&#x53CA;&#x5DE5;&#x5177;" class="plugin-anchor" href="#&#x76F8;&#x5173;&#x9879;&#x76EE;&#x53CA;&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76F8;&#x5173;&#x9879;&#x76EE;&#x53CA;&#x5DE5;&#x5177;</h2>
 <ul>
 <li><a href="https://github.com/joe-sky/nornj-react" target="_blank">nornj-react(React&#x9002;&#x914D;&#x5E93;)</a></li>
@@ -526,23 +540,10 @@ render(nj<span class="hljs-string">`&lt;TestComponent no=100 /&gt;`</span>(), <s
 <li><a href="https://github.com/joe-sky/nornj/blob/master/tools/expressEngine.js" target="_blank">express&#x9002;&#x914D;&#x5668;</a></li>
 <li><a href="https://github.com/joe-sky/nornj/blob/master/tools/metroTransformer.js" target="_blank">react-native transformer</a></li>
 </ul>
-<h2 id="&#x9879;&#x76EE;&#x811A;&#x624B;&#x67B6;"><a name="&#x9879;&#x76EE;&#x811A;&#x624B;&#x67B6;" class="plugin-anchor" href="#&#x9879;&#x76EE;&#x811A;&#x624B;&#x67B6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9879;&#x76EE;&#x811A;&#x624B;&#x67B6;</h2>
-<ul>
-<li><a href="https://github.com/joe-sky/nornj-cli" target="_blank">nornj-cli</a></li>
-</ul>
-<p>&#x8BE5;&#x811A;&#x624B;&#x67B6;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;&#x4E8E;<code>vue-cli</code>&#xFF0C;&#x76EE;&#x524D;&#x53EF;&#x521B;&#x5EFA;&#x5B8C;&#x6574;&#x7684;&#x57FA;&#x4E8E;<code>react + mobx</code>&#x7684;&#x9879;&#x76EE;&#x6A21;&#x677F;&#xFF0C;&#x4E14;&#x6709;<a href="https://github.com/joe-sky/nornj-cli/blob/master/docs/guides/overview.md" target="_blank">&#x5FEB;&#x901F;&#x4E0A;&#x624B;&#x6587;&#x6863;</a>&#x3002;</p>
 <h2 id="&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x63D2;&#x4EF6;"><a name="&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x63D2;&#x4EF6;" class="plugin-anchor" href="#&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x63D2;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x63D2;&#x4EF6;</h2>
 <ul>
 <li><a href="https://github.com/joe-sky/nornj-highlight" target="_blank">nornj-highlight(vscode)</a></li>
 <li><a href="https://github.com/zyj1022/language-nornj" target="_blank">language-nornj(atom)</a></li>
-</ul>
-<h2 id="&#x793A;&#x4F8B;&#x9879;&#x76EE;"><a name="&#x793A;&#x4F8B;&#x9879;&#x76EE;" class="plugin-anchor" href="#&#x793A;&#x4F8B;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;&#x9879;&#x76EE;</h2>
-<ul>
-<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc" target="_blank">todomvc&#x9879;&#x76EE;[react + redux + react-router + nornj + webpack4]</a></li>
-<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc-es5" target="_blank">todomvc&#x9879;&#x76EE;(&#x65E0;&#x9700;webpack&#x6253;&#x5305;)[react + redux + react-router + nornj]</a></li>
-<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/backbone-marionette-nornj-todomvc" target="_blank">todomvc&#x9879;&#x76EE;[backbone + marionette + nornj]</a></li>
-<li><a href="https://github.com/joe-sky/nornj-react-native-counter" target="_blank">&#x8BA1;&#x6570;&#x5668;&#x793A;&#x4F8B;[react-native + styled-components + nornj]</a></li>
-<li><a href="https://github.com/joe-sky/nornj-cli/tree/master/templates/react-mst" target="_blank">&#x9879;&#x76EE;&#x811A;&#x624B;&#x67B6;[react + mobx + react-router + nornj]</a></li>
 </ul>
 <h2 id="&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;"><a name="&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;" class="plugin-anchor" href="#&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;</h2>
 <ul>
@@ -591,7 +592,7 @@ render(nj<span class="hljs-string">`&lt;TestComponent no=100 /&gt;`</span>(), <s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"概述","level":"1.1","depth":1,"next":{"title":"模板语法","level":"1.2","depth":1,"path":"templateSyntax/index.md","ref":"templateSyntax/index.md","articles":[{"title":"插值变量","level":"1.2.1","depth":2,"path":"templateSyntax/variable.md","ref":"templateSyntax/variable.md","articles":[]},{"title":"访问器属性","level":"1.2.2","depth":2,"path":"templateSyntax/accessor.md","ref":"templateSyntax/accessor.md","articles":[]},{"title":"过滤器与表达式","level":"1.2.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},{"title":"内置过滤器","level":"1.2.4","depth":2,"path":"templateSyntax/built-inFilter.md","ref":"templateSyntax/built-inFilter.md","articles":[]},{"title":"扩展标签","level":"1.2.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},{"title":"内置扩展标签","level":"1.2.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},{"title":"行内扩展标签","level":"1.2.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},{"title":"模板注释","level":"1.2.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},{"title":"标签模板字符串(es6)语法","level":"1.2.9","depth":2,"path":"templateSyntax/templateString.md","ref":"templateSyntax/templateString.md","articles":[]},{"title":"React开发中与JSX的不同点","level":"1.2.10","depth":2,"path":"templateSyntax/react.md","ref":"templateSyntax/react.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle"],"pluginsConfig":{"jsfiddle":{"type":"script","tabs":["result","html","js","css"],"height":"500","width":"500","fontColor":"00FF00"},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-04-03T12:10:22.085Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-03T12:10:29.762Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"概述","level":"1.1","depth":1,"next":{"title":"模板语法","level":"1.2","depth":1,"path":"templateSyntax/index.md","ref":"templateSyntax/index.md","articles":[{"title":"插值变量","level":"1.2.1","depth":2,"path":"templateSyntax/variable.md","ref":"templateSyntax/variable.md","articles":[]},{"title":"访问器属性","level":"1.2.2","depth":2,"path":"templateSyntax/accessor.md","ref":"templateSyntax/accessor.md","articles":[]},{"title":"过滤器与表达式","level":"1.2.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},{"title":"内置过滤器","level":"1.2.4","depth":2,"path":"templateSyntax/built-inFilter.md","ref":"templateSyntax/built-inFilter.md","articles":[]},{"title":"扩展标签","level":"1.2.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},{"title":"内置扩展标签","level":"1.2.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},{"title":"行内扩展标签","level":"1.2.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},{"title":"模板注释","level":"1.2.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},{"title":"标签模板字符串(es6)语法","level":"1.2.9","depth":2,"path":"templateSyntax/templateString.md","ref":"templateSyntax/templateString.md","articles":[]},{"title":"React开发中与JSX的不同点","level":"1.2.10","depth":2,"path":"templateSyntax/react.md","ref":"templateSyntax/react.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle"],"pluginsConfig":{"jsfiddle":{"type":"script","tabs":["result","html","js","css"],"height":"500","width":"500","fontColor":"00FF00"},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-04-03T23:31:11.599Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-03T23:32:50.648Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
