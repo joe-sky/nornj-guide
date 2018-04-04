@@ -3,3 +3,9 @@
 .page-wrapper h2 {
   border-bottom: 1px solid #eeeeee;
 }
+@media screen and (max-width: 480px) {
+  a.btn.pull-left.js-toolbar-action:nth-of-type(2) {
+    width: 40px;
+    overflow: hidden;
+  }
+}

@@ -93,7 +93,7 @@ render: function() {
     <div id={this.state.num + '_100'}>
       {this.props.arr.map((o, i) => [
         o.item.name['fullName'],
-        <span className={'test_' + i} style={{ color: 'blue' }} onClick={this.onClick}>
+        <span className={'test_' + i} style={styles} onClick={this.onClick}>
           {'test_' + this.state.num}
           {list2.map((p, j) => <div key={j}>
             <span>{'span' + p.no}</span>
@@ -155,7 +155,7 @@ nj:1222
 avg:1264.4
 ```
 
-可见，`NornJ`比`JSX`速度略低一点点，但也在同一个数量级上。毕竟`NornJ`和`JSX`相比，就好比拿`jQuery`去和`原生dom`对比效率一样，封装过的毕竟没有原生方式速度快。
+可见，`NornJ`比`JSX`速度略低一点点，但也在同一个数量级上。毕竟`NornJ`和`JSX`相比，就好比拿`jQuery`去和`原生dom`对比效率一样，封装过的没有原生方式速度快。
 
 但是，`NornJ`可以使用一些模板特有的优化方式进行优化。比如使用`<#once>`标签，它和`Vue`的`v-once`指令有些类似，可以把一些静态的标签放到它里面，这样只会渲染第一次，之后就会利用缓存了。如下对`nj`样例进行修改：
 
@@ -208,5 +208,5 @@ avg:1010.8
 
 ## NornJ的渲染效率仍可继续提升
 
-虽然`NornJ`模板目前的渲染效率已算不错了，但仍远未优化至极限效率。在未来的版本中，我们会持续提高它的渲染效率，敬请期待。
+虽然`NornJ`模板目前的渲染效率已算高效了，但仍远未优化至极限效率。在未来的版本中，我们会持续提高它的渲染效率，敬请期待。
 {% endraw %}
