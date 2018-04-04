@@ -409,7 +409,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 </code></pre>
-<p>&#x5982;&#x4E0A;&#xFF0C;<code>NornJ</code>&#x7684;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#x5728;&#x5C3D;&#x91CF;&#x4E0E;html&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x66F4;&#x6709;&#x4E30;&#x5BCC;&#x7684;&#x6269;&#x5C55;&#x8BED;&#x6CD5;&#x53BB;&#x5B9E;&#x73B0;&#x5404;&#x79CD;&#x903B;&#x8F91;&#xFF1B;&#x4E14;&#x62E5;&#x6709;<code>..</code>&#x3001;<code>**</code>&#x7B49;js&#x539F;&#x751F;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x6269;&#x5C55;&#x5904;&#x66F4;&#x591A;&#x7684;&#x65B0;&#x8BED;&#x53E5;&#x4E0E;&#x8FD0;&#x7B97;&#x7B26;!</p>
+<p>&#x5982;&#x4E0A;&#xFF0C;<code>NornJ</code>&#x7684;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#x5728;&#x5C3D;&#x91CF;&#x4E0E;html&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x66F4;&#x6709;&#x4E30;&#x5BCC;&#x7684;&#x6269;&#x5C55;&#x8BED;&#x6CD5;&#x53BB;&#x5B9E;&#x73B0;&#x5404;&#x79CD;&#x903B;&#x8F91;&#xFF1B;&#x4E14;&#x62E5;&#x6709;<code>..</code>&#x3001;<code>**</code>&#x7B49;js&#x539F;&#x751F;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x6269;&#x5C55;&#x51FA;&#x66F4;&#x591A;&#x7684;&#x65B0;&#x8BED;&#x53E5;&#x4E0E;&#x8FD0;&#x7B97;&#x7B26;!</p>
 <ul>
 <li>&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x50CF;JSX&#x90A3;&#x6837;&#x7F16;&#x5199;</li>
 </ul>
@@ -469,34 +469,48 @@
 <li>&#x5B83;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x652F;&#x6301;<code>&#x6A21;&#x677F;&#x9884;&#x7F16;&#x8BD1;</code>&#xFF1B;&#x53BB;&#x9664;&#x7F16;&#x8BD1;&#x5668;&#x7684;runtime&#x7248;&#x4EC5;<code>4kb(gzip)</code>&#x5927;&#x5C0F;&#x3002;</li>
 </ul>
 <h2 id="&#x4E0E;react&#x914D;&#x5408;&#x793A;&#x4F8B;"><a name="&#x4E0E;react&#x914D;&#x5408;&#x793A;&#x4F8B;" class="plugin-anchor" href="#&#x4E0E;react&#x914D;&#x5408;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0E;React&#x914D;&#x5408;&#x793A;&#x4F8B;</h2>
-<p><code>NornJ</code>&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;JSX&#x8F93;&#x51FA;React&#x7EC4;&#x4EF6;&#xFF0C;&#x7528;&#x5B83;&#x53EF;&#x4EE5;&#x5C06;React&#x7EC4;&#x4EF6;&#x7684;&#x8868;&#x73B0;&#x4E0E;&#x903B;&#x8F91;&#x66F4;&#x4F18;&#x96C5;&#x5730;&#x5B9E;&#x73B0;&#x89E3;&#x85D5;&#xFF1A;</p>
+<p><code>NornJ</code>&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;JSX&#x8F93;&#x51FA;React&#x7EC4;&#x4EF6;&#xFF0C;&#x4E0E;JSX&#x76F8;&#x6BD4;&#xFF0C;&#x5B83;&#x7684;&#x8BED;&#x6CD5;&#x66F4;&#x50CF;html&#x3002;</p>
+<p>JSX&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">const</span> { no } = <span class="hljs-keyword">this</span>.props;
+
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">test1</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;test1&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">color:</span> &apos;<span class="hljs-attr">purple</span>&apos;, <span class="hljs-attr">height:</span> <span class="hljs-attr">200</span> }&gt;</span>
+        this the test demo{no}.<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span>
+        {Object.keys(Array.from({ length: no })).map((v, no) =&gt; {
+          return <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>test{no}<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>;
+        })}
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    );
+  }
+}
+</span></code></pre>
+<p>&#x4E0A;&#x4F8B;&#x4F7F;&#x7528;<code>NornJ</code>&#x5B9E;&#x73B0;&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
 <span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom&apos;</span>;
 <span class="hljs-keyword">import</span> nj <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
 <span class="hljs-keyword">import</span> { registerTmpl } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj-react&apos;</span>;
 
-@registerTmpl({
-  name: <span class="hljs-string">&apos;TestComponent&apos;</span>,
-  template: <span class="hljs-string">`
-    &lt;div id=test1&gt;
-      this the test demo{no}.
-      &lt;#for {1} {no}&gt;
-        &lt;i&gt;test{@index}&lt;/i&gt;
-      &lt;/#for&gt;
-    &lt;/div&gt;
-  `</span>
-})
+@registerTmpl(<span class="hljs-string">&apos;TestComponent&apos;</span>)
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
   render() {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.template(<span class="hljs-keyword">this</span>.props);
+    <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
+      &lt;div id=test1 class=&quot;test1&quot; style=&quot;color:purple;height:200px;&quot;&gt;
+        this the test demo{no}.&lt;input type=&quot;text&quot;&gt;
+        &lt;#for {1} {no}&gt;
+          &lt;i&gt;test{@index}&lt;/i&gt;
+        &lt;/#for&gt;
+      &lt;/div&gt;
+    `</span>(<span class="hljs-keyword">this</span>.props);
   }
 }
 
-render(nj<span class="hljs-string">`&lt;TestComponent no=100 /&gt;`</span>(), <span class="hljs-built_in">document</span>.body);
+render(nj<span class="hljs-string">`&lt;TestComponent no={100} /&gt;`</span>(), <span class="hljs-built_in">document</span>.body);
 
 <span class="hljs-comment">/* output:
-&lt;div id=&quot;test1&quot;&gt;
-  this the test demo100.
+&lt;div id=&quot;test1&quot; class=&quot;test1&quot; style=&quot;color:purple;height:200px;&quot;&gt;
+  this the test demo100.&lt;input type=&quot;text&quot; /&gt;
   &lt;i&gt;test0&lt;/i&gt;
   &lt;i&gt;test1&lt;/i&gt;
   &lt;i&gt;test2&lt;/i&gt;
@@ -592,7 +606,7 @@ render(nj<span class="hljs-string">`&lt;TestComponent no=100 /&gt;`</span>(), <s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"概述","level":"1.1","depth":1,"next":{"title":"模板语法","level":"1.2","depth":1,"path":"templateSyntax/index.md","ref":"templateSyntax/index.md","articles":[{"title":"插值变量","level":"1.2.1","depth":2,"path":"templateSyntax/variable.md","ref":"templateSyntax/variable.md","articles":[]},{"title":"访问器属性","level":"1.2.2","depth":2,"path":"templateSyntax/accessor.md","ref":"templateSyntax/accessor.md","articles":[]},{"title":"过滤器与表达式","level":"1.2.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},{"title":"内置过滤器","level":"1.2.4","depth":2,"path":"templateSyntax/built-inFilter.md","ref":"templateSyntax/built-inFilter.md","articles":[]},{"title":"扩展标签","level":"1.2.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},{"title":"内置扩展标签","level":"1.2.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},{"title":"行内扩展标签","level":"1.2.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},{"title":"模板注释","level":"1.2.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},{"title":"标签模板字符串(es6)语法","level":"1.2.9","depth":2,"path":"templateSyntax/templateString.md","ref":"templateSyntax/templateString.md","articles":[]},{"title":"React开发中与JSX的不同点","level":"1.2.10","depth":2,"path":"templateSyntax/react.md","ref":"templateSyntax/react.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle"],"pluginsConfig":{"jsfiddle":{"type":"script","tabs":["result","html","js","css"],"height":"500","width":"500","fontColor":"00FF00"},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-04-03T23:31:11.599Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-03T23:32:50.648Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"概述","level":"1.1","depth":1,"next":{"title":"模板语法","level":"1.2","depth":1,"path":"templateSyntax/index.md","ref":"templateSyntax/index.md","articles":[{"title":"插值变量","level":"1.2.1","depth":2,"path":"templateSyntax/variable.md","ref":"templateSyntax/variable.md","articles":[]},{"title":"访问器属性","level":"1.2.2","depth":2,"path":"templateSyntax/accessor.md","ref":"templateSyntax/accessor.md","articles":[]},{"title":"过滤器与表达式","level":"1.2.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},{"title":"内置过滤器","level":"1.2.4","depth":2,"path":"templateSyntax/built-inFilter.md","ref":"templateSyntax/built-inFilter.md","articles":[]},{"title":"扩展标签","level":"1.2.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},{"title":"内置扩展标签","level":"1.2.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},{"title":"行内扩展标签","level":"1.2.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},{"title":"模板注释","level":"1.2.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},{"title":"标签模板字符串(es6)语法","level":"1.2.9","depth":2,"path":"templateSyntax/templateString.md","ref":"templateSyntax/templateString.md","articles":[]},{"title":"React开发中与JSX的不同点","level":"1.2.10","depth":2,"path":"templateSyntax/react.md","ref":"templateSyntax/react.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle"],"pluginsConfig":{"jsfiddle":{"type":"script","tabs":["result","html","js","css"],"height":"500","width":"500","fontColor":"00FF00"},"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-04-04T07:02:34.214Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T07:02:40.769Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
