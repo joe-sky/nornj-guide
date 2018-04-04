@@ -12,7 +12,11 @@
     * [模板注释](templateSyntax/comment.md)
     * [标签模板字符串(es6)语法](templateSyntax/templateString.md)
     * [React开发中与JSX的不同点](templateSyntax/react.md)
-* [编译模板并输出html字符串](api/renderString.md)
-* [编译模板并输出React组件](api/renderReact.md)
-* [模板全局配置](api/config.md)
-* [配合Webpack在html文件中构建模板](api/webpack.md)
+* 渲染模板
+    * [编译模板并输出html字符串](api/renderString.md)
+    * [编译模板并输出React组件](api/renderReact.md)
+* API
+    * [模板全局配置](api/config.md)
+* 结合前端生态工具
+    * [配合Webpack在html文件中构建模板](api/webpack.md)
+* [模板渲染效率测试](performance/renderSpeed.md)

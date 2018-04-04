@@ -1,6 +1,6 @@
 {
   "gitbook": "3.2.2",
-  "plugins": ["anchors", "jsfiddle"],
+  "plugins": ["anchors", "jsfiddle", "edit-link", "github"],
   "pluginsConfig": {
     "jsfiddle": {
       "type": "script",
@@ -8,6 +8,13 @@
       "height": "500",
       "width": "500",
       "fontColor": "00FF00"
+    },
+    "edit-link": {
+      "base": "https://github.com/joe-sky/nornj-guide/blob/master",
+      "label": "在github上编辑此页"
+    },
+    "github": {
+      "url": "https://github.com/joe-sky/nornj"
     }
   }
 }
