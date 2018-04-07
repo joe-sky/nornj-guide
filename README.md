@@ -149,7 +149,7 @@ class TestComponent extends Component {
     const { no } = this.props;
 
     return (
-      <div id=test1 className="test1" style={{ color: 'purple', height: 200 }>
+      <div id=test1 className="test1" style={{ color: 'purple', height: 200 }}>
         this the test demo{no}.<input type="text" />
         {Object.keys(Array.from({ length: no })).map((value, index) => {
           return <i>test{index}</i>;

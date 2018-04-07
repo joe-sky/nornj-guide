@@ -3,7 +3,7 @@
   "plugins": ["anchors", "jsfiddle", "edit-link", "github"],
   "pluginsConfig": {
     "jsfiddle": {
-      "type": "script",
+      "type": "frame",
       "tabs": ["result", "html", "js", "css"],
       "height": "500",
       "width": "500",
