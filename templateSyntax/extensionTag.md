@@ -21,9 +21,9 @@
 </#ext>
 ```
 
-* 自定义扩展标签
+## 自定义扩展标签
 
-扩展标签可支持自定义，这样就可以自行为模板实现各种各样的逻辑及功能。例如实现一个`customIf`扩展标签：
+* 扩展标签可支持自定义，这样就可以自行为模板实现各种各样的逻辑及功能。例如实现一个`customIf`全局扩展标签：
 
 ```html
 <#customIf {{value.trim()}} useUnless>
@@ -35,7 +35,7 @@
 ```
 
 ```js
-//每个扩展标签都是一个函数，使用nj.registerExtension方法注册
+//每个扩展标签都是一个函数，使用nj.registerExtension方法全局注册
 nj.registerExtension('customIf', (value, options) => {  //options参数会自动放置在参数列表最后一个，保存一些模板内部成员
   let valueR, ret;
   if (!options.props.useUnless) {  //#customIf标签的useUnless参数，使用options.props.paramName的方式获取
@@ -54,4 +54,69 @@ nj.registerExtension('customIf', (value, options) => {  //options参数会自动
   return ret;
 });
 ```
+
+* 可以一次定义多个全局扩展标签：
+
+```js
+nj.registerExtension({
+  customIf: (val, option) => {...},
+  customSwitch: (val, option) => {...}
+});
+```
+
+### 局部扩展标签
+
+* 还可以使用局部扩展标签，将扩展标签函数定义为插值变量即可：
+
+```js
+nj`
+<#customIf {{true}}>
+  test if
+</#customIf>`({
+  customIf: (val, option) => {...}
+});
+```
+
+`NornJ`可以利用局部扩展标签的特性，来为一些实际场景提供代码逻辑与结构的分离，例如这个[Ant Design表单验证组件的例子](https://github.com/joe-sky/nornj-cli/blob/master/docs/guides/antDesign.md#%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)。
+
+### 扩展标签内部的options参数
+
+* 注册扩展标签函数的最后一个参数即为options参数，它是一个对象类型。从options中可以获取到模板内部的一些值，主要用于实现一些复杂的模板扩展功能，如下所示：
+
+```js
+nj.registerExtension('customIf', (value, options) => {
+  const ctx = options.context;
+  console.log(ctx.getData('id'));   //输出100
+  console.log(ctx.data[0]);         //输出1
+  console.log(ctx.parent.data[0]);  //输出{ list: [1] }
+  console.log(ctx.index);           //输出0
+
+  if (value) {
+    return options.result();  //输出0
+  }
+});
+
+nj`
+<#each {{list}}>
+  <#customIf {{this > 0}}>
+    {{@index}}
+  </#customIf>
+</#each>
+`({ list: [1] }, { id: 100 });
+```
+
+options参数列表(更多参数及细节待补充)：
+
+| 参数名称           | 类型            | 作用            |
+|:------------------|:----------------|:----------------|
+| _njOpts           | Object          | 主要用在过滤器参数数量不固定时，用来判断是否为options参数 |
+| context           | Object          | 模板内部的上下文数据 |
+| result            | Function        | 执行此函数后，获得当前扩展标签的子节点执行结果 |
+| props             | Object          | 当前扩展标签的各行内属性值(即`<#exTag a=1 b=2>`中的`a`和`b`) |
+| name              | String          | 当前扩展标签的名称 |
+| parentName        | String          | 上一层标签的名称 |
+
+## 内置扩展标签
+
+* 具体请看[内置扩展标签](built-inExtensionTag.md)。
 {% endraw %}

@@ -10,7 +10,8 @@
 * `过滤器`语法为`{插值变量 | 过滤器1 | 过滤器2...}`，如使用多个过滤器则会按顺序依次执行，如下所示：
 
 ```js
-nj.registerFilter('2x', num => num * 2);  //每个过滤器都是一个函数，使用nj.registerFilter方法注册
+//每个过滤器都是一个函数，使用nj.registerFilter方法全局注册
+nj.registerFilter('2x', num => num * 2);
 
 console.log(nj`<div>{{100 | +(50) | 2x}}</div>`());  //输出<div>300</div>
 ```
@@ -24,6 +25,8 @@ nj.registerFilter({
 });
 ```
 
+### 局部过滤器
+
 * 还可以使用局部过滤器，将过滤器函数定义为插值变量即可：
 
 ```js
@@ -31,6 +34,8 @@ nj`<div>{{1 | test}}</div>`({
   test: value => value + '_test'
 });
 ```
+
+### 过滤器参数
 
 * 过滤器也可以添加参数，语法为`{插值变量 | 过滤器1(参数1,参数2...) | 过滤器2(参数1,参数2...)...}`。在过滤器方法中第一个参数是当前传入的数据；从第二个参数开始依次为这些模板中传入的参数，如下所示：
 
@@ -60,6 +65,8 @@ nj`<div>{{data | test(1, arg2)}}</div>`({
 <#if {{i >=(0) ||(i <=(-10))}}>...</#if>
 ```
 
+### 函数型过滤器
+
 * 还可以直接以函数调用的方式来使用过滤器，称为`函数型过滤器`。语法为将过滤器名称当做函数调用即可，例如：
 
 ```html
@@ -76,15 +83,19 @@ nj`<div>{{data | test(1, arg2)}}</div>`({
 
 > 注意：`函数型过滤器`的前面可以不加空格。
 
-* 在过滤器方法内，可以通过this.x的方式获取一些参数，如下所示：
+### 过滤器内部的options参数
+
+* 注册过滤器函数的最后一个参数即为options参数，它是一个对象类型。从options中可以获取到模板内部的一些值，主要用于实现一些复杂的模板扩展功能，如下所示：
 
 ```js
-nj.registerFilter('test', function(obj) {
-  console.log(this.getData('id'));  //输出100
-  console.log(this.data[0]);    //输出1
-  console.log(this.parent.data[0]);  //输出{ list: [1] }
-  console.log(this.index);   //输出0
-  return obj;
+nj.registerFilter('test', function(val, options) {
+  const ctx = options.context;
+  console.log(ctx.getData('id'));   //输出100
+  console.log(ctx.data[0]);         //输出1
+  console.log(ctx.parent.data[0]);  //输出{ list: [1] }
+  console.log(ctx.index);           //输出0
+
+  return val;
 });
 
 nj`
@@ -93,6 +104,14 @@ nj`
 </#each>
 `({ list: [1] }, { id: 100 });
 ```
+
+options参数列表(更多参数及细节待补充)：
+
+| 参数名称      | 类型       | 作用          |
+|:-------------|:-----------|:----------------|
+| _njOpts      | Object     | 主要用在过滤器参数数量不固定时，用来判断是否为options参数 |
+| context      | Object     | 模板内部的上下文数据 |
+| lastValue    | Any        | 上一个的上一个过滤器的结果值，在过滤器函数内使用call及apply时可能会用到 |
 
 ## 表达式
 
@@ -150,6 +169,8 @@ nj`
 ```
 
 使用上述错误的语法时，`NornJ`会在控制台发出相应的警告信息。
+
+## 内置过滤器
 
 * 表达式中的部分运算符及字面量(如`a.b`、`{ a: 1 }`、`[1, 2]`等)实际上都是过滤器的语法糖写法，具体请看[内置过滤器](built-inFilter.md)。
 {% endraw %}
