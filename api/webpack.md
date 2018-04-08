@@ -1,5 +1,5 @@
 {% raw %}
-# 配合Webpack在html文件中构建模板
+# 结合Webpack在html文件中构建模板
 
 `NornJ`模板可以用纯字符串构建在单独的html文件中，并可支持分模块构建。这种方式可在以下几个场景使用：
 * 在`Webpack`环境下使用`nornj-loader`引入独立模板文件，[loader如何配置请见这里](https://github.com/joe-sky/nornj-loader/blob/master/README.md)。
