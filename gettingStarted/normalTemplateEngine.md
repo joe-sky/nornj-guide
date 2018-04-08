@@ -17,8 +17,6 @@ npm install nornj-loader  # webpack环境请一起安装此包
 
 `NornJ`包含传统模板引擎通用的api如`compile`、`render`等。例如使用`compile`api可以将一段模板编译为一个模板函数：
 
-* NornJ
-
 ```js
 import nj from 'nornj';
 

@@ -95,6 +95,18 @@ const template = nj`
 
 `NornJ`也同时支持像`JSX`那样在js文件中自由地编写，它使用`ES2015+`提供的`tagged template string`语法；并且几乎所有JSX支持的特性，它也都是支持的!
 
+## 在线演示地址
+
+### 渲染html字符串
+
+* [在线Playground(jsfiddle)](https://jsfiddle.net/joe_sky/byjdkaf1/)
+* [在线Playground(codepen)](https://codepen.io/joe_sky/pen/BrGvVG)
+
+### 渲染React组件
+
+* [在线Playground(jsfiddle)](https://jsfiddle.net/joe_sky/n5n9tutj/)
+* [在线Playground(codepen)](https://codepen.io/joe_sky/pen/ooPNbj)
+
 ## 安装
 
 ```sh
@@ -102,11 +114,6 @@ npm install nornj
 npm install nornj-react   # React开发请一起安装此包
 npm install nornj-loader  # webpack环境请一起安装此包
 ```
-
-## 在线演示地址
-
-* [在线Playground(jsfiddle)](https://jsfiddle.net/joe_sky/n5n9tutj/)
-* [在线Playground(codepen)](https://codepen.io/joe_sky/pen/ooPNbj)
 
 ## 项目脚手架
 
