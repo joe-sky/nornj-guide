@@ -6,6 +6,14 @@
 * [在线Playground(jsfiddle)](https://jsfiddle.net/joe_sky/n5n9tutj/)
 * [在线Playground(codepen)](https://codepen.io/joe_sky/pen/ooPNbj)
 
+## 安装
+
+```sh
+npm install nornj
+npm install nornj-react
+npm install nornj-loader  # webpack环境请一起安装此包
+```
+
 ## 在js文件中使用NornJ模板
 
 每个React组件都须要在render返回组件的标签代码，如在`HelloWorld`组件中渲染一个下拉框，用`JSX`和`NornJ`的语法分别实现：
