@@ -5,7 +5,7 @@
     "jsfiddle": {
       "type": "frame",
       "tabs": ["result", "html", "js", "css"],
-      "height": "500",
+      "height": "200",
       "width": "500",
       "fontColor": "00FF00"
     },
