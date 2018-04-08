@@ -2,7 +2,7 @@
 
 * [概述](README.md)
 * [快速起步](gettingStarted/index.md)
-    * [像传统模板引擎那样工作](gettingStarted/commonTemplateEngine.md)
+    * [像传统模板引擎那样工作](gettingStarted/normalTemplateEngine.md)
     * [增强React开发体验](gettingStarted/enhanceReact.md)
 * [模板语法](templateSyntax/index.md)
     * [插值变量](templateSyntax/variable.md)

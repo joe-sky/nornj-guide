@@ -8,6 +8,6 @@
 
 ## 目录
 
-* [像传统模板引擎那样工作](commonTemplateEngine.md)
+* [像传统模板引擎那样工作](normalTemplateEngine.md)
 * [增强React开发体验](enhanceReact.md)
 {% endraw %}
