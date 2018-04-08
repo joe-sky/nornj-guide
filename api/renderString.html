@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>编译模板并输出html字符串 · GitBook</title>
+        <title>编译模板并渲染html字符串 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -305,7 +305,7 @@
                 <span>
             
                     
-                    渲染模板
+                    API
             
                 </span>
             
@@ -319,7 +319,7 @@
                 <a href="renderString.html">
             
                     
-                    编译模板并输出html字符串
+                    编译模板并渲染html字符串
             
                 </a>
             
@@ -332,7 +332,7 @@
                 <a href="renderReact.html">
             
                     
-                    编译模板并输出React组件
+                    编译模板并渲染React组件
             
                 </a>
             
@@ -340,26 +340,7 @@
             
         </li>
     
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" >
-            
-                <span>
-            
-                    
-                    API
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.5.1" data-path="config.html">
+        <li class="chapter " data-level="1.4.3" data-path="config.html">
             
                 <a href="config.html">
             
@@ -377,7 +358,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" >
+        <li class="chapter " data-level="1.5" >
             
                 <span>
             
@@ -391,12 +372,77 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="webpack.html">
+        <li class="chapter " data-level="1.5.1" data-path="webpack.html">
             
                 <a href="webpack.html">
             
                     
-                    配合Webpack在html文件中构建模板
+                    结合Webpack在html文件中构建模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="reactNative.md">
+            
+                <span>
+            
+                    
+                    结合React-Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="redux.md">
+            
+                <span>
+            
+                    
+                    结合Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="reactRouter.md">
+            
+                <span>
+            
+                    
+                    结合React-Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="mobx.md">
+            
+                <span>
+            
+                    
+                    结合Mobx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="antd.md">
+            
+                <span>
+            
+                    
+                    结合Ant Design
             
                 </a>
             
@@ -409,7 +455,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../performance/renderSpeed.html">
+        <li class="chapter " data-level="1.6" data-path="../performance/renderSpeed.html">
             
                 <a href="../performance/renderSpeed.html">
             
@@ -452,7 +498,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >编译模板并输出html字符串</a>
+        <a href=".." >编译模板并渲染html字符串</a>
     </h1>
 </div>
 
@@ -467,10 +513,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x5E76;&#x8F93;&#x51FA;html&#x5B57;&#x7B26;&#x4E32;"><a name="&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x5E76;&#x8F93;&#x51FA;html&#x5B57;&#x7B26;&#x4E32;" class="plugin-anchor" href="#&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x5E76;&#x8F93;&#x51FA;html&#x5B57;&#x7B26;&#x4E32;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x5E76;&#x8F93;&#x51FA;html&#x5B57;&#x7B26;&#x4E32;</h1>
-<p>&#x6BCF;&#x4E2A;NornJ&#x6A21;&#x677F;&#x90FD;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x4E3A;1&#x4E2A;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x3002;&#x4F20;&#x5165;&#x6570;&#x636E;&#x5E76;&#x6267;&#x884C;&#x6B64;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5219;&#x53EF;&#x4EE5;&#x8F93;&#x51FA;html(&#x6216;&#x8005;&#x662F;xml&#x3001;&#x666E;&#x901A;&#x6587;&#x672C;&#xFF0C;&#x4EE5;&#x4E0B;&#x7EDF;&#x4E00;&#x79F0;&#x4E3A;&#x8F93;&#x51FA;html)&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x914D;&#x5408;<code>Backbone</code>&#x6216;<code>express</code>&#x7B49;&#x6846;&#x67B6;&#x4F5C;&#x4E3A;&#x89C6;&#x56FE;&#x7684;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x4E86;&#x3002;</p>
+                                <h1 id="&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x5E76;&#x6E32;&#x67D3;html&#x5B57;&#x7B26;&#x4E32;"><a name="&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x5E76;&#x6E32;&#x67D3;html&#x5B57;&#x7B26;&#x4E32;" class="plugin-anchor" href="#&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x5E76;&#x6E32;&#x67D3;html&#x5B57;&#x7B26;&#x4E32;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x5E76;&#x6E32;&#x67D3;html&#x5B57;&#x7B26;&#x4E32;</h1>
+<p>&#x6BCF;&#x4E2A;<code>NornJ</code>&#x6A21;&#x677F;&#x90FD;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x4E3A;1&#x4E2A;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x3002;&#x4F20;&#x5165;&#x6570;&#x636E;&#x5E76;&#x6267;&#x884C;&#x6B64;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5219;&#x53EF;&#x4EE5;&#x8F93;&#x51FA;html(&#x6216;&#x8005;&#x662F;xml&#x3001;&#x666E;&#x901A;&#x6587;&#x672C;&#xFF0C;&#x4EE5;&#x4E0B;&#x7EDF;&#x4E00;&#x79F0;&#x4E3A;&#x8F93;&#x51FA;html)&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x914D;&#x5408;<code>Backbone</code>&#x3001;<code>express</code>&#x3001;<code>koa</code>&#x7B49;&#x6846;&#x67B6;&#x4F5C;&#x4E3A;&#x89C6;&#x56FE;&#x7684;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x4E86;&#x3002;</p>
 <h2 id="&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;"><a name="&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;" class="plugin-anchor" href="#&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;</h2>
-<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<p>&#x4F8B;&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-comment">//&#x5B9A;&#x4E49;&#x6A21;&#x677F;</span>
 <span class="hljs-keyword">const</span> tmpl = <span class="hljs-string">`
 &lt;div id=test1&gt;
@@ -486,7 +532,7 @@
 <li>&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x6A21;&#x677F;&#x540D;&#x79F0;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;&#x6A21;&#x677F;&#x540D;&#x79F0;(&#x6A21;&#x677F;&#x540D;&#x79F0;&#x5E94;&#x4E3A;&#x5168;&#x5C40;&#x552F;&#x4E00;)&#xFF0C;&#x5219;&#x4E0B;&#x4E00;&#x6B21;&#x7F16;&#x8BD1;&#x540D;&#x79F0;&#x76F8;&#x540C;&#x7684;&#x6A21;&#x677F;&#x65F6;&#x4F1A;&#x76F4;&#x63A5;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x83B7;&#x53D6;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x63D0;&#x5347;&#x5F88;&#x591A;&#x6027;&#x80FD;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x63A8;&#x8350;&#x7F16;&#x8BD1;&#x65F6;&#x8BBE;&#x7F6E;&#x8BE5;&#x540D;&#x79F0;&#x53C2;&#x6570;&#x3002;</li>
 </ul>
 <h3 id="&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5E76;&#x8F93;&#x51FA;html"><a name="&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5E76;&#x8F93;&#x51FA;html" class="plugin-anchor" href="#&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5E76;&#x8F93;&#x51FA;html"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5E76;&#x8F93;&#x51FA;html</h3>
-<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<p>&#x4F8B;&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-comment">//&#x5B9A;&#x4E49;&#x6A21;&#x677F;</span>
 <span class="hljs-keyword">const</span> tmpl = <span class="hljs-string">`
 &lt;div id=test1&gt;
@@ -597,7 +643,7 @@
             
                 
                 
-                <a href="renderReact.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 编译模板并输出React组件">
+                <a href="renderReact.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 编译模板并渲染React组件">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -608,7 +654,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"编译模板并输出html字符串","level":"1.4.1","depth":2,"next":{"title":"编译模板并输出React组件","level":"1.4.2","depth":2,"path":"api/renderReact.md","ref":"api/renderReact.md","articles":[]},"previous":{"title":"渲染模板","level":"1.4","depth":1,"ref":"","articles":[{"title":"编译模板并输出html字符串","level":"1.4.1","depth":2,"path":"api/renderString.md","ref":"api/renderString.md","articles":[]},{"title":"编译模板并输出React组件","level":"1.4.2","depth":2,"path":"api/renderReact.md","ref":"api/renderReact.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/renderString.md","mtime":"2018-03-29T10:27:16.526Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-08T10:17:32.994Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"编译模板并渲染html字符串","level":"1.4.1","depth":2,"next":{"title":"编译模板并渲染React组件","level":"1.4.2","depth":2,"path":"api/renderReact.md","ref":"api/renderReact.md","articles":[]},"previous":{"title":"API","level":"1.4","depth":1,"ref":"","articles":[{"title":"编译模板并渲染html字符串","level":"1.4.1","depth":2,"path":"api/renderString.md","ref":"api/renderString.md","articles":[]},{"title":"编译模板并渲染React组件","level":"1.4.2","depth":2,"path":"api/renderReact.md","ref":"api/renderReact.md","articles":[]},{"title":"模板全局配置","level":"1.4.3","depth":2,"path":"api/config.md","ref":"api/config.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/renderString.md","mtime":"2018-04-08T12:01:42.811Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-08T12:08:01.132Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

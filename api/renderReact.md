@@ -1,19 +1,19 @@
 {% raw %}
-# 编译模板并输出React组件
+# 编译模板并渲染React组件
 
-每个NornJ模板都可以编译为1个组件模板函数。传入数据并执行此模板函数则可以输出React虚拟dom组件对象，这样就可以配合React框架作为JSX的替代模板来开发React组件了。
+每个`NornJ`模板都可以编译为1个组件模板函数。传入数据并执行此模板函数则可以输出React虚拟dom组件对象，这样就可以配合React作为JSX的替代模板来开发组件了。
 
 ## NornJ模板与JSX的不同点
 
-* NornJ模板使用字符串构建，无需预编译也可以直接使用，也可以选择预编译的方式；JSX在保证性能与网络开销的前提下，通常都是预编译的方式。
-* NornJ模板可以在React组件逻辑代码内构建，也可以用单独的文件构建；JSX通常只和React组件逻辑代码在一起构建。
-* NornJ模板支持直接嵌入在html中的script标签内使用(示例请见[这里](https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc-es5/index.html))，可以替代ReactDOM.render方法，这样即使使用非`node.js`的服务器环境也可以做直出html渲染；JSX通常都是在js文件中渲染React组件。
-* 在JSX中使用js语句与html标签混合的语法；NornJ模板会提供**完全声明式**的标签语法，如`if`或**循环语句**等语法都为标签。
-* NornJ模板的解析方式和html更加类似，例如不加闭合的`<img>`、`<input>`等标签，以及`style="margin-left:1px;"`等`JSX`不支持的语法在nj中都是可行的。另外NornJ模板还有一些语法如`style`等均与html更加一致，具体请见[这里](../templateSyntax/react.md)。
+* `NornJ`模板使用字符串构建，无需预编译也可以直接使用，也可以选择预编译的方式；`JSX`在保证性能与网络开销的前提下，通常都是预编译的方式。
+* `NornJ`模板可以在React组件逻辑代码内编写，也可以用单独的文件编写；`JSX`通常只和React组件逻辑代码在一起编写。
+* 在`JSX`中使用js表达式与html标签混合的语法来表达逻辑判断等；`NornJ`模板会提供**完全声明式**的标签语法，如`if`或**循环语句**等语法都为标签。
+* `NornJ`模板的解析方式和html更加类似，例如不加闭合的`<img>`、`<input>`等标签，以及`style="margin-left:1px;"`等`JSX`不支持的语法在nj中都是可行的。另外NornJ模板还有一些语法如`style`等均与html更加一致，具体请见[这里](../templateSyntax/react.md)。
+<!-- * NornJ模板支持直接嵌入在html中的script标签内使用(示例请见[这里](https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc-es5/index.html))，可以替代ReactDOM.render方法，这样即使使用非`node.js`的服务器环境也可以做直出html渲染；JSX通常都是在js文件中渲染React组件。 -->
 
 ## 将纯字符串模板编译为模板函数
 
-举例：
+例：
 
 ```js
 //定义模板
