@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>编译模板并渲染html字符串 · GitBook</title>
+        <title>Redux · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -63,8 +63,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="renderReact.html" />
+    <link rel="next" href="reactRouter.md" />
     
+    
+    <link rel="prev" href="reactNative.md" />
     
 
     </head>
@@ -314,7 +316,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="renderString.html">
+        <li class="chapter " data-level="1.4.1" data-path="renderString.html">
             
                 <a href="renderString.html">
             
@@ -411,7 +413,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="redux.html">
+        <li class="chapter active" data-level="1.5.4" data-path="redux.html">
             
                 <a href="redux.html">
             
@@ -511,7 +513,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >编译模板并渲染html字符串</a>
+        <a href=".." >Redux</a>
     </h1>
 </div>
 
@@ -526,108 +528,39 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x5E76;&#x6E32;&#x67D3;html&#x5B57;&#x7B26;&#x4E32;"><a name="&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x5E76;&#x6E32;&#x67D3;html&#x5B57;&#x7B26;&#x4E32;" class="plugin-anchor" href="#&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x5E76;&#x6E32;&#x67D3;html&#x5B57;&#x7B26;&#x4E32;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x5E76;&#x6E32;&#x67D3;html&#x5B57;&#x7B26;&#x4E32;</h1>
-<p>&#x6BCF;&#x4E2A;<code>NornJ</code>&#x6A21;&#x677F;&#x90FD;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x4E3A;1&#x4E2A;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x3002;&#x4F20;&#x5165;&#x6570;&#x636E;&#x5E76;&#x6267;&#x884C;&#x6B64;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5219;&#x53EF;&#x4EE5;&#x8F93;&#x51FA;html(&#x6216;&#x8005;&#x662F;xml&#x3001;&#x666E;&#x901A;&#x6587;&#x672C;&#xFF0C;&#x4EE5;&#x4E0B;&#x7EDF;&#x4E00;&#x79F0;&#x4E3A;&#x8F93;&#x51FA;html)&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x914D;&#x5408;<code>Backbone</code>&#x3001;<code>express</code>&#x3001;<code>koa</code>&#x7B49;&#x6846;&#x67B6;&#x4F5C;&#x4E3A;&#x89C6;&#x56FE;&#x7684;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x4E86;&#x3002;</p>
-<h2 id="&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;"><a name="&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;" class="plugin-anchor" href="#&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;</h2>
-<p>&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-comment">//&#x5B9A;&#x4E49;&#x6A21;&#x677F;</span>
-<span class="hljs-keyword">const</span> tmpl = <span class="hljs-string">`
-&lt;div id=test1&gt;
-  this the test demo{{no}}.
-  &lt;i&gt;test{{no}}&lt;/i&gt;
-&lt;/div&gt;`</span>;
-
-<span class="hljs-comment">//&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;</span>
-<span class="hljs-keyword">const</span> tmplFn = nj.compile(tmpl, <span class="hljs-string">&apos;tmpl1&apos;</span>);
+                                <h1 id="&#x7ED3;&#x5408;redux"><a name="&#x7ED3;&#x5408;redux" class="plugin-anchor" href="#&#x7ED3;&#x5408;redux"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7ED3;&#x5408;Redux</h1>
+<p><code>NornJ</code>&#x53EF;&#x76F4;&#x63A5;&#x652F;&#x6301;<code>Redux</code>&#x3002;&#x5728;<code>nornj-react</code>&#x5305;&#x4E2D;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x9ED8;&#x8BA4;&#x5C01;&#x88C5;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x66F4;&#x65B9;&#x4FBF;&#x5730;&#x4F7F;&#x7528;<code>Redux</code>&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x5F15;&#x5165;&#x5373;&#x53EF;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;nornj-react/redux&apos;</span>;
 </code></pre>
+<p>&#x7EC4;&#x4EF6;&#x5217;&#x8868;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">nornj-react&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x5BF9;&#x5E94;&#x7684;Redux&#x7EC4;&#x4EF6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Provider</td>
+<td style="text-align:left">Provider</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF0C;&#x548C;Redux&#x539F;&#x751F;&#x7EC4;&#x4EF6;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF1A;</p>
+<pre><code class="lang-js">nj<span class="hljs-string">`
+  &lt;Provider store=<span class="hljs-subst">${store}</span>&gt;
+    &lt;<span class="hljs-subst">${App}</span> /&gt;
+  &lt;/Provider&gt;
+`</span>()
+</code></pre>
+<h2 id="nornj--redux&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;"><a name="nornj--redux&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;" class="plugin-anchor" href="#nornj--redux&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>NornJ + Redux&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;</h2>
 <ul>
-<li>&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x987B;&#x4F7F;&#x7528;<code>nj.compile</code>&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#xFF1B;</li>
-<li>&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x6A21;&#x677F;&#x540D;&#x79F0;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;&#x6A21;&#x677F;&#x540D;&#x79F0;(&#x6A21;&#x677F;&#x540D;&#x79F0;&#x5E94;&#x4E3A;&#x5168;&#x5C40;&#x552F;&#x4E00;)&#xFF0C;&#x5219;&#x4E0B;&#x4E00;&#x6B21;&#x7F16;&#x8BD1;&#x540D;&#x79F0;&#x76F8;&#x540C;&#x7684;&#x6A21;&#x677F;&#x65F6;&#x4F1A;&#x76F4;&#x63A5;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x83B7;&#x53D6;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x63D0;&#x5347;&#x5F88;&#x591A;&#x6027;&#x80FD;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x63A8;&#x8350;&#x7F16;&#x8BD1;&#x65F6;&#x8BBE;&#x7F6E;&#x8BE5;&#x540D;&#x79F0;&#x53C2;&#x6570;&#x3002;</li>
+<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc" target="_blank">todomvc[react + redux + react-router + nornj + webpack4]</a></li>
+<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc-es5" target="_blank">todomvc(&#x65E0;&#x9700;webpack&#x6253;&#x5305;)[react + redux + react-router + nornj]</a></li>
+<li><a href="https://github.com/joe-sky/nornj-react-native-counter" target="_blank">&#x8BA1;&#x6570;&#x5668;&#x793A;&#x4F8B;[react-native + styled-components + nornj]</a></li>
 </ul>
-<h3 id="&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5E76;&#x8F93;&#x51FA;html"><a name="&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5E76;&#x8F93;&#x51FA;html" class="plugin-anchor" href="#&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5E76;&#x8F93;&#x51FA;html"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5E76;&#x8F93;&#x51FA;html</h3>
-<p>&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-comment">//&#x5B9A;&#x4E49;&#x6A21;&#x677F;</span>
-<span class="hljs-keyword">const</span> tmpl = <span class="hljs-string">`
-&lt;div id=test1&gt;
-  this the test demo{{no}}.
-  &lt;i&gt;test{{no}}&lt;/i&gt;
-&lt;/div&gt;`</span>;
-
-<span class="hljs-comment">//&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;</span>
-<span class="hljs-keyword">const</span> tmplFn = nj.compile(tmpl, <span class="hljs-string">&apos;tmpl1&apos;</span>);
-
-<span class="hljs-comment">//&#x8F93;&#x51FA;html</span>
-<span class="hljs-keyword">let</span> html = tmplFn({
-  no: <span class="hljs-number">100</span>
-});
-
-<span class="hljs-built_in">console</span>.log(html);
-<span class="hljs-comment">/*&#x8F93;&#x51FA;html:
-&lt;div id=&quot;test1&quot;&gt;
-  this the test demo100.
-  &lt;i&gt;test100&lt;/i&gt;
-&lt;/div&gt;
-*/</span>
-</code></pre>
-<ul>
-<li>&#x6A21;&#x677F;&#x51FD;&#x6570;&#x4E00;&#x822C;&#x53EA;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x503C;&#x4E3A;json&#x683C;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x3002;&#x6A21;&#x677F;&#x4E2D;&#x548C;&#x4F20;&#x5165;&#x6570;&#x636E;&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x4F1A;&#x81EA;&#x52A8;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x66FF;&#x6362;&#xFF0C;&#x6700;&#x540E;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E3A;&#x66FF;&#x6362;&#x540E;&#x7684;html&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
-<li>&#x6A21;&#x677F;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x591A;&#x4E2A;json&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</li>
-</ul>
-<pre><code class="lang-js"><span class="hljs-comment">//&#x5B9A;&#x4E49;&#x6A21;&#x677F;</span>
-<span class="hljs-keyword">const</span> tmpl = <span class="hljs-string">`
-&lt;div id=test1&gt;
-  this the test demo{{no}}.
-  &lt;i&gt;test{{no2}}&lt;/i&gt;
-&lt;/div&gt;`</span>;
-
-<span class="hljs-comment">//&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;</span>
-<span class="hljs-keyword">const</span> tmplFn = nj.compile(tmpl, <span class="hljs-string">&apos;tmpl1&apos;</span>);
-
-<span class="hljs-comment">//&#x6E32;&#x67D3;</span>
-<span class="hljs-keyword">let</span> html = tmplFn({
-  no: <span class="hljs-number">100</span>
-}, {
-  no: <span class="hljs-number">200</span>,  <span class="hljs-comment">//&#x76F8;&#x540C;&#x7684;&#x503C;&#x4F18;&#x5148;&#x91C7;&#x7528;&#x987A;&#x5E8F;&#x9760;&#x524D;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x7684;(1)</span>
-  no2: <span class="hljs-number">300</span>  <span class="hljs-comment">//&#x5982;&#x679C;&#x6570;&#x7EC4;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x6CA1;&#x6709;no2&#x5C5E;&#x6027;&#xFF0C;&#x5C31;&#x4F1A;&#x5C1D;&#x8BD5;&#x4ECE;&#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x83B7;&#x53D6;(2)</span>
-});
-
-<span class="hljs-built_in">console</span>.log(html);
-<span class="hljs-comment">/*&#x8F93;&#x51FA;html:
-&lt;div id=&quot;test1&quot;&gt;
-  this the test demo100.
-  &lt;i&gt;test300&lt;/i&gt;
-&lt;/div&gt;
-</span></code></pre>
-<p>&#x4F20;&#x5165;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x540E;&#xFF0C;NornJ&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x4F1A;&#x6309;&#x987A;&#x5E8F;&#x68C0;&#x6D4B;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x6709;&#x548C;&#x6A21;&#x677F;&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x3002;&#x5982;&#x679C;&#x68C0;&#x6D4B;&#x5230;&#x524D;&#x9762;&#x7684;&#x53C2;&#x6570;&#x6709;&#x5BF9;&#x5E94;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x505C;&#x6B62;&#x7EE7;&#x7EED;&#x68C0;&#x6D4B;&#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;&#x662F;&#x5426;&#x6709;&#x8BE5;&#x5BF9;&#x5E94;&#x503C;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(1)&#x5904;&#x6240;&#x793A;&#xFF1B;&#x5982;&#x679C;&#x9760;&#x524D;&#x9762;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x6CA1;&#x6709;&#x5BF9;&#x5E94;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x6309;&#x987A;&#x5E8F;&#x5BFB;&#x627E;&#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x5982;&#x4F8B;&#x4E2D;(2)&#x5904;&#x6240;&#x793A;&#x3002;</p>
-<ul>
-<li>&#x53E6;&#x5916;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;<code>nj.render</code>&#x65B9;&#x6CD5;&#x6765;&#x6267;&#x884C;&#x6E32;&#x67D3;&#xFF0C;&#x5B83;&#x4E0E;<code>nj.compile</code>&#x76F8;&#x6BD4;&#x5219;&#x662F;&#x81EA;&#x52A8;&#x5305;&#x542B;&#x4E86;&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x7684;&#x6B65;&#x9AA4;&#xFF1A;</li>
-</ul>
-<pre><code class="lang-js"><span class="hljs-keyword">let</span> html = nj.render(<span class="hljs-string">`
-&lt;div id=test1&gt;
-  this the test demo{{no}}.
-  &lt;i&gt;test{{no}}&lt;/i&gt;
-&lt;/div&gt;`</span>, {
-  no: <span class="hljs-number">100</span>
-});
-
-<span class="hljs-built_in">console</span>.log(html);
-<span class="hljs-comment">/*&#x8F93;&#x51FA;html:
-&lt;div id=&quot;test1&quot;&gt;
-  this the test demo100.
-  &lt;i&gt;test100&lt;/i&gt;
-&lt;/div&gt;
-*/</span>
-</code></pre>
-<p>&#x5982;&#x4E0A;&#xFF0C;<code>nj.render</code>&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#xFF0C;&#x4ECE;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x5F00;&#x59CB;&#x548C;<code>nj.compile</code>&#x7F16;&#x8BD1;&#x51FA;&#x6765;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x4E00;&#x6837;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x591A;&#x4E2A;json&#x53C2;&#x6570;&#x3002;</p>
-<h2 id="&#x4F7F;&#x7528;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;&#x6A21;&#x677F;"><a name="&#x4F7F;&#x7528;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;&#x6A21;&#x677F;" class="plugin-anchor" href="#&#x4F7F;&#x7528;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;&#x6A21;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;&#x6A21;&#x677F;</h2>
-<p>&#x4EE5;<code>nj</code>&#x4E3A;&#x524D;&#x7F6E;&#x6807;&#x7B7E;&#x7684;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x50CF;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x4E00;&#x6837;&#x6267;&#x884C;&#xFF0C;&#x5C31;&#x548C;&#x6267;&#x884C;&#x4F7F;&#x7528;<code>compile</code>&#x65B9;&#x6CD5;&#x7F16;&#x8BD1;&#x51FA;&#x6765;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x7684;&#x6548;&#x679C;&#x76F8;&#x540C;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">let</span> html = nj<span class="hljs-string">`&lt;span&gt;test{{no}}&lt;/span&gt;`</span>({ no: <span class="hljs-number">1</span> });
-
-<span class="hljs-built_in">console</span>.log(html);
-<span class="hljs-comment">/*&#x8F93;&#x51FA;html:
-&lt;span&gt;test1&lt;/span&gt;
-*/</span>
-</code></pre>
 
                                 
                                 </section>
@@ -655,8 +588,12 @@
 
             
                 
+                <a href="reactNative.md" class="navigation navigation-prev " aria-label="Previous page: React-Native">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="renderReact.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 编译模板并渲染React组件">
+                
+                <a href="reactRouter.md" class="navigation navigation-next " aria-label="Next page: React-Router">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -667,7 +604,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"编译模板并渲染html字符串","level":"1.4.1","depth":2,"next":{"title":"编译模板并渲染React组件","level":"1.4.2","depth":2,"path":"api/renderReact.md","ref":"api/renderReact.md","articles":[]},"previous":{"title":"API","level":"1.4","depth":1,"ref":"","articles":[{"title":"编译模板并渲染html字符串","level":"1.4.1","depth":2,"path":"api/renderString.md","ref":"api/renderString.md","articles":[]},{"title":"编译模板并渲染React组件","level":"1.4.2","depth":2,"path":"api/renderReact.md","ref":"api/renderReact.md","articles":[]},{"title":"模板全局配置","level":"1.4.3","depth":2,"path":"api/config.md","ref":"api/config.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/renderString.md","mtime":"2018-04-08T12:01:42.811Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-09T12:29:34.885Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Redux","level":"1.5.4","depth":2,"next":{"title":"React-Router","level":"1.5.5","depth":2,"path":"api/reactRouter.md","ref":"api/reactRouter.md","articles":[]},"previous":{"title":"React-Native","level":"1.5.3","depth":2,"path":"api/reactNative.md","ref":"api/reactNative.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/redux.md","mtime":"2018-04-09T12:27:30.807Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-09T12:29:34.885Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
