@@ -3,7 +3,10 @@
 
 `NornJ`模板引擎在React开发中是`JSX`的一个很好的替代或辅助工具，下面的是一个使用cdn上umd包的在线可运行实例：
 
-* [在线Playground(jsfiddle)](https://jsfiddle.net/joe_sky/n5n9tutj/)
+* 在线Playground(jsfiddle)
+
+[source code](https://jsfiddle.net/joe_sky/n5n9tutj/)
+
 * [在线Playground(codepen)](https://codepen.io/joe_sky/pen/ooPNbj)
 
 ## 安装

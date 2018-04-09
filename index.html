@@ -377,7 +377,7 @@
                 <a href="api/webpack.html">
             
                     
-                    结合Webpack在html文件中构建模板
+                    结合Webpack在单文件中编写模板
             
                 </a>
             
@@ -385,12 +385,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="api/reactNative.md">
+        <li class="chapter " data-level="1.5.2" data-path="api/htmlWebpackPlugin.md">
             
                 <span>
             
                     
-                    结合React-Native
+                    Html-Webpack-Plugin
             
                 </a>
             
@@ -398,12 +398,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="api/redux.md">
+        <li class="chapter " data-level="1.5.3" data-path="api/reactNative.md">
             
                 <span>
             
                     
-                    结合Redux
+                    React-Native
             
                 </a>
             
@@ -411,12 +411,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="api/reactRouter.md">
+        <li class="chapter " data-level="1.5.4" data-path="api/redux.md">
             
                 <span>
             
                     
-                    结合React-Router
+                    Redux
             
                 </a>
             
@@ -424,12 +424,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="api/mobx.md">
+        <li class="chapter " data-level="1.5.5" data-path="api/reactRouter.md">
             
                 <span>
             
                     
-                    结合Mobx
+                    React-Router
             
                 </a>
             
@@ -437,12 +437,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.6" data-path="api/antd.md">
+        <li class="chapter " data-level="1.5.6" data-path="api/mobx.md">
             
                 <span>
             
                     
-                    结合Ant Design
+                    Mobx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="api/antd.md">
+            
+                <span>
+            
+                    
+                    Ant Design
             
                 </a>
             
@@ -525,12 +538,9 @@
 </code></pre>
 <p><code>NornJ</code>&#x662F;&#x4E00;&#x4E2A;<strong>&#x6E32;&#x67D3;&#x9AD8;&#x6548;</strong>&#xFF0C;<strong>&#x53EF;&#x8BFB;&#x6027;&#x597D;</strong>&#xFF0C;<strong>&#x6269;&#x5C55;&#x5BB9;&#x6613;</strong>&#xFF0C;<strong>&#x9002;&#x7528;&#x6027;&#x5E7F;</strong>&#x7684;javascript&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x3002;</p>
 <p><a href="https://www.npmjs.org/package/nornj" target="_blank"><img src="https://img.shields.io/npm/v/nornj.svg" alt="NPM Version"></a>
-<a href="https://travis-ci.org/joe-sky/nornj" target="_blank">
-<img src="https://travis-ci.org/joe-sky/nornj.svg?branch=master" alt="Travis CI Status">
-</a>
-<a href="https://codecov.io/gh/joe-sky/nornj" target="_blank">
-  <img src="https://codecov.io/gh/joe-sky/nornj/branch/master/graph/badge.svg" alt="Codecov">
-</a>
+<a href="https://www.npmjs.com/package/nornj" target="_blank"><img src="https://img.shields.io/npm/l/nornj.svg" alt="License"></a>
+<a href="https://travis-ci.org/joe-sky/nornj" target="_blank"><img src="https://travis-ci.org/joe-sky/nornj.svg?branch=master" alt="Travis CI Status"></a>
+<a href="https://codecov.io/gh/joe-sky/nornj" target="_blank"><img src="https://codecov.io/gh/joe-sky/nornj/branch/master/graph/badge.svg" alt="Codecov"></a>
 <a href="https://www.npmjs.org/package/nornj" target="_blank"><img src="https://img.shields.io/npm/dm/nornj.svg" alt="NPM Downloads"></a></p>
 <h2 id="&#x6982;&#x8FF0;"><a name="&#x6982;&#x8FF0;" class="plugin-anchor" href="#&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6982;&#x8FF0;</h2>
 <p><code>NornJ</code>&#x662F;&#x4E00;&#x6B3E;&#x540C;&#x65F6;&#x652F;&#x6301;&#x6E32;&#x67D3;<code>&#x7EAF;&#x5B57;&#x7B26;&#x4E32;(html)</code>&#x548C;<code>HyperScript(React vdom)</code>&#x7684;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x3002;</p>
@@ -595,12 +605,18 @@
 <h2 id="&#x5728;&#x7EBF;&#x6F14;&#x793A;&#x5730;&#x5740;"><a name="&#x5728;&#x7EBF;&#x6F14;&#x793A;&#x5730;&#x5740;" class="plugin-anchor" href="#&#x5728;&#x7EBF;&#x6F14;&#x793A;&#x5730;&#x5740;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;&#x7EBF;&#x6F14;&#x793A;&#x5730;&#x5740;</h2>
 <h3 id="&#x6E32;&#x67D3;html&#x5B57;&#x7B26;&#x4E32;"><a name="&#x6E32;&#x67D3;html&#x5B57;&#x7B26;&#x4E32;" class="plugin-anchor" href="#&#x6E32;&#x67D3;html&#x5B57;&#x7B26;&#x4E32;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6E32;&#x67D3;html&#x5B57;&#x7B26;&#x4E32;</h3>
 <ul>
-<li><a href="https://jsfiddle.net/joe_sky/byjdkaf1/" target="_blank">&#x5728;&#x7EBF;Playground(jsfiddle)</a></li>
+<li>&#x5728;&#x7EBF;Playground(jsfiddle)</li>
+</ul>
+<p><a href="https://jsfiddle.net/joe_sky/byjdkaf1/" target="_blank">source code</a></p>
+<ul>
 <li><a href="https://codepen.io/joe_sky/pen/BrGvVG" target="_blank">&#x5728;&#x7EBF;Playground(codepen)</a></li>
 </ul>
 <h3 id="&#x6E32;&#x67D3;react&#x7EC4;&#x4EF6;"><a name="&#x6E32;&#x67D3;react&#x7EC4;&#x4EF6;" class="plugin-anchor" href="#&#x6E32;&#x67D3;react&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6E32;&#x67D3;React&#x7EC4;&#x4EF6;</h3>
 <ul>
-<li><a href="https://jsfiddle.net/joe_sky/n5n9tutj/" target="_blank">&#x5728;&#x7EBF;Playground(jsfiddle)</a></li>
+<li>&#x5728;&#x7EBF;Playground(jsfiddle)</li>
+</ul>
+<p><a href="https://jsfiddle.net/joe_sky/n5n9tutj/" target="_blank">source code</a></p>
+<ul>
 <li><a href="https://codepen.io/joe_sky/pen/ooPNbj" target="_blank">&#x5728;&#x7EBF;Playground(codepen)</a></li>
 </ul>
 <h2 id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="plugin-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5;</h2>
@@ -793,7 +809,7 @@ render(nj<span class="hljs-string">`&lt;TestComponent no={100} /&gt;`</span>(), 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"概述","level":"1.1","depth":1,"next":{"title":"快速起步","level":"1.2","depth":1,"path":"gettingStarted/index.md","ref":"gettingStarted/index.md","articles":[{"title":"像传统模板引擎那样工作","level":"1.2.1","depth":2,"path":"gettingStarted/normalTemplateEngine.md","ref":"gettingStarted/normalTemplateEngine.md","articles":[]},{"title":"增强React开发体验","level":"1.2.2","depth":2,"path":"gettingStarted/enhanceReact.md","ref":"gettingStarted/enhanceReact.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-04-08T07:11:13.186Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-08T12:08:01.132Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"概述","level":"1.1","depth":1,"next":{"title":"快速起步","level":"1.2","depth":1,"path":"gettingStarted/index.md","ref":"gettingStarted/index.md","articles":[{"title":"像传统模板引擎那样工作","level":"1.2.1","depth":2,"path":"gettingStarted/normalTemplateEngine.md","ref":"gettingStarted/normalTemplateEngine.md","articles":[]},{"title":"增强React开发体验","level":"1.2.2","depth":2,"path":"gettingStarted/enhanceReact.md","ref":"gettingStarted/enhanceReact.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-04-09T07:53:59.530Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-09T08:14:54.824Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

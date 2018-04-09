@@ -3,7 +3,10 @@
 
 `NornJ`模板引擎虽然可以支持React开发，但其实它同时也是一个传统的js模板引擎，用法和[`Handlebars`](https://github.com/wycats/handlebars.js)、[`Nunjucks`](https://github.com/mozilla/nunjucks)等非常类似。下面的是一个使用cdn上umd包的在线可运行实例：
 
-* [在线Playground(jsfiddle)](https://jsfiddle.net/joe_sky/byjdkaf1/)
+* 在线Playground(jsfiddle)
+
+[source code](https://jsfiddle.net/joe_sky/byjdkaf1/)
+
 * [在线Playground(codepen)](https://codepen.io/joe_sky/pen/BrGvVG)
 
 ## 安装
