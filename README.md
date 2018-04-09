@@ -15,12 +15,9 @@
 `NornJ`是一个**渲染高效**，**可读性好**，**扩展容易**，**适用性广**的javascript模板引擎。
 
 [![NPM Version][npm-image]][npm-url]
-<a href="https://travis-ci.org/joe-sky/nornj">
-<img src="https://travis-ci.org/joe-sky/nornj.svg?branch=master" alt="Travis CI Status"/>
-</a>
-<a href="https://codecov.io/gh/joe-sky/nornj">
-  <img src="https://codecov.io/gh/joe-sky/nornj/branch/master/graph/badge.svg" alt="Codecov" />
-</a>
+<a href="https://www.npmjs.com/package/nornj"><img src="https://img.shields.io/npm/l/nornj.svg" alt="License"></a>
+<a href="https://travis-ci.org/joe-sky/nornj"><img src="https://travis-ci.org/joe-sky/nornj.svg?branch=master" alt="Travis CI Status"/></a>
+<a href="https://codecov.io/gh/joe-sky/nornj"><img src="https://codecov.io/gh/joe-sky/nornj/branch/master/graph/badge.svg" alt="Codecov" /></a>
 [![NPM Downloads][downloads-image]][npm-url]
 
 ## 概述
@@ -34,9 +31,9 @@
 而`NornJ`可将同样语法规范的模板，转换为多种方式渲染：
 
 ```
-                  +-----------------+
-                  ¦ template string ¦
-                  +-----------------+
+                +---------------------+
+                ¦ <Template string /> ¦
+                +---------------------+
                            |
                            |
            +-------------------------------+
@@ -51,7 +48,7 @@
 
 ## 模板基本示例
 
-* 在独立的模板文件中编写
+* 在单独的模板文件中编写
 
 ```html
 <template name="partial">
@@ -99,12 +96,18 @@ const template = nj`
 
 ### 渲染html字符串
 
-* [在线Playground(jsfiddle)](https://jsfiddle.net/joe_sky/byjdkaf1/)
+* 在线Playground(jsfiddle)
+
+[source code](https://jsfiddle.net/joe_sky/byjdkaf1/)
+
 * [在线Playground(codepen)](https://codepen.io/joe_sky/pen/BrGvVG)
 
 ### 渲染React组件
 
-* [在线Playground(jsfiddle)](https://jsfiddle.net/joe_sky/n5n9tutj/)
+* 在线Playground(jsfiddle)
+
+[source code](https://jsfiddle.net/joe_sky/n5n9tutj/)
+
 * [在线Playground(codepen)](https://codepen.io/joe_sky/pen/ooPNbj)
 
 ## 安装
