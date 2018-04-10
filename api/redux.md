@@ -1,7 +1,21 @@
 {% raw %}
 # 结合Redux
 
-`NornJ`可直接支持`Redux`。在`nornj-react`包中提供一些默认封装的组件，可更方便地使用`Redux`。
+可以直接在`NornJ`模板中使用`Redux`提供的组件：
+
+```js
+import { Provider } from 'react-redux';
+
+nj`
+  <${Provider} store=${store}>
+    <${App} />
+  </${Provider}>
+`()
+```
+
+## 使用nornj-react包中的redux组件
+
+在`nornj-react`包中提供一些默认封装的组件，可更方便地使用`Redux`。
 
 这样引入即可：
 
@@ -15,7 +29,7 @@ import 'nornj-react/redux';
 |:-------------------------|:---------------|
 | Provider                 | Provider       |
 
-使用方法如下，和Redux原生组件完全相同：
+使用方法如下，和`Redux`原生组件完全相同：
 
 ```js
 nj`
