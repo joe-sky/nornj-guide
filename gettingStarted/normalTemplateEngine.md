@@ -70,9 +70,9 @@ console.log(nj`
 
 > 更多关于使用标签模板字符串编写`NornJ`模板的语法细节[请参考这里](../templateSyntax/templateString.md)。
 
-## 在独立的文件中编写NornJ模板
+## 在单独的文件中编写NornJ模板
 
-`NornJ`模板除了可以在js文件中编写之外，还可以编写在独立的模板文件中，用来做展现层与结构层的分离([具体文档请参考这里](../api/webpack.md))。例如编写一个`helloWorld.t.html`文件：
+`NornJ`模板除了可以在js文件中编写之外，还可以编写在单独的模板文件中，用来做展现层与结构层的分离([具体文档请参考这里](../api/webpack.md))。例如编写一个`helloWorld.t.html`文件：
 
 ```html
 <template name="helloWorld">
