@@ -1,22 +1,22 @@
 {% raw %}
 # 结合Webpack在单文件中编写模板
 
-`NornJ`模板可以用纯字符串构建在单独的模板文件中，并可支持分模块构建。这种方式可在以下几个场景使用：
+`NornJ`模板可以用纯字符串构建在单独的模板文件中，并可支持分模块构建，称为**single-file templates(单文件模板)**。它可以在以下几个场景使用：
 
-* 在`Webpack`环境下使用`nornj-loader`引入单模板文件，[loader如何配置请见这里](https://github.com/joe-sky/nornj-loader/blob/master/README.md)。
+* 在`Webpack`环境下使用`nornj-loader`引入单文件模板，[loader如何配置请见这里](https://github.com/joe-sky/nornj-loader/blob/master/README.md)。
 * 在Node.js环境中(如`Express`服务器或`React`服务器端渲染)使用`NornJ`模板。
 
-> 单模板文件的扩展名一般为这几种：
+> 单文件模板的扩展名一般为这几种：
 `*.nj.html`、`*.nj.htm`、`*.t.html`、`*.t.htm`、`*.nornj`、`*.nj`
 
 ## 模板语法高亮插件
 
-针对上述几种扩展名的文件，我们提供了`NornJ`语法的高亮和智能提示插件：
+针对上述几种扩展名的单文件模板，我们提供了`NornJ`语法的高亮和智能提示插件：
 
 * [nornj-highlight(vscode)](https://github.com/joe-sky/nornj-highlight)
 * [language-nornj(atom)](https://github.com/zyj1022/language-nornj)
 
-## 在单模板文件中定义单个模板
+## 在单文件模板中定义单个模板
 
 template.nj.html：
 ```html
@@ -44,9 +44,9 @@ class TestComponent extends Component {
 */
 ```
 
-## 在同一个文件中定义多个模板
+## 在同一个单文件模板中定义多个模板
 
-`NornJ`模板也可支持在一个单模板文件中定义多个模板，每个模板使用`template`标签定义，然后使用`include`标签引入：
+`NornJ`模板也可支持在一个单文件模板中定义多个模板，每个模板使用`template`标签定义，然后使用`include`标签引入：
 
 template.nj.html：
 ```html
@@ -114,15 +114,15 @@ class TestComponent extends Component {
 */
 ```
 
-1. 单模板文件可由多个`template`标签构成，每个`template`里放置独立的模板。
+1. 单文件模板可由多个`template`标签构成，每个`template`里放置独立的模板。
 2. 使用`include`块可以引入其他模板，分为几种情况如例中(2)、(3)、(4)处所示。
-3. 每个单模板文件中只能有一个`name="main"`的`template`标签定义为主模板，如例中(1)处。
+3. 每个单文件模板中只能有一个`name="main"`的`template`标签定义为主模板，如例中(1)处。
 4. 没有设置`name`属性的`template`标签会自动生成`name="main"`属性，如例中(3)处所示。
-5. `template`标签还可以设置`local`属性，这样它就只能在当前单模板文件内被其他模板使用，如例中(6)处。
+5. `template`标签还可以设置`local`属性，这样它就只能在当前单文件模板内被其他模板使用，如例中(6)处。
 
-## 在单模板文件中引入图片
+## 在单文件模板中引入图片
 
-目前`nornj-loader`配合webpack时还暂时不支持直接在单模板文件中用相对路径引入图片，如需引入相对路径图片可以这样做：
+目前`nornj-loader`配合webpack时还暂时不支持直接在单文件模板中用相对路径引入图片，如需引入相对路径图片可以这样做：
 
 testImg.nj.html：
 
