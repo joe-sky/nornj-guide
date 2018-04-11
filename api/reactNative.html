@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>React-Router · GitBook</title>
+        <title>React-Native · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -63,10 +63,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="mobx.html" />
+    <link rel="next" href="redux.html" />
     
     
-    <link rel="prev" href="redux.html" />
+    <link rel="prev" href="htmlWebpackPlugin.html" />
     
 
     </head>
@@ -400,7 +400,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="reactNative.html">
+        <li class="chapter active" data-level="1.5.3" data-path="reactNative.html">
             
                 <a href="reactNative.html">
             
@@ -426,7 +426,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.5" data-path="reactRouter.html">
+        <li class="chapter " data-level="1.5.5" data-path="reactRouter.html">
             
                 <a href="reactRouter.html">
             
@@ -513,7 +513,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >React-Router</a>
+        <a href=".." >React-Native</a>
     </h1>
 </div>
 
@@ -528,107 +528,97 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7ED3;&#x5408;react-router"><a name="&#x7ED3;&#x5408;react-router" class="plugin-anchor" href="#&#x7ED3;&#x5408;react-router"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7ED3;&#x5408;React-Router</h1>
-<p>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;<code>NornJ</code>&#x6A21;&#x677F;&#x4E2D;&#x4F7F;&#x7528;<code>React-Router</code>&#x63D0;&#x4F9B;&#x7684;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+                                <h1 id="&#x7ED3;&#x5408;react-native"><a name="&#x7ED3;&#x5408;react-native" class="plugin-anchor" href="#&#x7ED3;&#x5408;react-native"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7ED3;&#x5408;React-Native</h1>
+<p>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;<code>NornJ</code>&#x6A21;&#x677F;&#x4E2D;&#x4F7F;&#x7528;<code>React-Native</code>&#x63D0;&#x4F9B;&#x7684;&#x7EC4;&#x4EF6;&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> {
-  BrowserRouter,
-  HashRouter,
-  Link,
-  MemoryRouter,
-  NavLink,
-  Prompt,
-  Redirect,
-  Route,
-  Router,
-  StaticRouter,
-  Switch
-} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+  AccessibilityInfo,
+  ActivityIndicator,
+  ART,
+  Button,
+  DatePickerIOS,
+  DrawerLayoutAndroid,
+  FlatList,
+  Image,
+  ...
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-native&apos;</span>;
 
 nj<span class="hljs-string">`
-  &lt;<span class="hljs-subst">${Switch}</span>&gt;
-    &lt;<span class="hljs-subst">${Route}</span> exact path=&apos;/&apos; component=<span class="hljs-subst">${Page1}</span>/&gt;
-    &lt;<span class="hljs-subst">${Route}</span> exact path=&apos;/Page1&apos; component=<span class="hljs-subst">${Page1}</span> /&gt;
-    &lt;<span class="hljs-subst">${Route}</span> exact path=&apos;/Page2&apos; component=<span class="hljs-subst">${Page2}</span> /&gt;
-    &lt;<span class="hljs-subst">${Route}</span> exact path=&apos;/FormExample&apos; component=<span class="hljs-subst">${FormExample}</span> /&gt;
-    &lt;<span class="hljs-subst">${Redirect}</span> from=&apos;*&apos; to=&apos;/&apos;/&gt;
-  &lt;/<span class="hljs-subst">${Switch}</span>&gt;
+  &lt;<span class="hljs-subst">${FlatList}</span>&gt;
+    &lt;<span class="hljs-subst">${Image}</span> /&gt;
+  &lt;/<span class="hljs-subst">${FlatList}</span>&gt;
 `</span>()
 </code></pre>
-<h2 id="&#x4F7F;&#x7528;nornj-react&#x5305;&#x4E2D;&#x7684;react-router&#x7EC4;&#x4EF6;"><a name="&#x4F7F;&#x7528;nornj-react&#x5305;&#x4E2D;&#x7684;react-router&#x7EC4;&#x4EF6;" class="plugin-anchor" href="#&#x4F7F;&#x7528;nornj-react&#x5305;&#x4E2D;&#x7684;react-router&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;nornj-react&#x5305;&#x4E2D;&#x7684;react-router&#x7EC4;&#x4EF6;</h2>
-<p>&#x5728;<code>nornj-react</code>&#x5305;&#x4E2D;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x9ED8;&#x8BA4;&#x5C01;&#x88C5;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x66F4;&#x65B9;&#x4FBF;&#x5730;&#x4F7F;&#x7528;<code>React-Router</code>&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;nornj-react&#x5305;&#x4E2D;&#x7684;react-native&#x7EC4;&#x4EF6;"><a name="&#x4F7F;&#x7528;nornj-react&#x5305;&#x4E2D;&#x7684;react-native&#x7EC4;&#x4EF6;" class="plugin-anchor" href="#&#x4F7F;&#x7528;nornj-react&#x5305;&#x4E2D;&#x7684;react-native&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;nornj-react&#x5305;&#x4E2D;&#x7684;react-native&#x7EC4;&#x4EF6;</h2>
+<p>&#x5728;<code>nornj-react</code>&#x5305;&#x4E2D;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x9ED8;&#x8BA4;&#x5C01;&#x88C5;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x66F4;&#x65B9;&#x4FBF;&#x5730;&#x4F7F;&#x7528;<code>React-Native</code>&#x3002;</p>
 <p>&#x8FD9;&#x6837;&#x5F15;&#x5165;&#x5373;&#x53EF;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;nornj-react/router&apos;</span>;
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;nornj-react/native&apos;</span>;
 </code></pre>
-<p>&#x7EC4;&#x4EF6;&#x5217;&#x8868;&#xFF1A;</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">nornj-react&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#x79F0;</th>
-<th style="text-align:left">&#x5BF9;&#x5E94;&#x7684;React-Router&#x7EC4;&#x4EF6;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">BrowserRouter</td>
-<td style="text-align:left">BrowserRouter</td>
-</tr>
-<tr>
-<td style="text-align:left">HashRouter</td>
-<td style="text-align:left">HashRouter</td>
-</tr>
-<tr>
-<td style="text-align:left">router-Link</td>
-<td style="text-align:left">Link</td>
-</tr>
-<tr>
-<td style="text-align:left">MemoryRouter</td>
-<td style="text-align:left">MemoryRouter</td>
-</tr>
-<tr>
-<td style="text-align:left">router-NavLink</td>
-<td style="text-align:left">NavLink</td>
-</tr>
-<tr>
-<td style="text-align:left">router-Prompt</td>
-<td style="text-align:left">Prompt</td>
-</tr>
-<tr>
-<td style="text-align:left">Redirect</td>
-<td style="text-align:left">Redirect</td>
-</tr>
-<tr>
-<td style="text-align:left">Route</td>
-<td style="text-align:left">Route</td>
-</tr>
-<tr>
-<td style="text-align:left">Router</td>
-<td style="text-align:left">Router</td>
-</tr>
-<tr>
-<td style="text-align:left">StaticRouter</td>
-<td style="text-align:left">StaticRouter</td>
-</tr>
-<tr>
-<td style="text-align:left">router-Switch</td>
-<td style="text-align:left">Switch</td>
-</tr>
-</tbody>
-</table>
-<p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF0C;&#x548C;<code>React-Router</code>&#x539F;&#x751F;&#x7EC4;&#x4EF6;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF1A;</p>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF0C;&#x548C;<code>React-Native</code>&#x539F;&#x751F;&#x7EC4;&#x4EF6;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF1A;</p>
 <pre><code class="lang-js">nj<span class="hljs-string">`
-  &lt;router-Switch&gt;
-    &lt;Route exact path=&apos;/&apos; component=<span class="hljs-subst">${Page1}</span>/&gt;
-    &lt;Route exact path=&apos;/Page1&apos; component=<span class="hljs-subst">${Page1}</span> /&gt;
-    &lt;Route exact path=&apos;/Page2&apos; component=<span class="hljs-subst">${Page2}</span> /&gt;
-    &lt;Route exact path=&apos;/FormExample&apos; component=<span class="hljs-subst">${FormExample}</span> /&gt;
-    &lt;Redirect from=&apos;*&apos; to=&apos;/&apos;/&gt;
-  &lt;/router-Switch&gt;
+  &lt;FlatList&gt;
+    &lt;Image /&gt;
+  &lt;/FlatList&gt;
 `</span>()
 </code></pre>
-<h2 id="nornj--react-router&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;"><a name="nornj--react-router&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;" class="plugin-anchor" href="#nornj--react-router&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>NornJ + React-Router&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;</h2>
+<h2 id="&#x5728;react-native&#x4E2D;&#x4F7F;&#x7528;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;"><a name="&#x5728;react-native&#x4E2D;&#x4F7F;&#x7528;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;" class="plugin-anchor" href="#&#x5728;react-native&#x4E2D;&#x4F7F;&#x7528;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;react-native&#x4E2D;&#x4F7F;&#x7528;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;</h2>
+<p>&#x5728;RN&#x9879;&#x76EE;&#x7684;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;<code>rn-cli.config.js</code>&#xFF0C;&#x7136;&#x540E;&#x8FD9;&#x6837;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+  getTransformModulePath() {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">&apos;./node_modules/nornj/tools/metroTransformer&apos;</span>);
+  },
+  getSourceExts() {
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">&apos;htm&apos;</span>, <span class="hljs-string">&apos;nj&apos;</span>, <span class="hljs-string">&apos;nornj&apos;</span>];
+  }
+};
+</code></pre>
+<p>&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x5728;RN&#x4E2D;&#x4F7F;&#x7528;<code>NornJ</code>&#x7684;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-html">&lt;template name=&quot;displayPanel&quot;&gt;
+  &lt;DisplayPanel&gt;
+    &lt;Text style=&quot;{[styles.numberBlock, counter &lt; 0 ? styles.lowerThanZero]}&quot;&gt;{counter}&lt;/Text&gt;
+    &lt;Text style={styles.unitBlock}&gt;/ times&lt;/Text&gt;
+  &lt;/DisplayPanel&gt;
+&lt;/template&gt;
+
+&lt;template&gt;
+  &lt;Container&gt;
+    &lt;#include name=&quot;displayPanel&quot; /&gt;
+    &lt;ControlPanel style=&quot;{styles.inline}&quot;&gt;
+      &lt;ButtonAddSmall onPress={increment}
+                      underlayColor={colors.add.bg}&gt;
+        &lt;Text :style=&quot;[styles.text, styles.textColorAdd]&quot;&gt;+&lt;/Text&gt;
+      &lt;/ButtonAddSmall&gt;
+      &lt;ButtonMinusSmall onPress={decrement}
+                        underlayColor={colors.minus.bg}&gt;
+        &lt;Text :style=&quot;[styles.text, styles.textColorMinus]&quot;&gt;-&lt;/Text&gt;
+      &lt;/ButtonMinusSmall&gt;
+    &lt;/ControlPanel&gt;
+    &lt;ControlPanel&gt;
+      &lt;ButtonAdd onPress={incrementIfOdd}
+                 underlayColor={colors.add.bg}&gt;
+        &lt;Text :style=&quot;[styles.text, styles.textColorAdd]&quot;&gt;Increment if odd&lt;/Text&gt;
+      &lt;/ButtonAdd&gt;
+      &lt;ButtonAdd onPress={onPressAdd}
+                 underlayColor={colors.add.bg}&gt;
+        &lt;Text :style=&quot;[styles.text, styles.textColorAdd]&quot;&gt;Increment async&lt;/Text&gt;
+      &lt;/ButtonAdd&gt;
+      &lt;ButtonMinus onPress={onPressMinus}
+                   underlayColor={colors.minus.bg}&gt;
+        &lt;Text :style=&quot;[styles.text, styles.textColorMinus]&quot;&gt;Decrement async&lt;/Text&gt;
+      &lt;/ButtonMinus&gt;
+      &lt;#if {counter &lt; 0}&gt;
+        &lt;ButtonZero onPress={setToZero}
+                    underlayColor={colors.minus.bg}&gt;
+          &lt;Text :style=&quot;[styles.text, styles.textColorMinus]&quot;&gt;Set to zero&lt;/Text&gt;
+        &lt;/ButtonZero&gt;
+      &lt;/#if&gt;
+    &lt;/ControlPanel&gt;
+  &lt;/Container&gt;
+&lt;/template&gt;
+</code></pre>
+<p>&#x5177;&#x4F53;&#x8BF7;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;&#x3002;</p>
+<h2 id="nornj--react-native&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;"><a name="nornj--react-native&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;" class="plugin-anchor" href="#nornj--react-native&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>NornJ + React-Native&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;</h2>
 <ul>
-<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc" target="_blank">todomvc[react + redux + react-router + nornj + webpack4]</a></li>
-<li><a href="https://github.com/joe-sky/nornj/blob/master/examples/react-redux-nornj-todomvc-es5" target="_blank">todomvc(&#x65E0;&#x9700;webpack&#x6253;&#x5305;)[react + redux + react-router + nornj]</a></li>
+<li><a href="https://github.com/joe-sky/nornj-react-native-counter" target="_blank">&#x8BA1;&#x6570;&#x5668;&#x793A;&#x4F8B;[react-native + styled-components + nornj]</a></li>
 </ul>
 
                                 
@@ -657,12 +647,12 @@ nj<span class="hljs-string">`
 
             
                 
-                <a href="redux.html" class="navigation navigation-prev " aria-label="Previous page: Redux">
+                <a href="htmlWebpackPlugin.html" class="navigation navigation-prev " aria-label="Previous page: Html-Webpack-Plugin">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="mobx.html" class="navigation navigation-next " aria-label="Next page: Mobx">
+                <a href="redux.html" class="navigation navigation-next " aria-label="Next page: Redux">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -673,7 +663,7 @@ nj<span class="hljs-string">`
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"React-Router","level":"1.5.5","depth":2,"next":{"title":"Mobx","level":"1.5.6","depth":2,"path":"api/mobx.md","ref":"api/mobx.md","articles":[]},"previous":{"title":"Redux","level":"1.5.4","depth":2,"path":"api/redux.md","ref":"api/redux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/reactRouter.md","mtime":"2018-04-10T11:55:18.992Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-11T09:41:22.755Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"React-Native","level":"1.5.3","depth":2,"next":{"title":"Redux","level":"1.5.4","depth":2,"path":"api/redux.md","ref":"api/redux.md","articles":[]},"previous":{"title":"Html-Webpack-Plugin","level":"1.5.2","depth":2,"path":"api/htmlWebpackPlugin.md","ref":"api/htmlWebpackPlugin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/reactNative.md","mtime":"2018-04-11T09:10:42.464Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-11T09:41:22.755Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
