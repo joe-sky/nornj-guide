@@ -90,7 +90,7 @@ const template = nj`
 `;
 ```
 
-`NornJ`也同时支持像`JSX`那样在js文件中自由地编写，它使用`ES2015+`提供的`tagged template string`语法；并且几乎所有JSX支持的特性，它也都是支持的!
+`NornJ`也同时支持像`JSX`那样在js文件中自由地编写，它使用`ES2015+`提供的`tagged template literals`语法；并且几乎所有JSX支持的特性，它也都是支持的!
 
 ## 在线演示地址
 
