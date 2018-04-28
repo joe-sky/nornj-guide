@@ -44,29 +44,29 @@ export default class HelloWorld extends Component {
 * NornJ
 
 ```js
-import nj from 'nornj';
+import nj, { template as t } from 'nornj';
 import 'nornj-react';
 
 export default class HelloWorld extends Component {
   render() {
-    return nj`
+    return t`
       <div class="hello" style="width:300px;height:200px;">
         <input type="text">
         <select>
           <#each {[1, 2, 3]}>
             <#if {@index > 1}>
-              <option>{this + 1}</option>
-              <#else><option>{this}</option></#else>
+              <option>{@item + 1}</option>
+              <#else><option>{@item}</option></#else>
             </#if>
           </#each>
         </select>
       </div>
-    `();
+    `;
   }
 }
 ```
 
-如上例，`NornJ`可使用`ES6+`的`tagged template string`语法在js文件中描述模板，它的语法在处理逻辑时的结构比`JSX`更加易读，且语法和html更为接近。
+如上例，`NornJ`可使用`ES6+`的`tagged template literals`语法在js文件中描述模板，模板语法也直接支持处理各种逻辑，并且更贴近于html规范。
 
 > 更多关于在js文件中编写`NornJ`模板的语法细节[请参考这里](../templateSyntax/templateString.md)。
 
@@ -77,18 +77,18 @@ export default class HelloWorld extends Component {
 * 使用`if`替代`三目运算符`：
 
 ```js
-import nj from 'nornj';
+import nj, { template as t } from 'nornj';
 import 'nornj-react';
 
 export default class HelloWorld extends Component {
   render() {
     return (
-      <div>{nj`
+      <div>{t`
         <#if ${this.props.isButton}>
           ${<button>click me</button>}
           <#else>${<input type="text" />}</#else>
-        </#if>`()}
-      </div>
+        </#if>
+      `}</div>
     );
   }
 }
@@ -97,7 +97,7 @@ export default class HelloWorld extends Component {
 * 使用`each`替代`map`：
 
 ```js
-import nj from 'nornj';
+import nj, { template as t } from 'nornj';
 import 'nornj-react';
 
 export default class HelloWorld extends Component {
@@ -105,21 +105,21 @@ export default class HelloWorld extends Component {
     return (
       <div className="hello" style={{ width: 300, height: 200 }}>
         <input type="text" />
-        <select>{nj`
+        <select>{t`
           <#each {1 .. 10}>
             <#if {@index > 1}>
-              #${ctx => <option>{ctx.data[0] + 1}</option>}
-              <#else>#${ctx => <option>{ctx.data[0]}</option>}</#else>
+              #${({ item, index }) => <option>{item + 1}</option>}
+              <#else>#${({ item, index }) => <option>{index}</option>}</#else>
             </#if>
-          </#each>`()}
-        </select>
+          </#each>
+        `}</select>
       </div>
     );
   }
 }
 ```
 
-如上所示，`NornJ`与`JSX`的语法并不会发生冲突，可共存一起运行。这样即使无需修改您已有的代码，也可享受`NornJ`模板带来的各种语法糖体验。
+如上所示，`NornJ`与`JSX`的语法并不会发生冲突，可共存一起运行。这样即使无需修改您已有的代码，也可使用`NornJ`模板带来的各种语法糖。
 
 > 如果在嵌套时`JSX`需要获取`NornJ`模板内产生的变量，如上例的`#each`中，这时可以使用`NornJ`提供的访问器属性语法获取，[具体参考这里](../templateSyntax/accessor.md)。
 
@@ -132,9 +132,9 @@ export default class HelloWorld extends Component {
   <div class={styles.hello}>
     <select>
       <#each {[1, 2, 3]}>
-        <#if {this > 1}>
-          <option>{this + 1}</option>
-          <#else><option>{this}</option></#else>
+        <#if {@index > 1}>
+          <option>{@item + 1}</option>
+          <#else><option>{@item}</option></#else>
         </#if>
       </#each>
     </select>

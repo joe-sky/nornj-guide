@@ -175,7 +175,7 @@ class TestComponent extends Component {
 ```js
 import { Component } from 'react';
 import { render } from 'react-dom';
-import nj from 'nornj';
+import nj, { template as t } from 'nornj';
 import { registerTmpl } from 'nornj-react';
 
 @registerTmpl('TestComponent')
@@ -192,7 +192,7 @@ class TestComponent extends Component {
   }
 }
 
-render(nj`<TestComponent no={100} />`(), document.body);
+render(t`<TestComponent no={100} />`, document.body);
 
 /* output:
 <div id="test1" class="test1" style="color:purple;height:200px;">

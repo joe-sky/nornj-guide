@@ -83,4 +83,26 @@ console.log(nj`
   {{ ${1 + 2} * 3 + ${4.5 + 5.5} | int }}  <!--#可以同时使用过滤器等其他模板语法#-->
 </div>`());  //输出：<div>19</div>
 ```
+
+# nj.template
+
+`v0.4.3`新增了一种更简便的使用模板方式`nj.template`，使用方法如下：
+
+```js
+import nj, { template as t } from 'nornj';
+
+const html1 = nj`
+<div>
+  {{'test_' + test2}}
+</div>`({ test2: 'test2' });
+
+const html2 = t`
+<div>
+  {{'test_' + ${'test2'}}}
+</div>`;
+
+//以上两种均输出：<div>test_test2</div>
+```
+
+如上，`nj.template`的优势在于不用在后面写执行模板函数的括号了，这样结构会更简便；但是这样就无法给模板传参数列表了，需要传参数列表时还是要用`nj`。
 {% endraw %}
