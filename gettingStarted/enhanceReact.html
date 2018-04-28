@@ -566,28 +566,28 @@ npm install nornj-loader  <span class="hljs-comment"># webpack&#x73AF;&#x5883;&#
 <ul>
 <li>NornJ</li>
 </ul>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj, { template <span class="hljs-keyword">as</span> t } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;nornj-react&apos;</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
   render() {
-    <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
+    <span class="hljs-keyword">return</span> t<span class="hljs-string">`
       &lt;div class=&quot;hello&quot; style=&quot;width:300px;height:200px;&quot;&gt;
         &lt;input type=&quot;text&quot;&gt;
         &lt;select&gt;
           &lt;#each {[1, 2, 3]}&gt;
             &lt;#if {@index &gt; 1}&gt;
-              &lt;option&gt;{this + 1}&lt;/option&gt;
-              &lt;#else&gt;&lt;option&gt;{this}&lt;/option&gt;&lt;/#else&gt;
+              &lt;option&gt;{@item + 1}&lt;/option&gt;
+              &lt;#else&gt;&lt;option&gt;{@item}&lt;/option&gt;&lt;/#else&gt;
             &lt;/#if&gt;
           &lt;/#each&gt;
         &lt;/select&gt;
       &lt;/div&gt;
-    `</span>();
+    `</span>;
   }
 }
 </code></pre>
-<p>&#x5982;&#x4E0A;&#x4F8B;&#xFF0C;<code>NornJ</code>&#x53EF;&#x4F7F;&#x7528;<code>ES6+</code>&#x7684;<code>tagged template string</code>&#x8BED;&#x6CD5;&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x63CF;&#x8FF0;&#x6A21;&#x677F;&#xFF0C;&#x5B83;&#x7684;&#x8BED;&#x6CD5;&#x5728;&#x5904;&#x7406;&#x903B;&#x8F91;&#x65F6;&#x7684;&#x7ED3;&#x6784;&#x6BD4;<code>JSX</code>&#x66F4;&#x52A0;&#x6613;&#x8BFB;&#xFF0C;&#x4E14;&#x8BED;&#x6CD5;&#x548C;html&#x66F4;&#x4E3A;&#x63A5;&#x8FD1;&#x3002;</p>
+<p>&#x5982;&#x4E0A;&#x4F8B;&#xFF0C;<code>NornJ</code>&#x53EF;&#x4F7F;&#x7528;<code>ES6+</code>&#x7684;<code>tagged template literals</code>&#x8BED;&#x6CD5;&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x63CF;&#x8FF0;&#x6A21;&#x677F;&#xFF0C;&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x4E5F;&#x76F4;&#x63A5;&#x652F;&#x6301;&#x5904;&#x7406;&#x5404;&#x79CD;&#x903B;&#x8F91;&#xFF0C;&#x5E76;&#x4E14;&#x66F4;&#x8D34;&#x8FD1;&#x4E8E;html&#x89C4;&#x8303;&#x3002;</p>
 <blockquote>
 <p>&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;<code>NornJ</code>&#x6A21;&#x677F;&#x7684;&#x8BED;&#x6CD5;&#x7EC6;&#x8282;<a href="../templateSyntax/templateString.html">&#x8BF7;&#x53C2;&#x8003;&#x8FD9;&#x91CC;</a>&#x3002;</p>
 </blockquote>
@@ -596,18 +596,18 @@ npm install nornj-loader  <span class="hljs-comment"># webpack&#x73AF;&#x5883;&#
 <ul>
 <li>&#x4F7F;&#x7528;<code>if</code>&#x66FF;&#x4EE3;<code>&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;</code>&#xFF1A;</li>
 </ul>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj, { template <span class="hljs-keyword">as</span> t } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;nornj-react&apos;</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
   render() {
     <span class="hljs-keyword">return</span> (
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{nj`
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{t`
         <span class="hljs-tag">&lt;<span class="hljs-name">#if</span> ${<span class="hljs-attr">this.props.isButton</span>}&gt;</span>
           ${<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>click me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>}
           <span class="hljs-tag">&lt;<span class="hljs-name">#else</span>&gt;</span>${<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span>}<span class="hljs-tag">&lt;/<span class="hljs-name">#else</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">#if</span>&gt;</span>`()}
-      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">#if</span>&gt;</span>
+      `}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     );
   }
 }
@@ -615,7 +615,7 @@ npm install nornj-loader  <span class="hljs-comment"># webpack&#x73AF;&#x5883;&#
 <ul>
 <li>&#x4F7F;&#x7528;<code>each</code>&#x66FF;&#x4EE3;<code>map</code>&#xFF1A;</li>
 </ul>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj, { template <span class="hljs-keyword">as</span> t } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;nornj-react&apos;</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
@@ -623,20 +623,20 @@ npm install nornj-loader  <span class="hljs-comment"># webpack&#x73AF;&#x5883;&#
     <span class="hljs-keyword">return</span> (
       <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;hello&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">width:</span> <span class="hljs-attr">300</span>, <span class="hljs-attr">height:</span> <span class="hljs-attr">200</span> }}&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>{nj`
+        <span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>{t`
           <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {<span class="hljs-attr">1</span> <span class="hljs-attr">..</span> <span class="hljs-attr">10</span>}&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">#if</span> {@<span class="hljs-attr">index</span> &gt;</span> 1}&gt;
-              #${ctx =&gt; <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>{ctx.data[0] + 1}<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>}
-              <span class="hljs-tag">&lt;<span class="hljs-name">#else</span>&gt;</span>#${ctx =&gt; <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>{ctx.data[0]}<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>}<span class="hljs-tag">&lt;/<span class="hljs-name">#else</span>&gt;</span>
+              #${({ item, index }) =&gt; <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>{item + 1}<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>}
+              <span class="hljs-tag">&lt;<span class="hljs-name">#else</span>&gt;</span>#${({ item, index }) =&gt; <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>{index}<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>}<span class="hljs-tag">&lt;/<span class="hljs-name">#else</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">#if</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-name">#each</span>&gt;</span>`()}
-        <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">#each</span>&gt;</span>
+        `}<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     );
   }
 }
 </span></code></pre>
-<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;<code>NornJ</code>&#x4E0E;<code>JSX</code>&#x7684;&#x8BED;&#x6CD5;&#x5E76;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x51B2;&#x7A81;&#xFF0C;&#x53EF;&#x5171;&#x5B58;&#x4E00;&#x8D77;&#x8FD0;&#x884C;&#x3002;&#x8FD9;&#x6837;&#x5373;&#x4F7F;&#x65E0;&#x9700;&#x4FEE;&#x6539;&#x60A8;&#x5DF2;&#x6709;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4E5F;&#x53EF;&#x4EAB;&#x53D7;<code>NornJ</code>&#x6A21;&#x677F;&#x5E26;&#x6765;&#x7684;&#x5404;&#x79CD;&#x8BED;&#x6CD5;&#x7CD6;&#x4F53;&#x9A8C;&#x3002;</p>
+<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;<code>NornJ</code>&#x4E0E;<code>JSX</code>&#x7684;&#x8BED;&#x6CD5;&#x5E76;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x51B2;&#x7A81;&#xFF0C;&#x53EF;&#x5171;&#x5B58;&#x4E00;&#x8D77;&#x8FD0;&#x884C;&#x3002;&#x8FD9;&#x6837;&#x5373;&#x4F7F;&#x65E0;&#x9700;&#x4FEE;&#x6539;&#x60A8;&#x5DF2;&#x6709;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4E5F;&#x53EF;&#x4F7F;&#x7528;<code>NornJ</code>&#x6A21;&#x677F;&#x5E26;&#x6765;&#x7684;&#x5404;&#x79CD;&#x8BED;&#x6CD5;&#x7CD6;&#x3002;</p>
 <blockquote>
 <p>&#x5982;&#x679C;&#x5728;&#x5D4C;&#x5957;&#x65F6;<code>JSX</code>&#x9700;&#x8981;&#x83B7;&#x53D6;<code>NornJ</code>&#x6A21;&#x677F;&#x5185;&#x4EA7;&#x751F;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5982;&#x4E0A;&#x4F8B;&#x7684;<code>#each</code>&#x4E2D;&#xFF0C;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>NornJ</code>&#x63D0;&#x4F9B;&#x7684;&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;&#x8BED;&#x6CD5;&#x83B7;&#x53D6;&#xFF0C;<a href="../templateSyntax/accessor.html">&#x5177;&#x4F53;&#x53C2;&#x8003;&#x8FD9;&#x91CC;</a>&#x3002;</p>
 </blockquote>
@@ -646,9 +646,9 @@ npm install nornj-loader  <span class="hljs-comment"># webpack&#x73AF;&#x5883;&#
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">{styles.hello}</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {[<span class="hljs-attr">1</span>, <span class="hljs-attr">2</span>, <span class="hljs-attr">3</span>]}&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">#if</span> {<span class="hljs-attr">this</span> &gt;</span> 1}&gt;
-          <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>{this + 1}<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">#else</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>{this}<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">#else</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">#if</span> {@<span class="hljs-attr">index</span> &gt;</span> 1}&gt;
+          <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>{@item + 1}<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">#else</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>{@item}<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">#else</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">#if</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">#each</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
@@ -711,7 +711,7 @@ npm install nornj-loader  <span class="hljs-comment"># webpack&#x73AF;&#x5883;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"增强React开发体验","level":"1.2.2","depth":2,"next":{"title":"模板语法","level":"1.3","depth":1,"path":"templateSyntax/index.md","ref":"templateSyntax/index.md","articles":[{"title":"插值变量","level":"1.3.1","depth":2,"path":"templateSyntax/variable.md","ref":"templateSyntax/variable.md","articles":[]},{"title":"访问器属性","level":"1.3.2","depth":2,"path":"templateSyntax/accessor.md","ref":"templateSyntax/accessor.md","articles":[]},{"title":"过滤器与表达式","level":"1.3.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},{"title":"内置过滤器","level":"1.3.4","depth":2,"path":"templateSyntax/built-inFilter.md","ref":"templateSyntax/built-inFilter.md","articles":[]},{"title":"扩展标签","level":"1.3.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},{"title":"内置扩展标签","level":"1.3.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},{"title":"行内扩展标签","level":"1.3.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},{"title":"模板注释","level":"1.3.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},{"title":"标签模板字符串(es6)语法","level":"1.3.9","depth":2,"path":"templateSyntax/templateString.md","ref":"templateSyntax/templateString.md","articles":[]},{"title":"React开发中与JSX的不同点","level":"1.3.10","depth":2,"path":"templateSyntax/react.md","ref":"templateSyntax/react.md","articles":[]}]},"previous":{"title":"像传统模板引擎那样工作","level":"1.2.1","depth":2,"path":"gettingStarted/normalTemplateEngine.md","ref":"gettingStarted/normalTemplateEngine.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gettingStarted/enhanceReact.md","mtime":"2018-04-10T11:21:55.560Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-25T10:47:03.423Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"增强React开发体验","level":"1.2.2","depth":2,"next":{"title":"模板语法","level":"1.3","depth":1,"path":"templateSyntax/index.md","ref":"templateSyntax/index.md","articles":[{"title":"插值变量","level":"1.3.1","depth":2,"path":"templateSyntax/variable.md","ref":"templateSyntax/variable.md","articles":[]},{"title":"访问器属性","level":"1.3.2","depth":2,"path":"templateSyntax/accessor.md","ref":"templateSyntax/accessor.md","articles":[]},{"title":"过滤器与表达式","level":"1.3.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},{"title":"内置过滤器","level":"1.3.4","depth":2,"path":"templateSyntax/built-inFilter.md","ref":"templateSyntax/built-inFilter.md","articles":[]},{"title":"扩展标签","level":"1.3.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},{"title":"内置扩展标签","level":"1.3.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},{"title":"行内扩展标签","level":"1.3.7","depth":2,"path":"templateSyntax/inlineExtensionTag.md","ref":"templateSyntax/inlineExtensionTag.md","articles":[]},{"title":"模板注释","level":"1.3.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},{"title":"标签模板字符串(es6)语法","level":"1.3.9","depth":2,"path":"templateSyntax/templateString.md","ref":"templateSyntax/templateString.md","articles":[]},{"title":"React开发中与JSX的不同点","level":"1.3.10","depth":2,"path":"templateSyntax/react.md","ref":"templateSyntax/react.md","articles":[]}]},"previous":{"title":"像传统模板引擎那样工作","level":"1.2.1","depth":2,"path":"gettingStarted/normalTemplateEngine.md","ref":"gettingStarted/normalTemplateEngine.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gettingStarted/enhanceReact.md","mtime":"2018-04-28T11:44:32.855Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-28T12:17:02.346Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
