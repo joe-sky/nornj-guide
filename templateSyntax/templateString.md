@@ -93,7 +93,7 @@ import nj, { template as t } from 'nornj';
 
 const html1 = nj`
 <div>
-  {{'test_' + ${test2}}}
+  {{'test_' + test2}}
 </div>`({ test2: 'test2' });
 
 const html2 = t`
