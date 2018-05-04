@@ -84,7 +84,7 @@ class TestComponent extends Component {
 
   render() {
     return nj`
-      <input value={inputValue} />
+      <input value={inputValue} {onChange} />
     `(this);
   }
 }
