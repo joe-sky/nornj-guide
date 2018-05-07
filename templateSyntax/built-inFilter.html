@@ -642,21 +642,33 @@
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">//</td>
+<td style="text-align:left">%%</td>
 <td style="text-align:left">&#x9664;&#x6CD5;&#x8FD0;&#x7B97;&#x540E;&#x518D;&#x53D6;&#x6574;&#x6570;</td>
+<td style="text-align:left"><code>{{ value %%(2) }}</code>&#x6216;<code>{{ value %% 2 }}</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">//</td>
+<td style="text-align:left">&#x540C;&#x4E0A;&#x9762;&#x7684;<code>%%</code>(<b style="color:red">&#x672A;&#x6765;&#x5C06;&#x5E9F;&#x5F03;&#xFF0C;&#x4E0D;&#x518D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;</b>)</td>
 <td style="text-align:left"><code>{{ value //(2) }}</code>&#x6216;<code>{{ value // 2 }}</code></td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">?</td>
-<td style="text-align:left">&#x7B49;&#x540C;&#x4E8E;js&#x4E2D;&#x7684;&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&quot;?:&quot;</td>
-<td style="text-align:left"><code>{{ value ?(foo, bar) }}</code>&#x6216;<code>{{ value ? foo }}</code></td>
+<td style="text-align:left">?:</td>
+<td style="text-align:left">&#x7B49;&#x540C;&#x4E8E;js&#x4E2D;&#x7684;&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;</td>
+<td style="text-align:left"><code>{{ value ?:(foo, bar) }}</code>&#x6216;<code>{{ value ?: foo }}</code></td>
 <td style="text-align:left">&#x53EA;&#x4F20;foo&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x5982;value&#x503C;&#x4E3A;false&#x5219;&#x8FD4;&#x56DE;undefined</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">&#x540C;&#x4E0A;&#x9762;&#x7684;<code>?:</code>(<b style="color:red">&#x672A;&#x6765;&#x5C06;&#x5E9F;&#x5F03;&#xFF0C;&#x4E0D;&#x518D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;</b>)</td>
+<td style="text-align:left"><code>{{ value ? (foo, bar) }}</code></td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">!</td>
 <td style="text-align:left">&#x7B49;&#x540C;&#x4E8E;js&#x4E2D;&#x7684;&quot;!&quot;&#x8FD0;&#x7B97;&#x7B26;</td>
-<td style="text-align:left"><code>{{ value | ! }}</code>&#x6216;<code>{{ !(value) }}</code></td>
+<td style="text-align:left"><code>{{ value | ! }}</code>&#x6216;<code>{{ !(value) }}</code><br><i>v0.4.4</i>&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x53EF;&#x7701;&#x7565;&#x62EC;&#x53F7;&#xFF1A;<code>{{ !a.b.c }}</code></td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
@@ -782,7 +794,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"内置过滤器","level":"1.3.4","depth":2,"next":{"title":"扩展标签","level":"1.3.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},"previous":{"title":"过滤器与表达式","level":"1.3.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/built-inFilter.md","mtime":"2018-04-08T11:31:58.975Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-04T03:00:10.589Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"内置过滤器","level":"1.3.4","depth":2,"next":{"title":"扩展标签","level":"1.3.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},"previous":{"title":"过滤器与表达式","level":"1.3.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/built-inFilter.md","mtime":"2018-05-07T04:33:46.640Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-07T11:57:13.156Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
