@@ -20,9 +20,11 @@
 | /              | 等同于js中的"/"运算符      | ```{{ value /(foo) }}```或```{{ value / foo }}```                      |                           |
 | %              | 等同于js中的"%"运算符      | ```{{ value %(foo) }}```或```{{ value % foo }}```                      |                           |
 | **             | 乘方运算      | ```{{ value **(2) }}```或```{{ value ** 2 }}```                      |                           |
-| //             | 除法运算后再取整数      | ```{{ value //(2) }}```或```{{ value // 2 }}```                      |                          |
-| ?              | 等同于js中的三目运算符"?:"  | ```{{ value ?(foo, bar) }}```或```{{ value ? foo }}```                | 只传foo一个参数时，如value值为false则返回undefined                           |
-| !              | 等同于js中的"!"运算符      | <code>{{ value &#124; ! }}</code>或```{{ !(value) }}```  |                           |
+| %%             | 除法运算后再取整数      | ```{{ value %%(2) }}```或```{{ value %% 2 }}```                      |                          |
+| //             | 同上面的`%%`(<b style="color:red">未来将废弃，不再建议使用</b>)      | ```{{ value //(2) }}```或```{{ value // 2 }}```                      |                          |
+| ?:              | 等同于js中的三目运算符  | ```{{ value ?:(foo, bar) }}```或```{{ value ?: foo }}```                | 只传foo一个参数时，如value值为false则返回undefined                           |
+| ?              | 同上面的`?:`(<b style="color:red">未来将废弃，不再建议使用</b>)  | ```{{ value ? (foo, bar) }}```                |                            |
+| !              | 等同于js中的"!"运算符      | <code>{{ value &#124; ! }}</code>或```{{ !(value) }}```<br><i>v0.4.4</i>以上版本可省略括号：```{{ !a.b.c }}```  |                           |
 | &&             | 等同于js中的"&&"运算符     | ```{{ value &&(foo) }}```或```{{ value && foo }}```                     |                           |
 | &#124;&#124;   | 等同于js中的"&#124;&#124;"运算符    | <code> value &#124;&#124;(foo) }}</code>或<code>{{ value &#124;&#124; foo }}</code>                  |                           |
 | int            | 转换为int值                | <code>{{ value &#124; int }}</code>                     |                           |  
