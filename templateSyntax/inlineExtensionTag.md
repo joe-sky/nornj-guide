@@ -63,8 +63,7 @@ class TestComponent extends Component {
 
   render() {
     return nj`
-      <input #mobx-model={inputValue} />
-      <!-- <input :#mobx-model="inputValue" /> 还可以这样写，效果完全一样 -->
+      <input :#mobx-model="inputValue">
     `(this);
   }
 }
