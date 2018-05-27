@@ -126,4 +126,21 @@ const html3 = m`'test_' + ${'test2'}`;
 ```
 
 如上，`nj.mustache`的优势在于不用写插值表达式的分隔符号(即`{{`和`}}`)，其他特性和`nj.template`相同。
+
+# nj.css
+
+`v0.4.7`新增了`nj.css`，主要用于在JSX中插入NornJ的style语法，使用方法如下：
+
+```js
+import nj, {
+  css as s
+} from 'nornj';
+
+//以下两种语法是等价的：
+const paddingValue = 20;
+const jsx = <div style={{ color: 'blue', marginLeft: 10, padding: paddingValue }}></div>;
+const jsxUseNjStyle = <div style={s`color:blue;margin-left:10;padding:${paddingValue};`}></div>;
+```
+
+如上，`nj.css`的优势在于编写style的方式可以像html一样。
 {% endraw %}
