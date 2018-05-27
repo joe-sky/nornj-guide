@@ -10,6 +10,7 @@
 * [unless](#unless)
 * [each](#each)
 * [for](#for)
+* [with](#with)
 * [props与prop](#props与prop)
 * [strProp](#strProp)
 * [obj](#obj)
@@ -225,6 +226,51 @@ console.log(html);
 <div>test</div>
 <div>test</div>  不加loopLast参数时此行不会渲染
 */
+```
+
+### with
+
+`with`标签和js的with语句作用类似，可用于缩短链式取值的长度：
+
+```js
+const html = nj`
+<#with {{props[0].prop1}}>
+  <span>{{a}}</span>
+  <span>{{b}}</span>
+</#with>
+`({
+  props: [
+    {
+      prop1: {
+        a: 1,
+        b: 2
+      }
+    }
+  ]
+});
+
+console.log(html);  //输出：<span>1</span><span>2</span>
+```
+
+还可以使用`with`标签在其子节点中创建新的变量：
+
+```js
+const html = nj`
+<#with propA={{props[0]}} propB={{props[1]}}>
+  <span>{{propA}}</span>
+  <span>{{propB}}</span>
+</#with>
+`({
+  props: [
+    {
+      value: 1
+    }, {
+      value: 2
+    }
+  ]
+});
+
+console.log(html);  //输出：<span>1</span><span>2</span>
 ```
 
 ### props与prop
