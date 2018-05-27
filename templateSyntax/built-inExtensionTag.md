@@ -234,14 +234,14 @@ console.log(html);
 
 ```js
 const html = nj`
-<#with {{props[0].prop1}}>
+<#with {{props[0].prop}}>
   <span>{{a}}</span>
   <span>{{b}}</span>
 </#with>
 `({
   props: [
     {
-      prop1: {
+      prop: {
         a: 1,
         b: 2
       }
@@ -257,8 +257,8 @@ console.log(html);  //输出：<span>1</span><span>2</span>
 ```js
 const html = nj`
 <#with propA={{props[0]}} propB={{props[1]}}>
-  <span>{{propA}}</span>
-  <span>{{propB}}</span>
+  <span>{{propA.value}}</span>
+  <span>{{propB.value}}</span>
 </#with>
 `({
   props: [
