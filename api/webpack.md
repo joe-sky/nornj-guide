@@ -122,11 +122,34 @@ class TestComponent extends Component {
 
 ## 在单文件模板中引入图片等资源
 
-与`webpack`的默认方式相同，在模板中使用`require`方法引入相对路径资源即可：
+【<b style="color:#b96121">v0.4.8新增</b>】与`webpack`的默认方式相同，在模板中使用`require`方法引入相对路径资源即可：
 
 ```html
 <template name="importImg">
   <img src="{require('../../images/test.png')}">
 </template>
+```
+
+另外，在`v0.4.7`及以前的版本中需要这样做：
+
+testImg.nj.html：
+
+```html
+<template name="importImg">
+  <img src={imgSrc}>
+</template>
+```
+
+testImg.js：
+
+```js
+import tmpls from './testImg.nj.html';
+
+@registerTmpl('TestImg')
+class TestImg extends Component {
+  render() {
+    return tmpls.importImg({ imgSrc: require('../../images/test.png') });  //在js文件中使用require方法引入相对路径图片，再传到模板中
+  }
+}
 ```
 {% endraw %}
