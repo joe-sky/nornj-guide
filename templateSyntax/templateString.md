@@ -86,7 +86,7 @@ console.log(nj`
 
 # nj.template
 
-`v0.4.3`新增了一种更简便的使用模板方式`nj.template`，使用方法如下：
+`nj.template`是一种更简便的使用模板方式，使用方法如下：
 
 ```js
 import nj, { template as t } from 'nornj';
@@ -106,30 +106,30 @@ const html2 = t`
 
 如上，`nj.template`的优势在于不用在后面写执行模板函数的括号了，这样结构会更简便；但是这样就无法给模板传参数列表了，需要传参数列表时还是要用`nj`。
 
-# nj.mustache
+# nj.expression
 
-`v0.4.5`新增了一种更简便的使用模板中插值表达式的方式`nj.mustache`，使用方法如下：
+`nj.expression`是一种更简便的使用模板中插值表达式的方式，使用方法如下：
 
 ```js
 import nj, {
   template as t,
-  mustache as m
+  expression as n
 } from 'nornj';
 
 const html1 = nj`{{'test_' + test2}}`({ test2: 'test2' });
 
 const html2 = t`{{'test_' + ${'test2'}}}`;
 
-const html3 = m`'test_' + ${'test2'}`;
+const html3 = n`'test_' + ${'test2'}`;
 
 //以上三种均输出：test_test2
 ```
 
-如上，`nj.mustache`的优势在于不用写插值表达式的分隔符号(即`{{`和`}}`)，其他特性和`nj.template`相同。
+如上，`nj.expression`的优势在于不用写插值表达式的分隔符号(即`{{`和`}}`)，其他特性和`nj.template`相同。
 
 # nj.css
 
-`v0.4.7`新增了`nj.css`，主要用于在JSX中插入NornJ的style语法，使用方法如下：
+用于在JSX中插入NornJ的style语法，使用方法如下：
 
 ```js
 import nj, {
