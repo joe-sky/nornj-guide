@@ -1,7 +1,7 @@
 {% raw %}
 # 扩展属性
 
-`扩展属性`即为在html元素开标签内编写的自定义属性，语法为`<element #exTag="value">`，用它可以封装一些实用功能，目的是写更少的代码去做更多的事情。`扩展属性`实际上是扩展标签的语法糖写法：
+`扩展属性`即为在html元素开标签内编写的自定义属性，类似于`Vue`及`Angular`中的`指令`。语法为`<element #exTag="value">`，用它可以封装一些实用功能，目的是写更少的代码去做更多的事情。`扩展属性`实际上是扩展标签的语法糖写法：
 
 ```html
 <div #show="{false}"></div>
@@ -24,8 +24,8 @@
 ### 目录
 
 * [show](#show)
-* [mobx-model](#mobx-model)
-* [mst-model](#mst-model)
+* [mobx-bind](#mobx-bind)
+* [mst-bind](#mst-bind)
 
 ### show
 
@@ -41,9 +41,9 @@ const html = nj`
 console.log(html);  //<div style="display:none">test inline extension tag</div>
 ```
 
-### mobx-model
+### mobx-bind
 
-类似于`Vue`的`v-model`指令，可以使用`#mobx-model`配合`Mobx`在`<input>`及`<textarea>`等表单元素上创建`双向数据绑定`，它会根据控件类型自动选取正确的方法来更新元素。
+类似于`Vue`的`v-model`指令，可以使用`#mobx-bind`配合`Mobx`在`<input>`及`<textarea>`等表单元素上创建`双向数据绑定`，它会根据控件类型自动选取正确的方法来更新元素。
 
 * 在线示例(jsfiddle)
 
@@ -63,15 +63,15 @@ class TestComponent extends Component {
 
   render() {
     return nj`
-      <input :#mobx-model="inputValue">
+      <input :#mobx-bind="inputValue">
     `(this);
   }
 }
 ```
 
-如上所示，无需编写`<input>`标签的`onChange`事件，`inputValue`变量已自动和`<input>`标签建立了`双向数据绑定`的关系。[点这里](https://github.com/joe-sky/nornj-cli/blob/master/docs/guides/antDesign.md#%E8%A1%A8%E5%8D%95%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)是一个`#mobx-model`结合表单组件的示例页面。
+如上所示，无需编写`<input>`标签的`onChange`事件，`inputValue`变量已自动和`<input>`标签建立了`双向数据绑定`的关系。[点这里](https://github.com/joe-sky/nornj-cli/blob/master/docs/guides/antDesign.md#%E8%A1%A8%E5%8D%95%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)是一个`#mobx-bind`结合表单组件的示例页面。
 
-* 实质上，`#mobx-model`的实现原理和`v-model`很类似，上述示例其实就是下面的语法糖形式：
+* 实质上，`#mobx-bind`的实现原理和`v-model`很类似，上述示例其实就是下面的语法糖形式：
 
 ```js
 class TestComponent extends Component {
@@ -83,13 +83,13 @@ class TestComponent extends Component {
 
   render() {
     return nj`
-      <input value={inputValue} {onChange} />
+      <input value={inputValue} {onChange}>
     `(this);
   }
 }
 ```
 
-* `#mobx-model`和`#mst-model`存放在`nornj-react`包中，需要按如下方式引入后方可使用：
+* `#mobx-bind`和`#mst-bind`存放在`nornj-react`包中，需要按如下方式引入后方可使用：
 
 ```js
 import 'nornj-react/mobx';
@@ -116,42 +116,32 @@ module: {
 }
 ```
 
-* `beforeChange`和`afterChange`事件
+* `onChange`事件
 
-由于`#mobx-model`默认自动设置了组件的`onChange`事件，但有些情况下我们可能还是需要在`onChange`中做一些其他的操作。`#mobx-model`提供了`beforeChange`和`afterChange`事件解决上述问题：
+由于`#mobx-bind`默认自动设置了组件的`onChange`事件，但有些情况下我们可能还是需要在`onChange`中做一些其他的操作：
 
 ```js
 class TestComponent extends Component {
   @observable inputValue = '1';
-  @autobind
-  beforeChange(prevValue, params) {
-    console.log(prevValue);               //输出：1
-    console.log(params[0].target.value);  //输出：12
-
-    //此处如果return false，则可以阻止onChange和afterChange事件的执行
-    //return false;
-  }
 
   @autobind
-  afterChange(nextValue, params) {
-    console.log(nextValue);               //输出：12
-    console.log(params[0].target.value);  //输出：12
+  onChange(e) {
+    console.log(e.target.value);
   }
 
   render() {
     return nj`
-      <!-- 使用"options: { ...settings }"语法来设置参数 -->
-      <input :#mobx-model="inputValue options: { beforeChange: beforeChange, afterChange: afterChange }" />
+      <input :#mobx-bind="inputValue" {onChange}>
     `(this);
   }
 }
 ```
 
-如上所示，`beforeChange`和`afterChange`事件均有两个参数，分别为`当前@observable变量的值`和`onChange事件原生的参数列表`。如用户在`<input>`(初始值为`1`)中继续录入了一个字符`2`，则会按照上例中所示打印相应信息。
+如上所示，`onChange`事件的行为和标签原生的`onChange`完全相同，它会在文本框的值变化后执行。
 
-* 使用`action`更新`@observable`变量
+* 使用`action`更新变量
 
-在`mobx`开发中如果启动严格模式或者使用`mobx-state-tree`时，则须要使用`action`来更新`@observable`变量。可按下面方式配置使用`action`：
+在`mobx`开发中如果启动严格模式或者使用`mobx-state-tree`时，则须要使用`action`来更新变量。可按下面方式配置使用`action`：
 
 ```js
 import { observable, action, configure } from 'mobx';
@@ -161,6 +151,7 @@ configure({enforceActions: true});
 
 class TestComponent extends Component {
   @observable inputValue = '1';
+  
   @action.bound
   setInputValue(v) {
     this.inputValue = v;
@@ -168,33 +159,17 @@ class TestComponent extends Component {
 
   render() {
     return nj`
-      <input :#mobx-model="inputValue options: { action: true }" />
+      <input :#mobx-bind.action="inputValue">
     `(this);
   }
 }
 ```
 
-`action`参数设置为`true`时，`#mobx-model`会默认执行camel命名法的`set + @observable变量名`的`action`，上例中为`setInputValue`。也可以手工指定`action`名称：
+当有`action`修饰符时，`#mobx-bind`会默认执行camel命名法(`set + 变量名`)定义的`action`，上例中为`setInputValue`。
 
-```js
-class TestComponent extends Component {
-  @observable inputValue = '1';
-  @action.bound
-  setValueToInputValue(v) {
-    this.inputValue = v;
-  }
+### mst-bind
 
-  render() {
-    return nj`
-      <input :#mobx-model="inputValue options: { action: 'setValueToInputValue' }" />
-    `(this);
-  }
-}
-```
-
-### mst-model
-
-`#mst-model`即为`#mobx-model`的默认使用`action`的版本，用来配合`mobx-state-tree`的变量使用，具体请参考上一节。示例如下：
+`#mst-bind`即为`#mobx-bind`的默认使用`action`来更新值的版本，用来配合`mobx-state-tree`的变量使用：
 
 store：
 
@@ -220,7 +195,7 @@ component：
 class TestComponent extends Component {
   render() {
     return nj`
-      <input :#mobx-model="testStore.inputValue" />
+      <input :#mst-bind="testStore.inputValue">
     `({
       testStore: this.props.rootStore.testStore
     });
@@ -228,9 +203,9 @@ class TestComponent extends Component {
 }
 ```
 
-### 目前mobx-model和mst-model支持的控件列表
+如上，`#mst-bind`会默认执行camel命名法(`set + 变量名`)定义的`action`来更新值，上例中为`setInputValue`。除此外`#mst-bind`的其他特性与上述的`#mobx-bind`完全相同。
 
-<!-- `#mobx-model`目前暂时是只能按照控件名称来自动选择相应的方式更新数据，日后会增加更多的方式(如根据type属性或对组件进行特殊参数配置)，敬请期待。 -->
+### 目前mobx-bind和mst-bind默认支持的控件列表
 
 | 控件名称        | 控件类型                  | 备注                     |
 |:---------------|:-------------------------|:-------------------------|
