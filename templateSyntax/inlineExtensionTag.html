@@ -529,7 +529,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x6269;&#x5C55;&#x5C5E;&#x6027;"><a name="&#x6269;&#x5C55;&#x5C5E;&#x6027;" class="plugin-anchor" href="#&#x6269;&#x5C55;&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6269;&#x5C55;&#x5C5E;&#x6027;</h1>
-<p><code>&#x6269;&#x5C55;&#x5C5E;&#x6027;</code>&#x5373;&#x4E3A;&#x5728;html&#x5143;&#x7D20;&#x5F00;&#x6807;&#x7B7E;&#x5185;&#x7F16;&#x5199;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#xFF0C;&#x8BED;&#x6CD5;&#x4E3A;<code>&lt;element #exTag=&quot;value&quot;&gt;</code>&#xFF0C;&#x7528;&#x5B83;&#x53EF;&#x4EE5;&#x5C01;&#x88C5;&#x4E00;&#x4E9B;&#x5B9E;&#x7528;&#x529F;&#x80FD;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x5199;&#x66F4;&#x5C11;&#x7684;&#x4EE3;&#x7801;&#x53BB;&#x505A;&#x66F4;&#x591A;&#x7684;&#x4E8B;&#x60C5;&#x3002;<code>&#x6269;&#x5C55;&#x5C5E;&#x6027;</code>&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x6269;&#x5C55;&#x6807;&#x7B7E;&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x5199;&#x6CD5;&#xFF1A;</p>
+<p><code>&#x6269;&#x5C55;&#x5C5E;&#x6027;</code>&#x5373;&#x4E3A;&#x5728;html&#x5143;&#x7D20;&#x5F00;&#x6807;&#x7B7E;&#x5185;&#x7F16;&#x5199;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;<code>Vue</code>&#x53CA;<code>Angular</code>&#x4E2D;&#x7684;<code>&#x6307;&#x4EE4;</code>&#x3002;&#x8BED;&#x6CD5;&#x4E3A;<code>&lt;element #exTag=&quot;value&quot;&gt;</code>&#xFF0C;&#x7528;&#x5B83;&#x53EF;&#x4EE5;&#x5C01;&#x88C5;&#x4E00;&#x4E9B;&#x5B9E;&#x7528;&#x529F;&#x80FD;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x5199;&#x66F4;&#x5C11;&#x7684;&#x4EE3;&#x7801;&#x53BB;&#x505A;&#x66F4;&#x591A;&#x7684;&#x4E8B;&#x60C5;&#x3002;<code>&#x6269;&#x5C55;&#x5C5E;&#x6027;</code>&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x6269;&#x5C55;&#x6807;&#x7B7E;&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x5199;&#x6CD5;&#xFF1A;</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> #<span class="hljs-attr">show</span>=<span class="hljs-string">&quot;{false}&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <p>&#x5B8C;&#x5168;&#x7B49;&#x4EF7;&#x4E8E;&#xFF1A;</p>
@@ -545,8 +545,8 @@
 <h3 id="&#x76EE;&#x5F55;"><a name="&#x76EE;&#x5F55;" class="plugin-anchor" href="#&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76EE;&#x5F55;</h3>
 <ul>
 <li><a href="#show">show</a></li>
-<li><a href="#mobx-model">mobx-model</a></li>
-<li><a href="#mst-model">mst-model</a></li>
+<li><a href="#mobx-bind">mobx-bind</a></li>
+<li><a href="#mst-bind">mst-bind</a></li>
 </ul>
 <h3 id="show"><a name="show" class="plugin-anchor" href="#show"><i class="fa fa-link" aria-hidden="true"></i></a>show</h3>
 <p>&#x7C7B;&#x4F3C;&#x4E8E;<code>Vue</code>&#x7684;<code>v-show</code>&#x6307;&#x4EE4;&#xFF0C;<code>#show</code>&#x7528;&#x4E8E;&#x5207;&#x6362;&#x5143;&#x7D20;&#x662F;&#x5426;&#x663E;&#x793A;&#xFF0C;&#x539F;&#x7406;&#x4E3A;&#x4FEE;&#x6539;style&#xFF1A;</p>
@@ -558,8 +558,8 @@
 
 <span class="hljs-built_in">console</span>.log(html);  <span class="hljs-comment">//&lt;div style=&quot;display:none&quot;&gt;test inline extension tag&lt;/div&gt;</span>
 </code></pre>
-<h3 id="mobx-model"><a name="mobx-model" class="plugin-anchor" href="#mobx-model"><i class="fa fa-link" aria-hidden="true"></i></a>mobx-model</h3>
-<p>&#x7C7B;&#x4F3C;&#x4E8E;<code>Vue</code>&#x7684;<code>v-model</code>&#x6307;&#x4EE4;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>#mobx-model</code>&#x914D;&#x5408;<code>Mobx</code>&#x5728;<code>&lt;input&gt;</code>&#x53CA;<code>&lt;textarea&gt;</code>&#x7B49;&#x8868;&#x5355;&#x5143;&#x7D20;&#x4E0A;&#x521B;&#x5EFA;<code>&#x53CC;&#x5411;&#x6570;&#x636E;&#x7ED1;&#x5B9A;</code>&#xFF0C;&#x5B83;&#x4F1A;&#x6839;&#x636E;&#x63A7;&#x4EF6;&#x7C7B;&#x578B;&#x81EA;&#x52A8;&#x9009;&#x53D6;&#x6B63;&#x786E;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x66F4;&#x65B0;&#x5143;&#x7D20;&#x3002;</p>
+<h3 id="mobx-bind"><a name="mobx-bind" class="plugin-anchor" href="#mobx-bind"><i class="fa fa-link" aria-hidden="true"></i></a>mobx-bind</h3>
+<p>&#x7C7B;&#x4F3C;&#x4E8E;<code>Vue</code>&#x7684;<code>v-model</code>&#x6307;&#x4EE4;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>#mobx-bind</code>&#x914D;&#x5408;<code>Mobx</code>&#x5728;<code>&lt;input&gt;</code>&#x53CA;<code>&lt;textarea&gt;</code>&#x7B49;&#x8868;&#x5355;&#x5143;&#x7D20;&#x4E0A;&#x521B;&#x5EFA;<code>&#x53CC;&#x5411;&#x6570;&#x636E;&#x7ED1;&#x5B9A;</code>&#xFF0C;&#x5B83;&#x4F1A;&#x6839;&#x636E;&#x63A7;&#x4EF6;&#x7C7B;&#x578B;&#x81EA;&#x52A8;&#x9009;&#x53D6;&#x6B63;&#x786E;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x66F4;&#x65B0;&#x5143;&#x7D20;&#x3002;</p>
 <ul>
 <li>&#x5728;&#x7EBF;&#x793A;&#x4F8B;(jsfiddle)</li>
 </ul>
@@ -579,14 +579,14 @@
 
   render() {
     <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
-      &lt;input :#mobx-model=&quot;inputValue&quot;&gt;
+      &lt;input :#mobx-bind=&quot;inputValue&quot;&gt;
     `</span>(<span class="hljs-keyword">this</span>);
   }
 }
 </code></pre>
-<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;&#x65E0;&#x9700;&#x7F16;&#x5199;<code>&lt;input&gt;</code>&#x6807;&#x7B7E;&#x7684;<code>onChange</code>&#x4E8B;&#x4EF6;&#xFF0C;<code>inputValue</code>&#x53D8;&#x91CF;&#x5DF2;&#x81EA;&#x52A8;&#x548C;<code>&lt;input&gt;</code>&#x6807;&#x7B7E;&#x5EFA;&#x7ACB;&#x4E86;<code>&#x53CC;&#x5411;&#x6570;&#x636E;&#x7ED1;&#x5B9A;</code>&#x7684;&#x5173;&#x7CFB;&#x3002;<a href="https://github.com/joe-sky/nornj-cli/blob/master/docs/guides/antDesign.md#%E8%A1%A8%E5%8D%95%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" target="_blank">&#x70B9;&#x8FD9;&#x91CC;</a>&#x662F;&#x4E00;&#x4E2A;<code>#mobx-model</code>&#x7ED3;&#x5408;&#x8868;&#x5355;&#x7EC4;&#x4EF6;&#x7684;&#x793A;&#x4F8B;&#x9875;&#x9762;&#x3002;</p>
+<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;&#x65E0;&#x9700;&#x7F16;&#x5199;<code>&lt;input&gt;</code>&#x6807;&#x7B7E;&#x7684;<code>onChange</code>&#x4E8B;&#x4EF6;&#xFF0C;<code>inputValue</code>&#x53D8;&#x91CF;&#x5DF2;&#x81EA;&#x52A8;&#x548C;<code>&lt;input&gt;</code>&#x6807;&#x7B7E;&#x5EFA;&#x7ACB;&#x4E86;<code>&#x53CC;&#x5411;&#x6570;&#x636E;&#x7ED1;&#x5B9A;</code>&#x7684;&#x5173;&#x7CFB;&#x3002;<a href="https://github.com/joe-sky/nornj-cli/blob/master/docs/guides/antDesign.md#%E8%A1%A8%E5%8D%95%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" target="_blank">&#x70B9;&#x8FD9;&#x91CC;</a>&#x662F;&#x4E00;&#x4E2A;<code>#mobx-bind</code>&#x7ED3;&#x5408;&#x8868;&#x5355;&#x7EC4;&#x4EF6;&#x7684;&#x793A;&#x4F8B;&#x9875;&#x9762;&#x3002;</p>
 <ul>
-<li>&#x5B9E;&#x8D28;&#x4E0A;&#xFF0C;<code>#mobx-model</code>&#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x548C;<code>v-model</code>&#x5F88;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E0B;&#x9762;&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x5F62;&#x5F0F;&#xFF1A;</li>
+<li>&#x5B9E;&#x8D28;&#x4E0A;&#xFF0C;<code>#mobx-bind</code>&#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x548C;<code>v-model</code>&#x5F88;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E0B;&#x9762;&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x5F62;&#x5F0F;&#xFF1A;</li>
 </ul>
 <pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
   @observable inputValue = <span class="hljs-string">&apos;&apos;</span>;
@@ -597,13 +597,13 @@
 
   render() {
     <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
-      &lt;input value={inputValue} {onChange} /&gt;
+      &lt;input value={inputValue} {onChange}&gt;
     `</span>(<span class="hljs-keyword">this</span>);
   }
 }
 </code></pre>
 <ul>
-<li><code>#mobx-model</code>&#x548C;<code>#mst-model</code>&#x5B58;&#x653E;&#x5728;<code>nornj-react</code>&#x5305;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x6309;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x5F15;&#x5165;&#x540E;&#x65B9;&#x53EF;&#x4F7F;&#x7528;&#xFF1A;</li>
+<li><code>#mobx-bind</code>&#x548C;<code>#mst-bind</code>&#x5B58;&#x653E;&#x5728;<code>nornj-react</code>&#x5305;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x6309;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x5F15;&#x5165;&#x540E;&#x65B9;&#x53EF;&#x4F7F;&#x7528;&#xFF1A;</li>
 </ul>
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;nornj-react/mobx&apos;</span>;
 </code></pre>
@@ -626,39 +626,29 @@
 }
 </code></pre>
 <ul>
-<li><code>beforeChange</code>&#x548C;<code>afterChange</code>&#x4E8B;&#x4EF6;</li>
+<li><code>onChange</code>&#x4E8B;&#x4EF6;</li>
 </ul>
-<p>&#x7531;&#x4E8E;<code>#mobx-model</code>&#x9ED8;&#x8BA4;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x4E86;&#x7EC4;&#x4EF6;&#x7684;<code>onChange</code>&#x4E8B;&#x4EF6;&#xFF0C;&#x4F46;&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x8FD8;&#x662F;&#x9700;&#x8981;&#x5728;<code>onChange</code>&#x4E2D;&#x505A;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7684;&#x64CD;&#x4F5C;&#x3002;<code>#mobx-model</code>&#x63D0;&#x4F9B;&#x4E86;<code>beforeChange</code>&#x548C;<code>afterChange</code>&#x4E8B;&#x4EF6;&#x89E3;&#x51B3;&#x4E0A;&#x8FF0;&#x95EE;&#x9898;&#xFF1A;</p>
+<p>&#x7531;&#x4E8E;<code>#mobx-bind</code>&#x9ED8;&#x8BA4;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x4E86;&#x7EC4;&#x4EF6;&#x7684;<code>onChange</code>&#x4E8B;&#x4EF6;&#xFF0C;&#x4F46;&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x8FD8;&#x662F;&#x9700;&#x8981;&#x5728;<code>onChange</code>&#x4E2D;&#x505A;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
   @observable inputValue = <span class="hljs-string">&apos;1&apos;</span>;
-  @autobind
-  beforeChange(prevValue, params) {
-    <span class="hljs-built_in">console</span>.log(prevValue);               <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;1</span>
-    <span class="hljs-built_in">console</span>.log(params[<span class="hljs-number">0</span>].target.value);  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;12</span>
-
-    <span class="hljs-comment">//&#x6B64;&#x5904;&#x5982;&#x679C;return false&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x963B;&#x6B62;onChange&#x548C;afterChange&#x4E8B;&#x4EF6;&#x7684;&#x6267;&#x884C;</span>
-    <span class="hljs-comment">//return false;</span>
-  }
 
   @autobind
-  afterChange(nextValue, params) {
-    <span class="hljs-built_in">console</span>.log(nextValue);               <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;12</span>
-    <span class="hljs-built_in">console</span>.log(params[<span class="hljs-number">0</span>].target.value);  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;12</span>
+  onChange(e) {
+    <span class="hljs-built_in">console</span>.log(e.target.value);
   }
 
   render() {
     <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
-      &lt;!-- &#x4F7F;&#x7528;&quot;options: { ...settings }&quot;&#x8BED;&#x6CD5;&#x6765;&#x8BBE;&#x7F6E;&#x53C2;&#x6570; --&gt;
-      &lt;input :#mobx-model=&quot;inputValue options: { beforeChange: beforeChange, afterChange: afterChange }&quot; /&gt;
+      &lt;input :#mobx-bind=&quot;inputValue&quot; {onChange}&gt;
     `</span>(<span class="hljs-keyword">this</span>);
   }
 }
 </code></pre>
-<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;<code>beforeChange</code>&#x548C;<code>afterChange</code>&#x4E8B;&#x4EF6;&#x5747;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5206;&#x522B;&#x4E3A;<code>&#x5F53;&#x524D;@observable&#x53D8;&#x91CF;&#x7684;&#x503C;</code>&#x548C;<code>onChange&#x4E8B;&#x4EF6;&#x539F;&#x751F;&#x7684;&#x53C2;&#x6570;&#x5217;&#x8868;</code>&#x3002;&#x5982;&#x7528;&#x6237;&#x5728;<code>&lt;input&gt;</code>(&#x521D;&#x59CB;&#x503C;&#x4E3A;<code>1</code>)&#x4E2D;&#x7EE7;&#x7EED;&#x5F55;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;<code>2</code>&#xFF0C;&#x5219;&#x4F1A;&#x6309;&#x7167;&#x4E0A;&#x4F8B;&#x4E2D;&#x6240;&#x793A;&#x6253;&#x5370;&#x76F8;&#x5E94;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;<code>onChange</code>&#x4E8B;&#x4EF6;&#x7684;&#x884C;&#x4E3A;&#x548C;&#x6807;&#x7B7E;&#x539F;&#x751F;&#x7684;<code>onChange</code>&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF0C;&#x5B83;&#x4F1A;&#x5728;&#x6587;&#x672C;&#x6846;&#x7684;&#x503C;&#x53D8;&#x5316;&#x540E;&#x6267;&#x884C;&#x3002;</p>
 <ul>
-<li>&#x4F7F;&#x7528;<code>action</code>&#x66F4;&#x65B0;<code>@observable</code>&#x53D8;&#x91CF;</li>
+<li>&#x4F7F;&#x7528;<code>action</code>&#x66F4;&#x65B0;&#x53D8;&#x91CF;</li>
 </ul>
-<p>&#x5728;<code>mobx</code>&#x5F00;&#x53D1;&#x4E2D;&#x5982;&#x679C;&#x542F;&#x52A8;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x6216;&#x8005;&#x4F7F;&#x7528;<code>mobx-state-tree</code>&#x65F6;&#xFF0C;&#x5219;&#x987B;&#x8981;&#x4F7F;&#x7528;<code>action</code>&#x6765;&#x66F4;&#x65B0;<code>@observable</code>&#x53D8;&#x91CF;&#x3002;&#x53EF;&#x6309;&#x4E0B;&#x9762;&#x65B9;&#x5F0F;&#x914D;&#x7F6E;&#x4F7F;&#x7528;<code>action</code>&#xFF1A;</p>
+<p>&#x5728;<code>mobx</code>&#x5F00;&#x53D1;&#x4E2D;&#x5982;&#x679C;&#x542F;&#x52A8;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x6216;&#x8005;&#x4F7F;&#x7528;<code>mobx-state-tree</code>&#x65F6;&#xFF0C;&#x5219;&#x987B;&#x8981;&#x4F7F;&#x7528;<code>action</code>&#x6765;&#x66F4;&#x65B0;&#x53D8;&#x91CF;&#x3002;&#x53EF;&#x6309;&#x4E0B;&#x9762;&#x65B9;&#x5F0F;&#x914D;&#x7F6E;&#x4F7F;&#x7528;<code>action</code>&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> { observable, action, configure } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;mobx&apos;</span>;
 
 <span class="hljs-comment">// don&apos;t allow state modifications outside actions</span>
@@ -666,6 +656,7 @@ configure({enforceActions: <span class="hljs-literal">true</span>});
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
   @observable inputValue = <span class="hljs-string">&apos;1&apos;</span>;
+
   @action.bound
   setInputValue(v) {
     <span class="hljs-keyword">this</span>.inputValue = v;
@@ -673,28 +664,14 @@ configure({enforceActions: <span class="hljs-literal">true</span>});
 
   render() {
     <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
-      &lt;input :#mobx-model=&quot;inputValue options: { action: true }&quot; /&gt;
+      &lt;input :#mobx-bind.action=&quot;inputValue&quot;&gt;
     `</span>(<span class="hljs-keyword">this</span>);
   }
 }
 </code></pre>
-<p><code>action</code>&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;<code>true</code>&#x65F6;&#xFF0C;<code>#mobx-model</code>&#x4F1A;&#x9ED8;&#x8BA4;&#x6267;&#x884C;camel&#x547D;&#x540D;&#x6CD5;&#x7684;<code>set + @observable&#x53D8;&#x91CF;&#x540D;</code>&#x7684;<code>action</code>&#xFF0C;&#x4E0A;&#x4F8B;&#x4E2D;&#x4E3A;<code>setInputValue</code>&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x624B;&#x5DE5;&#x6307;&#x5B9A;<code>action</code>&#x540D;&#x79F0;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
-  @observable inputValue = <span class="hljs-string">&apos;1&apos;</span>;
-  @action.bound
-  setValueToInputValue(v) {
-    <span class="hljs-keyword">this</span>.inputValue = v;
-  }
-
-  render() {
-    <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
-      &lt;input :#mobx-model=&quot;inputValue options: { action: &apos;setValueToInputValue&apos; }&quot; /&gt;
-    `</span>(<span class="hljs-keyword">this</span>);
-  }
-}
-</code></pre>
-<h3 id="mst-model"><a name="mst-model" class="plugin-anchor" href="#mst-model"><i class="fa fa-link" aria-hidden="true"></i></a>mst-model</h3>
-<p><code>#mst-model</code>&#x5373;&#x4E3A;<code>#mobx-model</code>&#x7684;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;<code>action</code>&#x7684;&#x7248;&#x672C;&#xFF0C;&#x7528;&#x6765;&#x914D;&#x5408;<code>mobx-state-tree</code>&#x7684;&#x53D8;&#x91CF;&#x4F7F;&#x7528;&#xFF0C;&#x5177;&#x4F53;&#x8BF7;&#x53C2;&#x8003;&#x4E0A;&#x4E00;&#x8282;&#x3002;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x5F53;&#x6709;<code>action</code>&#x4FEE;&#x9970;&#x7B26;&#x65F6;&#xFF0C;<code>#mobx-bind</code>&#x4F1A;&#x9ED8;&#x8BA4;&#x6267;&#x884C;camel&#x547D;&#x540D;&#x6CD5;(<code>set + &#x53D8;&#x91CF;&#x540D;</code>)&#x5B9A;&#x4E49;&#x7684;<code>action</code>&#xFF0C;&#x4E0A;&#x4F8B;&#x4E2D;&#x4E3A;<code>setInputValue</code>&#x3002;</p>
+<h3 id="mst-bind"><a name="mst-bind" class="plugin-anchor" href="#mst-bind"><i class="fa fa-link" aria-hidden="true"></i></a>mst-bind</h3>
+<p><code>#mst-bind</code>&#x5373;&#x4E3A;<code>#mobx-bind</code>&#x7684;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;<code>action</code>&#x6765;&#x66F4;&#x65B0;&#x503C;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x7528;&#x6765;&#x914D;&#x5408;<code>mobx-state-tree</code>&#x7684;&#x53D8;&#x91CF;&#x4F7F;&#x7528;&#xFF1A;</p>
 <p>store&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">import</span> { types } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;mobx-state-tree&quot;</span>;
 
@@ -714,15 +691,15 @@ configure({enforceActions: <span class="hljs-literal">true</span>});
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
   render() {
     <span class="hljs-keyword">return</span> nj<span class="hljs-string">`
-      &lt;input :#mobx-model=&quot;testStore.inputValue&quot; /&gt;
+      &lt;input :#mst-bind=&quot;testStore.inputValue&quot;&gt;
     `</span>({
       testStore: <span class="hljs-keyword">this</span>.props.rootStore.testStore
     });
   }
 }
 </code></pre>
-<h3 id="&#x76EE;&#x524D;mobx-model&#x548C;mst-model&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x5217;&#x8868;"><a name="&#x76EE;&#x524D;mobx-model&#x548C;mst-model&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x5217;&#x8868;" class="plugin-anchor" href="#&#x76EE;&#x524D;mobx-model&#x548C;mst-model&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x5217;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76EE;&#x524D;mobx-model&#x548C;mst-model&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x5217;&#x8868;</h3>
-<!-- `#mobx-model`目前暂时是只能按照控件名称来自动选择相应的方式更新数据，日后会增加更多的方式(如根据type属性或对组件进行特殊参数配置)，敬请期待。 -->
+<p>&#x5982;&#x4E0A;&#xFF0C;<code>#mst-bind</code>&#x4F1A;&#x9ED8;&#x8BA4;&#x6267;&#x884C;camel&#x547D;&#x540D;&#x6CD5;(<code>set + &#x53D8;&#x91CF;&#x540D;</code>)&#x5B9A;&#x4E49;&#x7684;<code>action</code>&#x6765;&#x66F4;&#x65B0;&#x503C;&#xFF0C;&#x4E0A;&#x4F8B;&#x4E2D;&#x4E3A;<code>setInputValue</code>&#x3002;&#x9664;&#x6B64;&#x5916;<code>#mst-bind</code>&#x7684;&#x5176;&#x4ED6;&#x7279;&#x6027;&#x4E0E;&#x4E0A;&#x8FF0;&#x7684;<code>#mobx-bind</code>&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x3002;</p>
+<h3 id="&#x76EE;&#x524D;mobx-bind&#x548C;mst-bind&#x9ED8;&#x8BA4;&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x5217;&#x8868;"><a name="&#x76EE;&#x524D;mobx-bind&#x548C;mst-bind&#x9ED8;&#x8BA4;&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x5217;&#x8868;" class="plugin-anchor" href="#&#x76EE;&#x524D;mobx-bind&#x548C;mst-bind&#x9ED8;&#x8BA4;&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x5217;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76EE;&#x524D;mobx-bind&#x548C;mst-bind&#x9ED8;&#x8BA4;&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x5217;&#x8868;</h3>
 <table>
 <thead>
 <tr>
@@ -897,7 +874,7 @@ configure({enforceActions: <span class="hljs-literal">true</span>});
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"扩展属性","level":"1.3.7","depth":2,"next":{"title":"模板注释","level":"1.3.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},"previous":{"title":"内置扩展标签","level":"1.3.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/inlineExtensionTag.md","mtime":"2018-08-10T09:31:12.810Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-08-10T13:16:23.899Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"扩展属性","level":"1.3.7","depth":2,"next":{"title":"模板注释","level":"1.3.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},"previous":{"title":"内置扩展标签","level":"1.3.6","depth":2,"path":"templateSyntax/built-inExtensionTag.md","ref":"templateSyntax/built-inExtensionTag.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/inlineExtensionTag.md","mtime":"2018-09-05T09:52:35.658Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-05T10:14:33.295Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
