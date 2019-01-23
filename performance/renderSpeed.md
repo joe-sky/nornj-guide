@@ -171,7 +171,7 @@ avg:1264.4
         <div key={@index}>
           <span>span{no}</span>
           <i>{no}</i>
-          <!-- 添加once扩展标签 -->
+          <!-- 添加once标签 -->
           <#once><div><i><i>1000</i></i><i><i>1000</i></i><i><i>1000</i></i><i><i>1000</i></i><i><i>1000</i></i></div></#once>
         </div>
       </#each>

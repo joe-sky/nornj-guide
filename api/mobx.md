@@ -54,9 +54,9 @@ nj`
 `()
 ```
 
-### 行内扩展标签
+### 指令
 
-针对`Mobx`我们提供了实现双向绑定的行内扩展标签`#mobx-model`，[具体请见这里](../templateSyntax/inlineExtensionTag.md#mobx-model)。
+针对`Mobx`我们提供了实现双向绑定的指令`#mobx-model`，[具体请见这里](../templateSyntax/inlineExtensionTag.md#mobx-model)。
 
 ## NornJ + Mobx的实例项目
 
