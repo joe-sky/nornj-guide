@@ -64,7 +64,7 @@
 <div>{{'content'}} {{500.05}} {{null}} {{undefined}} {{false}}</div>
 ```
 
-模板中也可以插入复杂类型(如对象或数组)和js表达式及语句，具体请见[表达式](filter.md#表达式)、[内置过滤器](built-inFilter.md)、[内置扩展标签](built-inExtensionTag.md)。
+模板中也可以插入复杂类型(如对象或数组)和js表达式及语句，具体请见[表达式](filter.md#表达式)、[内置过滤器](built-inFilter.md)、[内置标签](built-inExtensionTag.md)。
 
 * 与`JSX`类似，可使用延展属性表示元素节点参数：
 

@@ -158,6 +158,29 @@ export default class HelloWorld extends Component {
 
 这些`template`标签会在引用它的js文件中通过[nornj-loader](https://github.com/joe-sky/nornj-loader)进行解析，生成一个以`template`标签的`name`属性为key的模板函数集合对象，在各个组件的render中调用它们就会生成相应的标签。
 
+## 直接在JSX中使用
+
+`NornJ`也提供了一个可以直接在JSX中编写的`babel`插件，写法如下：
+
+```js
+const Button = () => {
+  return (
+    <div>
+      <for i={0} to={10}>
+        <if condition={i < 5}>
+          <i>less than 5</i>
+          <else>
+            <i>greater than 5</i>
+          </else>
+        </if>
+      </for>
+    </div>
+  )
+}
+```
+
+具体请见[babel-plugin-nornj-in-jsx](https://github.com/joe-sky/nornj/blob/master/packages/babel-plugin-nornj-in-jsx/README.md)。
+
 ## 与各种React已有生态结合
 
 `NornJ`模板可直接支持所有`React`现有生态，包括`Redux`、`React-Router`、`Mobx`、`Ant Design`等等，它可以和任何已有的`React`生态共存。
