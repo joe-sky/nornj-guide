@@ -649,7 +649,7 @@
 </tr>
 <tr>
 <td style="text-align:left">//</td>
-<td style="text-align:left">&#x3010;<b style="color:red">&#x5F85;&#x9010;&#x6B65;&#x5E9F;&#x5F03;</b>&#x3011;&#x540C;&#x4E0A;&#x9762;&#x7684;<code>%%</code></td>
+<td style="text-align:left">&#x3010;<b style="color:red">&#x5F85;&#x5E9F;&#x5F03;</b>&#x3011;&#x540C;&#x4E0A;&#x9762;&#x7684;<code>%%</code></td>
 <td style="text-align:left"><code>{{ value //(2) }}</code>&#x6216;<code>{{ value // 2 }}</code></td>
 <td style="text-align:left"></td>
 </tr>
@@ -661,7 +661,7 @@
 </tr>
 <tr>
 <td style="text-align:left">?</td>
-<td style="text-align:left">&#x3010;<b style="color:red">&#x5F85;&#x9010;&#x6B65;&#x5E9F;&#x5F03;</b>&#x3011;&#x540C;&#x4E0A;&#x9762;&#x7684;<code>?:</code></td>
+<td style="text-align:left">&#x3010;<b style="color:red">&#x5F85;&#x5E9F;&#x5F03;</b>&#x3011;&#x540C;&#x4E0A;&#x9762;&#x7684;<code>?:</code></td>
 <td style="text-align:left"><code>{{ value ? (foo, bar) }}</code></td>
 <td style="text-align:left"></td>
 </tr>
@@ -744,6 +744,12 @@
 <td style="text-align:left">&#xA0;</td>
 </tr>
 <tr>
+<td style="text-align:left">capitalize</td>
+<td style="text-align:left">&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;</td>
+<td style="text-align:left"><code>{{ &apos;nornj&apos; | capitalize }}</code>&#x6216;<code>{{ capitalize(&apos;nornj&apos;) }}</code></td>
+<td style="text-align:left">&#xA0;</td>
+</tr>
+<tr>
 <td style="text-align:left">=&gt;</td>
 <td style="text-align:left">&#x751F;&#x6210;&#x51FD;&#x6570;</td>
 <td style="text-align:left"></td>
@@ -794,7 +800,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"内置过滤器","level":"1.3.4","depth":2,"next":{"title":"标签","level":"1.3.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},"previous":{"title":"过滤器与表达式","level":"1.3.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/built-inFilter.md","mtime":"2018-05-08T03:58:22.293Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-01-23T08:07:26.841Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"内置过滤器","level":"1.3.4","depth":2,"next":{"title":"标签","level":"1.3.5","depth":2,"path":"templateSyntax/extensionTag.md","ref":"templateSyntax/extensionTag.md","articles":[]},"previous":{"title":"过滤器与表达式","level":"1.3.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/built-inFilter.md","mtime":"2019-01-27T08:32:10.685Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-01-27T08:33:09.509Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
