@@ -21,6 +21,14 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -538,14 +546,14 @@
 <li><a href="https://codepen.io/joe_sky/pen/BrGvVG" target="_blank">&#x5728;&#x7EBF;Playground(codepen)</a></li>
 </ul>
 <h2 id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="plugin-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5;</h2>
-<pre><code class="lang-sh">npm install nornj
-npm install nornj-loader  <span class="hljs-comment"># webpack&#x73AF;&#x5883;&#x8BF7;&#x4E00;&#x8D77;&#x5B89;&#x88C5;&#x6B64;&#x5305;</span>
+<pre class="language-"><code class="lang-sh"><span class="token function">npm</span> <span class="token function">install</span> nornj
+<span class="token function">npm</span> <span class="token function">install</span> nornj-loader  <span class="token comment"># webpack&#x73AF;&#x5883;&#x8BF7;&#x4E00;&#x8D77;&#x5B89;&#x88C5;&#x6B64;&#x5305;</span>
 </code></pre>
 <h2 id="&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;nornj&#x6A21;&#x677F;"><a name="&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;nornj&#x6A21;&#x677F;" class="plugin-anchor" href="#&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;nornj&#x6A21;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;NornJ&#x6A21;&#x677F;</h2>
 <p><code>NornJ</code>&#x5305;&#x542B;&#x4F20;&#x7EDF;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x901A;&#x7528;&#x7684;api&#x5982;<code>compile</code>&#x3001;<code>render</code>&#x7B49;&#x3002;&#x4F8B;&#x5982;&#x4F7F;&#x7528;<code>compile</code>api&#x53EF;&#x4EE5;&#x5C06;&#x4E00;&#x6BB5;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#x51FD;&#x6570;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> nj <span class="token keyword">from</span> <span class="token string">&apos;nornj&apos;</span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">const</span> tmplFn = nj.compile(<span class="hljs-string">`
+<span class="token keyword">const</span> tmplFn <span class="token operator">=</span> nj<span class="token punctuation">.</span><span class="token function">compile</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`
   &lt;div class=&quot;hello&quot; style=&quot;width:300px;height:200px;&quot;&gt;
     &lt;input type=&quot;{{inputType}}&quot;&gt;
     &lt;select&gt;
@@ -557,24 +565,24 @@ npm install nornj-loader  <span class="hljs-comment"># webpack&#x73AF;&#x5883;&#
       &lt;/#each&gt;
     &lt;/select&gt;
   &lt;/div&gt;
-`</span>);
+`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">//&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5E76;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x6E32;&#x67D3;</span>
-<span class="hljs-built_in">console</span>.log(tmplFn({ inputType: <span class="hljs-string">&apos;text&apos;</span> }));
+<span class="token comment">//&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5E76;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x6E32;&#x67D3;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">tmplFn</span><span class="token punctuation">(</span><span class="token punctuation">{</span> inputType<span class="token punctuation">:</span> <span class="token string">&apos;text&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <blockquote>
 <p>&#x66F4;&#x591A;<code>NornJ</code>&#x6A21;&#x677F;&#x7684;&#x8BED;&#x6CD5;&#x7EC6;&#x8282;<a href="../templateSyntax/">&#x8BF7;&#x53C2;&#x8003;&#x8FD9;&#x91CC;</a>&#x3002;</p>
 </blockquote>
 <h2 id="&#x4F7F;&#x7528;es6&#x7684;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x6765;&#x7F16;&#x5199;&#x6A21;&#x677F;"><a name="&#x4F7F;&#x7528;es6&#x7684;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x6765;&#x7F16;&#x5199;&#x6A21;&#x677F;" class="plugin-anchor" href="#&#x4F7F;&#x7528;es6&#x7684;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x6765;&#x7F16;&#x5199;&#x6A21;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;ES6+&#x7684;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x6765;&#x7F16;&#x5199;&#x6A21;&#x677F;</h2>
 <p><code>NornJ</code>&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>ES6+</code>&#x7684;<code>tagged template string</code>&#x8BED;&#x6CD5;&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x63CF;&#x8FF0;&#x6A21;&#x677F;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> nj <span class="token keyword">from</span> <span class="token string">&apos;nornj&apos;</span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">//&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x6E32;&#x67D3;</span>
-<span class="hljs-built_in">console</span>.log(nj<span class="hljs-string">`
+<span class="token comment">//&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x6E32;&#x67D3;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>nj<span class="token template-string"><span class="token string">`
   &lt;div class=&quot;hello&quot; style=&quot;width:300px;height:200px;&quot;&gt;
-    &lt;input type=<span class="hljs-subst">${&apos;inputType&apos;}</span>&gt;
+    &lt;input type=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token string">&apos;inputType&apos;</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&gt;
     &lt;select&gt;
-      &lt;#each <span class="hljs-subst">${[1, 2, 3]}</span>&gt;
+      &lt;#each </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&gt;
         &lt;#if {{@index &gt; 1}}&gt;
           &lt;option&gt;{{this + 1}}&lt;/option&gt;
           &lt;#else&gt;&lt;option&gt;{{this}}&lt;/option&gt;&lt;/#else&gt;
@@ -582,7 +590,7 @@ npm install nornj-loader  <span class="hljs-comment"># webpack&#x73AF;&#x5883;&#
       &lt;/#each&gt;
     &lt;/select&gt;
   &lt;/div&gt;
-`</span>());
+`</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>&#x5982;&#x4E0A;&#xFF0C;&#x4F7F;&#x7528;<code>NornJ</code>&#x7684;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x8BED;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x65B9;&#x4FBF;&#x5730;&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;&#x6A21;&#x677F;&#xFF0C;&#x8FD8;&#x80FD;&#x4EFB;&#x610F;&#x63D2;&#x5165;&#x5404;&#x79CD;&#x5916;&#x90E8;js&#x539F;&#x751F;&#x53D8;&#x91CF;&#x3002;</p>
 <blockquote>
@@ -590,33 +598,33 @@ npm install nornj-loader  <span class="hljs-comment"># webpack&#x73AF;&#x5883;&#
 </blockquote>
 <h2 id="&#x5728;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;nornj&#x6A21;&#x677F;"><a name="&#x5728;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;nornj&#x6A21;&#x677F;" class="plugin-anchor" href="#&#x5728;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;nornj&#x6A21;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;NornJ&#x6A21;&#x677F;</h2>
 <p><code>NornJ</code>&#x6A21;&#x677F;&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x5728;&#x5355;&#x72EC;&#x7684;&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x7528;&#x6765;&#x505A;&#x5C55;&#x73B0;&#x5C42;&#x4E0E;&#x7ED3;&#x6784;&#x5C42;&#x7684;&#x5206;&#x79BB;(<a href="../api/webpack.html">&#x5177;&#x4F53;&#x6587;&#x6863;&#x8BF7;&#x53C2;&#x8003;&#x8FD9;&#x91CC;</a>)&#x3002;&#x4F8B;&#x5982;&#x7F16;&#x5199;&#x4E00;&#x4E2A;<code>helloWorld.t.html</code>&#x6587;&#x4EF6;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;helloWorld&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">{{styles.hello}}</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {{[<span class="hljs-attr">1</span>, <span class="hljs-attr">2</span>, <span class="hljs-attr">3</span>]}}&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">#if</span> {{<span class="hljs-attr">this</span> &gt;</span> 1}}&gt;
-          <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>{{this + 1}}<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">#else</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>{{this}}<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">#else</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">#if</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">#each</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>helloWorld<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span>{{styles.hello}}</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#each</span> <span class="token attr-name">{{[1,</span> <span class="token attr-name">2,</span> <span class="token attr-name">3]}}</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#if</span> <span class="token attr-name">{{this</span> <span class="token punctuation">&gt;</span></span> 1}}&gt;
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>{{this + 1}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#else</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>{{this}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#else</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#if</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#each</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p>&#x7136;&#x540E;&#x53EF;&#x4EE5;&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x5F15;&#x5165;&#x540E;&#x4F7F;&#x7528;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> tmpls <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./helloWorld.t.html&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> tmpls <span class="token keyword">from</span> <span class="token string">&apos;./helloWorld.t.html&apos;</span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">//&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x751F;&#x6210;html&#x5B57;&#x7B26;&#x4E32;</span>
-<span class="hljs-built_in">console</span>.log(tmpls.helloWorld());
+<span class="token comment">//&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x751F;&#x6210;html&#x5B57;&#x7B26;&#x4E32;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>tmpls<span class="token punctuation">.</span><span class="token function">helloWorld</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>&#x5982;&#x4E0A;&#xFF0C;&#x6BCF;&#x4E2A;<code>*.t.html</code>&#x6587;&#x4EF6;&#x5185;&#x90FD;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;<code>template</code>&#x6807;&#x7B7E;&#x3002;</p>
 <p>&#x8FD9;&#x4E9B;<code>template</code>&#x6807;&#x7B7E;&#x4F1A;&#x5728;&#x5F15;&#x7528;&#x5B83;&#x7684;js&#x6587;&#x4EF6;&#x4E2D;&#x901A;&#x8FC7;<a href="https://github.com/joe-sky/nornj-loader" target="_blank">nornj-loader</a>&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x4EE5;<code>template</code>&#x6807;&#x7B7E;&#x7684;<code>name</code>&#x5C5E;&#x6027;&#x4E3A;key&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x96C6;&#x5408;&#x5BF9;&#x8C61;&#xFF0C;&#x6267;&#x884C;&#x8FD9;&#x4E9B;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5C31;&#x4F1A;&#x751F;&#x6210;&#x76F8;&#x5E94;&#x7684;html&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
 <h2 id="&#x4F7F;&#x7528;nornj&#x6E32;&#x67D3;&#x666E;&#x901A;&#x6587;&#x672C;"><a name="&#x4F7F;&#x7528;nornj&#x6E32;&#x67D3;&#x666E;&#x901A;&#x6587;&#x672C;" class="plugin-anchor" href="#&#x4F7F;&#x7528;nornj&#x6E32;&#x67D3;&#x666E;&#x901A;&#x6587;&#x672C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;NornJ&#x6E32;&#x67D3;&#x666E;&#x901A;&#x6587;&#x672C;</h2>
 <p><code>NornJ</code>&#x4E0D;&#x53EA;&#x53EF;&#x4EE5;&#x6E32;&#x67D3;html&#xFF0C;&#x5B83;&#x4E5F;&#x540C;&#x6837;&#x50CF;<code>Handlebars</code>&#x90A3;&#x6837;&#x652F;&#x6301;&#x6E32;&#x67D3;&#x666E;&#x901A;&#x6587;&#x672C;&#x6587;&#x4EF6;&#xFF0C;&#x5C31;&#x50CF;<code>vue-cli</code>&#x4E2D;&#x4F7F;&#x7528;<code>Handlebars</code>&#x6765;&#x66FF;&#x6362;&#x9879;&#x76EE;&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x90A3;&#x6837;&#x5DE5;&#x4F5C;&#x3002;</p>
 <p>&#x53EA;&#x9700;&#x8981;&#x5F00;&#x542F;&#x6587;&#x672C;&#x89E3;&#x6790;&#x6A21;&#x5F0F;(<a href="../api/config.html#&#x4F7F;&#x7528;&#x6587;&#x672C;&#x6A21;&#x5F0F;&#x89E3;&#x6790;">&#x5177;&#x4F53;&#x539F;&#x56E0;&#x8BF7;&#x89C1;&#x6587;&#x6863;</a>)&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF1A;</p>
-<pre><code class="lang-js">nj.config({
-  textMode: <span class="hljs-literal">true</span>
-});
+<pre class="language-"><code class="lang-js">nj<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  textMode<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>&#x7136;&#x540E;&#x5B83;&#x5C31;&#x53EF;&#x4EE5;&#x5BF9;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x6E32;&#x67D3;&#x4E86;&#xFF0C;&#x666E;&#x901A;&#x6587;&#x672C;&#x4E2D;&#x7684;&#x5404;&#x79CD;&#x6362;&#x884C;&#x7B26;&#x7B49;&#x90FD;&#x4F1A;&#x6309;&#x7167;&#x539F;&#x6837;&#x4FDD;&#x7559;&#x3002;&#x5177;&#x4F53;&#x5E94;&#x7528;&#x573A;&#x666F;&#x8BF7;&#x89C1;<a href="https://github.com/joe-sky/nornj-cli/blob/master/templates/react-mst/templates/routes-web.js" target="_blank">nornj-cli&#x4E2D;&#x7684;&#x9879;&#x76EE;&#x6A21;&#x677F;&#x6587;&#x4EF6;</a>&#x3002;</p>
 <h2 id="&#x4E0E;node&#x670D;&#x52A1;&#x5668;&#x6846;&#x67B6;&#x7ED3;&#x5408;"><a name="&#x4E0E;node&#x670D;&#x52A1;&#x5668;&#x6846;&#x67B6;&#x7ED3;&#x5408;" class="plugin-anchor" href="#&#x4E0E;node&#x670D;&#x52A1;&#x5668;&#x6846;&#x67B6;&#x7ED3;&#x5408;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0E;Node&#x670D;&#x52A1;&#x5668;&#x6846;&#x67B6;&#x7ED3;&#x5408;</h2>
@@ -668,7 +676,7 @@ npm install nornj-loader  <span class="hljs-comment"># webpack&#x73AF;&#x5883;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"像传统模板引擎那样工作","level":"1.2.1","depth":2,"next":{"title":"增强React开发体验","level":"1.2.2","depth":2,"path":"gettingStarted/enhanceReact.md","ref":"gettingStarted/enhanceReact.md","articles":[]},"previous":{"title":"快速起步","level":"1.2","depth":1,"path":"gettingStarted/index.md","ref":"gettingStarted/index.md","articles":[{"title":"像传统模板引擎那样工作","level":"1.2.1","depth":2,"path":"gettingStarted/normalTemplateEngine.md","ref":"gettingStarted/normalTemplateEngine.md","articles":[]},{"title":"增强React开发体验","level":"1.2.2","depth":2,"path":"gettingStarted/enhanceReact.md","ref":"gettingStarted/enhanceReact.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gettingStarted/normalTemplateEngine.md","mtime":"2018-04-10T11:22:28.221Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-01-31T02:56:09.657Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"像传统模板引擎那样工作","level":"1.2.1","depth":2,"next":{"title":"增强React开发体验","level":"1.2.2","depth":2,"path":"gettingStarted/enhanceReact.md","ref":"gettingStarted/enhanceReact.md","articles":[]},"previous":{"title":"快速起步","level":"1.2","depth":1,"path":"gettingStarted/index.md","ref":"gettingStarted/index.md","articles":[{"title":"像传统模板引擎那样工作","level":"1.2.1","depth":2,"path":"gettingStarted/normalTemplateEngine.md","ref":"gettingStarted/normalTemplateEngine.md","articles":[]},{"title":"增强React开发体验","level":"1.2.2","depth":2,"path":"gettingStarted/enhanceReact.md","ref":"gettingStarted/enhanceReact.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github","prism","advanced-emoji"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gettingStarted/normalTemplateEngine.md","mtime":"2018-04-10T11:22:28.221Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-03-18T03:03:19.162Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

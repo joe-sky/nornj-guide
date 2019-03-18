@@ -21,6 +21,14 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -530,110 +538,110 @@
                                 
                                 <h1 id="&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;es6&#x8BED;&#x6CD5;"><a name="&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;es6&#x8BED;&#x6CD5;" class="plugin-anchor" href="#&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;es6&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;(es6)&#x8BED;&#x6CD5;</h1>
 <p><code>NornJ</code>&#x6A21;&#x677F;&#x9664;&#x4E86;&#x80FD;&#x4F7F;&#x7528;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6765;&#x6784;&#x5EFA;&#x5916;&#xFF0C;&#x8FD8;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x7C7B;&#x4F3C;<code>JSX</code>&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#xFF0C;&#x5373;&#x4F7F;&#x7528;es6&#x652F;&#x6301;&#x7684;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x6765;&#x6784;&#x5EFA;&#x6A21;&#x677F;&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> nj <span class="token keyword">from</span> <span class="token string">&apos;nornj&apos;</span><span class="token punctuation">;</span>
 
-nj<span class="hljs-string">`&lt;div&gt;
+nj<span class="token template-string"><span class="token string">`&lt;div&gt;
      {{test}}
-   &lt;/div&gt;`</span>;
+   &lt;/div&gt;`</span></span><span class="token punctuation">;</span>
 </code></pre>
 <h1 id="&#x6784;&#x5EFA;&#x65B9;&#x5F0F;"><a name="&#x6784;&#x5EFA;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#&#x6784;&#x5EFA;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6784;&#x5EFA;&#x65B9;&#x5F0F;</h1>
 <p>&#x5F15;&#x5165;<code>nj</code>&#x53D8;&#x91CF;&#x540E;&#xFF0C;&#x5C06;&#x5B83;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6807;&#x7B7E;&#x5373;&#x53EF;&#x3002;&#x8BE5;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#x51FD;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x5217;&#x8868;&#x548C;nj.compile&#x65B9;&#x6CD5;&#x7F16;&#x8BD1;&#x51FA;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x3002;&#x5982;&#x4E0B;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> tmplFn = nj<span class="hljs-string">`
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> tmplFn <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;
   {{test}}
-&lt;/div&gt;`</span>;
+&lt;/div&gt;`</span></span><span class="token punctuation">;</span>
 
-<span class="hljs-built_in">console</span>.log(tmplFn({ test: <span class="hljs-number">100</span> }));  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;100&lt;/div&gt;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">tmplFn</span><span class="token punctuation">(</span><span class="token punctuation">{</span> test<span class="token punctuation">:</span> <span class="token number">100</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;100&lt;/div&gt;</span>
 </code></pre>
 <h2 id="&#x5D4C;&#x5165;js&#x53D8;&#x91CF;&#x6216;&#x8868;&#x8FBE;&#x5F0F;"><a name="&#x5D4C;&#x5165;js&#x53D8;&#x91CF;&#x6216;&#x8868;&#x8FBE;&#x5F0F;" class="plugin-anchor" href="#&#x5D4C;&#x5165;js&#x53D8;&#x91CF;&#x6216;&#x8868;&#x8FBE;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5D4C;&#x5165;js&#x53D8;&#x91CF;&#x6216;&#x8868;&#x8FBE;&#x5F0F;</h2>
 <p><code>nj</code>&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x53EF;&#x76F4;&#x63A5;&#x5D4C;&#x5165;&#x4EFB;&#x610F;js&#x53D8;&#x91CF;&#x4E0E;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x8BED;&#x6CD5;&#x4E3A;&#x4F7F;&#x7528;<code>${}</code>&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(nj<span class="hljs-string">`
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;
-  <span class="hljs-subst">${(1 + 2) * 3}</span>
-  <span class="hljs-subst">${&apos; test &apos;.trim()}</span>
-&lt;/div&gt;`</span>());  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;9test&lt;/div&gt;</span>
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">3</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token string">&apos; test &apos;</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+&lt;/div&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;9test&lt;/div&gt;</span>
 </code></pre>
 <p>&#x5728;<code>React</code>&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;<code>JSX</code>&#x53D8;&#x91CF;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5D4C;&#x5165;&#x5230;&#x5176;&#x4E2D;&#xFF1A;</p>
-<pre><code class="lang-js">nj<span class="hljs-string">`
+<pre class="language-"><code class="lang-js">nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;
-  &lt;#if <span class="hljs-subst">${true}</span>&gt;
-    <span class="hljs-subst">${&lt;img /&gt;}</span>
+  &lt;#if </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token boolean">true</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&gt;
+    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token operator">&lt;</span>img <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
   &lt;/#if&gt;
-&lt;/div&gt;`</span>;
+&lt;/div&gt;`</span></span><span class="token punctuation">;</span>
 </code></pre>
 <p><code>React</code>&#x7EC4;&#x4EF6;&#x5BF9;&#x8C61;&#x4E5F;&#x652F;&#x6301;&#x5D4C;&#x5165;&#x6807;&#x7B7E;&#x4E2D;&#x7F16;&#x5199;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> Icon <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-native-vector-icons/FontAwesome&apos;</span>;
-<span class="hljs-keyword">import</span> Button <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;antd-mobile/lib/button&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> Icon <span class="token keyword">from</span> <span class="token string">&apos;react-native-vector-icons/FontAwesome&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Button <span class="token keyword">from</span> <span class="token string">&apos;antd-mobile/lib/button&apos;</span><span class="token punctuation">;</span>
 
-nj<span class="hljs-string">`
-&lt;<span class="hljs-subst">${Button}</span> type=&quot;primary&quot; size=&quot;small&quot; inline&gt;
-  &lt;<span class="hljs-subst">${Icon}</span> name=&quot;rocket&quot; size={30} color=&quot;#900&quot; /&gt;small
-&lt;/<span class="hljs-subst">${Button}</span>&gt;`</span>;
+nj<span class="token template-string"><span class="token string">`
+&lt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Button<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> type=&quot;primary&quot; size=&quot;small&quot; inline&gt;
+  &lt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Icon<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> name=&quot;rocket&quot; size={30} color=&quot;#900&quot; /&gt;small
+&lt;/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Button<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&gt;`</span></span><span class="token punctuation">;</span>
 </code></pre>
 <p>&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x8FD9;&#x79CD;&#x5D4C;&#x5165;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x672C;&#x8D28;&#x662F;&#x4E00;&#x79CD;&#x6A21;&#x677F;&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#x6240;&#x793A;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> html <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;
-  <span class="hljs-subst">${(1 + 2) * 3}</span>
-&lt;/div&gt;`</span>();
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">3</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+&lt;/div&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">//&#x4EE5;&#x4E0A;&#x5B8C;&#x5168;&#x7B49;&#x4EF7;&#x4E8E;&#xFF1A;</span>
+<span class="token comment">//&#x4EE5;&#x4E0A;&#x5B8C;&#x5168;&#x7B49;&#x4EF7;&#x4E8E;&#xFF1A;</span>
 
-<span class="hljs-keyword">const</span> html2 = nj<span class="hljs-string">`
+<span class="token keyword">const</span> html2 <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;
   {{value}}
-&lt;/div&gt;`</span>({ value: (<span class="hljs-number">1</span> + <span class="hljs-number">2</span>) * <span class="hljs-number">3</span> });
+&lt;/div&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> value<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <ul>
 <li>&#x53EF;&#x5728;&#x5355;&#x4E2A;&#x63D2;&#x503C;&#x53D8;&#x91CF;&#x4E2D;&#x63D2;&#x5165;&#x591A;&#x4E2A;js&#x53D8;&#x91CF;&#x6216;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#x6240;&#x793A;&#xFF1A;</li>
 </ul>
-<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(nj<span class="hljs-string">`
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;
-  {{ <span class="hljs-subst">${1 + 2}</span> * 3 + <span class="hljs-subst">${4.5 + 5.5}</span> | int }}  &lt;!--#&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x8FC7;&#x6EE4;&#x5668;&#x7B49;&#x5176;&#x4ED6;&#x6A21;&#x677F;&#x8BED;&#x6CD5;#--&gt;
-&lt;/div&gt;`</span>());  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;19&lt;/div&gt;</span>
+  {{ </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> * 3 + </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">4.5</span> <span class="token operator">+</span> <span class="token number">5.5</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | int }}  &lt;!--#&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x8FC7;&#x6EE4;&#x5668;&#x7B49;&#x5176;&#x4ED6;&#x6A21;&#x677F;&#x8BED;&#x6CD5;#--&gt;
+&lt;/div&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;19&lt;/div&gt;</span>
 </code></pre>
 <h1 id="njtemplate"><a name="njtemplate" class="plugin-anchor" href="#njtemplate"><i class="fa fa-link" aria-hidden="true"></i></a>nj.template</h1>
 <p><code>nj.template</code>&#x662F;&#x4E00;&#x79CD;&#x66F4;&#x7B80;&#x4FBF;&#x7684;&#x4F7F;&#x7528;&#x6A21;&#x677F;&#x65B9;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj, { template <span class="hljs-keyword">as</span> t } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> nj<span class="token punctuation">,</span> <span class="token punctuation">{</span> template <span class="token keyword">as</span> t <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;nornj&apos;</span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">const</span> html1 = nj<span class="hljs-string">`
+<span class="token keyword">const</span> html1 <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;
   {{&apos;test_&apos; + test2}}
-&lt;/div&gt;`</span>({ test2: <span class="hljs-string">&apos;test2&apos;</span> });
+&lt;/div&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> test2<span class="token punctuation">:</span> <span class="token string">&apos;test2&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">const</span> html2 = t<span class="hljs-string">`
+<span class="token keyword">const</span> html2 <span class="token operator">=</span> t<span class="token template-string"><span class="token string">`
 &lt;div&gt;
-  {{&apos;test_&apos; + <span class="hljs-subst">${&apos;test2&apos;}</span>}}
-&lt;/div&gt;`</span>;
+  {{&apos;test_&apos; + </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token string">&apos;test2&apos;</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">}}
+&lt;/div&gt;`</span></span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">//&#x4EE5;&#x4E0A;&#x4E24;&#x79CD;&#x5747;&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;test_test2&lt;/div&gt;</span>
+<span class="token comment">//&#x4EE5;&#x4E0A;&#x4E24;&#x79CD;&#x5747;&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;test_test2&lt;/div&gt;</span>
 </code></pre>
 <p>&#x5982;&#x4E0A;&#xFF0C;<code>nj.template</code>&#x7684;&#x4F18;&#x52BF;&#x5728;&#x4E8E;&#x4E0D;&#x7528;&#x5728;&#x540E;&#x9762;&#x5199;&#x6267;&#x884C;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x7684;&#x62EC;&#x53F7;&#x4E86;&#xFF0C;&#x8FD9;&#x6837;&#x7ED3;&#x6784;&#x4F1A;&#x66F4;&#x7B80;&#x4FBF;&#xFF1B;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x5C31;&#x65E0;&#x6CD5;&#x7ED9;&#x6A21;&#x677F;&#x4F20;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E86;&#xFF0C;&#x9700;&#x8981;&#x4F20;&#x53C2;&#x6570;&#x5217;&#x8868;&#x65F6;&#x8FD8;&#x662F;&#x8981;&#x7528;<code>nj</code>&#x3002;</p>
 <h1 id="njexpression"><a name="njexpression" class="plugin-anchor" href="#njexpression"><i class="fa fa-link" aria-hidden="true"></i></a>nj.expression</h1>
 <p><code>nj.expression</code>&#x662F;&#x4E00;&#x79CD;&#x66F4;&#x7B80;&#x4FBF;&#x7684;&#x4F7F;&#x7528;&#x6A21;&#x677F;&#x4E2D;&#x63D2;&#x503C;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj, {
-  template <span class="hljs-keyword">as</span> t,
-  expression <span class="hljs-keyword">as</span> n
-} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> nj<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  template <span class="token keyword">as</span> t<span class="token punctuation">,</span>
+  expression <span class="token keyword">as</span> n
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;nornj&apos;</span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">const</span> html1 = nj<span class="hljs-string">`{{&apos;test_&apos; + test2}}`</span>({ test2: <span class="hljs-string">&apos;test2&apos;</span> });
+<span class="token keyword">const</span> html1 <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`{{&apos;test_&apos; + test2}}`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> test2<span class="token punctuation">:</span> <span class="token string">&apos;test2&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">const</span> html2 = t<span class="hljs-string">`{{&apos;test_&apos; + <span class="hljs-subst">${&apos;test2&apos;}</span>}}`</span>;
+<span class="token keyword">const</span> html2 <span class="token operator">=</span> t<span class="token template-string"><span class="token string">`{{&apos;test_&apos; + </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token string">&apos;test2&apos;</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">}}`</span></span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">const</span> html3 = n<span class="hljs-string">`&apos;test_&apos; + <span class="hljs-subst">${&apos;test2&apos;}</span>`</span>;
+<span class="token keyword">const</span> html3 <span class="token operator">=</span> n<span class="token template-string"><span class="token string">`&apos;test_&apos; + </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token string">&apos;test2&apos;</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">//&#x4EE5;&#x4E0A;&#x4E09;&#x79CD;&#x5747;&#x8F93;&#x51FA;&#xFF1A;test_test2</span>
+<span class="token comment">//&#x4EE5;&#x4E0A;&#x4E09;&#x79CD;&#x5747;&#x8F93;&#x51FA;&#xFF1A;test_test2</span>
 </code></pre>
 <p>&#x5982;&#x4E0A;&#xFF0C;<code>nj.expression</code>&#x7684;&#x4F18;&#x52BF;&#x5728;&#x4E8E;&#x4E0D;&#x7528;&#x5199;&#x63D2;&#x503C;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5206;&#x9694;&#x7B26;&#x53F7;(&#x5373;<code>{{</code>&#x548C;<code>}}</code>)&#xFF0C;&#x5176;&#x4ED6;&#x7279;&#x6027;&#x548C;<code>nj.template</code>&#x76F8;&#x540C;&#x3002;</p>
 <h1 id="njcss"><a name="njcss" class="plugin-anchor" href="#njcss"><i class="fa fa-link" aria-hidden="true"></i></a>nj.css</h1>
 <p>&#x7528;&#x4E8E;&#x5728;JSX&#x4E2D;&#x63D2;&#x5165;NornJ&#x7684;style&#x8BED;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> nj, {
-  css <span class="hljs-keyword">as</span> s
-} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;nornj&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> nj<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  css <span class="token keyword">as</span> s
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;nornj&apos;</span><span class="token punctuation">;</span>
 
-<span class="hljs-comment">//&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x8BED;&#x6CD5;&#x662F;&#x7B49;&#x4EF7;&#x7684;&#xFF1A;</span>
-<span class="hljs-keyword">const</span> paddingValue = <span class="hljs-number">20</span>;
-<span class="hljs-keyword">const</span> jsx = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">color:</span> &apos;<span class="hljs-attr">blue</span>&apos;, <span class="hljs-attr">marginLeft:</span> <span class="hljs-attr">10</span>, <span class="hljs-attr">padding:</span> <span class="hljs-attr">paddingValue</span> }}&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
-<span class="hljs-keyword">const</span> jsxUseNjStyle = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{s`color:blue;margin-left:10;padding:${paddingValue};`}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+<span class="token comment">//&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x8BED;&#x6CD5;&#x662F;&#x7B49;&#x4EF7;&#x7684;&#xFF1A;</span>
+<span class="token keyword">const</span> paddingValue <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> jsx <span class="token operator">=</span> <span class="token operator">&lt;</span>div style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> color<span class="token punctuation">:</span> <span class="token string">&apos;blue&apos;</span><span class="token punctuation">,</span> marginLeft<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> padding<span class="token punctuation">:</span> paddingValue <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> jsxUseNjStyle <span class="token operator">=</span> <span class="token operator">&lt;</span>div style<span class="token operator">=</span><span class="token punctuation">{</span>s<span class="token template-string"><span class="token string">`color:blue;margin-left:10;padding:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>paddingValue<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">;`</span></span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">;</span>
 </code></pre>
 <p>&#x5982;&#x4E0A;&#xFF0C;<code>nj.css</code>&#x7684;&#x4F18;&#x52BF;&#x5728;&#x4E8E;&#x7F16;&#x5199;style&#x7684;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x50CF;html&#x4E00;&#x6837;&#x3002;</p>
 
@@ -679,7 +687,7 @@ nj<span class="hljs-string">`
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"标签模板字符串(es6)语法","level":"1.3.9","depth":2,"next":{"title":"React开发中与JSX的不同点","level":"1.3.10","depth":2,"path":"templateSyntax/react.md","ref":"templateSyntax/react.md","articles":[]},"previous":{"title":"模板注释","level":"1.3.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/templateString.md","mtime":"2018-08-10T09:23:51.165Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-01-31T02:56:09.657Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"标签模板字符串(es6)语法","level":"1.3.9","depth":2,"next":{"title":"React开发中与JSX的不同点","level":"1.3.10","depth":2,"path":"templateSyntax/react.md","ref":"templateSyntax/react.md","articles":[]},"previous":{"title":"模板注释","level":"1.3.8","depth":2,"path":"templateSyntax/comment.md","ref":"templateSyntax/comment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github","prism","advanced-emoji"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/templateString.md","mtime":"2018-08-10T09:23:51.165Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-03-18T03:03:19.162Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

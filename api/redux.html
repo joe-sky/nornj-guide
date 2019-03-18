@@ -21,6 +21,14 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -530,18 +538,18 @@
                                 
                                 <h1 id="&#x7ED3;&#x5408;redux"><a name="&#x7ED3;&#x5408;redux" class="plugin-anchor" href="#&#x7ED3;&#x5408;redux"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7ED3;&#x5408;Redux</h1>
 <p>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;<code>NornJ</code>&#x6A21;&#x677F;&#x4E2D;&#x4F7F;&#x7528;<code>Redux</code>&#x63D0;&#x4F9B;&#x7684;&#x7EC4;&#x4EF6;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> { Provider } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Provider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span><span class="token punctuation">;</span>
 
-nj<span class="hljs-string">`
-  &lt;<span class="hljs-subst">${Provider}</span> store=<span class="hljs-subst">${store}</span>&gt;
-    &lt;<span class="hljs-subst">${App}</span> /&gt;
-  &lt;/<span class="hljs-subst">${Provider}</span>&gt;
-`</span>()
+nj<span class="token template-string"><span class="token string">`
+  &lt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Provider<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> store=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>store<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&gt;
+    &lt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>App<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> /&gt;
+  &lt;/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Provider<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&gt;
+`</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 <h2 id="&#x4F7F;&#x7528;nornj-react&#x5305;&#x4E2D;&#x7684;redux&#x7EC4;&#x4EF6;"><a name="&#x4F7F;&#x7528;nornj-react&#x5305;&#x4E2D;&#x7684;redux&#x7EC4;&#x4EF6;" class="plugin-anchor" href="#&#x4F7F;&#x7528;nornj-react&#x5305;&#x4E2D;&#x7684;redux&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;nornj-react&#x5305;&#x4E2D;&#x7684;redux&#x7EC4;&#x4EF6;</h2>
 <p>&#x5728;<code>nornj-react</code>&#x5305;&#x4E2D;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x9ED8;&#x8BA4;&#x5C01;&#x88C5;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x66F4;&#x65B9;&#x4FBF;&#x5730;&#x4F7F;&#x7528;<code>Redux</code>&#x3002;</p>
 <p>&#x8FD9;&#x6837;&#x5F15;&#x5165;&#x5373;&#x53EF;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;nornj-react/redux&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token string">&apos;nornj-react/redux&apos;</span><span class="token punctuation">;</span>
 </code></pre>
 <p>&#x7EC4;&#x4EF6;&#x5217;&#x8868;&#xFF1A;</p>
 <table>
@@ -559,11 +567,11 @@ nj<span class="hljs-string">`
 </tbody>
 </table>
 <p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF0C;&#x548C;<code>Redux</code>&#x539F;&#x751F;&#x7EC4;&#x4EF6;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF1A;</p>
-<pre><code class="lang-js">nj<span class="hljs-string">`
-  &lt;Provider store=<span class="hljs-subst">${store}</span>&gt;
-    &lt;<span class="hljs-subst">${App}</span> /&gt;
+<pre class="language-"><code class="lang-js">nj<span class="token template-string"><span class="token string">`
+  &lt;Provider store=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>store<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&gt;
+    &lt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>App<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> /&gt;
   &lt;/Provider&gt;
-`</span>()
+`</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 <h2 id="nornj--redux&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;"><a name="nornj--redux&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;" class="plugin-anchor" href="#nornj--redux&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>NornJ + Redux&#x7684;&#x5B9E;&#x4F8B;&#x9879;&#x76EE;</h2>
 <ul>
@@ -614,7 +622,7 @@ nj<span class="hljs-string">`
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Redux","level":"1.5.4","depth":2,"next":{"title":"React-Router","level":"1.5.5","depth":2,"path":"api/reactRouter.md","ref":"api/reactRouter.md","articles":[]},"previous":{"title":"React-Native","level":"1.5.3","depth":2,"path":"api/reactNative.md","ref":"api/reactNative.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/redux.md","mtime":"2018-04-10T11:57:17.244Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-01-31T02:56:09.657Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Redux","level":"1.5.4","depth":2,"next":{"title":"React-Router","level":"1.5.5","depth":2,"path":"api/reactRouter.md","ref":"api/reactRouter.md","articles":[]},"previous":{"title":"React-Native","level":"1.5.3","depth":2,"path":"api/reactNative.md","ref":"api/reactNative.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github","prism","advanced-emoji"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/redux.md","mtime":"2018-04-10T11:57:17.244Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-03-18T03:03:19.162Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -21,6 +21,14 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -529,171 +537,171 @@
                                 <h1 id="&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x6D4B;&#x8BD5;"><a name="&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x6D4B;&#x8BD5;" class="plugin-anchor" href="#&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x6D4B;&#x8BD5;</h1>
 <p><code>NornJ</code>&#x7684;&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x539F;&#x7406;&#xFF0C;&#x4E0E;&#x4E00;&#x4E9B;&#x8457;&#x540D;&#x7684;&#x9879;&#x76EE;&#x5982;<code>Handlebars</code>&#x6216;<code>Vue</code>&#x7684;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x662F;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4F7F;&#x7528;js&#x539F;&#x751F;&#x7684;<code>new Function</code>API&#x6765;&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x3002;</p>
 <p>&#x4F7F;&#x7528;<code>new Function</code>API&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x5C0F;&#x578B;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x7406;&#x8BBA;&#x4E0A;&#x53EF;&#x4EE5;&#x6709;&#x65E0;&#x4E0A;&#x9650;&#x7684;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x7A7A;&#x95F4;&#x3002;&#x4F8B;&#x5982;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">anonymous</span>(<span class="hljs-params">p1, p2</span>) </span>{
-  <span class="hljs-keyword">var</span> _type0 = <span class="hljs-string">&apos;div&apos;</span>;
-  <span class="hljs-keyword">var</span> _data0 = p2.getData(<span class="hljs-string">&apos;num&apos;</span>) + <span class="hljs-string">&apos;_100&apos;</span>;
-  <span class="hljs-keyword">var</span> _props0 = {
-    <span class="hljs-string">&apos;id&apos;</span>: _data0
-  };
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">anonymous</span><span class="token punctuation">(</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> _type0 <span class="token operator">=</span> <span class="token string">&apos;div&apos;</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> _data0 <span class="token operator">=</span> p2<span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token string">&apos;num&apos;</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&apos;_100&apos;</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> _props0 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">&apos;id&apos;</span><span class="token punctuation">:</span> _data0
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-  <span class="hljs-keyword">return</span> p1.h(_type0, _props0);
-}
+  <span class="token keyword">return</span> p1<span class="token punctuation">.</span><span class="token function">h</span><span class="token punctuation">(</span>_type0<span class="token punctuation">,</span> _props0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x4E0A;&#x4F8B;&#x53EF;&#x4EE5;&#x518D;&#x8FD9;&#x6837;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x7F16;&#x8BD1;&#x9636;&#x6BB5;&#x7684;&#x4F18;&#x5316;&#xFF0C;&#x5C06;&#x521B;&#x5EFA;&#x53D8;&#x91CF;&#x7684;&#x8FC7;&#x7A0B;&#x7701;&#x7565;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">anonymous</span>(<span class="hljs-params">p1, p2</span>) </span>{
-  <span class="hljs-keyword">return</span> p1.h(<span class="hljs-string">&apos;div&apos;</span>, {
-    <span class="hljs-string">&apos;id&apos;</span>: p2.getData(<span class="hljs-string">&apos;num&apos;</span>) + <span class="hljs-string">&apos;_100&apos;</span>
-  });
-}
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">anonymous</span><span class="token punctuation">(</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> p1<span class="token punctuation">.</span><span class="token function">h</span><span class="token punctuation">(</span><span class="token string">&apos;div&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token string">&apos;id&apos;</span><span class="token punctuation">:</span> p2<span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token string">&apos;num&apos;</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&apos;_100&apos;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x8FD9;&#x6837;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x7684;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x5C31;&#x4F1A;&#x5F97;&#x5230;&#x76F8;&#x5E94;&#x63D0;&#x5347;&#x3002;</p>
 <h2 id="&#x5927;&#x91CF;&#x6570;&#x636E;&#x6E32;&#x67D3;&#x6D4B;&#x8BD5;"><a name="&#x5927;&#x91CF;&#x6570;&#x636E;&#x6E32;&#x67D3;&#x6D4B;&#x8BD5;" class="plugin-anchor" href="#&#x5927;&#x91CF;&#x6570;&#x636E;&#x6E32;&#x67D3;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5927;&#x91CF;&#x6570;&#x636E;&#x6E32;&#x67D3;&#x6D4B;&#x8BD5;</h2>
 <p>&#x9488;&#x5BF9;&#x4E8E;<code>NornJ</code>&#x7684;&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x6548;&#x7387;&#xFF0C;&#x6211;&#x4EEC;&#x505A;&#x8FC7;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6D4B;&#x8BD5;&#xFF0C;<a href="https://github.com/joe-sky/nornj/blob/master/test/misc/testSpeed.spec.js" target="_blank">&#x6E90;&#x7801;&#x5728;&#x8FD9;&#x91CC;</a>&#x3002;</p>
 <h3 id="&#x4E0E;handlebars&#x5BF9;&#x6BD4;"><a name="&#x4E0E;handlebars&#x5BF9;&#x6BD4;" class="plugin-anchor" href="#&#x4E0E;handlebars&#x5BF9;&#x6BD4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0E;Handlebars&#x5BF9;&#x6BD4;</h3>
 <p><code>hbs</code>&#x6837;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">{{div}}</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;{{num}}_100&quot;</span> <span class="hljs-attr">id2</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>{{div}}</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{{num}}_100<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id2</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
   {{#each arr}}
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;test_{{@index}}&quot;</span>&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>test_{{@index}}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
       test_{{../num}}
       {{#each ../list2}}
-        {{no}}{{no}}<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{{no}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>{{no}}{{no}}
+        {{no}}{{no}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>{{no}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>{{no}}{{no}}
       {{/each}}
-    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
     {{#five @index}}
-      <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
     {{else}}
-      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> /&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token punctuation">/&gt;</span></span>
     {{/five}}
   {{/each}}
-<span class="hljs-tag">&lt;/<span class="hljs-name">{{div}}</span>&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>{{div}}</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p><code>nj</code>&#x6837;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">{{div}}</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;{{num}}_100&quot;</span> <span class="hljs-attr">id2</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {{<span class="hljs-attr">arr</span>}}&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;test_{{@index}}&quot;</span>&gt;</span>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>{{div}}</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{{num}}_100<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id2</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#each</span> <span class="token attr-name">{{arr}}</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>test_{{@index}}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
       test_{{../num}}
-      <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {{<span class="hljs-attr">..</span>/<span class="hljs-attr">list2</span>}}&gt;</span>
-        {{no}}{{no}}<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{{no}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>{{no}}{{no}}
-      <span class="hljs-tag">&lt;/<span class="hljs-name">#each</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">#if</span> {{@<span class="hljs-attr">index</span> | <span class="hljs-attr">five</span>}}&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">#else</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> /&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">#else</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">#if</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">#each</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">{{div}}</span>&gt;</span>
+      &lt;#each {{../list2}}&gt;
+        {{no}}{{no}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>{{no}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>{{no}}{{no}}
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#each</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#if</span> <span class="token attr-name">{{@index</span> <span class="token attr-name">|</span> <span class="token attr-name">five}}</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#else</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#else</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#if</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#each</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>{{div}}</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p>&#x5982;&#x4E0A;&#x4F8B;&#xFF0C;&#x5916;&#x5C42;&#x5FAA;&#x73AF;&#x4E3A;<code>100&#x6B21;</code>&#xFF0C;&#x5185;&#x5C42;&#x5FAA;&#x73AF;&#x4E3A;<code>1000&#x6B21;</code>&#xFF0C;&#x6E32;&#x67D3;&#x6D4B;&#x8BD5;&#x8017;&#x65F6;&#x4E3A;&#xFF1A;</p>
-<pre><code class="lang-js">hbs:<span class="hljs-number">246</span>
-nj:<span class="hljs-number">171</span>
+<pre class="language-"><code class="lang-js">hbs<span class="token punctuation">:</span><span class="token number">246</span>
+nj<span class="token punctuation">:</span><span class="token number">171</span>
 </code></pre>
 <h3 id="&#x4E0E;jsx&#x5BF9;&#x6BD4;"><a name="&#x4E0E;jsx&#x5BF9;&#x6BD4;" class="plugin-anchor" href="#&#x4E0E;jsx&#x5BF9;&#x6BD4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0E;JSX&#x5BF9;&#x6BD4;</h3>
 <p><code>JSX</code>&#x6837;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-js">render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">return</span> (
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">{this.state.num</span> + &apos;<span class="hljs-attr">_100</span>&apos;}&gt;</span>
-      {this.props.arr.map((o, i) =&gt; [
-        o.item.name[&apos;fullName&apos;],
-        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{&apos;test_&apos;</span> + <span class="hljs-attr">i</span>} <span class="hljs-attr">style</span>=<span class="hljs-string">{styles}</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.onClick}</span>&gt;</span>
-          {&apos;test_&apos; + this.state.num}
-          {list2.map((p, j) =&gt; <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{j}</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{&apos;span&apos; + p.no}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>{p.no}<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>)}
-        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-      ])}
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-  );
-}
+<pre class="language-"><code class="lang-js">render<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>num <span class="token operator">+</span> <span class="token string">&apos;_100&apos;</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span>
+        o<span class="token punctuation">.</span>item<span class="token punctuation">.</span>name<span class="token punctuation">[</span><span class="token string">&apos;fullName&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token operator">&lt;</span>span className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">&apos;test_&apos;</span> <span class="token operator">+</span> i<span class="token punctuation">}</span> style<span class="token operator">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">}</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>onClick<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+          <span class="token punctuation">{</span><span class="token string">&apos;test_&apos;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>num<span class="token punctuation">}</span>
+          <span class="token punctuation">{</span>list2<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> j<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>div key<span class="token operator">=</span><span class="token punctuation">{</span>j<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token string">&apos;span&apos;</span> <span class="token operator">+</span> p<span class="token punctuation">.</span>no<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>p<span class="token punctuation">.</span>no<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token number">1000</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token number">1000</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token number">1000</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token number">1000</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token number">1000</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+      <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p><code>nj</code>&#x6837;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;{num}_100&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {<span class="hljs-attr">arr</span>}&gt;</span>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{num}_100<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#each</span> <span class="token attr-name">{arr}</span><span class="token punctuation">&gt;</span></span>
     {item.name[&apos;fullName&apos;]}
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">test_{@index}</span>
-          <span class="hljs-attr">style</span>=<span class="hljs-string">{..</span>/<span class="hljs-attr">styles</span>}
-          <span class="hljs-attr">onClick</span>=<span class="hljs-string">{..</span>/<span class="hljs-attr">onClick</span>}&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span>test_{@index}</span>
+          <span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation">=</span>{../styles}</span>
+          <span class="token attr-name">onClick</span><span class="token attr-value"><span class="token punctuation">=</span>{../onClick}</span><span class="token punctuation">&gt;</span></span>
       test_{../num}
-      <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {<span class="hljs-attr">..</span>/<span class="hljs-attr">list2</span>}&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{@index}</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>span{no}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>{no}<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">#each</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">#if</span> {@<span class="hljs-attr">index</span> | <span class="hljs-attr">five</span>(<span class="hljs-attr">1</span>)}&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">#else</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> /&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">#else</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">#if</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">#each</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      &lt;#each {../list2}&gt;
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span>{@index}</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>span{no}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>{no}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>1000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>1000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>1000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>1000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>1000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#each</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#if</span> <span class="token attr-name">{@index</span> <span class="token attr-name">|</span> <span class="token attr-name">five(1)}</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#else</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#else</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#if</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#each</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p>&#x5982;&#x4E0A;&#x4F8B;&#xFF0C;&#x5916;&#x5C42;&#x5FAA;&#x73AF;&#x4E3A;<code>100&#x6B21;</code>&#xFF0C;&#x5185;&#x5C42;&#x5FAA;&#x73AF;&#x4E5F;&#x4E3A;<code>100&#x6B21;</code>&#xFF0C;&#x518D;&#x5404;&#x6E32;&#x67D3;<code>5&#x6B21;</code>&#x53D6;&#x5E73;&#x5747;&#x503C;&#xFF0C;&#x6E32;&#x67D3;&#x6D4B;&#x8BD5;&#x8017;&#x65F6;&#x4E3A;&#xFF1A;</p>
-<pre><code class="lang-js">jsx:<span class="hljs-number">1198</span>
-jsx:<span class="hljs-number">1164</span>
-jsx:<span class="hljs-number">1304</span>
-jsx:<span class="hljs-number">1184</span>
-jsx:<span class="hljs-number">1136</span>
+<pre class="language-"><code class="lang-js">jsx<span class="token punctuation">:</span><span class="token number">1198</span>
+jsx<span class="token punctuation">:</span><span class="token number">1164</span>
+jsx<span class="token punctuation">:</span><span class="token number">1304</span>
+jsx<span class="token punctuation">:</span><span class="token number">1184</span>
+jsx<span class="token punctuation">:</span><span class="token number">1136</span>
 
-avg:<span class="hljs-number">1197.2</span>
+avg<span class="token punctuation">:</span><span class="token number">1197.2</span>
 
-nj:<span class="hljs-number">1470</span>
-nj:<span class="hljs-number">1190</span>
-nj:<span class="hljs-number">1225</span>
-nj:<span class="hljs-number">1215</span>
-nj:<span class="hljs-number">1222</span>
+nj<span class="token punctuation">:</span><span class="token number">1470</span>
+nj<span class="token punctuation">:</span><span class="token number">1190</span>
+nj<span class="token punctuation">:</span><span class="token number">1225</span>
+nj<span class="token punctuation">:</span><span class="token number">1215</span>
+nj<span class="token punctuation">:</span><span class="token number">1222</span>
 
-avg:<span class="hljs-number">1264.4</span>
+avg<span class="token punctuation">:</span><span class="token number">1264.4</span>
 </code></pre>
 <p>&#x53EF;&#x89C1;&#xFF0C;<code>NornJ</code>&#x6BD4;<code>JSX</code>&#x901F;&#x5EA6;&#x7565;&#x4F4E;&#x4E00;&#x70B9;&#x70B9;&#xFF0C;&#x4F46;&#x4E5F;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x91CF;&#x7EA7;&#x4E0A;&#x3002;&#x6BD5;&#x7ADF;<code>NornJ</code>&#x548C;<code>JSX</code>&#x76F8;&#x6BD4;&#xFF0C;&#x5C31;&#x597D;&#x6BD4;&#x62FF;<code>jQuery</code>&#x53BB;&#x548C;<code>&#x539F;&#x751F;dom</code>&#x5BF9;&#x6BD4;&#x6548;&#x7387;&#x4E00;&#x6837;&#xFF0C;&#x5C01;&#x88C5;&#x8FC7;&#x7684;&#x6CA1;&#x6709;&#x539F;&#x751F;&#x65B9;&#x5F0F;&#x901F;&#x5EA6;&#x5FEB;&#x3002;</p>
-<p>&#x4F46;&#x662F;&#xFF0C;<code>NornJ</code>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x6A21;&#x677F;&#x7279;&#x6709;&#x7684;&#x4F18;&#x5316;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002;&#x6BD4;&#x5982;&#x4F7F;&#x7528;<code>&lt;#once&gt;</code>&#x6807;&#x7B7E;&#xFF0C;&#x5B83;&#x548C;<code>Vue</code>&#x7684;<code>v-once</code>&#x6307;&#x4EE4;&#x6709;&#x4E9B;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E9B;&#x9759;&#x6001;&#x7684;&#x6807;&#x7B7E;&#x653E;&#x5230;&#x5B83;&#x91CC;&#x9762;&#xFF0C;&#x8FD9;&#x6837;&#x53EA;&#x4F1A;&#x6E32;&#x67D3;&#x7B2C;&#x4E00;&#x6B21;&#xFF0C;&#x4E4B;&#x540E;&#x5C31;&#x4F1A;&#x5229;&#x7528;&#x7F13;&#x5B58;&#x4E86;&#x3002;&#x5982;&#x4E0B;&#x5BF9;<code>nj</code>&#x6837;&#x4F8B;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;{num}_100&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {<span class="hljs-attr">arr</span>}&gt;</span>
+<p>&#x4F46;&#x662F;&#xFF0C;<code>NornJ</code>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x6A21;&#x677F;&#x7279;&#x6709;&#x7684;&#x4F18;&#x5316;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002;&#x6BD4;&#x5982;&#x4F7F;&#x7528;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#once</span><span class="token punctuation">&gt;</span></span></code>&#x6807;&#x7B7E;&#xFF0C;&#x5B83;&#x548C;<code>Vue</code>&#x7684;<code>v-once</code>&#x6307;&#x4EE4;&#x6709;&#x4E9B;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E9B;&#x9759;&#x6001;&#x7684;&#x6807;&#x7B7E;&#x653E;&#x5230;&#x5B83;&#x91CC;&#x9762;&#xFF0C;&#x8FD9;&#x6837;&#x53EA;&#x4F1A;&#x6E32;&#x67D3;&#x7B2C;&#x4E00;&#x6B21;&#xFF0C;&#x4E4B;&#x540E;&#x5C31;&#x4F1A;&#x5229;&#x7528;&#x7F13;&#x5B58;&#x4E86;&#x3002;&#x5982;&#x4E0B;&#x5BF9;<code>nj</code>&#x6837;&#x4F8B;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF1A;</p>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{num}_100<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#each</span> <span class="token attr-name">{arr}</span><span class="token punctuation">&gt;</span></span>
     {item.name[&apos;fullName&apos;]}
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">test_{@index}</span>
-          <span class="hljs-attr">style</span>=<span class="hljs-string">{..</span>/<span class="hljs-attr">styles</span>}
-          <span class="hljs-attr">onClick</span>=<span class="hljs-string">{..</span>/<span class="hljs-attr">onClick</span>}&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span>test_{@index}</span>
+          <span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation">=</span>{../styles}</span>
+          <span class="token attr-name">onClick</span><span class="token attr-value"><span class="token punctuation">=</span>{../onClick}</span><span class="token punctuation">&gt;</span></span>
       test_{../num}
-      <span class="hljs-tag">&lt;<span class="hljs-name">#each</span> {<span class="hljs-attr">..</span>/<span class="hljs-attr">list2</span>}&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{@index}</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>span{no}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>{no}<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
-          <span class="hljs-comment">&lt;!-- &#x6DFB;&#x52A0;once&#x6807;&#x7B7E; --&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">#once</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">#once</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">#each</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">#if</span> {@<span class="hljs-attr">index</span> | <span class="hljs-attr">five</span>(<span class="hljs-attr">1</span>)}&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">#else</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> /&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">#else</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">#if</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">#each</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      &lt;#each {../list2}&gt;
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span>{@index}</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>span{no}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>{no}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+          <span class="token comment">&lt;!-- &#x6DFB;&#x52A0;once&#x6807;&#x7B7E; --&gt;</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#once</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>1000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>1000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>1000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>1000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>1000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#once</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#each</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#if</span> <span class="token attr-name">{@index</span> <span class="token attr-name">|</span> <span class="token attr-name">five(1)}</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#else</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#else</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#if</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#each</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p>&#x518D;&#x6B21;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x8FD9;&#x6B21;<code>NornJ</code>&#x6BD4;<code>JSX</code>&#x7A0D;&#x5FEB;&#x4E86;&#x4E00;&#x4E9B;&#xFF1A;</p>
-<pre><code class="lang-js">jsx:<span class="hljs-number">1129</span>
-jsx:<span class="hljs-number">1101</span>
-jsx:<span class="hljs-number">1115</span>
-jsx:<span class="hljs-number">1254</span>
-jsx:<span class="hljs-number">1070</span>
+<pre class="language-"><code class="lang-js">jsx<span class="token punctuation">:</span><span class="token number">1129</span>
+jsx<span class="token punctuation">:</span><span class="token number">1101</span>
+jsx<span class="token punctuation">:</span><span class="token number">1115</span>
+jsx<span class="token punctuation">:</span><span class="token number">1254</span>
+jsx<span class="token punctuation">:</span><span class="token number">1070</span>
 
-avg:<span class="hljs-number">1133.8</span>
+avg<span class="token punctuation">:</span><span class="token number">1133.8</span>
 
-nj:<span class="hljs-number">1258</span>
-nj:<span class="hljs-number">960</span>
-nj:<span class="hljs-number">942</span>
-nj:<span class="hljs-number">946</span>
-nj:<span class="hljs-number">948</span>
+nj<span class="token punctuation">:</span><span class="token number">1258</span>
+nj<span class="token punctuation">:</span><span class="token number">960</span>
+nj<span class="token punctuation">:</span><span class="token number">942</span>
+nj<span class="token punctuation">:</span><span class="token number">946</span>
+nj<span class="token punctuation">:</span><span class="token number">948</span>
 
-avg:<span class="hljs-number">1010.8</span>
+avg<span class="token punctuation">:</span><span class="token number">1010.8</span>
 </code></pre>
 <h2 id="nornj&#x7684;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x4ECD;&#x53EF;&#x7EE7;&#x7EED;&#x63D0;&#x5347;"><a name="nornj&#x7684;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x4ECD;&#x53EF;&#x7EE7;&#x7EED;&#x63D0;&#x5347;" class="plugin-anchor" href="#nornj&#x7684;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x4ECD;&#x53EF;&#x7EE7;&#x7EED;&#x63D0;&#x5347;"><i class="fa fa-link" aria-hidden="true"></i></a>NornJ&#x7684;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x4ECD;&#x53EF;&#x7EE7;&#x7EED;&#x63D0;&#x5347;</h2>
 <p>&#x867D;&#x7136;<code>NornJ</code>&#x6A21;&#x677F;&#x76EE;&#x524D;&#x7684;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x5DF2;&#x7B97;&#x9AD8;&#x6548;&#x4E86;&#xFF0C;&#x4F46;&#x4ECD;&#x8FDC;&#x672A;&#x4F18;&#x5316;&#x81F3;&#x6781;&#x9650;&#x6548;&#x7387;&#x3002;&#x5728;&#x672A;&#x6765;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x6301;&#x7EED;&#x63D0;&#x9AD8;&#x5B83;&#x7684;&#x6E32;&#x67D3;&#x6548;&#x7387;&#xFF0C;&#x656C;&#x8BF7;&#x671F;&#x5F85;&#x3002;</p>
@@ -736,7 +744,7 @@ avg:<span class="hljs-number">1010.8</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"模板渲染效率测试","level":"1.6","depth":1,"previous":{"title":"React第三方ui库","level":"1.5.7","depth":2,"path":"api/reactUI.md","ref":"api/reactUI.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"performance/renderSpeed.md","mtime":"2019-01-23T07:47:27.501Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-01-31T02:56:09.657Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"模板渲染效率测试","level":"1.6","depth":1,"previous":{"title":"React第三方ui库","level":"1.5.7","depth":2,"path":"api/reactUI.md","ref":"api/reactUI.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github","prism","advanced-emoji"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"performance/renderSpeed.md","mtime":"2019-01-23T07:47:27.501Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-03-18T03:03:19.162Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

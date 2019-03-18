@@ -21,6 +21,14 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -544,21 +552,21 @@
 </ul>
 <h2 id="&#x5728;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5B9A;&#x4E49;&#x5355;&#x4E2A;&#x6A21;&#x677F;"><a name="&#x5728;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5B9A;&#x4E49;&#x5355;&#x4E2A;&#x6A21;&#x677F;" class="plugin-anchor" href="#&#x5728;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5B9A;&#x4E49;&#x5355;&#x4E2A;&#x6A21;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5B9A;&#x4E49;&#x5355;&#x4E2A;&#x6A21;&#x677F;</h2>
 <p>template.nj.html&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
   this the test demo{no}.
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p>component.js&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> template <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./template.nj.html&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> template <span class="token keyword">from</span> <span class="token string">&apos;./template.nj.html&apos;</span><span class="token punctuation">;</span>
 
-@registerTmpl(<span class="hljs-string">&apos;TestComponent&apos;</span>)
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
-  render() {
-    <span class="hljs-keyword">return</span> template({ no: <span class="hljs-number">1</span> });
-  }
-}
+@<span class="token function">registerTmpl</span><span class="token punctuation">(</span><span class="token string">&apos;TestComponent&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">TestComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">template</span><span class="token punctuation">(</span><span class="token punctuation">{</span> no<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-<span class="hljs-comment">/*&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x540E;&#x8F93;&#x51FA;html:
+<span class="token comment">/*&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x540E;&#x8F93;&#x51FA;html:
 &lt;div&gt;
   this the test demo1.
 &lt;/div&gt;
@@ -567,50 +575,50 @@
 <h2 id="&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x6A21;&#x677F;"><a name="&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x6A21;&#x677F;" class="plugin-anchor" href="#&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x6A21;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x6A21;&#x677F;</h2>
 <p><code>NornJ</code>&#x6A21;&#x677F;&#x4E5F;&#x53EF;&#x652F;&#x6301;&#x5728;&#x4E00;&#x4E2A;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x6A21;&#x677F;&#xFF0C;&#x6BCF;&#x4E2A;&#x6A21;&#x677F;&#x4F7F;&#x7528;<code>template</code>&#x6807;&#x7B7E;&#x5B9A;&#x4E49;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;<code>include</code>&#x6807;&#x7B7E;&#x5F15;&#x5165;&#xFF1A;</p>
 <p>template.nj.html&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;tmplModule&quot;</span> <span class="hljs-attr">local</span>&gt;</span>  <span class="hljs-comment">&lt;!-- &#x53EF;&#x8BBE;&#x7F6E;local&#x5C5E;&#x6027; --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tmplModule<span class="token punctuation">&quot;</span></span> <span class="token attr-name">local</span><span class="token punctuation">&gt;</span></span>  <span class="token comment">&lt;!-- &#x53EF;&#x8BBE;&#x7F6E;local&#x5C5E;&#x6027; --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
     this the tmplModule demo{no}.
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;tmplModule2&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tmplModule2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>button<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>  <span class="hljs-comment">&lt;!-- &#x6BCF;&#x4E2A;template&#x6807;&#x7B7E;&#x90FD;&#x6709;name&#x5C5E;&#x6027;(1) --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">#include</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;tmplModule&quot;</span> /&gt;</span>  <span class="hljs-comment">&lt;!-- include&#x5757;&#x53EA;&#x8BBE;&#x7F6E;name&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x4E3A;&#x5F15;&#x5165;&#x5F53;&#x524D;html&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x6A21;&#x677F;(2) --&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">#include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./template2.nj.html&quot;</span> /&gt;</span>  <span class="hljs-comment">&lt;!-- include&#x5757;&#x53EA;&#x8BBE;&#x7F6E;src&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x4E3A;&#x5F15;&#x5165;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4E3B;&#x6A21;&#x677F;(3) --&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">#include</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;tmplModule2&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./template2.nj.html&quot;</span> /&gt;</span>  <span class="hljs-comment">&lt;!-- include&#x5757;&#x8BBE;&#x7F6E;src&#x548C;name&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x4E3A;&#x5F15;&#x5165;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x6A21;&#x677F;(4) --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>main<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>  <span class="token comment">&lt;!-- &#x6BCF;&#x4E2A;template&#x6807;&#x7B7E;&#x90FD;&#x6709;name&#x5C5E;&#x6027;(1) --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#include</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tmplModule<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>  <span class="token comment">&lt;!-- include&#x5757;&#x53EA;&#x8BBE;&#x7F6E;name&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x4E3A;&#x5F15;&#x5165;&#x5F53;&#x524D;html&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x6A21;&#x677F;(2) --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#include</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>./template2.nj.html<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>  <span class="token comment">&lt;!-- include&#x5757;&#x53EA;&#x8BBE;&#x7F6E;src&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x4E3A;&#x5F15;&#x5165;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4E3B;&#x6A21;&#x677F;(3) --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#include</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tmplModule2<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>./template2.nj.html<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>  <span class="token comment">&lt;!-- include&#x5757;&#x8BBE;&#x7F6E;src&#x548C;name&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x4E3A;&#x5F15;&#x5165;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x6A21;&#x677F;(4) --&gt;</span>
     this the main demo{no}.
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p>template2.nj.html&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;tmplModule2&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tmplModule2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
     this the tmplModule2 demo{no}.
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>  <span class="hljs-comment">&lt;!-- template&#x6807;&#x7B7E;&#x7684;name&#x5C5E;&#x6027;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x8BBE;&#x7F6E;&#xFF0C;&#x8FD9;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;name&#x5C5E;&#x6027;&#x4E3A;&quot;main&quot;(5) --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>  <span class="token comment">&lt;!-- template&#x6807;&#x7B7E;&#x7684;name&#x5C5E;&#x6027;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x8BBE;&#x7F6E;&#xFF0C;&#x8FD9;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;name&#x5C5E;&#x6027;&#x4E3A;&quot;main&quot;(5) --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
     this the main2 demo{no}.
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p>component.js&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> tmpls <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./template.nj.html&apos;</span>;
-<span class="hljs-built_in">console</span>.log(tmpls);  <span class="hljs-comment">//{ main:..., tmplModule2:... }&#xFF0C;&#x8BBE;&#x7F6E;local&#x5C5E;&#x6027;&#x7684;&#x6A21;&#x677F;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;(6)</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> tmpls <span class="token keyword">from</span> <span class="token string">&apos;./template.nj.html&apos;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>tmpls<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//{ main:..., tmplModule2:... }&#xFF0C;&#x8BBE;&#x7F6E;local&#x5C5E;&#x6027;&#x7684;&#x6A21;&#x677F;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;(6)</span>
 
-@registerTmpl(<span class="hljs-string">&apos;TestComponent&apos;</span>)
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
-  render() {
-    <span class="hljs-keyword">return</span> tmpls.main({ no: <span class="hljs-number">1</span> });  <span class="hljs-comment">//tmpls&#x4E3A;&#x5BF9;&#x8C61;&#x7ED3;&#x6784;&#xFF0C;key&#x503C;&#x4E3A;html&#x6587;&#x4EF6;&#x4E2D;template&#x6807;&#x7B7E;&#x7684;name&#x5C5E;&#x6027;</span>
-  }
-}
+@<span class="token function">registerTmpl</span><span class="token punctuation">(</span><span class="token string">&apos;TestComponent&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">TestComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> tmpls<span class="token punctuation">.</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">{</span> no<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//tmpls&#x4E3A;&#x5BF9;&#x8C61;&#x7ED3;&#x6784;&#xFF0C;key&#x503C;&#x4E3A;html&#x6587;&#x4EF6;&#x4E2D;template&#x6807;&#x7B7E;&#x7684;name&#x5C5E;&#x6027;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-<span class="hljs-comment">/*&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x540E;&#x8F93;&#x51FA;html:
+<span class="token comment">/*&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x540E;&#x8F93;&#x51FA;html:
 &lt;div&gt;
   &lt;div&gt;
     this the tmplModule demo1.
@@ -634,25 +642,25 @@
 </ol>
 <h2 id="&#x5728;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5F15;&#x5165;&#x56FE;&#x7247;&#x7B49;&#x8D44;&#x6E90;"><a name="&#x5728;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5F15;&#x5165;&#x56FE;&#x7247;&#x7B49;&#x8D44;&#x6E90;" class="plugin-anchor" href="#&#x5728;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5F15;&#x5165;&#x56FE;&#x7247;&#x7B49;&#x8D44;&#x6E90;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;&#x5355;&#x6587;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x5F15;&#x5165;&#x56FE;&#x7247;&#x7B49;&#x8D44;&#x6E90;</h2>
 <p>&#x3010;<b style="color:#b96121">v0.4.8&#x65B0;&#x589E;</b>&#x3011;&#x4E0E;<code>webpack</code>&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#x76F8;&#x540C;&#xFF0C;&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x4F7F;&#x7528;<code>require</code>&#x65B9;&#x6CD5;&#x5F15;&#x5165;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x8D44;&#x6E90;&#x5373;&#x53EF;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;importImg&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;{require(&apos;../../images/test.png&apos;)}&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>importImg<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{require(<span class="token punctuation">&apos;</span>../../images/test.png<span class="token punctuation">&apos;</span>)}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p>&#x53E6;&#x5916;&#xFF0C;&#x5728;<code>v0.4.7</code>&#x53CA;&#x4EE5;&#x524D;&#x7684;&#x7248;&#x672C;&#x4E2D;&#x9700;&#x8981;&#x8FD9;&#x6837;&#x505A;&#xFF1A;</p>
 <p>testImg.nj.html&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;importImg&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{imgSrc}</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>importImg<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span>{imgSrc}</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p>testImg.js&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> tmpls <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./testImg.nj.html&apos;</span>;
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> tmpls <span class="token keyword">from</span> <span class="token string">&apos;./testImg.nj.html&apos;</span><span class="token punctuation">;</span>
 
-@registerTmpl(<span class="hljs-string">&apos;TestImg&apos;</span>)
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestImg</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
-  render() {
-    <span class="hljs-keyword">return</span> tmpls.importImg({ imgSrc: <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../../images/test.png&apos;</span>) });  <span class="hljs-comment">//&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;require&#x65B9;&#x6CD5;&#x5F15;&#x5165;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x56FE;&#x7247;&#xFF0C;&#x518D;&#x4F20;&#x5230;&#x6A21;&#x677F;&#x4E2D;</span>
-  }
-}
+@<span class="token function">registerTmpl</span><span class="token punctuation">(</span><span class="token string">&apos;TestImg&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">TestImg</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> tmpls<span class="token punctuation">.</span><span class="token function">importImg</span><span class="token punctuation">(</span><span class="token punctuation">{</span> imgSrc<span class="token punctuation">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;../../images/test.png&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x5728;js&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;require&#x65B9;&#x6CD5;&#x5F15;&#x5165;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x56FE;&#x7247;&#xFF0C;&#x518D;&#x4F20;&#x5230;&#x6A21;&#x677F;&#x4E2D;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
                                 
@@ -693,7 +701,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"结合Webpack在单文件中编写模板","level":"1.5.1","depth":2,"next":{"title":"Html-Webpack-Plugin","level":"1.5.2","depth":2,"path":"api/htmlWebpackPlugin.md","ref":"api/htmlWebpackPlugin.md","articles":[]},"previous":{"title":"结合前端生态工具","level":"1.5","depth":1,"ref":"","articles":[{"title":"结合Webpack在单文件中编写模板","level":"1.5.1","depth":2,"path":"api/webpack.md","ref":"api/webpack.md","articles":[]},{"title":"Html-Webpack-Plugin","level":"1.5.2","depth":2,"path":"api/htmlWebpackPlugin.md","ref":"api/htmlWebpackPlugin.md","articles":[]},{"title":"React-Native","level":"1.5.3","depth":2,"path":"api/reactNative.md","ref":"api/reactNative.md","articles":[]},{"title":"Redux","level":"1.5.4","depth":2,"path":"api/redux.md","ref":"api/redux.md","articles":[]},{"title":"React-Router","level":"1.5.5","depth":2,"path":"api/reactRouter.md","ref":"api/reactRouter.md","articles":[]},{"title":"Mobx","level":"1.5.6","depth":2,"path":"api/mobx.md","ref":"api/mobx.md","articles":[]},{"title":"React第三方ui库","level":"1.5.7","depth":2,"path":"api/reactUI.md","ref":"api/reactUI.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/webpack.md","mtime":"2018-07-26T11:33:55.633Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-01-31T02:56:09.657Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"结合Webpack在单文件中编写模板","level":"1.5.1","depth":2,"next":{"title":"Html-Webpack-Plugin","level":"1.5.2","depth":2,"path":"api/htmlWebpackPlugin.md","ref":"api/htmlWebpackPlugin.md","articles":[]},"previous":{"title":"结合前端生态工具","level":"1.5","depth":1,"ref":"","articles":[{"title":"结合Webpack在单文件中编写模板","level":"1.5.1","depth":2,"path":"api/webpack.md","ref":"api/webpack.md","articles":[]},{"title":"Html-Webpack-Plugin","level":"1.5.2","depth":2,"path":"api/htmlWebpackPlugin.md","ref":"api/htmlWebpackPlugin.md","articles":[]},{"title":"React-Native","level":"1.5.3","depth":2,"path":"api/reactNative.md","ref":"api/reactNative.md","articles":[]},{"title":"Redux","level":"1.5.4","depth":2,"path":"api/redux.md","ref":"api/redux.md","articles":[]},{"title":"React-Router","level":"1.5.5","depth":2,"path":"api/reactRouter.md","ref":"api/reactRouter.md","articles":[]},{"title":"Mobx","level":"1.5.6","depth":2,"path":"api/mobx.md","ref":"api/mobx.md","articles":[]},{"title":"React第三方ui库","level":"1.5.7","depth":2,"path":"api/reactUI.md","ref":"api/reactUI.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github","prism","advanced-emoji"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/webpack.md","mtime":"2018-07-26T11:33:55.633Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-03-18T03:03:19.162Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

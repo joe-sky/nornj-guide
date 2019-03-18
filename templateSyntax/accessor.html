@@ -21,6 +21,14 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -530,104 +538,104 @@
                                 
                                 <h1 id="&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;"><a name="&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;" class="plugin-anchor" href="#&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;</h1>
 <p>&#x4E0E;<code>Vue</code>&#x6216;<code>Mobx</code>&#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x529F;&#x80FD;&#x6709;&#x4E9B;&#x76F8;&#x4F3C;&#xFF0C;<code>NornJ</code>&#x6A21;&#x677F;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;</code>&#x6765;&#x5C06;&#x4E00;&#x4E9B;&#x590D;&#x6742;&#x903B;&#x8F91;&#x5C01;&#x88C5;&#x6210;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x8BED;&#x6CD5;&#x4E3A;&#x5728;&#x666E;&#x901A;&#x7684;&#x63D2;&#x503C;&#x53D8;&#x91CF;&#x524D;&#x52A0;&#x4E00;&#x4E2A;<code>#</code>&#x5B57;&#x7B26;&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`&lt;div&gt;{{#prop}}&lt;/div&apos;&gt;`</span>({
-  info: <span class="hljs-string">&apos;accessor property.&apos;</span>,
-  prop: ctx =&gt; {  <span class="hljs-comment">//&#x6BCF;&#x4E2A;&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x503C;&#x5373;&#x4E3A;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;This is a &apos;</span> + ctx.getData(<span class="hljs-string">&apos;info&apos;</span>)
-  }
-});
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> html <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`&lt;div&gt;{{#prop}}&lt;/div&apos;&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  info<span class="token punctuation">:</span> <span class="token string">&apos;accessor property.&apos;</span><span class="token punctuation">,</span>
+  prop<span class="token punctuation">:</span> ctx <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>  <span class="token comment">//&#x6BCF;&#x4E2A;&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x503C;&#x5373;&#x4E3A;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;</span>
+    <span class="token keyword">return</span> <span class="token string">&apos;This is a &apos;</span> <span class="token operator">+</span> ctx<span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token string">&apos;info&apos;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-built_in">console</span>.log(html);  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;This is a accessor property.&lt;/div&apos;&gt;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;This is a accessor property.&lt;/div&apos;&gt;</span>
 </code></pre>
 <ul>
 <li><code>&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;</code>&#x7684;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x6709;&#x4E00;&#x4E2A;<code>ctx</code>(&#x5373;&#x4E3A;context)&#x53C2;&#x6570;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x4E2D;&#x53EF;&#x4EE5;&#x53D6;&#x5230;&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#xFF1A;</li>
 </ul>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> html <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;
   &lt;#each {{list}}&gt;
     {{#prop}}
   &lt;/#each&gt;
-&lt;/div&gt;`</span>({
-  id: <span class="hljs-number">100</span>,
-  list: [<span class="hljs-number">1</span>],
-  prop: ctx =&gt; {
-    <span class="hljs-built_in">console</span>.log(ctx.data[<span class="hljs-number">0</span>]);  <span class="hljs-comment">//&#x8F93;&#x51FA;1</span>
-    <span class="hljs-built_in">console</span>.log(ctx.parent.data[<span class="hljs-number">0</span>].list);  <span class="hljs-comment">//&#x8F93;&#x51FA;[1]</span>
-    <span class="hljs-built_in">console</span>.log(ctx.index);  <span class="hljs-comment">//&#x8F93;&#x51FA;0</span>
-    <span class="hljs-keyword">return</span> ctx.getData(<span class="hljs-string">&apos;id&apos;</span>);
-  }
-});
+&lt;/div&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  id<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+  list<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  prop<span class="token punctuation">:</span> ctx <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;1</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;[1]</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;0</span>
+    <span class="token keyword">return</span> ctx<span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token string">&apos;id&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-built_in">console</span>.log(html);  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;100,200&lt;/div&apos;&gt;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;100,200&lt;/div&apos;&gt;</span>
 </code></pre>
 <ul>
 <li><code>&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;</code>&#x4E5F;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x83B7;&#x53D6;&#xFF1A;</li>
 </ul>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> html <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;
   {{props.#prop * 2}}
-&lt;/div&gt;`</span>({
-  id: <span class="hljs-number">100</span>,
-  props: {
-    prop: ctx =&gt; {
-      <span class="hljs-keyword">return</span> ctx.getData(<span class="hljs-string">&apos;id&apos;</span>) + <span class="hljs-number">50</span>;
-    }
-  }
-});
+&lt;/div&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  id<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+  props<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    prop<span class="token punctuation">:</span> ctx <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> ctx<span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token string">&apos;id&apos;</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">50</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-built_in">console</span>.log(html);  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;300&lt;/div&apos;&gt;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;300&lt;/div&apos;&gt;</span>
 </code></pre>
 <ul>
 <li><code>&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;</code>&#x8FD8;&#x53EF;&#x4EE5;&#x5F53;&#x505A;&#x5D4C;&#x5165;&#x5176;&#x4ED6;<code>NornJ</code>&#x6A21;&#x677F;&#x51FD;&#x6570;&#x7684;&#x63D2;&#x69FD;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</li>
 </ul>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> tmpl1 = nj<span class="hljs-string">`
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> tmpl1 <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;test1&lt;/div&gt;
-`</span>;
+`</span></span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">const</span> tmpl2 = nj<span class="hljs-string">`
+<span class="token keyword">const</span> tmpl2 <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;{{test2}}&lt;/div&gt;
-`</span>;
+`</span></span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`
+<span class="token keyword">const</span> html <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;
   {{#tmpl1}}
   {{#tmpl2}}
 &lt;/div&gt;
-`</span>({
-  tmpl1,
-  tmpl2,
-  test2: <span class="hljs-string">&apos;test2&apos;</span>
-});
+`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  tmpl1<span class="token punctuation">,</span>
+  tmpl2<span class="token punctuation">,</span>
+  test2<span class="token punctuation">:</span> <span class="token string">&apos;test2&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-built_in">console</span>.log(html);  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;&lt;div&gt;test1&lt;/div&gt;&lt;div&gt;test2&lt;/div&gt;&lt;/div&gt;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;&lt;div&gt;test1&lt;/div&gt;&lt;div&gt;test2&lt;/div&gt;&lt;/div&gt;</span>
 </code></pre>
 <ul>
 <li><code>&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;</code>&#x4E5F;&#x652F;&#x6301;&#x5728;<code>NornJ</code>&#x7684;&#x6807;&#x7B7E;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x8BED;&#x6CD5;&#x4E2D;&#x76F4;&#x63A5;&#x7528;<code>${}</code>&#x8BED;&#x6CD5;&#x5D4C;&#x5165;&#x4F7F;&#x7528;&#xFF0C;&#x8BED;&#x6CD5;&#x4E3A;<code>#${}</code>&#xFF1A;</li>
 </ul>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> tmpl = nj<span class="hljs-string">`
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> tmpl <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;test&lt;/div&gt;
-`</span>;
+`</span></span><span class="token punctuation">;</span>
 
-<span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`
+<span class="token keyword">const</span> html <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;
-  #<span class="hljs-subst">${tmpl}</span>
+  #</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>tmpl<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
 &lt;/div&gt;
-`</span>();
+`</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-built_in">console</span>.log(html);  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;&lt;div&gt;test&lt;/div&gt;&lt;/div&gt;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;&lt;div&gt;test&lt;/div&gt;&lt;/div&gt;</span>
 </code></pre>
 <ul>
 <li>&#x5728;React&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x5229;&#x7528;<code>&#x8BBF;&#x95EE;&#x5668;&#x5C5E;&#x6027;</code>&#x8FD8;&#x53EF;&#x5C06;<code>NornJ</code>&#x6A21;&#x677F;&#x5185;&#x7684;&#x6570;&#x636E;&#x4F20;&#x7ED9;<code>JSX</code>&#xFF1A;</li>
 </ul>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> html = nj<span class="hljs-string">`
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> html <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div&gt;
   &lt;#each {1 .. 5}&gt;
-    #<span class="hljs-subst">${ctx =&gt; &lt;img id={ctx.data[0]}</span> /&gt;}
+    #</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ctx <span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>img id<span class="token operator">=</span><span class="token punctuation">{</span>ctx<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> /&gt;}
   &lt;/#each&gt;
 &lt;/div&gt;
-`</span>();
+`</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="hljs-built_in">console</span>.log(ReactDOMServer.renderToStaticMarkup(html));  <span class="hljs-comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;&lt;img id=&quot;1&quot; /&gt;&lt;img id=&quot;2&quot; /&gt;&lt;img id=&quot;3&quot; /&gt;&lt;img id=&quot;4&quot; /&gt;&lt;img id=&quot;5&quot; /&gt;&lt;/div&gt;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ReactDOMServer<span class="token punctuation">.</span><span class="token function">renderToStaticMarkup</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;div&gt;&lt;img id=&quot;1&quot; /&gt;&lt;img id=&quot;2&quot; /&gt;&lt;img id=&quot;3&quot; /&gt;&lt;img id=&quot;4&quot; /&gt;&lt;img id=&quot;5&quot; /&gt;&lt;/div&gt;</span>
 </code></pre>
 
                                 
@@ -672,7 +680,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"访问器属性","level":"1.3.2","depth":2,"next":{"title":"过滤器与表达式","level":"1.3.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},"previous":{"title":"插值变量","level":"1.3.1","depth":2,"path":"templateSyntax/variable.md","ref":"templateSyntax/variable.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github"],"pluginsConfig":{"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/accessor.md","mtime":"2018-02-27T10:06:23.742Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-01-31T02:56:09.657Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"访问器属性","level":"1.3.2","depth":2,"next":{"title":"过滤器与表达式","level":"1.3.3","depth":2,"path":"templateSyntax/filter.md","ref":"templateSyntax/filter.md","articles":[]},"previous":{"title":"插值变量","level":"1.3.1","depth":2,"path":"templateSyntax/variable.md","ref":"templateSyntax/variable.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":["anchors","jsfiddle","edit-link","github","prism","advanced-emoji"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"在github上编辑此页","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"templateSyntax/accessor.md","mtime":"2018-02-27T10:06:23.742Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-03-18T03:03:19.162Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
