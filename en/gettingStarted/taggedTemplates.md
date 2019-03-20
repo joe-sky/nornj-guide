@@ -1,7 +1,7 @@
 {% raw %}
-# 增强React开发体验
+# 在JSX中使用增强React开发体验
 
-`NornJ`模板引擎在React开发中是`JSX`的一个很好的替代或辅助工具，下面的是一个使用cdn上umd包的在线可运行实例：
+`NornJ`通过配套的[babel插件]()可直接在，下面的是一个使用cdn上umd包的在线可运行实例：
 
 * 在线Playground(jsfiddle)
 

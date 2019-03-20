@@ -1,6 +1,15 @@
 {
   "gitbook": "3.2.2",
-  "plugins": ["anchors", "jsfiddle", "edit-link", "github"],
+  "plugins": [
+    "anchors",
+    "jsfiddle",
+    "edit-link",
+    "github",
+    "prism",
+    "advanced-emoji",
+    "i18n",
+    "-sharing"
+  ],
   "pluginsConfig": {
     "jsfiddle": {
       "type": "frame",
@@ -11,10 +20,18 @@
     },
     "edit-link": {
       "base": "https://github.com/joe-sky/nornj-guide/blob/master",
-      "label": "在github上编辑此页"
+      "label": "Edit this page on GitHub"
     },
     "github": {
       "url": "https://github.com/joe-sky/nornj"
+    },
+    "prism": {
+      "css": ["prismjs/themes/prism-tomorrow.css"]
+    },
+    "i18n": {
+      "all": ["english", "chinese"],
+      "ChineseUrl": "/zh",
+      "EnglishUrl": "/en"
     }
   }
 }
