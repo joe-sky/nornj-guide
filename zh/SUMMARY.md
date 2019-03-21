@@ -1,54 +1,54 @@
 # Summary
 
 * [概述](README.md)
-    * [为什么要开发NornJ](gettingStarted/whyNornj.md)
+    * [为什么要开发NornJ](getting-started/why-nornj.md)
 * 快速起步
-    * [在JSX中使用](gettingStarted/enhanceReact.md)
-    * 使用tagged templates
-* [模板语法(JSX)](templateSyntax/index.md)
-    * [标签](templateSyntax/extensionTag.md)
-        * If
-        * Each
-        * Switch
-        * For
-        * With
-        * Fn
-        * [开发新的标签](templateSyntax/built-inExtensionTag.md)
-    * [指令](templateSyntax/inlineExtensionTag.md)
-        * n-show
-        * n-style
-        * n-class
-        * n-debounce
-        * n-mobx-bind
-        * n-mst-bind
-        * [开发新的指令](templateSyntax/built-inExtensionTag.md)
-    * [表达式](templateSyntax/filter.md)
-        * 过滤器
-            * capitalize
-            * bool
-            * currency
-            * [开发新的过滤器](templateSyntax/built-inFilter.md)
-        * 运算符
-            * a.b\[c\] (安全属性访问器)
-            * a .. b (范围运算符)
-            * a ** b (乘方)
-            * a %% b (向下取整)
-            * [开发新的运算符](templateSyntax/built-inFilter.md)
-* [模板语法(tagged templates)](templateSyntax/index.md)
-    * 与JSX语法的不同点
-    * [插值变量](templateSyntax/variable.md)
-    * [访问器属性](templateSyntax/accessor.md)
-    * [模板注释](templateSyntax/comment.md)
+    * [在JSX中使用](getting-started/use-it-in-jsx.md)
+    * [使用tagged templates](getting-started/use-tagged-templates.md)
+* [NornJ 语法 (JSX)](jsx-syntax/index.md)
+    * [标签](jsx-syntax/tags.md)
+        * [If](jsx-syntax/tags.md#if)
+        * [Each](jsx-syntax/tags.md#each)
+        * [Switch](jsx-syntax/tags.md#switch)
+        * [For](jsx-syntax/tags.md#for)
+        * [With](jsx-syntax/tags.md#with)
+        * [Fn](jsx-syntax/tags.md#fn)
+        * [开发新的标签](extentions/create-new-tag.md)
+    * [指令](jsx-syntax/directives.md)
+        * [n-show](jsx-syntax/directives.md#n-show)
+        * [n-style](jsx-syntax/directives.md#n-style)
+        * [n-class](jsx-syntax/directives.md#n-class)
+        * [n-debounce](jsx-syntax/directives.md#n-debounce)
+        * [n-mobx-bind](jsx-syntax/directives.md#n-mobx-bind)
+        * [n-mst-bind](jsx-syntax/directives.md#n-mst-bind)
+        * [开发新的指令](extentions/create-new-directive.md)
+    * [表达式](jsx-syntax/expressions.md)
+        * [过滤器](jsx-syntax/expressions.md#filters)
+            * [capitalize](jsx-syntax/expressions.md#capitalize)
+            * [currency](jsx-syntax/expressions.md#currency)
+            * [开发新的过滤器](extentions/create-new-filter.md)
+        * [运算符](jsx-syntax/expressions.md#operators)
+            * [a.b\[c\] (安全访问器)](jsx-syntax/expressions.md#safe-accessor)
+            * [a .. b (范围运算符)](jsx-syntax/expressions.md#range-operator)
+            * [a ** b (乘方)](jsx-syntax/expressions.md#power)
+            * [a %% b (向下取整)](jsx-syntax/expressions.md#rounding-down)
+            * [开发新的运算符](extentions/create-new-operator.md)
+* [NornJ 语法 (tagged templates)](tagged-templates-syntax/index.md)
+    * [插值变量](tagged-templates-syntax/interpolations.md)
+    * [访问器属性](tagged-templates-syntax/accessor.md)
+    * [过滤器与运算符](tagged-templates-syntax/filters-and-operators.md)
+    * [标签与指令](tagged-templates-syntax/tags-and-directives.md)
+    * [模板注释](tagged-templates-syntax/comment.md)
 * API 参考
-    * [nj.compileH](api/renderString.md)
-    * [nj.renderH](api/renderReact.md)
+    * [nj.compileH](api/nj-compile-h.md)
+    * [nj.renderH](api/nj-render-h.md)
     * [nj.config](api/config.md)
 * 结合前端生态工具
-    * [结合Webpack在单文件中编写模板](api/webpack.md)
-    * [Html-Webpack-Plugin](api/htmlWebpackPlugin.md)
-    * [React-Native](api/reactNative.md)
-    * [Redux](api/redux.md)
-    * [React-Router](api/reactRouter.md)
-    * [Mobx](api/mobx.md)
-    * [React第三方ui库](api/reactUI.md)
-* [像传统模板引擎那样工作](gettingStarted/normalTemplateEngine.md)
+    * [结合Webpack在单文件中编写模板](tools-adaptation/webpack.md)
+    * [Html-Webpack-Plugin](tools-adaptation/html-webpack-plugin.md)
+    * [React-Native](tools-adaptation/react-native.md)
+    * [Redux](tools-adaptation/redux.md)
+    * [React-Router](api/react-router.md)
+    * [Mobx](tools-adaptation/mobx.md)
+    * [React第三方ui库](tools-adaptation/react-ui.md)
+* [像传统模板引擎那样工作](classic-template-engine/index.md)

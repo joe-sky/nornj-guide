@@ -5,7 +5,7 @@
 * Getting Started
     * [Use it in JSX](gettingStarted/enhanceReact.md)
     * Use tagged templates
-* [Template syntax(JSX)](templateSyntax/index.md)
+* [NornJ syntax(JSX)](templateSyntax/index.md)
     * [Tags](templateSyntax/extensionTag.md)
         * If
         * Each
@@ -25,7 +25,6 @@
     * [Expressions](templateSyntax/filter.md)
         * Filters
             * capitalize
-            * bool
             * currency
             * [Create new filter](templateSyntax/built-inFilter.md)
         * Operators
@@ -34,10 +33,11 @@
             * a ** b (Power)
             * a %% b (Rounding down)
             * [Create new operator](templateSyntax/built-inFilter.md)
-* [Template syntax(tagged templates)](templateSyntax/index.md)
-    * Difference from JSX
+* [NornJ syntax(tagged templates)](templateSyntax/index.md)
     * [Interpolations](templateSyntax/variable.md)
     * [Accessor](templateSyntax/accessor.md)
+    * [Filter and Operator](tagged-templates-syntax/filters-and-operators.md)
+    * [Tag and Directive](tagged-templates-syntax/tags-and-directives.md)
     * [Template comment](templateSyntax/comment.md)
 * API Reference
     * [nj.compileH](api/renderString.md)
@@ -51,4 +51,4 @@
     * [React-Router](api/reactRouter.md)
     * [Mobx](api/mobx.md)
     * [React UI libraries](api/reactUI.md)
-* [Works like classic template engine](gettingStarted/normalTemplateEngine.md)
+* [As a classic template engine](gettingStarted/normalTemplateEngine.md)
