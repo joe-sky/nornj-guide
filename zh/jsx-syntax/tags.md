@@ -149,6 +149,40 @@ ReactDOM.render(<Test num={30} />, document.body);
 |:------------------|:----------------|:----------------|
 | condition           | Boolean       | elseif标签子节点的渲染条件 |
 
+### switch
+
+`switch`标签也可以实现多分支流程：
+
+```js
+const Test = props => (
+  <div>
+    <switch value={props.num}>
+      <case value={50}>
+        50
+      </case>
+      <case value={30}>
+        30
+      </case>
+      <default>
+        0
+      </default>
+    </switch>
+  <div>
+);
+
+ReactDOM.render(<Test num={30} />, document.body);
+
+/* 以上渲染内容为：
+<div>30</div>
+*/
+```
+
+* `switch`和`case`标签的参数列表：
+
+| 参数名称           | 类型            | 作用            |
+|:------------------|:----------------|:----------------|
+| value           | Any       | 在switch标签的value参数传入要判断值；<br>然后其会和case标签中的value值进行`===`判断；<br>所有case都不匹配时则渲染default标签的子节点 |
+
 <!--
 * 标签语法
 
