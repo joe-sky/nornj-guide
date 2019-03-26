@@ -1,8 +1,155 @@
 {% raw %}
-# 标签
+# 标签 {#top}
 
-`NornJ`模板中可使用`内置标签`来表示if、else、each等流程控制语句以及更多的功能，也可以支持自定义标签。
+在React开发中，`NornJ`提供了一种可扩展的特殊组件语法，称为`标签`。这种语法最常见的使用场景就是流程控制语句：
 
+```js
+const Test = props => (
+  <if condition={props.isTest}>
+    <i>success</i>
+    <else>
+      <i>fail</i>
+    </else>
+  </if>
+);
+```
+
+上例中的`<if>`、`<else>`等都是标签语法。
+
+# NornJ标签与React组件的区别
+
+从上面`<if>`的例子我们不难想到，其实用React的组件语法不是也是可以实现么？确实可以实现，比如[react-if](https://github.com/romac/react-if)项目：
+
+```js
+const Foo = ({ data }) => (
+  <div>
+    <If condition={false}>
+      <Then>{() =>
+        renderData(data)
+      }</Then>
+      <Else>
+        Nothing to see here
+      </Else>
+    </If>
+  </div>
+);
+```
+
+但是可以看出，`react-if`需要一个额外的`<Then>`标签；而且文档中也注明了，如果不在`<Then>`或`<Else>`中写一个返回子节点的函数是会存在性能消耗的。因为在并不确定`condition`的值之前，所有的分支节点都没必要进行提前渲染。
+
+然而`NornJ`的`<if>`标签则不存在上述问题，因为它的本质并不是React组件而是一个`模板函数`，由配套的babel插件进行了转换：
+
+```js
+const test = props => (
+  nj`
+    <#if condition=${props.isTest}>
+      #${() => <i>success</i>}
+      <#else>
+        #${() => <i>fail</i>}
+      </#else>
+    </#if>
+  `()
+);
+```
+
+从上面可以看出，`<i>success</i>`等其实是包在函数内并没立即执行的。
+
+> 另外，这并不是`NornJ`标签最终的运行时代码，`NornJ`配套的babel插件还会做进一步的模板预编译以提高性能。
+
+### if
+
+示例：
+
+```js
+const Test = props => (
+  <div>
+    This is a if tag demo.
+    <if condition={props.type}>
+      test if tag
+      <span>test1</span>
+    </if>
+  </div>
+);
+```
+
+如上，如果`if`标签的`condition`参数计算结果为true，则会渲染`if`标签内的子节点；如为false则不会渲染`if`标签内的任何东西。
+
+* if标签的参数列表：
+
+| 参数名称           | 类型            | 作用            |
+|:------------------|:----------------|:----------------|
+| condition           | Boolean       | if标签子节点的渲染条件 |
+
+`if`标签还包含`else`、`elseif`等子标签。
+
+### else
+
+示例：
+
+```js
+const Test = props => (
+  <div>
+    This is a if tag demo.
+    <if condition={props.type}>
+      test if tag
+      <span>test1</span>
+      <else>
+        <span>test2</span>
+      </else>
+    </if>
+  </div>
+);
+```
+
+上例中如果`if`标签的`condition`参数值为false，则会渲染`else`标签内的子节点；否则会渲染`if`标签内除了`else`标签外的其他内容：
+
+```js
+ReactDOM.render(<Test type={false} />, document.body);
+
+/* 以上渲染内容为：
+<div>
+  This is a if tag demo.
+  <span>test2</span>
+</div>
+*/
+```
+
+### elseif
+
+`elseif`标签可以实现多分支流程：
+
+```js
+const Test = props => (
+  <div>
+    <if condition={props.num > 100}>
+      100
+      <elseif condition={props.num > 50}>
+        50
+      </elseif>
+      <elseif condition={props.num > 20}>
+        20
+      </elseif>
+      <else>
+        0
+      </else>
+    </if>
+  <div>
+);
+
+ReactDOM.render(<Test num={30} />, document.body);
+
+/* 以上渲染内容为：
+<div>20</div>
+*/
+```
+
+* elseif标签的参数列表：
+
+| 参数名称           | 类型            | 作用            |
+|:------------------|:----------------|:----------------|
+| condition           | Boolean       | elseif标签子节点的渲染条件 |
+
+<!--
 * 标签语法
 
 在`NornJ`模板中`标签`使用闭合的xml节点元素形式定义，节点名称为`#`+`标签名称`，也可定义元素节点参数，语法与普通元素节点类似：
@@ -119,4 +266,5 @@ options参数列表(更多参数及细节待补充)：
 ## 内置标签
 
 * 具体请看[内置标签](built-inExtensionTag.md)。
+-->
 {% endraw %}

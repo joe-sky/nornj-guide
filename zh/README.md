@@ -12,7 +12,7 @@
   </html>`();
 ```
 
-`NornJ`(读音[nɔ:n dʒeɪ]，简称`nj`)是一个可以同React一起工作的模板引擎，**JSX的增强或替代工具**。
+`NornJ`(读音[`nɔ:ndʒeɪ]，简称`nj`)是一个可以同React一起工作的模板引擎，**JSX的增强或替代工具**。
 
 [![NPM Version][npm-image]][npm-url]
 <a href="https://www.npmjs.com/package/nornj"><img src="https://img.shields.io/npm/l/nornj.svg" alt="License"></a>
@@ -39,7 +39,7 @@
 * 支持过滤器语法：
 
 ```js
-<button>{n`${'abc'} | capitalize`}</button>
+<button>{n`${foo} | capitalize`}</button>
 ```
 
 * 支持自定义运算符：

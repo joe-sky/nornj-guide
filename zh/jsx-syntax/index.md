@@ -1,25 +1,41 @@
 {% raw %}
-# 模板语法
+# NornJ 语法(JSX)
 
-`NornJ`模板可以使用纯字符串或标签模板字符串(es6)构建，并可适应多种不同使用场景。模板结构与html非常相似，基本示例如下：
+`NornJ`可为JS/JSX增加的语法有以下这几类：
 
-```html
-<slider>
-  this the test slider {{msg}}.
-  <sliderItem id="test" onSliderEnd="{{event}}" />
-</slider>
+* [标签](jsx-syntax/tags.md)
+
+主要用于为JSX扩充流程控制语句，例如循环：
+
+```js
+<each of={[1, 2, 3]}>
+  <i>{item}</i>
+</each>
 ```
 
-## 目录
+* [指令](jsx-syntax/directives.md)
 
-* [插值变量](variable.md)
-* [访问器属性](accessor.md)
-* [过滤器与表达式](filter.md)
-* [内置过滤器](built-inFilter.md)
-* [标签](extensionTag.md)
-* [内置标签](built-inExtensionTag.md)
-* [指令](inlineExtensionTag.md)
-* [模板注释](comment.md)
-* [标签模板字符串(es6)语法](templateString.md)
-* [React开发中与JSX的不同点](react.md)
+主要用于为JSX扩充一种新的修改组件`props`的封装形式，例如修改组件style属性的`display`值：
+
+```js
+<img n-show={false} />
+```
+
+* [过滤器](jsx-syntax/expressions.md#filters)
+
+为JS/JSX扩充类似模板引擎的`过滤器/管道`语法，例如可将各类通用函数统一封装为过滤器使用：
+
+```js
+<button>
+  {n`${foo} | capitalize`}
+</button>
+```
+
+* [运算符](jsx-syntax/expressions.md#operators)
+
+可为JS/JSX扩充新的运算符，比如范围运算符：
+
+```js
+<input value={n`(1 .. 100).join('-')`} />
+```
 {% endraw %}
