@@ -16,7 +16,7 @@ const Test = props => (
 
 上例中的`<if>`、`<else>`等都是标签语法。
 
-# NornJ标签与React组件的区别
+# NornJ标签与React组件的区别 {#different-from-react}
 
 简单地说，`NornJ`标签可以实现以下几种普通`React`组件无法实现的功能：
 
@@ -25,7 +25,7 @@ const Test = props => (
 
 下面我们用实例分别解释下这些特性。
 
-## 延迟渲染子节点
+## 延迟渲染子节点 {#lazy-render-children}
 
 从上面`<if>`的例子我们不难想到，其实用React的组件语法不是也是可以实现么？确实可以实现，比如[react-if](https://github.com/romac/react-if)项目：
 
@@ -65,7 +65,7 @@ const test = props => (
 
 > 另外，这并不是`NornJ`标签最终的运行时代码，`NornJ`配套的babel插件还会做进一步的模板预编译以提高性能。
 
-### 生成子节点可用的新变量
+## 生成子节点可用的新变量 {#generate-new-variable}
 
 例如`<each>`循环：
 
@@ -190,7 +190,44 @@ ReactDOM.render(<Test num={30} />, document.body);
 
 ### each
 
+`each`标签可以实现循环：
 
+```js
+<each of={numbers}>   //要循环的数组
+  <i>num: {item}</i>  //item表示使用数组项
+  <i>no: {index}</i>  //index表示使用数组项索引值
+</each>
+```
+
+在循环中内嵌`if`标签：
+
+```js
+<each of={numbers}>
+  <if condition={first}>show first<br/></if>  //first表示数组第一项
+  <if condition={last}>show last</if>         //last表示数组最后一项
+</each>
+```
+
+如要循环的数组为空，则可以渲染`empty`标签的内容：
+
+```js
+<each of={numbers}>
+  <span>test {item.no}</span>
+  <empty>
+    <span>no data</span>
+  </empty>
+</each>
+```
+
+* `each`标签的参数列表：
+
+| 参数名称           | 类型            | 作用            |
+|:------------------|:----------------|:----------------|
+| of           | 数组       | 要循环的数组 |
+| item           | String       | 循环中生成的每项变量名，可以改变 |
+| index           | String       | 循环中生成的每项索引值变量名，可以改变 |
+| first           | String       | 循环中生成的第一项变量名，可以改变 |
+| last           | String       | 循环中生成的最后一项变量名，可以改变 |
 
 ### switch
 
@@ -226,56 +263,30 @@ ReactDOM.render(<Test num={30} />, document.body);
 |:------------------|:----------------|:----------------|
 | value           | Any       | 在switch标签的value参数传入要判断值；<br>然后其会和case标签中的value值进行`===`判断；<br>所有case都不匹配时则渲染default标签的子节点 |
 
-<!--
-* 标签语法
+# 开发新的标签 {#create-new-tag}
 
-在`NornJ`模板中`标签`使用闭合的xml节点元素形式定义，节点名称为`#`+`标签名称`，也可定义元素节点参数，语法与普通元素节点类似：
-
-```html
-<#ext {{prop1}} {{prop2}} checked prop3="test{{no}}">
-  {{children}}
-</#ext>
-```
-
-* 标签内每个插值变量也都可以使用过滤器或表达式，这样就可以实现更复杂的逻辑，例如：
-
-```html
-<#ext {{value1.trim() | filter1}} {{ value2.length * 2 }}>
-  test block
-</#ext>
-```
-
-## 自定义标签
-
-* 标签可支持自定义，这样就可以自行为模板实现各种各样的逻辑及功能。例如实现一个`customIf`全局标签：
-
-```html
-<#customIf {{value.trim()}} useUnless>
-  test if
-  <#else>
-    test else
-  </#else>
-</#customIf>
-```
+`NornJ`的标签都是支持可扩展的，也就是说与React组件一样可以自行封装各种新功能。例如实现一个`customIf`标签：
 
 ```js
-//每个标签都是一个函数，使用nj.registerExtension方法全局注册
-nj.registerExtension('customIf', (value, options) => {  //options参数会自动放置在参数列表最后一个，保存一些模板内部成员
-  let valueR, ret;
-  if (!options.props.useUnless) {  //#customIf标签的useUnless参数，使用options.props.paramName的方式获取
-    valueR = !!value;  //"value"即为插值变量"{{value.trim()}}"的执行结果
-  } else {
-    valueR = !!!value;
-  }
+<customIf condition={foo}>
+  test if
+  <else>
+    test else
+  </else>
+</customIf>
+```
 
-  if (valueR) {
-    ret = options.result();  //输出标签的子节点，即"test if"
+每个标签都是一个函数，使用`nj.registerExtension`方法注册：
+
+```js
+nj.registerExtension('customIf', options => {
+  const { props, children } = options;
+  if (props.condition) {
+    return children();  //输出标签的子节点，即"test if"
   }
   else {
-    ret = options.props['else'];  //输出<#else>的子节点，即"test else"
+    return props['else'];  //输出else标签的子节点，即"test else"
   }
-
-  return ret;
 });
 ```
 
@@ -283,65 +294,15 @@ nj.registerExtension('customIf', (value, options) => {  //options参数会自动
 
 ```js
 nj.registerExtension({
-  customIf: (val, option) => {...},
-  customSwitch: (val, option) => {...}
+  customIf: options => {...},
+  customSwitch: options => {...}
 });
 ```
 
-### 局部标签
-
-* 还可以使用局部标签，将标签函数定义为插值变量即可：
-
-```js
-nj`
-<#customIf {{true}}>
-  test if
-</#customIf>`({
-  customIf: (val, option) => {...}
-});
-```
-
-`NornJ`可以利用局部标签的特性，来为一些实际场景提供代码逻辑与结构的分离，例如这个[Ant Design表单验证组件的例子](https://github.com/joe-sky/nornj-cli/blob/master/docs/guides/antDesign.md#%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)。
-
-### 标签内部的options参数
-
-* 注册标签函数的最后一个参数即为options参数，它是一个对象类型。从options中可以获取到模板内部的一些值，主要用于实现一些复杂的模板扩展功能，如下所示：
-
-```js
-nj.registerExtension('customIf', (value, options) => {
-  const ctx = options.context;
-  console.log(ctx.getData('id'));   //输出100
-  console.log(ctx.data[0]);         //输出1
-  console.log(ctx.parent.data[0]);  //输出{ list: [1] }
-  console.log(ctx.index);           //输出0
-
-  if (value) {
-    return options.result();  //输出0
-  }
-});
-
-nj`
-<#each {{list}}>
-  <#customIf {{this > 0}}>
-    {{@index}}
-  </#customIf>
-</#each>
-`({ list: [1] }, { id: 100 });
-```
-
-options参数列表(更多参数及细节待补充)：
+### 标签扩展函数的options参数 {#tag-options}
 
 | 参数名称           | 类型            | 作用            |
 |:------------------|:----------------|:----------------|
-| _njOpts           | Object          | 主要用在标签参数数量不固定时，用来判断是否为options参数 |
-| context           | Object          | 模板内部的上下文数据 |
-| result            | Function        | 执行此函数后，获得当前标签的子节点执行结果 |
-| props             | Object          | 当前标签的各行内属性值(即`<#exTag a=1 b=2>`中的`a`和`b`) |
-| name              | String          | 当前标签的名称 |
-| parentName        | String          | 上一层标签的名称 |
-
-## 内置标签
-
-* 具体请看[内置标签](built-inExtensionTag.md)。
--->
+| children            | Function        | 返回需要渲染的标签子节点 |
+| props             | Object          | 当前标签的各行内属性值(即`<tag a=1 b=2>`中的`a`和`b`) |
 {% endraw %}
