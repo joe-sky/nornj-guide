@@ -229,6 +229,19 @@ ReactDOM.render(<Test num={30} />, document.body);
 | first           | String       | 循环中生成的第一项变量名，可以改变 |
 | last           | String       | 循环中生成的最后一项变量名，可以改变 |
 
+### for
+
+`for`标签是`each`标签的别名，用法是完全一样的：
+
+```js
+<for of={numbers}>
+  <span>test {item.no}</span>
+  <empty>
+    <span>no data</span>
+  </empty>
+</for>
+```
+
 ### switch
 
 `switch`标签也可以实现多分支流程：
@@ -262,6 +275,18 @@ ReactDOM.render(<Test num={30} />, document.body);
 | 参数名称           | 类型            | 作用            |
 |:------------------|:----------------|:----------------|
 | value           | Any       | 在switch标签的value参数传入要判断值；<br>然后其会和case标签中的value值进行`===`判断；<br>所有case都不匹配时则渲染default标签的子节点 |
+
+# with
+
+`with`标签主要用于在`JSX`中创建新的变量：
+
+```js
+<each of={[1, 2, 3]}>
+  <with num={item} i={index}>
+    <span>test-{num}-{i}</span>
+  </with>
+</each>
+```
 
 # 开发新的标签 {#create-new-tag}
 
