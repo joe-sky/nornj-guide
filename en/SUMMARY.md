@@ -1,44 +1,57 @@
 # Summary
 
 * [Introduction](README.md)
-    * [Why NornJ](gettingStarted/whyNornj.md)
+    * [Why NornJ](getting-started/why-nornj.md)
 * Getting Started
-    * [Use it in JSX](gettingStarted/enhanceReact.md)
-    * Use tagged templates
-* [NornJ syntax(JSX)](templateSyntax/index.md)
-    * [Tags](templateSyntax/extensionTag.md)
-        * If
-        * Each
-        * Switch
-        * For
-        * With
-        * Fn
-        * [Create new tag](templateSyntax/built-inExtensionTag.md)
-    * [Directives](templateSyntax/inlineExtensionTag.md)
-        * n-show
-        * n-style
-        * n-class
-        * n-debounce
-        * n-mobx-bind
-        * n-mst-bind
-        * [Create new directive](templateSyntax/built-inExtensionTag.md)
-    * [Expressions](templateSyntax/filter.md)
+    * [Use it in JSX](getting-started/use-it-in-jsx.md)
+    * [Use tagged templates](getting-started/use-tagged-templates.md)
+* [NornJ syntax(JSX)](jsx-syntax/index.md)
+    * [Tags](jsx-syntax/tags.md#top)
+        * [Different from react component](jsx-syntax/tags.md#different-from-react)
+        * [If](jsx-syntax/tags.md#if)
+            * [Else](jsx-syntax/tags.md#else)
+            * [Elseif](jsx-syntax/tags.md#elseif)
+        * [Each](jsx-syntax/tags.md#each)
+            * [For](jsx-syntax/tags.md#for)
+        * [Switch](jsx-syntax/tags.md#switch)
+        * [With](jsx-syntax/tags.md#with)
+        * [MobxObserver](jsx-syntax/tags.md#mobxobserver)
+        * [Create new tag](jsx-syntax/tags.md#create-new-tag)
+            * [Simple tag](jsx-syntax/tags.md#a-simple-tag)
+            * [More complex tag](jsx-syntax/tags.md#more-complex-tag)
+            * [Subsidiary tag](jsx-syntax/tags.md#sub-tag)
+    * [Directives](jsx-syntax/directives.md#top)
+        * [n-show](jsx-syntax/directives.md#n-show)
+        * [n-style](jsx-syntax/directives.md#n-style)
+        * [n-debounce](jsx-syntax/directives.md#n-debounce)
+        * [n-mobxBind](jsx-syntax/directives.md#n-mobxBind)
+        * [n-mstBind](jsx-syntax/directives.md#n-mstBind)
+        * [Create new directive](jsx-syntax/directives.md#create-new-directive)
+            * [Simple directive](jsx-syntax/directives.md#a-simple-directive)
+            * [More complex directive](jsx-syntax/directives.md#more-complex-directive)
+    * [Expressions](jsx-syntax/expressions.md#top)
         * Filters
-            * capitalize
-            * currency
-            * [Create new filter](templateSyntax/built-inFilter.md)
+            * [capitalize](jsx-syntax/expressions.md#capitalize)
+            * [lowerFirst](jsx-syntax/expressions.md#lowerFirst)
+            * [camelCase](jsx-syntax/expressions.md#camelCase)
+            * [Type conversion](jsx-syntax/expressions.md#type-conversion)
+            * [Type determination](jsx-syntax/expressions.md#type-determination)
+            * [currency](jsx-syntax/expressions.md#currency)
+            * [Create new filter](jsx-syntax/expressions.md#create-new-filter)
         * Operators
-            * a.b\[c\] (Safe accessors)
-            * a .. b (Range operator)
-            * a ** b (Power)
-            * a %% b (Rounding down)
-            * [Create new operator](templateSyntax/built-inFilter.md)
-* [NornJ syntax(tagged templates)](templateSyntax/index.md)
-    * [Interpolations](templateSyntax/variable.md)
-    * [Accessor](templateSyntax/accessor.md)
+            * [Safe navigation operator](jsx-syntax/expressions.md#safe-navigation)
+            * [foo .. bar](jsx-syntax/expressions.md#range-operator)
+            * [foo ..< bar](jsx-syntax/expressions.md#range-operator)
+            * [foo <=> bar](jsx-syntax/expressions.md#spaceship-operator)
+            * [foo ** bar](jsx-syntax/expressions.md#power)
+            * [foo %% bar](jsx-syntax/expressions.md#rounding-down)
+            * [Create new operator](jsx-syntax/expressions.md#create-new-operator)
+* [NornJ syntax(tagged templates)](tagged-templates-syntax/index.md)
+    * [Interpolations](tagged-templates-syntax/interpolations.md)
+    * [Accessor](tagged-templates-syntax/accessor.md)
     * [Filter and Operator](tagged-templates-syntax/filters-and-operators.md)
     * [Tag and Directive](tagged-templates-syntax/tags-and-directives.md)
-    * [Template comment](templateSyntax/comment.md)
+    * [Template comment](tagged-templates-syntax/comment.md)
 * API Reference
     * [nj.compileH](api/renderString.md)
     * [nj.renderH](api/renderReact.md)

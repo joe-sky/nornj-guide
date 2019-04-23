@@ -8,7 +8,8 @@
     "prism",
     "advanced-emoji",
     "i18n",
-    "-sharing"
+    "-sharing",
+    "back-to-top-button"
   ],
   "pluginsConfig": {
     "jsfiddle": {
@@ -30,8 +31,8 @@
     },
     "i18n": {
       "all": ["english", "chinese"],
-      "ChineseUrl": "/zh",
-      "EnglishUrl": "/en"
+      "ChineseUrl": "/zh/",
+      "EnglishUrl": "/en/"
     }
   }
 }
