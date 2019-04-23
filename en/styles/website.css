@@ -15,3 +15,9 @@ ul.summary > li.chapter > a:first-child {
   font-weight: bolder;
   font-size: 16px;
 }
+
+a[href="tags.html#top"],
+a[href="directives.html#top"],
+a[href="expressions.html#top"] {
+  font-weight: bolder;
+}
