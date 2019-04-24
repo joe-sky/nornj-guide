@@ -20,16 +20,18 @@ const Test = props => (
 
 简单地说，`NornJ`标签可以实现以下几种普通`React`组件无法实现的功能：
 
-* **延迟渲染子节点**
-* **生成子节点可用的新变量**
+* [延迟渲染子节点](#lazy-render-children)
+* [生成子节点可用的新变量](#generate-new-variable)
 
 下面我们用实例分别解释下这些特性。
 
 ## 延迟渲染子节点 {#lazy-render-children}
 
-从上面`<if>`的例子我们不难想到，其实用React的组件语法不是也是可以实现么？确实可以实现，比如[react-if](https://github.com/romac/react-if)项目：
+从上面`<if>`的例子我们不难想到，其实用React的组件语法不是也是可以实现么？确实可以实现，比如[react-if](https://github.com/romac/react-if)：
 
 ```js
+import { If, Then, Else } from 'react-if';
+
 const Foo = ({ data }) => (
   <div>
     <If condition={false}>
@@ -50,14 +52,18 @@ const Foo = ({ data }) => (
 
 ```js
 const test = props => (
-  nj`
-    <#if condition=${props.isTest}>
-      #${() => <i>success</i>}
-      <#else>
-        #${() => <i>fail</i>}
-      </#else>
-    </#if>
-  `()
+  nj.renderH(`
+    <if condition={_njParam0}>
+      {#_njParam1}
+      <else>
+        {#_njParam2}
+      </else>
+    </if>
+  `, {
+    _njParam0: props.isTest,
+    _njParam1: () => <i>success</i>,
+    _njParam2: () => <i>fail</i>
+  });
 );
 ```
 
@@ -79,17 +85,25 @@ const Test = props => (
 );
 ```
 
-上例中使用`NornJ`的`each`标签实现了循环数组`[1, 2, 3]`，然后在子节点中使用新生成的`item`变量渲染循环中每一项的值。而常规`JSX`写法则必须使用函数才能实现：
+上例中使用`NornJ`的`each`标签实现了循环数组`[1, 2, 3]`，然后在子节点中使用新生成的`item`变量渲染循环中每一项的值。而使用常规`JSX`写法的组件则必须使用函数才能实现，比如[react-loops](https://github.com/leebyron/react-loops)：
 
 ```js
+import { For } from 'react-loops';
+
 const Test = props => (
   <div>
-    {[1, 2, 3].map(item => <i>{item}</i>}
+    <For of={[1, 2, 3]}>
+      {item =>
+        <li>{item}</li>
+      }
+    </For>
   </div>
 );
 ```
 
-上述虽然是官方常规写法，但是标签中插入的`额外花括号`、`函数体`等，可能或多或少会影响一点代码整体的可读性 :smiling_imp:。
+上述虽然是`JSX`的常规写法，但是标签子节点中插入的`额外花括号`、`函数体`等，可能或多或少还是增加了少量代码，以及影响了一点点标签嵌套的可读性 :smiling_imp:。
+
+
 
 ***
 
