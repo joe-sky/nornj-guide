@@ -16,7 +16,7 @@ const Test = props => (
 
 上例中的`<if>`、`<else>`等都是标签语法。
 
-# NornJ标签与React组件的区别 {#different-from-react}
+# 与React组件的区别 {#different-from-react}
 
 简单地说，`NornJ`标签可以实现以下几种普通`React`组件无法实现的功能：
 
@@ -95,7 +95,7 @@ const Test = props => (
 
 下面是`NornJ`已有内置的标签：
 
-### if
+## if
 
 示例：
 
@@ -121,7 +121,7 @@ const Test = props => (
 
 `if`标签还包含`else`、`elseif`等子标签。
 
-### else
+## else
 
 示例：
 
@@ -153,7 +153,7 @@ ReactDOM.render(<Test type={false} />, document.body);
 */
 ```
 
-### elseif
+## elseif
 
 `elseif`标签可以实现多分支流程：
 
@@ -188,7 +188,7 @@ ReactDOM.render(<Test num={30} />, document.body);
 |:------------------|:----------------|:----------------|
 | condition           | Boolean       | elseif标签子节点的渲染条件 |
 
-### each
+## each
 
 `each`标签可以实现循环：
 
@@ -229,7 +229,7 @@ ReactDOM.render(<Test num={30} />, document.body);
 | first           | String       | 循环中生成的第一项变量名，可以改变 |
 | last           | String       | 循环中生成的最后一项变量名，可以改变 |
 
-### for
+## for
 
 `for`标签是`each`标签的别名，用法是完全一样的：
 
@@ -242,7 +242,7 @@ ReactDOM.render(<Test num={30} />, document.body);
 </for>
 ```
 
-### switch
+## switch
 
 `switch`标签也可以实现多分支流程：
 
@@ -276,7 +276,7 @@ ReactDOM.render(<Test num={30} />, document.body);
 |:------------------|:----------------|:----------------|
 | value           | Any       | 在switch标签的value参数传入要判断值；<br>然后其会和case标签中的value值进行`===`判断；<br>所有case都不匹配时则渲染default标签的子节点 |
 
-# with
+## with
 
 `with`标签主要用于在`JSX`中创建新的变量：
 
@@ -287,6 +287,8 @@ ReactDOM.render(<Test num={30} />, document.body);
   </with>
 </each>
 ```
+
+## MobxObserver
 
 # 开发新的标签 {#create-new-tag}
 
@@ -330,4 +332,10 @@ nj.registerExtension({
 |:------------------|:----------------|:----------------|
 | children            | Function        | 返回需要渲染的标签子节点 |
 | props             | Object          | 当前标签的各行内属性值(即`<tag a=1 b=2>`中的`a`和`b`) |
+
+## 开发一个最简单的标签 {#a-simple-tag}
+
+## 更复杂的标签 {#more-complex-tag}
+
+## 附属标签 {#subsidiary-tag}
 {% endraw %}

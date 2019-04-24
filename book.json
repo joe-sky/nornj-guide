@@ -9,7 +9,8 @@
     "advanced-emoji",
     "i18n-revised",
     "-sharing",
-    "back-to-top-button"
+    "back-to-top-button",
+    "theme-default"
   ],
   "pluginsConfig": {
     "jsfiddle": {
@@ -21,7 +22,7 @@
     },
     "edit-link": {
       "base": "https://github.com/joe-sky/nornj-guide/blob/master",
-      "label": "Edit this page on GitHub"
+      "label": "Edit this page"
     },
     "github": {
       "url": "https://github.com/joe-sky/nornj"

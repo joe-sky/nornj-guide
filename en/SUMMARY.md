@@ -19,7 +19,7 @@
         * [Create new tag](jsx-syntax/tags.md#create-new-tag)
             * [Simple tag](jsx-syntax/tags.md#a-simple-tag)
             * [More complex tag](jsx-syntax/tags.md#more-complex-tag)
-            * [Subsidiary tag](jsx-syntax/tags.md#sub-tag)
+            * [Subsidiary tag](jsx-syntax/tags.md#subsidiary-tag)
     * [Directives](jsx-syntax/directives.md#top)
         * [n-show](jsx-syntax/directives.md#n-show)
         * [n-style](jsx-syntax/directives.md#n-style)
@@ -30,7 +30,7 @@
             * [Simple directive](jsx-syntax/directives.md#a-simple-directive)
             * [More complex directive](jsx-syntax/directives.md#more-complex-directive)
     * [Expressions](jsx-syntax/expressions.md#top)
-        * Filters
+        * [Filters](jsx-syntax/expressions.md#filters)
             * [capitalize](jsx-syntax/expressions.md#capitalize)
             * [lowerFirst](jsx-syntax/expressions.md#lowerFirst)
             * [camelCase](jsx-syntax/expressions.md#camelCase)
@@ -38,7 +38,7 @@
             * [Type determination](jsx-syntax/expressions.md#type-determination)
             * [currency](jsx-syntax/expressions.md#currency)
             * [Create new filter](jsx-syntax/expressions.md#create-new-filter)
-        * Operators
+        * [Operators](jsx-syntax/expressions.md#operators)
             * [Safe navigation operator](jsx-syntax/expressions.md#safe-navigation)
             * [foo .. bar](jsx-syntax/expressions.md#range-operator)
             * [foo ..< bar](jsx-syntax/expressions.md#range-operator)

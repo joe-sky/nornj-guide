@@ -19,7 +19,7 @@
         * [开发新的标签](jsx-syntax/tags.md#create-new-tag)
             * [最简单的标签](jsx-syntax/tags.md#a-simple-tag)
             * [更复杂的标签](jsx-syntax/tags.md#more-complex-tag)
-            * [附属标签](jsx-syntax/tags.md#sub-tag)
+            * [附属标签](jsx-syntax/tags.md#subsidiary-tag)
     * [指令](jsx-syntax/directives.md#top)
         * [n-show](jsx-syntax/directives.md#n-show)
         * [n-style](jsx-syntax/directives.md#n-style)
