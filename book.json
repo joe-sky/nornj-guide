@@ -10,7 +10,10 @@
     "i18n-revised",
     "-sharing",
     "back-to-top-button",
-    "theme-default"
+    "theme-default",
+    "-lunr",
+    "-search",
+    "search-plus"
   ],
   "pluginsConfig": {
     "jsfiddle": {
