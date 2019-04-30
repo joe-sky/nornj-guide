@@ -13,7 +13,8 @@
     "theme-default",
     "-lunr",
     "-search",
-    "search-plus"
+    "search-plus",
+    "expandable-chapters-revised"
   ],
   "pluginsConfig": {
     "jsfiddle": {
