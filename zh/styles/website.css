@@ -18,8 +18,9 @@ ul.summary > li.chapter > a:first-child {
 
 a[href$="tags.html#top"],
 a[href$="directives.html#top"],
-a[href$="expressions.html#top"],
-a[href$="expressions.html#filters"],
-a[href$="expressions.html#operators"] {
+a[href$="expressions.html#top"]
+/* a[href$="expressions.html#filters"], */
+/* a[href$="expressions.html#operators"]  */
+{
   font-weight: bolder;
 }
