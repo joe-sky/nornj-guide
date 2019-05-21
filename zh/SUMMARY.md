@@ -29,8 +29,8 @@
         * [开发新的指令](jsx-syntax/directives.md#create-new-directive)
             * [最简单的指令](jsx-syntax/directives.md#a-simple-directive)
             * [更复杂的指令](jsx-syntax/directives.md#more-complex-directive)
-* [tagged templates语法](tagged-templates-syntax/index.md)
-    * [n\`expressions\`](jsx-syntax/expressions.md#top)
+* [Tagged templates语法](tagged-templates-syntax/index.md)
+    * [表达式 (n\`expressions\`)](jsx-syntax/expressions.md#top)
         * [过滤器](jsx-syntax/expressions.md#filters)
             * [capitalize](jsx-syntax/expressions.md#capitalize)
             * [lowerFirst](jsx-syntax/expressions.md#lowerFirst)
@@ -47,7 +47,7 @@
             * [foo ** bar](jsx-syntax/expressions.md#power)
             * [foo %% bar](jsx-syntax/expressions.md#rounding-down)
             * [开发新的运算符](jsx-syntax/expressions.md#create-new-operator)
-    * [html\`tags\`](jsx-syntax/expressions.md#top)
+    * [模板引擎 (html\`tags\`)](jsx-syntax/expressions.md#top)
         * [插值变量](tagged-templates-syntax/interpolations.md)
         * [访问器属性](tagged-templates-syntax/accessor.md)
         * [过滤器与运算符](tagged-templates-syntax/filters-and-operators.md)
@@ -59,7 +59,7 @@
     * [nj.config](api/config.md)
     * [nj.template (t\`tags\`)](api/config.md)
     * [nj.css (s\`styles\`)](api/config.md)
-* 结合前端生态工具
+* 生态工具
     * [结合Webpack在单文件中编写模板](tools-adaptation/webpack.md)
     * [Html-Webpack-Plugin](tools-adaptation/html-webpack-plugin.md)
     * [React-Native](tools-adaptation/react-native.md)
@@ -67,5 +67,6 @@
     * [React-Router](api/react-router.md)
     * [Mobx](tools-adaptation/mobx.md)
     * [React第三方ui库](tools-adaptation/react-ui.md)
-* [像传统模板引擎那样工作](classic-template-engine/index.md)
-    * [/\* html \*/\`tags\`](classic-template-engine/index.md)
+* 其他
+    * [像传统模板引擎那样工作](classic-template-engine/index.md)
+    * [关于渲染效率](classic-template-engine/index.md)

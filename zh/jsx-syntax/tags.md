@@ -5,16 +5,16 @@
 
 ```js
 const Test = props => (
-  <if condition={props.isTest}>
+  <If condition={props.isTest}>
     <i>success</i>
-    <else>
+    <Else>
       <i>fail</i>
-    </else>
-  </if>
+    </Else>
+  </If>
 );
 ```
 
-上例中的`<if>`、`<else>`等都是标签语法。
+上例中的`<If>`、`<Else>`等都是标签语法。
 
 # 与React组件的区别 {#different-from-react}
 
@@ -48,7 +48,7 @@ const Foo = ({ data }) => (
 
 但是可以看出，`react-if`需要一个额外的`<Then>`标签；而且文档中也注明了，如果不在`<Then>`或`<Else>`中写一个返回子节点的函数是会存在性能消耗的。因为在并不确定`condition`的值之前，所有的分支节点都没必要进行提前渲染。
 
-然而`NornJ`的`<if>`标签则不存在上述问题，因为它的本质并不是React组件而是一个`模板函数`，由配套的babel插件进行了转换：
+然而`NornJ`的`<If>`标签则不存在上述问题，因为它的本质并不是React组件而是一个`模板函数`，由配套的babel插件进行了转换：
 
 ```js
 const test = props => (
@@ -73,14 +73,14 @@ const test = props => (
 
 ## 生成子节点可用的新变量 {#generate-new-variable}
 
-例如`<each>`循环：
+例如`<Each>`循环：
 
 ```js
 const Test = props => (
   <div>
-    <each of={[1, 2, 3]}>
+    <Each of={[1, 2, 3]}>
       <i>{item}</i>
-    </each>
+    </Each>
   </div>
 );
 ```
@@ -101,15 +101,13 @@ const Test = props => (
 );
 ```
 
-上述虽然是`JSX`的常规写法，但是标签子节点中插入的`额外花括号`、`函数体`等，可能或多或少还是增加了少量代码，以及影响了一点点标签嵌套的可读性 :smiling_imp:。
-
-
+上述虽然是`JSX`的常规写法，但是标签子节点中插入的`额外花括号`、`函数体`等，可能或多或少还是增加了少量代码，以及影响了一点点标签嵌套的可读性。
 
 ***
 
 下面是`NornJ`已有内置的标签：
 
-## if
+## If
 
 示例：
 
@@ -117,10 +115,10 @@ const Test = props => (
 const Test = props => (
   <div>
     This is a if tag demo.
-    <if condition={props.type}>
+    <If condition={props.type}>
       test if tag
       <span>test1</span>
-    </if>
+    </If>
   </div>
 );
 ```
@@ -135,7 +133,7 @@ const Test = props => (
 
 `if`标签还包含`else`、`elseif`等子标签。
 
-## else
+## Else
 
 示例：
 
@@ -143,13 +141,13 @@ const Test = props => (
 const Test = props => (
   <div>
     This is a if tag demo.
-    <if condition={props.type}>
+    <If condition={props.type}>
       test if tag
       <span>test1</span>
-      <else>
+      <Else>
         <span>test2</span>
-      </else>
-    </if>
+      </Else>
+    </If>
   </div>
 );
 ```
@@ -167,25 +165,25 @@ ReactDOM.render(<Test type={false} />, document.body);
 */
 ```
 
-## elseif
+## Elseif
 
 `elseif`标签可以实现多分支流程：
 
 ```js
 const Test = props => (
   <div>
-    <if condition={props.num > 100}>
+    <If condition={props.num > 100}>
       100
-      <elseif condition={props.num > 50}>
+      <Elseif condition={props.num > 50}>
         50
-      </elseif>
-      <elseif condition={props.num > 20}>
+      </Elseif>
+      <Elseif condition={props.num > 20}>
         20
-      </elseif>
-      <else>
+      </Elseif>
+      <Else>
         0
-      </else>
-    </if>
+      </Else>
+    </If>
   <div>
 );
 
@@ -202,35 +200,35 @@ ReactDOM.render(<Test num={30} />, document.body);
 |:------------------|:----------------|:----------------|
 | condition           | Boolean       | elseif标签子节点的渲染条件 |
 
-## each
+## Each
 
 `each`标签可以实现循环：
 
 ```js
-<each of={numbers}>   //要循环的数组
+<Each of={numbers}>   //要循环的数组
   <i>num: {item}</i>  //item表示使用数组项
   <i>no: {index}</i>  //index表示使用数组项索引值
-</each>
+</Each>
 ```
 
 在循环中内嵌`if`标签：
 
 ```js
-<each of={numbers}>
-  <if condition={first}>show first<br/></if>  //first表示数组第一项
-  <if condition={last}>show last</if>         //last表示数组最后一项
-</each>
+<Each of={numbers}>
+  <If condition={first}>show first<br/></If>  //first表示数组第一项
+  <If condition={last}>show last</If>         //last表示数组最后一项
+</Each>
 ```
 
 如要循环的数组为空，则可以渲染`empty`标签的内容：
 
 ```js
-<each of={numbers}>
+<Each of={numbers}>
   <span>test {item.no}</span>
   <empty>
     <span>no data</span>
   </empty>
-</each>
+</Each>
 ```
 
 * `each`标签的参数列表：
@@ -243,37 +241,37 @@ ReactDOM.render(<Test num={30} />, document.body);
 | first           | String       | 循环中生成的第一项变量名，可以改变 |
 | last           | String       | 循环中生成的最后一项变量名，可以改变 |
 
-## for
+## For
 
 `for`标签是`each`标签的别名，用法是完全一样的：
 
 ```js
-<for of={numbers}>
+<For of={numbers}>
   <span>test {item.no}</span>
   <empty>
     <span>no data</span>
   </empty>
-</for>
+</For>
 ```
 
-## switch
+## Switch
 
 `switch`标签也可以实现多分支流程：
 
 ```js
 const Test = props => (
   <div>
-    <switch value={props.num}>
-      <case value={50}>
+    <Switch value={props.num}>
+      <Case value={50}>
         50
-      </case>
-      <case value={30}>
+      </Case>
+      <Case value={30}>
         30
-      </case>
-      <default>
+      </Case>
+      <Default>
         0
-      </default>
-    </switch>
+      </Default>
+    </Switch>
   <div>
 );
 
@@ -290,16 +288,16 @@ ReactDOM.render(<Test num={30} />, document.body);
 |:------------------|:----------------|:----------------|
 | value           | Any       | 在switch标签的value参数传入要判断值；<br>然后其会和case标签中的value值进行`===`判断；<br>所有case都不匹配时则渲染default标签的子节点 |
 
-## with
+## With
 
 `with`标签主要用于在`JSX`中创建新的变量：
 
 ```js
-<each of={[1, 2, 3]}>
-  <with num={item} i={index}>
+<Each of={[1, 2, 3]}>
+  <With num={item} i={index}>
     <span>test-{num}-{i}</span>
-  </with>
-</each>
+  </With>
+</Each>
 ```
 
 ## MobxObserver
@@ -309,12 +307,12 @@ ReactDOM.render(<Test num={30} />, document.body);
 `NornJ`的标签都是支持可扩展的，也就是说与React组件一样可以自行封装各种新功能。例如实现一个`customIf`标签：
 
 ```js
-<customIf condition={foo}>
+<CustomIf condition={foo}>
   test if
-  <else>
+  <Else>
     test else
-  </else>
-</customIf>
+  </Else>
+</CustomIf>
 ```
 
 每个标签都是一个函数，使用`nj.registerExtension`方法注册：
