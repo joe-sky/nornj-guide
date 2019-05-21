@@ -302,52 +302,160 @@ ReactDOM.render(<Test num={30} />, document.body);
 
 ## MobxObserver
 
+`mobxObserver`标签实际上就是[mobx-react-lite库的observer组件](https://github.com/mobxjs/mobx-react-lite#observer)，只不过它在编写时无需在子节点写函数：
+
+```js
+import { Observer, useObservable } from "mobx-react-lite"
+
+function ObservePerson(props) {
+  const person = useObservable({ name: "John" })
+  return (
+    <div>
+      {person.name}
+
+      {/* 原生写法 */}
+      <Observer>{
+        () => <div>{person.name}</div>
+      }</Observer>
+
+      {/* MobxObserver标签 */}
+      <MobxObserver>
+        <div>{person.name}</div>
+      </MobxObserver>
+
+      <button onClick={() => (person.name = "Mike")}>No! I am Mike</button>
+    </div>
+  )
+}
+```
+
 # 开发新的标签 {#create-new-tag}
 
-`NornJ`的标签都是支持可扩展的，也就是说与React组件一样可以自行封装各种新功能。例如实现一个`customIf`标签：
+`NornJ`的标签都是支持可扩展的，也就是说与React组件一样可以自行封装各种新功能。
+
+## 开发一个最简单的标签 {#a-simple-tag}
+
+例如实现一个`Unless`标签，功能即为与`If`标签相反，它的`condition`属性为false时才渲染子节点：
 
 ```js
-<CustomIf condition={foo}>
-  test if
-  <Else>
-    test else
-  </Else>
-</CustomIf>
+<Unless condition={false}>
+  <div>Test unless</div>
+</Unless>
 ```
 
-每个标签都是一个函数，使用`nj.registerExtension`方法注册：
+上面的`Unless`标签实际上是一个扩展函数，使用`nj.registerExtension`方法注册：
 
 ```js
-nj.registerExtension('customIf', options => {
-  const { props, children } = options;
-  if (props.condition) {
-    return children();  //输出标签的子节点，即"test if"
+import nj from 'nornj';
+
+nj.registerExtension(
+  'unless',     //注意：标签名称需要使用小写开头的camel命名方式
+  options => {
+    const { props, children } = options;
+    if (!props.condition) {
+      return children();  //输出标签的子节点：Test unless
+    }
   }
-  else {
-    return props['else'];  //输出else标签的子节点，即"test else"
-  }
-});
+);
 ```
 
-* 可以一次定义多个全局标签：
+然后还需要配置一下`.babel.rc`，因为这样配套的babel插件才知道需要对`Unless`标签进行转换：
 
 ```js
-nj.registerExtension({
-  customIf: options => {...},
-  customSwitch: options => {...}
-});
+{
+  ...
+  "plugins": [
+    [
+      "nornj-in-jsx",
+      {
+        "extensionConfig": {
+          "unless": true
+        }
+      }
+    ]
+  ]
+}
 ```
+
+这样我们就成功开发了一个`Unless`标签，与普通React组件不同的是，它可以获得`NornJ`标签的[延迟渲染子节点](#lazy-render-children)特性。
 
 ### 标签扩展函数的options参数 {#tag-options}
 
 | 参数名称           | 类型            | 作用            |
 |:------------------|:----------------|:----------------|
-| children            | Function        | 返回需要渲染的标签子节点 |
-| props             | Object          | 当前标签的各行内属性值(即`<tag a=1 b=2>`中的`a`和`b`) |
-
-## 开发一个最简单的标签 {#a-simple-tag}
+| children          | Function        | 执行后返回需要渲染的标签子节点，与React的props.children不同，它是函数 |
+| props             | Object          | 当前标签的属性值(即`<tag a=1 b=2>`中的`a`和`b`，这里与React组件一致) |
 
 ## 更复杂的标签 {#more-complex-tag}
+
+上面的例子我们介绍了如何开发一个最简单的标签`Unless`，它只需在扩展函数内按照一定条件判断是否返回子节点就可以了。
+
+这样简单的标签也无需配置更多的`extensionConfig`配置参数，填写`true`即可。接下来我们实现一个循环标签`SimpleFor`，用法如下：
+
+```js
+<SimpleFor of={[1, 2, 3]}>
+  <If condition={!loopFirst}>
+    <div key={loopIndex}>Test for: {loopItem}</div>
+  </If>
+</SimpleFor>
+```
+
+我们还注意到上面循环体中的`index`与`item`是该标签生成出来的新变量，也就是获得了`NornJ`标签的[生成子节点可用的新变量](#generate-new-variable)特性。这就需要配置`extensionConfig`的`newContext`参数：
+
+```js
+{
+  ...
+  "plugins": [
+    [
+      "nornj-in-jsx",
+      {
+        "extensionConfig": {
+          "simpleFor": {
+            "newContext": {
+              "datas": {
+                "index": "loopIndex",
+                "item": "loopItem",
+                "first": "loopFirst"
+              }
+            }
+          }
+        }
+      }
+    ]
+  ]
+}
+```
+
+使用`nj.registerExtension`方法注册：
+
+```js
+import nj from 'nornj';
+
+nj.registerExtension(
+  'simpleFor',
+  options => {
+    const { props, children } = options;
+
+    return props.of.map((item, index) => children({
+      data: [{  //注意：data参数需要传入一个每项为对象的数组，对象个数不限
+        loopIndex: index,
+        loopItem: item,
+        loopFirst: index == 0
+      }]
+    }))
+  }
+);
+```
+
+如需要改变循环体中的`loopItem`等参数名，在`SimpleFor`标签的属性上修改在`extensionConfig.simpleFor.newContext.datas`中设置的对象名即可，如`item`等：
+
+```js
+<SimpleFor of={[1, 2, 3]} item="itemNum" index="itemIndex" first="itemFirst">
+  <If condition={!itemFirst}>
+    <div key={itemIndex}>Test for: {itemNum}</div>
+  </If>
+</SimpleFor>
+```
 
 ## 附属标签 {#subsidiary-tag}
 {% endraw %}

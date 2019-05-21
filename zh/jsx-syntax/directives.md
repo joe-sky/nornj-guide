@@ -1,143 +1,163 @@
 {% raw %}
-# 指令
+# 指令 {#top}
 
-`指令`即为在html元素开标签内编写的自定义属性，类似于`Vue`及`Angular`中的`指令`。语法为`<element #exTag="value">`，用它可以封装一些实用功能，目的是写更少的代码去做更多的事情。在`NornJ`中，`指令`实质上是`标签`的一种特殊写法：
+`指令`即为在组件开标签内编写的自定义属性，类似于`Vue`及`Angular`中的`指令`。语法为`<Component n-directiveName>`，用它可以封装一些实用功能，目的是写更少的代码去做更多的事情。
 
-```html
-<div #show="{false}"></div>
-```
+### n-show
 
-完全等价于：
-
-```html
-<div>
-  <#props>
-    <#show>
-      {false}
-    </#show>
-  </#props>
-</div>
-```
-
-## 内置指令
-
-### 目录
-
-* [show](#show)
-* [mobx-bind](#mobx-bind)
-* [mst-bind](#mst-bind)
-
-### show
-
-类似于`Vue`的`v-show`指令，`#show`用于切换元素是否显示，原理为修改style：
+使用`n-show`可以在JSX中很方便地切换标签的`style.display`属性，当值为`false`时不显示，效果和`Vue`的`v-show`类似：
 
 ```js
-const html = nj`
-<div #show="{{isShow}}">
-  test inline extension tag
-</div>
-`({ isShow: false });
+class TestComponent extends Component {
+  render() {
+    return <input n-show={this.props.show} />;
+  }
+}
 
-console.log(html);  //<div style="display:none">test inline extension tag</div>
+ReactDOM.render(<TestComponent show={false} />);
+/*
+ 渲染结果：<input style="display:none" />
+*/
 ```
 
-### mobx-bind
+### n-style
 
-类似于`Vue`的`v-model`指令，可以使用`#mobx-bind`配合`Mobx`在`<input>`及`<textarea>`等表单元素上创建`双向数据绑定`，它会根据控件类型自动选取正确的方法来更新元素。
+使用`n-style`可以在JSX中使用与html语法一致的css写法：
 
-* 在线示例(jsfiddle)
+```js
+class TestComponent extends Component {
+  render() {
+    //以下与<input style={{ marginLeft: '10px', padding: 0 }} />效果相同
+    return <input n-style="margin-left:10px;padding:0" />;
+  }
+}
+```
 
-[source code](https://jsfiddle.net/joe_sky/wwrLuns2/)
+在`n-style`中也可以动态嵌入变量：
 
-* [在线示例(codepen)](https://codepen.io/joe_sky/pen/mxKdrj)
+```js
+const cssProp = 'padding';
+
+class TestComponent extends Component {
+  render() {
+    return <input n-style={`margin-left:${10};${cssProp}:0`} />;
+  }
+}
+```
+
+### n-debounce
+
+使用`n-debounce`可以在JSX中为`input`等表单元素增加防抖效果，以减少用户输入频率而提高性能：
+
+```js
+class TestComponent extends Component {
+  onChange = e => {
+    //每次输入后延迟一定毫秒才触发一次
+    console.log(e.target.value);
+  };
+
+  render() {
+    return (
+      <>
+        <input n-debounce onChange={this.onChange} defaultValue="test" />
+        <input n-debounce={200} onChange={this.onChange} />
+      </>
+    );
+  }
+}
+```
+
+如上，`n-debounce`的触发事件默认为`onChange`。如果不写`n-debounce`的值，默认为`100毫秒`。
+
+* 指定任意事件
+
+`n-debounce`也可以支持`onChange`以外的其他事件。比如`onInput`，则需要在`n-debounce`后面添加`onInput`参数：
+
+```js
+class TestComponent extends Component {
+  onInput = e => {
+    console.log(e.target.value);
+  };
+
+  render() {
+    return <input n-debounce-onInput={200} onInput={this.onInput} />;
+  }
+}
+```
+
+### n-mobxBind
+
+类似于`Vue`的`v-model`指令，可以使用`n-mobxBind`配合`Mobx`在`<input>`及`<textarea>`等表单元素上创建`双向数据绑定`，它会根据控件类型自动选取正确的方法来更新元素。
 
 * 基本使用方法
 
 ```js
 import { Component } from 'react';
 import { observable } from 'mobx';
-import nj from 'nornj';
 
 class TestComponent extends Component {
   @observable inputValue = '';
 
   render() {
-    return nj`
-      <input :#mobx-bind="inputValue">
-    `(this);
+    return <input n-mobxBind="inputValue" />;
   }
 }
 ```
 
-如上所示，无需编写`<input>`标签的`onChange`事件，`inputValue`变量已自动和`<input>`标签建立了`双向数据绑定`的关系。[点这里](https://github.com/joe-sky/nornj-cli/blob/master/docs/guides/antDesign.md#%E8%A1%A8%E5%8D%95%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)是一个`#mobx-bind`结合表单组件的示例页面。
+如上所示，无需编写`<input>`标签的`onChange`事件，`inputValue`变量已自动和`<input>`标签建立了`双向数据绑定`的关系。
 
-* 实质上，`#mobx-bind`的实现原理和`v-model`很类似，上述示例其实就是下面的语法糖形式：
+* 实质上，`n-mobxBind`的实现原理和`v-model`很类似，上述示例其实就是下面的语法糖形式：
 
 ```js
 class TestComponent extends Component {
   @observable inputValue = '';
-  @autobind
-  onChange(e) {
+
+  onChange = e => {
     this.inputValue = e.target.value;
-  }
+  };
 
   render() {
-    return nj`
-      <input value={inputValue} {onChange}>
-    `(this);
+    return <input value={this.inputValue} onChange={this.onChange} />;
   }
-}
-```
-
-* `#mobx-bind`和`#mst-bind`存放在`nornj-react`包中，需要按如下方式引入后方可使用：
-
-```js
-import 'nornj-react/mobx';
-```
-
-另外如果使用`nornj-loader`，则需要在`Webpack`的配置中引入`相应的扩展配置文件`：
-
-```js
-module: {
-  rules: [
-    {
-      test: /\.t.html(\?[\s\S]+)*$/,
-      use: [{
-        loader: 'nornj-loader',
-        options: {
-          outputH: true,
-          delimiters: 'react',
-          extensionConfig: require('nornj-react/mobx/extensionConfig')
-        }
-      }]
-    },
-    ...
-  ]
 }
 ```
 
 * `onChange`事件
 
-由于`#mobx-bind`默认自动设置了组件的`onChange`事件，但有些情况下我们可能还是需要在`onChange`中做一些其他的操作：
+由于`n-mobxBind`默认自动设置了组件的`onChange`事件，但有些情况下我们可能还是需要在`onChange`中做一些其他的操作：
 
 ```js
 class TestComponent extends Component {
   @observable inputValue = '1';
 
-  @autobind
-  onChange(e) {
+  onChange = e => {
     console.log(e.target.value);
-  }
+  };
 
   render() {
-    return nj`
-      <input :#mobx-bind="inputValue" {onChange}>
-    `(this);
+    return <input n-mobxBind="inputValue" onChange={this.onChange} />;
   }
 }
 ```
 
 如上所示，`onChange`事件的行为和标签原生的`onChange`完全相同，它会在文本框的值变化后执行。
+
+* 增加防抖效果
+
+可以使用`debounce`修饰符为`n-mobxBind`提供防抖效果：
+
+```js
+import { Component } from 'react';
+import { observable } from 'mobx';
+
+class TestComponent extends Component {
+  @observable inputValue = '';
+
+  render() {
+    return <input n-mobxBind-debounce$200="inputValue" />;
+  }
+}
+```
 
 * 使用`action`更新变量
 
@@ -147,29 +167,27 @@ class TestComponent extends Component {
 import { observable, action, configure } from 'mobx';
 
 // don't allow state modifications outside actions
-configure({enforceActions: true});
+configure({ enforceActions: true });
 
 class TestComponent extends Component {
   @observable inputValue = '1';
-  
+
   @action.bound
   setInputValue(v) {
     this.inputValue = v;
   }
 
   render() {
-    return nj`
-      <input :#mobx-bind.action="inputValue">
-    `(this);
+    return <input n-mobxBind-action="inputValue" />;
   }
 }
 ```
 
-当有`action`修饰符时，`#mobx-bind`会默认执行camel命名法(`set + 变量名`)定义的`action`，上例中为`setInputValue`。
+当有`action`参数时，`n-mobxBind`会默认执行camel命名法(`set + 变量名`)定义的`action`，上例中为`setInputValue`。
 
-### mst-bind
+### n-mstBind
 
-`#mst-bind`即为`#mobx-bind`的默认使用`action`来更新值的版本，用来配合`mobx-state-tree`的变量使用：
+`n-mstBind`即为`n-mobxBind`的默认使用`action`来更新值的版本，用来配合`mobx-state-tree`的变量使用：
 
 store：
 
@@ -194,43 +212,11 @@ component：
 @observer
 class TestComponent extends Component {
   render() {
-    return nj`
-      <input :#mst-bind="testStore.inputValue">
-    `({
-      testStore: this.props.rootStore.testStore
-    });
+    return <input n-mstBind="rootStore.testStore" />;
   }
 }
 ```
 
-如上，`#mst-bind`会默认执行camel命名法(`set + 变量名`)定义的`action`来更新值，上例中为`setInputValue`。除此外`#mst-bind`的其他特性与上述的`#mobx-bind`完全相同。
+如上，`n-mstBind`会默认执行camel命名法(`set + 变量名`)定义的`action`来更新值，上例中为`setInputValue`。除此外`n-mstBind`的其他特性与上述的`n-mobxBind`完全相同。
 
-### 目前mobx-bind和mst-bind默认支持的控件列表
-
-| 控件名称        | 控件类型                  | 备注                     |
-|:---------------|:-------------------------|:-------------------------|
-| `<input>`      | 原生                      | `<input type="checkbox">`和`<input type="radio">`暂时不支持 |
-| `<textarea>`   | 原生                      |                         |
-| `<select>`     | 原生                      | `<select multiple>`暂时不支持 |
-| `<ant-input>`  | Ant Design                |                         |
-| `<ant-input.textarea>`<br>`<ant-textarea>`  | Ant Design                |                         |
-| `<ant-checkbox>`  | Ant Design                |                         |
-| `<ant-checkbox.group>`<br>`<ant-checkboxgroup>`  | Ant Design                |                         |
-| `<ant-radio.group>`  | Ant Design                |                         |
-| `<ant-switch>`  | Ant Design                |                         |
-| `<ant-select>`  | Ant Design                | `<ant-select mode="multiple">`暂时不支持                        |
-| `<ant-cascader>`  | Ant Design                |                         |
-| `<ant-datepicker>`<br>`<ant-datepicker.monthpicker>`<br>`<ant-datepicker.weekpicker>`<br>`<ant-datepicker.rangepicker>`<br>`<ant-monthpicker>`<br>`<ant-weekpicker>`<br>`<ant-rangepicker>`  | Ant Design                |                         |
-| `<el-input>`   | Element-React                |                         |
-| `<el-select>`   | Element-React                | `<el-select multiple>`暂时不支持 |
-| `<el-datepicker>`   | Element-React                |                         |
-| `<el-daterangepicker>`   | Element-React                |                         |
-| `<el-timeselect>`   | Element-React                |                         |
-| `<el-timepicker>`   | Element-React                |                         |
-| `<el-timerangepicker>`   | Element-React                |                         |
-| `<el-switch>`   | Element-React                |                         |
-| `<el-checkbox>`   | Element-React                |                         |
-| `<el-checkbox.group>`   | Element-React                |                         |
-| `<el-radio.group>`   | Element-React                |                         |
-| `<el-cascader>`   | Element-React                | &nbsp;                        |
 {% endraw %}

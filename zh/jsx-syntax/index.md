@@ -1,5 +1,5 @@
 {% raw %}
-# NornJ 语法(JSX)
+# JSX扩展语法
 
 `NornJ`可为JS/JSX增加的语法有以下这几类：
 
