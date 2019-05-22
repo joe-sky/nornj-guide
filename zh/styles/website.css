@@ -18,9 +18,17 @@ ul.summary > li.chapter > a:first-child {
 
 a[href$="tags.html#top"],
 a[href$="directives.html#top"],
-a[href$="expressions.html#top"]
-/* a[href$="expressions.html#filters"], */
-/* a[href$="expressions.html#operators"]  */
+a[href$="expressions.html#top"],
+a[href$="templateString.html#top"]
 {
   font-weight: bolder;
+  color: #dd0044 !important;
+}
+
+a[href$="tags.html#top"] i,
+a[href$="directives.html#top"] i,
+a[href$="expressions.html#top"] i,
+a[href$="templateString.html#top"] i
+{
+  color: #364149 !important;
 }

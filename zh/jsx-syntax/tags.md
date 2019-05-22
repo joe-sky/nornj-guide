@@ -359,7 +359,7 @@ nj.registerExtension(
 );
 ```
 
-然后还需要配置一下`.babel.rc`，因为这样配套的babel插件才知道需要对`Unless`标签进行转换：
+然后还需要配置一下`.babelrc`，因为这样配套的babel插件才知道需要对`Unless`标签进行转换：
 
 ```js
 {
@@ -388,9 +388,9 @@ nj.registerExtension(
 
 ## 更复杂的标签 {#more-complex-tag}
 
-上面的例子我们介绍了如何开发一个最简单的标签`Unless`，它只需在扩展函数内按照一定条件判断是否返回子节点就可以了。
+上面的例子我们介绍了如何开发一个最简单的标签`Unless`，它只需在扩展函数内按照一定条件判断是否返回子节点就可以了；也无需配置更多的`extensionConfig`配置参数，填写`true`即可。
 
-这样简单的标签也无需配置更多的`extensionConfig`配置参数，填写`true`即可。接下来我们实现一个循环标签`SimpleFor`，用法如下：
+接下来我们实现一个循环标签`SimpleFor`，用法如下：
 
 ```js
 <SimpleFor of={[1, 2, 3]}>
@@ -400,7 +400,7 @@ nj.registerExtension(
 </SimpleFor>
 ```
 
-我们还注意到上面循环体中的`index`与`item`是该标签生成出来的新变量，也就是获得了`NornJ`标签的[生成子节点可用的新变量](#generate-new-variable)特性。这就需要配置`extensionConfig`的`newContext`参数：
+我们还注意到上面循环体中的`loopIndex`与`loopItem`是该标签生成出来的新变量，也就是获得了`NornJ`标签的[生成子节点可用的新变量](#generate-new-variable)特性。这就需要配置`extensionConfig`的`newContext`参数：
 
 ```js
 {
@@ -412,7 +412,7 @@ nj.registerExtension(
         "extensionConfig": {
           "simpleFor": {
             "newContext": {
-              "datas": {
+              "data": {
                 "index": "loopIndex",
                 "item": "loopItem",
                 "first": "loopFirst"
@@ -426,7 +426,7 @@ nj.registerExtension(
 }
 ```
 
-使用`nj.registerExtension`方法注册：
+然后使用`nj.registerExtension`方法注册标签扩展函数：
 
 ```js
 import nj from 'nornj';
@@ -437,7 +437,7 @@ nj.registerExtension(
     const { props, children } = options;
 
     return props.of.map((item, index) => children({
-      data: [{  //注意：data参数需要传入一个每项为对象的数组，对象个数不限
+      data: [{  //注意：data参数需要传入一个每项为对象的数组；对象个数不限
         loopIndex: index,
         loopItem: item,
         loopFirst: index == 0
@@ -447,7 +447,7 @@ nj.registerExtension(
 );
 ```
 
-如需要改变循环体中的`loopItem`等参数名，在`SimpleFor`标签的属性上修改在`extensionConfig.simpleFor.newContext.datas`中设置的对象名即可，如`item`等：
+如需要改变循环体中的`loopItem`等参数名，在`SimpleFor`标签的属性上修改在`extensionConfig.simpleFor.newContext.data`中设置的对象名即可，如`item`、`index`等：
 
 ```js
 <SimpleFor of={[1, 2, 3]} item="itemNum" index="itemIndex" first="itemFirst">
@@ -458,4 +458,80 @@ nj.registerExtension(
 ```
 
 ## 附属标签 {#subsidiary-tag}
+
+`附属标签`也就是常规标签的`子标签`，比如`<If>`标签内的`<Else>`、`<Elseif>`，`<Each>`标签内的`<Empty>`等。
+
+> 配套babel插件在运作时会将附属标签连同其主标签一起进行转换。目前`NornJ`的babel插件暂时只支持转换1级附属标签，这在大多数情况下足够用了。
+
+比如我们需要给上面开发的`Unless`标签增加一个名为`Otherwise`的`附属标签`，功能为在`condition`条件为true时渲染它的子节点。用法如下：
+
+```js
+<Unless condition={false}>
+  <div>Test unless</div>
+  <Otherwise>
+    <div>Test otherwise</div>
+  </Otherwise>
+</Unless>
+```
+
+编写`Otherwise`标签扩展函数：
+
+```js
+import nj from 'nornj';
+
+nj.registerExtension(
+  'otherwise',  //注意：标签名称需要使用小写开头的camel命名方式
+  options => {
+    const {
+      props,
+      children,
+      tagProps  //tagProps是主标签(Unless)的props对象
+    } = options;
+
+    //把Otherwise的子节点函数添加在Unless标签的props对象上面。注意，不必在这里执行它
+    tagProps.otherwise = children;
+  }
+);
+```
+
+接着修改`Unless`标签的扩展函数：
+
+```js
+import nj from 'nornj';
+
+nj.registerExtension(
+  'unless',
+  options => {
+    const { props, children } = options;
+    if (!props.condition) {
+      return children();  //输出Unless标签的子节点：Test unless
+    }
+    else if(props.otherwise != null) {
+      return props.otherwise();  //输出Otherwise标签的子节点：Test otherwise
+    }
+  }
+);
+```
+
+最后在`.babelrc`配置一下`Otherwise`的标签信息，需要设置`isSubTag`参数为`true`：
+
+```js
+{
+  ...
+  "plugins": [
+    [
+      "nornj-in-jsx",
+      {
+        "extensionConfig": {
+          "unless": true,
+          "otherwise": {
+            "isSubTag": true
+          }
+        }
+      }
+    ]
+  ]
+}
+```
+
 {% endraw %}
