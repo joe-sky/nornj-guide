@@ -1,7 +1,7 @@
 {% raw %}
 # 指令 {#top}
 
-类似于`Vue`及`Angular`中的`指令`，`NornJ`也提供了模板引擎特征之一的指令语法：
+`指令`是一种扩展的HTML(XML)标签属性，`NornJ`也为`JSX`提供了指令语法：
 
 ```js
 <div n-show={true}>
@@ -16,7 +16,42 @@
 `指令`通常可以用来封装一些实用功能，以实现写更少的代码去做更多的事情为目的。具体来说`NornJ`的指令主要可以实现以下几种功能：
 
 * [操作将传入组件的props值](#set-component-props)
-* [高阶组件语法糖](#hoc-syntax-sugar)
+* [封装高阶组件](#encapsulate-hoc)
+
+## 操作将传入组件的props值 {#set-component-props}
+
+`NornJ`的指令最主要的功能就是用来设置(或修改)`JSX`标签的属性值。比如预置指令`n-show`，它就是用来设置JSX标签的`style.display`属性：
+
+```js
+<input n-show={false} />
+/*
+ 实际渲染：<input style="display:none" />
+*/
+```
+
+目前`JSX`原生的语法可以实现类似指令的效果吗？答案是可以的。通常可以使用`JSX延展操作符`来模拟出类似指令的效果，比如[react-hanger的useInput](https://github.com/kitze/react-hanger#useinput)：
+
+```js
+const newTodo = useInput('');
+
+<input name="input" {...newTodo.eventBind} />
+/*
+ 实际渲染：<input name="input" value={newTodo.value} onChange={newTodo.onChange} />
+*/
+```
+
+但是，上面这种方式也存在以下这些问题：
+
+* 封装扩展的内部无法获取JSX标签已有的其他属性值，比如上例中的`name="input"`。这在开发一些功能时会有局限。
+* 写法与常规的JSX属性区别较大，可读性差一些。
+
+然而`NornJ`的指令语法可以完美解决上述问题。
+
+## 封装高阶组件 {#encapsulate-hoc}
+
+设置(或修改)`JSX`标签的属性值是`NornJ`的指令最基本的功能。但指令还能实现更高级的功能，以一种更简单的语法应用高阶组件。下面我们看一个简单的应用例子(使用[ant-design的tooltip组件](https://ant.design/components/tooltip/))：
+
+
 
 ***
 
@@ -203,6 +238,16 @@ class TestComponent extends Component {
 ```
 
 当有`action`参数时，`n-mobxBind`会默认执行camel命名法(`set + 变量名`)定义的`action`，上例中为`setInputValue`。
+
+### 文本框 {#n-mobxbind-input}
+
+### 复选框 {#n-mobxbind-checkbox}
+
+### 单选按钮 {#n-mobxbind-radio}
+
+### 选择框 {#n-mobxbind-select}
+
+### 在组件上使用 {#n-mobxbind-component}
 
 ## n-mstBind
 

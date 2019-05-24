@@ -457,13 +457,13 @@ nj.registerExtension(
 </SimpleFor>
 ```
 
-## 附属标签 {#subsidiary-tag}
+## 子标签 {#subsidiary-tag}
 
-`附属标签`也就是常规标签的`子标签`，比如`<If>`标签内的`<Else>`、`<Elseif>`，`<Each>`标签内的`<Empty>`等。
+`NornJ`标签还可以在子节点中附带`子标签`，比如`<If>`标签内的`<Else>`、`<Elseif>`，`<Each>`标签内的`<Empty>`等。
 
-> 配套babel插件在运作时会将附属标签连同其主标签一起进行转换。目前`NornJ`的babel插件暂时只支持转换1级附属标签，这在大多数情况下足够用了。
+> 配套babel插件在运作时会将子标签连同其主标签一起进行转换。目前`NornJ`的babel插件暂时只支持转换1级子标签，这在大多数情况下足够用了。
 
-比如我们需要给上面开发的`Unless`标签增加一个名为`Otherwise`的`附属标签`，功能为在`condition`条件为true时渲染它的子节点。用法如下：
+比如我们需要给上面开发的`Unless`标签增加一个名为`Otherwise`的`子标签`，功能为在`condition`条件为true时渲染它的子节点。用法如下：
 
 ```js
 <Unless condition={false}>
