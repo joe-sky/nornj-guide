@@ -36,6 +36,8 @@
                 * [单选按钮](jsx-syntax/directives.md#n-mobxbind-radio)
                 * [选择框](jsx-syntax/directives.md#n-mobxbind-select)
             * [绑定组件](jsx-syntax/directives.md#n-mobxbind-component)
+                * [注册组件可配置的参数](jsx-syntax/directives.md#n-mobxbind-component-params)
+                * [已预置注册的组件库](jsx-syntax/directives.md#n-mobxbind-component-preset)
         * [n-mstBind](jsx-syntax/directives.md#n-mstbind)
         * [开发新的指令](jsx-syntax/directives.md#create-new-directive)
             * [最简单的指令](jsx-syntax/directives.md#a-simple-directive)

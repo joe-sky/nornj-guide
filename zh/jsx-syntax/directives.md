@@ -278,17 +278,296 @@ class TestComponent extends Component {
 
 当有`action`参数时，`n-mobxBind`会默认执行camel命名法(`set + 变量名`)定义的`action`，上例中为`setInputValue`。
 
+接下来我们来按控件分类列举下`n-mobxBind`指令可支持的场景：
+
 ### 绑定原生表单控件 {#n-mobxbind-formitem}
+
+原生表单控件包含`文本框`、`复选框`、`单选按钮`、`选择框`等，以上都可以直接使用`n-mobxBind`指令，会自动监听相应控件的`onChange`事件并正确地更新值。
 
 #### 文本框 {#n-mobxbind-input}
 
+单行文本框：
+
+```js
+class TestComponent extends Component {
+  @observable inputValue = 'test';
+
+  render() {
+    return (
+      <>
+        <input n-mobxBind={this.inputValue} />
+        <p>Message is: {this.inputValue}</p>
+      </>
+    );
+  }
+}
+```
+
+多行文本框：
+
+```js
+class TestComponent extends Component {
+  @observable inputValue = 'test';
+
+  render() {
+    return (
+      <>
+        <textarea n-mobxBind={this.inputValue}></textarea>
+        <p>Message is: {this.inputValue}</p>
+      </>
+    );
+  }
+}
+```
+
 #### 复选框 {#n-mobxbind-checkbox}
+
+单个复选框，绑定到布尔值：
+
+```js
+class TestComponent extends Component {
+  @observable checked = false;
+
+  render() {
+    return (
+      <>
+        <input type="checkbox" id="checkbox" n-mobxBind={this.checked} />
+        <label for="checkbox">{this.checked}</label>
+      </>
+    );
+  }
+}
+```
+
+多个复选框，绑定到同一个数组：
+
+```js
+class TestComponent extends Component {
+  @observable checkedNames = ['Jack', 'Mike'];
+
+  render() {
+    return (
+      <>
+        <input type="checkbox" id="jack" value="Jack" n-mobxBind={this.checkedNames} />
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" n-mobxBind={this.checkedNames} />
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" n-mobxBind={this.checkedNames} />
+        <label for="mike">Mike</label>
+        <br />
+        <span>Checked names: {this.checkedNames}</span>
+      </>
+    );
+  }
+}
+```
 
 #### 单选按钮 {#n-mobxbind-radio}
 
+```js
+class TestComponent extends Component {
+  @observable picked = '';
+
+  render() {
+    return (
+      <>
+        <input type="radio" id="one" value="One" n-mobxBind={this.picked}>
+        <label for="one">One</label>
+        <br />
+        <input type="radio" id="two" value="Two" n-mobxBind={this.picked}>
+        <label for="two">Two</label>
+        <br />
+        <span>Picked: {this.picked}</span>
+      </>
+    );
+  }
+}
+```
+
 #### 选择框 {#n-mobxbind-select}
 
+单选时：
+
+```js
+class TestComponent extends Component {
+  @observable selected = '';
+
+  render() {
+    return (
+      <>
+        <select n-mobxBind={this.selected}>
+          <option disabled value="">请选择</option>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+        </select>
+        <span>Selected: {this.selected}</span>
+      </>
+    );
+  }
+}
+```
+
+多选时，绑定到一个数组：
+
+```js
+class TestComponent extends Component {
+  @observable selected = [];
+
+  render() {
+    return (
+      <>
+        <select n-mobxBind={this.selected} multiple n-style="width: 50px;">
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+        </select>
+        <br />
+        <span>Selected: {this.selected}</span>
+      </>
+    );
+  }
+}
+```
+
+用`<Each>`渲染的动态选项：
+
+```js
+class TestComponent extends Component {
+  @observable selected = 'A';
+  options = [
+    { text: 'One', value: 'A' },
+    { text: 'Two', value: 'B' },
+    { text: 'Three', value: 'C' }
+  ];
+
+  render() {
+    return (
+      <>
+        <select n-mobxBind={this.selected}>
+          <Each of={this.options}>
+            <option value={item.value}>{item.text}</option>
+          <Each/>
+        </select>
+        <span>Selected: {this.selected}</span>
+      </>
+    );
+  }
+}
+```
+
 ### 绑定组件 {#n-mobxbind-component}
+
+除了上述的原生表单控件外，`n-mobxBind`指令也可以绑定到任意React组件上。当然，前提是该组件可能需要使用`nj.registerComponent`进行注册，并且设置一些必要的参数。
+
+例如我们注册一个使用[ant-design的Input组件](https://ant.design/components/input/)的例子，首先是注册组件：
+
+```js
+import nj from 'nornj';
+import { Input } from 'antd';
+
+nj.registerComponent(
+  'ant-Input',            //组件名(全局唯一)，类型为字符串
+  Input,                  //组件对象
+  {                       //组件配置参数对象
+    hasEventObject: true    //为true时使用e.target.value获取值
+  }
+);
+```
+
+上述代码在全局统一注册一次就可以了。然后便可以正常地使用`n-mobxBind`指令进行绑定：
+
+```js
+import { Component } from 'react';
+import { observable } from 'mobx';
+import { Input } from 'antd';
+
+class TestComponent extends Component {
+  @observable inputValue = 'test';
+
+  render() {
+    return <Input n-mobxBind={this.inputValue} />;
+  }
+}
+```
+
+#### 注册组件可配置的参数 {#n-mobxbind-component-params}
+
+示例：
+
+```js
+import nj from 'nornj';
+import { Cascader } from 'antd';
+
+nj.registerComponent(
+  'ant-Cascader',     //组件名(全局唯一)，类型为字符串
+  Cascader,           //组件对象
+  {                   //组件配置参数对象，如果下表中的默认配置都满足要求也可以省略
+    needToJS: true      //值被更新到该组件前，需要执行一次Mobx.toJS
+  }
+);
+```
+
+| 参数名             | 类型            | 默认值            | 作用       |
+|:------------------|:----------------|:----------------|:----------------|
+| hasEventObject    | Boolean         | false           | 为true时，更新事件中使用`<input onChange={e => e.target.value} />`取值。 <br> 为false时，更新事件中使用`<input onChange={value => value} />`取值。 |
+| targetPropName    | String          | 'value'         | 如果hasEventObject参数为true，则更新事件中使用`<input onChange={e => e.target[targetPropName]} />`取值。 <br> 不填时默认值是`value`，也就是使用`e.target.value`取值。                |
+| valuePropName    | String           | 'value'         | 被绑定控件的值属性名，即`<input value={...} />`中的value属性名称。比如可以依不同组件特性修改为`textValue`、`checked`等等。 |
+| changeEventName   | String           | 'onChange'     | 被绑定控件的更新事件属性名，即`<input onChange={...} />`中的onChange属性名称。比如可以依不同组件特性修改为`onInput`、`onTextChange`等等。 |
+| needToJS          | Boolean          | false          | 输入的新值在被更新到组件时，是否需要执行一次`Mobx.toJS`。例如一些需要绑定到数组值的组件可能需要设置needToJS为`true`，否则无法正确地更新值到相应的组件中，比如[ant-design的Cascader组件](https://ant.design/components/cascader/)。 <br> 需要进行这一步操作，是由[Mobx可观察变量的特性](https://mobx.js.org/refguide/tojson.html)与该组件的内部实现是否有冲突来决定的，这个有时候也无法避免。 |
+
+#### 已预置注册的组件库 {#n-mobxbind-component-preset}
+
+目前[ant-design组件库](https://ant.design/docs/react/introduce)已在[nornj-react](https://github.com/joe-sky/nornj-react/tree/master/antd)包中预置注册了全部组件。也就是说对于`ant-design组件库`无需再手工注册了，按下面方式直接引入就可以使用`n-mobxBind`指令。
+
+首先需要安装[babel-plugin-import插件](https://github.com/ant-design/babel-plugin-import)，并在`.babelrc`增加以下配置：
+
+```js
+"plugins": [
+   ...
+   [
+     "import",
+     {
+       "libraryName": "nornj-react/antd",
+       "style": true
+     }
+   ],
+   ...
+]
+```
+
+然后这样引入使用各`ant-design组件`即可：
+
+```js
+import {
+  Table,
+  Input,
+  Button,
+  Pagination,
+  Tabs,
+  Tree,
+  Select,
+  Checkbox,
+  Modal,
+  message,
+  Row,
+  Col,
+  Form,
+  DatePicker,
+  Icon,
+  Steps,
+  Divider
+} from 'nornj-react/antd';  //注意，此处由"antd"改为"nornj-react/antd"
+
+...
+class TestComponent extends Component {
+  @observable inputValue = 'test';
+
+  render() {
+    return <Input n-mobxBind={this.inputValue} />;
+  }
+}
+```
 
 ## n-mstBind
 
@@ -327,7 +606,62 @@ class TestComponent extends Component {
 
 # 开发新的指令 {#create-new-directive}
 
+`NornJ`的指令都是支持可扩展的，也就是说可以自行封装各种新功能。
+
 ## 开发一个最简单的指令 {#a-simple-directive}
+
+例如实现一个`n-class`指令，功能即为与[classnames](https://github.com/JedWatson/classnames)库相同：
+
+```js
+<div id="test" n-class={{ foo: true, bar: true }}>Test</div>
+/* 以上渲染内容为：
+<div id="test" class="foo bar">Test</div>
+*/
+```
+
+上面的`n-class`指令实际上是一个扩展函数，使用`nj.registerExtension`方法注册：
+
+```js
+import nj from 'nornj';
+import classNames from 'classnames';
+
+nj.registerExtension(
+  'class',     //注意：标签名称需要使用小写开头的camel命名方式
+  options => {
+    const {
+      tagProps,  //指令所在标签的props对象，本例中为{ id: 'test' }
+      value      //指令值函数，注意它是个函数需要执行才能取到结果
+    } = options;
+
+    //在标签渲染前，使用classNames库来设置className属性的值
+    tagProps.className = classNames(
+      value()  //此处返回例中的{ foo: true, bar: true }
+    );
+  }
+);
+```
+
+配置`.babelrc`(该例中此步骤也可以省略)：
+
+```js
+{
+  ...
+  "plugins": [
+    [
+      "nornj-in-jsx",
+      {
+        "extensionConfig": {
+          "class": {
+            "isDirective": true
+          }
+        }
+      }
+    ]
+  ]
+}
+```
+
+这样我们就成功开发了一个`n-class`指令，该实例演示了`NornJ`指令的[操作将传入组件的props值](#set-component-props)功能。
 
 ## 更复杂的指令 {#more-complex-directive}
 
