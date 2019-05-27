@@ -49,9 +49,33 @@ const newTodo = useInput('');
 
 ## 封装高阶组件 {#encapsulate-hoc}
 
-设置(或修改)`JSX`标签的属性值是`NornJ`的指令最基本的功能。但指令还能实现更高级的功能，以一种更简单的语法应用高阶组件。下面我们看一个简单的应用例子(使用[ant-design的tooltip组件](https://ant.design/components/tooltip/))：
+设置(或修改)`JSX`标签的属性值是`NornJ`的指令最基本的功能。但指令还能实现更高级的功能，以一种更简单的语法应用高阶组件。下面我们看一个简单的应用例子(使用[ant-design的Tooltip组件](https://ant.design/components/tooltip/))。
 
+`ant-design的Tooltip组件`常规的写法：
 
+```js
+import { Tooltip, Button } from 'antd';
+
+ReactDOM.render(
+  <div className="demo">
+    <Tooltip placement="topLeft" title={text}>
+      <Button>TL</Button>
+    </Tooltip>
+  </div>
+)
+```
+
+然而可以使用`NornJ指令`的扩展开发方式将上面的Tooltip组件封装在一个高阶组件之中，这样就可以像下面这种方式使用：
+
+```js
+ReactDOM.render(
+  <div className="demo">
+    <Button n-tooltip-topLeft={text}>TL</Button>
+  </div>
+)
+```
+
+如上，使用了指令后组件树结构减少了一层，看起来会更加简洁清晰。上述`n-tooltip`指令的扩展实现方式，我们将在本章节最后详细阐述。
 
 ***
 
@@ -59,7 +83,7 @@ const newTodo = useInput('');
 
 ## n-show
 
-使用`n-show`可以在JSX中很方便地切换标签的`style.display`属性，当值为`false`时不显示，效果和`Vue`的`v-show`类似：
+使用`n-show`可以在JSX中很方便地切换标签的`style.display`值是否为none，当值为`false`时不显示：
 
 ```js
 class TestComponent extends Component {
@@ -73,6 +97,13 @@ ReactDOM.render(<TestComponent show={false} />);
  渲染结果：<input style="display:none" />
 */
 ```
+
+* `n-show指令`与`<If>标签`的区别
+
+| 语法               | 特点            | 建议使用场景       |
+|:------------------|:----------------|:----------------|
+| `n-show`          | 初始渲染开销大；切换时开销小       | 在条件频繁切换时使用，性能会更好 |
+| `<If>`            | 初始渲染开销小；切换时开销大       | 在条件很少改变时使用，性能会更好 |
 
 ## n-style
 
@@ -141,7 +172,7 @@ class TestComponent extends Component {
 
 ## n-mobxBind
 
-类似于`Vue`的`v-model`指令，可以使用`n-mobxBind`配合`Mobx`在`<input>`及`<textarea>`等表单元素上创建`双向数据绑定`，它会根据控件类型自动选取正确的方法来更新元素。
+使用`n-mobxBind`指令可以配合`Mobx`的可观察变量在`<input>`及`<textarea>`等表单元素上创建`双向数据绑定`，它会根据控件类型自动选取正确的方法来更新值。
 
 * 基本使用方法
 
@@ -150,7 +181,7 @@ import { Component } from 'react';
 import { observable } from 'mobx';
 
 class TestComponent extends Component {
-  @observable inputValue = '';
+  @observable inputValue = 'test';
 
   render() {
     return <input n-mobxBind={this.inputValue} />;
@@ -160,11 +191,11 @@ class TestComponent extends Component {
 
 如上所示，无需编写`<input>`标签的`onChange`事件，`inputValue`变量已自动和`<input>`标签建立了`双向数据绑定`的关系。
 
-* 实质上，`n-mobxBind`的实现原理和`v-model`很类似，上述示例其实就是下面的语法糖形式：
+* 实质上，`n-mobxBind`的实现原理其实就是下面的语法糖形式：
 
 ```js
 class TestComponent extends Component {
-  @observable inputValue = '';
+  @observable inputValue = 'test';
 
   onChange = e => {
     this.inputValue = e.target.value;
@@ -182,7 +213,7 @@ class TestComponent extends Component {
 
 ```js
 class TestComponent extends Component {
-  @observable inputValue = '1';
+  @observable inputValue = 'test';
 
   onChange = e => {
     console.log(e.target.value);
@@ -198,7 +229,7 @@ class TestComponent extends Component {
 
 * 增加防抖效果
 
-可以使用`debounce`修饰符为`n-mobxBind`提供防抖效果：
+可以使用`debounce`参数为`n-mobxBind`提供防抖效果：
 
 ```js
 import { Component } from 'react';
@@ -208,14 +239,21 @@ class TestComponent extends Component {
   @observable inputValue = '';
 
   render() {
-    return <input n-mobxBind-debounce$200={this.inputValue} />;
+    return (
+      <>
+        <input n-mobxBind-debounce={this.inputValue} />
+        <input n-mobxBind-debounce$200={this.inputValue} />
+      </>
+    );
   }
 }
 ```
 
-* 使用`action`更新变量
+上例中的`debounce`参数默认值为`100毫秒`。也支持自定义设置，如例中为`debounce`加修饰符即可。
 
-在`mobx`开发中如果启动严格模式或者使用`mobx-state-tree`时，则须要使用`action`来更新变量。可按下面方式配置使用`action`：
+* 使用action更新变量
+
+在`Mobx`开发中如果启动严格模式或者使用`mobx-state-tree`时，则须要使用action来更新变量。可按下面方式配置使用action：
 
 ```js
 import { observable, action, configure } from 'mobx';
@@ -224,11 +262,12 @@ import { observable, action, configure } from 'mobx';
 configure({ enforceActions: true });
 
 class TestComponent extends Component {
-  @observable inputValue = '1';
+  @observable inputValue = 'test';
 
   @action.bound
-  setInputValue(v) {
-    this.inputValue = v;
+  setInputValue(value, args) {
+    this.inputValue = value;  //value是用户输入的新值
+    console.log(args);        //args为控件onChange事件的全部参数，类型为数组
   }
 
   render() {
@@ -239,19 +278,21 @@ class TestComponent extends Component {
 
 当有`action`参数时，`n-mobxBind`会默认执行camel命名法(`set + 变量名`)定义的`action`，上例中为`setInputValue`。
 
-### 文本框 {#n-mobxbind-input}
+### 绑定原生表单控件 {#n-mobxbind-formitem}
 
-### 复选框 {#n-mobxbind-checkbox}
+#### 文本框 {#n-mobxbind-input}
 
-### 单选按钮 {#n-mobxbind-radio}
+#### 复选框 {#n-mobxbind-checkbox}
 
-### 选择框 {#n-mobxbind-select}
+#### 单选按钮 {#n-mobxbind-radio}
 
-### 在组件上使用 {#n-mobxbind-component}
+#### 选择框 {#n-mobxbind-select}
+
+### 绑定组件 {#n-mobxbind-component}
 
 ## n-mstBind
 
-`n-mstBind`即为`n-mobxBind`的默认使用`action`来更新值的版本，用来配合`mobx-state-tree`的变量使用：
+`n-mstBind`即为`n-mobxBind`的默认使用action来更新值的版本，用来配合`mobx-state-tree`的变量使用：
 
 store：
 
@@ -259,12 +300,13 @@ store：
 import { types } from "mobx-state-tree";
 
 const TestStore = types.model("TestStore",
-  {  
-    inputValue: '1'
+  {
+    inputValue: 'test'
   })
   .actions(self => ({
-    setInputValue(v) {
-      self.inputValue = v;
+    setInputValue(value, args) {
+      self.inputValue = value;  //value是用户输入的新值
+      console.log(args);        //args为控件onChange事件的全部参数，类型为数组
     }
   }));
 ```
