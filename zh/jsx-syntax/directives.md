@@ -16,7 +16,7 @@
 `指令`通常可以用来封装一些实用功能，以实现写更少的代码去做更多的事情为目的。具体来说`NornJ`的指令主要可以实现以下几种功能：
 
 * [操作将传入组件的props值](#set-component-props)
-* [封装高阶组件](#encapsulate-hoc)
+* [封装包装组件](#encapsulate-wrapped-component)
 
 ## 操作将传入组件的props值 {#set-component-props}
 
@@ -47,9 +47,9 @@ const newTodo = useInput('');
 
 然而`NornJ`的指令语法可以完美解决上述问题。
 
-## 封装高阶组件 {#encapsulate-hoc}
+## 封装包装组件 {#encapsulate-wrapped-component}
 
-设置(或修改)`JSX`标签的属性值是`NornJ`的指令最基本的功能。但指令还能实现更高级的功能，以一种更简单的语法应用高阶组件。下面我们看一个简单的应用例子(使用[ant-design的Tooltip组件](https://ant.design/components/tooltip/))。
+设置(或修改)`JSX`标签的属性值是`NornJ`的指令最基本的功能。指令还能实现更高级的功能，可以在当前指令所在组件的外层再套自定义逻辑的包装组件。下面我们看一个简单的应用例子(使用[ant-design的Tooltip组件](https://ant.design/components/tooltip/))。
 
 `ant-design的Tooltip组件`常规的写法：
 
@@ -65,7 +65,7 @@ ReactDOM.render(
 )
 ```
 
-然而可以使用`NornJ指令`的扩展开发方式将上面的Tooltip组件封装在一个高阶组件之中，这样就可以像下面这种方式使用：
+然而可以使用`NornJ指令`的扩展开发方式将上面的Tooltip组件封装在一个包装组件之中，这样就可以像下面这种方式使用：
 
 ```js
 ReactDOM.render(
@@ -491,9 +491,9 @@ class TestComponent extends Component {
 }
 ```
 
-#### 注册组件可配置的参数 {#n-mobxbind-component-params}
+#### 注册组件 {#n-mobxbind-register-component}
 
-示例：
+在注册很多组件时按各参数的默认值就可以了，也就是说其实可以不写`nj.registerComponent`的第三个参数的。但是也有组件需要配置一些参数，例如：
 
 ```js
 import nj from 'nornj';
@@ -508,6 +508,8 @@ nj.registerComponent(
 );
 ```
 
+所有组件参数列表：
+
 | 参数名             | 类型            | 默认值            | 作用       |
 |:------------------|:----------------|:----------------|:----------------|
 | hasEventObject    | Boolean         | false           | 为true时，更新事件中使用`<input onChange={e => e.target.value} />`取值。 <br> 为false时，更新事件中使用`<input onChange={value => value} />`取值。 |
@@ -516,7 +518,7 @@ nj.registerComponent(
 | changeEventName   | String           | 'onChange'     | 被绑定控件的更新事件属性名，即`<input onChange={...} />`中的onChange属性名称。比如可以依不同组件特性修改为`onInput`、`onTextChange`等等。 |
 | needToJS          | Boolean          | false          | 输入的新值在被更新到组件时，是否需要执行一次`Mobx.toJS`。例如一些需要绑定到数组值的组件可能需要设置needToJS为`true`，否则无法正确地更新值到相应的组件中，比如[ant-design的Cascader组件](https://ant.design/components/cascader/)。 <br> 需要进行这一步操作，是由[Mobx可观察变量的特性](https://mobx.js.org/refguide/tojson.html)与该组件的内部实现是否有冲突来决定的，这个有时候也无法避免。 |
 
-#### 已预置注册的组件库 {#n-mobxbind-component-preset}
+#### 已预置注册的组件 {#n-mobxbind-component-preset}
 
 目前[ant-design组件库](https://ant.design/docs/react/introduce)已在[nornj-react](https://github.com/joe-sky/nornj-react/tree/master/antd)包中预置注册了全部组件。也就是说对于`ant-design组件库`无需再手工注册了，按下面方式直接引入就可以使用`n-mobxBind`指令。
 
@@ -664,6 +666,75 @@ nj.registerExtension(
 这样我们就成功开发了一个`n-class`指令，该实例演示了`NornJ`指令的[操作将传入组件的props值](#set-component-props)功能。
 
 ## 更复杂的指令 {#more-complex-directive}
+
+接下来我们来实现一个内部封装了包装组件的指令`n-tooltip`，它的作用和[ant-design的Tooltip组件](https://ant.design/components/tooltip/)是一样的：
+
+```js
+ReactDOM.render(
+  <div className="demo">
+    <Button n-tooltip-topLeft={text}>TL</Button>
+  </div>
+)
+```
+
+首先，我们组要实现一个包装组件`TooltipWrap.jsx`：
+
+```js
+import React from 'react';
+import { Tooltip } from 'antd';
+
+const TooltipWrap = ({
+    component,         //指令所在标签的组件对象；如果是原生html标签的话就是标签名字符串，如div
+    directiveOptions,  //指令扩展函数的options对象
+    ...tagProps        //指令所在标签的props对象
+  }) => {
+  const {
+    props: directiveProps,
+    value
+  } = directiveOptions;
+
+  //获取指令参数
+  const args = directiveProps && directiveProps.arguments;
+
+  return (
+    <Tooltip
+      placement={
+        (args && args[0].name) || 'rightTop'  //指令的第一个参数传递到Tooltip组件的placement属性，即显示位置
+      }
+      title={value()}  //指令的值传到Tooltip组件的title属性，即显示文本
+    >
+      {React.createElement(component, {  //此处渲染指令所在标签的组件
+        ...tagProps  //传递指令所在标签的props对象
+      })}
+    </Tooltip>
+  );
+};
+
+export default TooltipWrap;
+```
+
+<!--
+然后使用`nj.registerExtension`方法注册扩展函数：
+
+```js
+import nj from 'nornj';
+
+nj.registerExtension(
+  'class',     //注意：标签名称需要使用小写开头的camel命名方式
+  options => {
+    const {
+      tagProps,  //指令所在标签的props对象，本例中为{ id: 'test' }
+      value      //指令值函数，注意它是个函数需要执行才能取到结果
+    } = options;
+
+    //在标签渲染前，使用classNames库来设置className属性的值
+    tagProps.className = classNames(
+      value()  //此处返回例中的{ foo: true, bar: true }
+    );
+  }
+);
+```
+-->
 
 ## 数据绑定指令 {#data-binding-directive}
 
