@@ -14,7 +14,8 @@
     "-lunr",
     "-search",
     "search-plus",
-    "expandable-chapters-revised"
+    "expandable-chapters-revised",
+    "anchor-navigation-ex"
   ],
   "pluginsConfig": {
     "jsfiddle": {
@@ -38,6 +39,9 @@
       "all": ["english", "chinese"],
       "ChineseUrl": "/zh/",
       "EnglishUrl": "/en/"
+    },
+    "anchor-navigation-ex": {
+      "showLevel": false
     }
   }
 }

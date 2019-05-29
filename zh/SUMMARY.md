@@ -3,8 +3,8 @@
 * [概述](README.md)
     * [为什么要开发NornJ](getting-started/why-nornj.md)
 * 快速起步
-    * [使用JSX扩展](getting-started/use-it-in-jsx.md)
-    * [使用tagged templates](getting-started/use-tagged-templates.md)
+    * [使用JSX扩展语法](getting-started/use-it-in-jsx.md)
+    * [使用tagged templates语法](getting-started/use-tagged-templates.md)
 * [JSX扩展语法](jsx-syntax/index.md)
     * [标签](jsx-syntax/tags.md#top)
         * [与React组件的区别](jsx-syntax/tags.md#different-from-react)
