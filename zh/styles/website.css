@@ -33,6 +33,9 @@ a[href$="templateString.html#top"] i
   color: #364149 !important;
 }
 
-div#anchor-navigation-ex-navbar {
-  right: 25px;
+@media screen and (max-width: 480px) {
+  div#anchor-navigation-ex-navbar {
+    top: 48px;
+    right: 25px;
+  }
 }
