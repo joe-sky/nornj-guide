@@ -628,14 +628,14 @@ import nj from 'nornj';
 import classNames from 'classnames';
 
 nj.registerExtension(
-  'class',     //注意：标签名称需要使用小写开头的camel命名方式
+  'class',     //注意：指令名称需要使用小写开头的camel命名方式
   options => {
     const {
-      tagProps,  //指令所在标签的props对象，本例中为{ id: 'test' }
+      tagProps,  //指令所在组件的props对象，本例中为{ id: 'test' }
       value      //指令值函数，注意它是个函数需要执行才能取到结果
     } = options;
 
-    //在标签渲染前，使用classNames库来设置className属性的值
+    //在组件渲染前，使用classNames库来设置className属性的值
     tagProps.className = classNames(
       value()  //此处返回例中的{ foo: true, bar: true }
     );
@@ -670,31 +670,29 @@ nj.registerExtension(
 接下来我们来实现一个内部封装了包装组件的指令`n-tooltip`，它的作用和[ant-design的Tooltip组件](https://ant.design/components/tooltip/)是一样的：
 
 ```js
-ReactDOM.render(
-  <div className="demo">
-    <Button n-tooltip-topLeft={text}>TL</Button>
-  </div>
-)
+<div>
+  <Button n-tooltip-topLeft={text}>TL</Button>
+</div>
 ```
 
-首先，我们组要实现一个包装组件`TooltipWrap.jsx`：
+首先，我们组要实现一个包装组件`WrappedTooltip.jsx`：
 
 ```js
 import React from 'react';
 import { Tooltip } from 'antd';
 
-const TooltipWrap = ({
-    component,         //指令所在标签的组件对象；如果是原生html标签的话就是标签名字符串，如div
-    directiveOptions,  //指令扩展函数的options对象
-    ...tagProps        //指令所在标签的props对象
+const WrappedTooltip = ({
+    TooltipDirectiveTag,      //指令所在组件的组件对象；如果是原生html标签的话就是标签名字符串，如div
+    tooltipDirectiveOptions,  //指令扩展函数的options对象
+    ...tagProps               //指令所在组件的props对象
   }) => {
   const {
-    props: directiveProps,
+    props,
     value
-  } = directiveOptions;
+  } = tooltipDirectiveOptions;
 
   //获取指令参数
-  const args = directiveProps && directiveProps.arguments;
+  const args = props && props.arguments;
 
   return (
     <Tooltip
@@ -703,38 +701,48 @@ const TooltipWrap = ({
       }
       title={value()}  //指令的值传到Tooltip组件的title属性，即显示文本
     >
-      {React.createElement(component, {  //此处渲染指令所在标签的组件
-        ...tagProps  //传递指令所在标签的props对象
-      })}
+      <TooltipDirectiveTag  //此处渲染指令所在组件
+        {...tagProps}       //传递指令所在组件的props对象
+      />
     </Tooltip>
   );
 };
 
-export default TooltipWrap;
+export default WrappedTooltip;
 ```
 
-<!--
 然后使用`nj.registerExtension`方法注册扩展函数：
 
 ```js
 import nj from 'nornj';
+import WrappedTooltip from './WrappedTooltip.jsx';
 
 nj.registerExtension(
-  'class',     //注意：标签名称需要使用小写开头的camel命名方式
+  'tooltip',     //注意：指令名称需要使用小写开头的camel命名方式
   options => {
     const {
-      tagProps,  //指令所在标签的props对象，本例中为{ id: 'test' }
-      value      //指令值函数，注意它是个函数需要执行才能取到结果
+      tagName,    //指令所在组件对象
+      tagProps,   //指令所在组件的props对象
+      setTagName  //运行此函数，可以修改当前即将渲染的组件对象
     } = options;
 
-    //在标签渲染前，使用classNames库来设置className属性的值
-    tagProps.className = classNames(
-      value()  //此处返回例中的{ foo: true, bar: true }
-    );
+    setTagName(WrappedTooltip);  //将当前渲染的组件修改为包装组件
+    tagProps.TooltipDirectiveTag = tagName;      //传递指令所在组件对象到包装组件中
+    tagProps.tooltipDirectiveOptions = options;  //传递指令的options到包装组件中
   }
 );
 ```
--->
+
+> 上例有个需要注意的地方，就是`TooltipDirectiveTag`和`tooltipDirectiveOptions`参数的命名应当特例化而避免和其他指令的重复。因为这样才能适应同时存在多个含有包装组件的指令的场景，比如`<div n-directive1 n-directive2>`。
+
+这样`n-tooltip`指令就开发完成了，还可以变更参数控制显示方向：
+
+```js
+<div>
+  <Button n-tooltip-topLeft="test1">TL</Button>
+  <Button n-tooltip-topRight="test2">TL</Button>
+</div>
+```
 
 ## 数据绑定指令 {#data-binding-directive}
 
