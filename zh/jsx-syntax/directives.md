@@ -81,7 +81,7 @@ ReactDOM.render(
 
 下面是`NornJ`已有内置的指令：
 
-## n-show
+# n-show
 
 使用`n-show`可以在JSX中很方便地切换标签的`style.display`值是否为none，当值为`false`时不显示：
 
@@ -105,7 +105,7 @@ ReactDOM.render(<TestComponent show={false} />);
 | `n-show`          | 初始渲染开销大；切换时开销小       | 在条件频繁切换时使用，性能会更好 |
 | `<If>`            | 初始渲染开销小；切换时开销大       | 在条件很少改变时使用，性能会更好 |
 
-## n-style
+# n-style
 
 使用`n-style`可以在JSX中使用与html语法一致的css写法：
 
@@ -130,7 +130,7 @@ class TestComponent extends Component {
 }
 ```
 
-## n-debounce
+# n-debounce
 
 使用`n-debounce`可以在JSX中为`input`等表单元素增加防抖效果，以减少用户输入频率而提高性能：
 
@@ -170,7 +170,7 @@ class TestComponent extends Component {
 }
 ```
 
-## n-mobxBind
+# n-mobxBind
 
 使用`n-mobxBind`指令可以配合`Mobx`的可观察变量在`<input>`及`<textarea>`等表单元素上创建`双向数据绑定`，它会根据控件类型自动选取正确的方法来更新值。
 
@@ -280,11 +280,11 @@ class TestComponent extends Component {
 
 接下来我们来按控件分类列举下`n-mobxBind`指令可支持的场景：
 
-### 绑定原生表单控件 {#n-mobxbind-formitem}
+## 绑定原生表单控件 {#n-mobxbind-formitem}
 
 原生表单控件包含`文本框`、`复选框`、`单选按钮`、`选择框`等，以上都可以直接使用`n-mobxBind`指令，会自动监听相应控件的`onChange`事件并正确地更新值。
 
-#### 文本框 {#n-mobxbind-input}
+### 文本框 {#n-mobxbind-input}
 
 单行文本框：
 
@@ -320,7 +320,7 @@ class TestComponent extends Component {
 }
 ```
 
-#### 复选框 {#n-mobxbind-checkbox}
+### 复选框 {#n-mobxbind-checkbox}
 
 单个复选框，绑定到布尔值：
 
@@ -362,7 +362,7 @@ class TestComponent extends Component {
 }
 ```
 
-#### 单选按钮 {#n-mobxbind-radio}
+### 单选按钮 {#n-mobxbind-radio}
 
 ```js
 class TestComponent extends Component {
@@ -384,7 +384,7 @@ class TestComponent extends Component {
 }
 ```
 
-#### 选择框 {#n-mobxbind-select}
+### 选择框 {#n-mobxbind-select}
 
 单选时：
 
@@ -456,7 +456,7 @@ class TestComponent extends Component {
 }
 ```
 
-### 绑定组件 {#n-mobxbind-component}
+## 绑定组件 {#n-mobxbind-component}
 
 除了上述的原生表单控件外，`n-mobxBind`指令也可以绑定到任意React组件上。当然，前提是该组件可能需要使用`nj.registerComponent`进行注册，并且设置一些必要的参数。
 
@@ -491,7 +491,7 @@ class TestComponent extends Component {
 }
 ```
 
-#### 注册组件 {#n-mobxbind-register-component}
+### 注册组件 {#n-mobxbind-register-component}
 
 在注册很多组件时按各参数的默认值就可以了，也就是说其实可以不写`nj.registerComponent`的第三个参数的。但是也有组件需要配置一些参数，例如：
 
@@ -518,7 +518,7 @@ nj.registerComponent(
 | changeEventName   | String           | 'onChange'     | 被绑定控件的更新事件属性名，即`<input onChange={...} />`中的onChange属性名称。比如可以依不同组件特性修改为`onInput`、`onTextChange`等等。 |
 | needToJS          | Boolean          | false          | 输入的新值在被更新到组件时，是否需要执行一次`Mobx.toJS`。例如一些需要绑定到数组值的组件可能需要设置needToJS为`true`，否则无法正确地更新值到相应的组件中，比如[ant-design的Cascader组件](https://ant.design/components/cascader/)。 <br> 需要进行这一步操作，是由[Mobx可观察变量的特性](https://mobx.js.org/refguide/tojson.html)与该组件的内部实现是否有冲突来决定的，这个有时候也无法避免。 |
 
-#### 已预置注册的组件 {#n-mobxbind-component-preset}
+### 已预置注册的组件 {#n-mobxbind-component-preset}
 
 目前[ant-design组件库](https://ant.design/docs/react/introduce)已在[nornj-react](https://github.com/joe-sky/nornj-react/tree/master/antd)包中预置注册了全部组件。也就是说对于`ant-design组件库`无需再手工注册了，按下面方式直接引入就可以使用`n-mobxBind`指令。
 
@@ -571,7 +571,7 @@ class TestComponent extends Component {
 }
 ```
 
-## n-mstBind
+# n-mstBind
 
 `n-mstBind`即为`n-mobxBind`的默认使用action来更新值的版本，用来配合`mobx-state-tree`的变量使用：
 

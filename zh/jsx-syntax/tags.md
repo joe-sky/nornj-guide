@@ -107,7 +107,7 @@ const Test = props => (
 
 下面是`NornJ`已有内置的标签：
 
-## If
+# If
 
 示例：
 
@@ -133,7 +133,7 @@ const Test = props => (
 
 `if`标签还包含`else`、`elseif`等子标签。
 
-## Else
+# Else
 
 示例：
 
@@ -165,7 +165,7 @@ ReactDOM.render(<Test type={false} />, document.body);
 */
 ```
 
-## Elseif
+# Elseif
 
 `elseif`标签可以实现多分支流程：
 
@@ -200,7 +200,7 @@ ReactDOM.render(<Test num={30} />, document.body);
 |:------------------|:----------------|:----------------|
 | condition           | Boolean       | elseif标签子节点的渲染条件 |
 
-## Each
+# Each
 
 `each`标签可以实现循环：
 
@@ -241,7 +241,7 @@ ReactDOM.render(<Test num={30} />, document.body);
 | first           | String       | 循环中生成的第一项变量名，可以改变 |
 | last           | String       | 循环中生成的最后一项变量名，可以改变 |
 
-## For
+# For
 
 `for`标签是`each`标签的别名，用法是完全一样的：
 
@@ -254,7 +254,7 @@ ReactDOM.render(<Test num={30} />, document.body);
 </For>
 ```
 
-## Switch
+# Switch
 
 `switch`标签也可以实现多分支流程：
 
@@ -288,7 +288,7 @@ ReactDOM.render(<Test num={30} />, document.body);
 |:------------------|:----------------|:----------------|
 | value           | Any       | 在switch标签的value参数传入要判断值；<br>然后其会和case标签中的value值进行`===`判断；<br>所有case都不匹配时则渲染default标签的子节点 |
 
-## With
+# With
 
 `with`标签主要用于在`JSX`中创建新的变量：
 
@@ -300,7 +300,7 @@ ReactDOM.render(<Test num={30} />, document.body);
 </Each>
 ```
 
-## MobxObserver
+# MobxObserver
 
 `mobxObserver`标签实际上就是[mobx-react-lite库的observer组件](https://github.com/mobxjs/mobx-react-lite#observer)，只不过它在编写时无需在子节点写函数：
 
