@@ -746,7 +746,7 @@ nj.registerExtension(
 
 ## 数据绑定指令 {#data-binding-directive}
 
-数据绑定指令一般用来将传入的值与表单控件建立`双向绑定关系`，`n-mobxBind`就是一个数据绑定指令，这种特殊的同样也可以支持扩展。下面我们先来实现一个用于React Hooks Api的`n-bind`指令，用法如下：
+数据绑定指令一般用来将传入的值与表单控件建立`双向绑定关系`，`n-mobxBind`就是一个数据绑定指令，这种特殊的指令同样也可以支持扩展。下面我们先来实现一个用于React Hooks Api的`n-bind`指令，用法如下：
 
 ```js
 function TestBind() {
