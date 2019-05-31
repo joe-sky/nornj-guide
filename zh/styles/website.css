@@ -18,8 +18,8 @@ ul.summary > li.chapter > a:first-child {
 
 a[href$="tags.html#top"],
 a[href$="directives.html#top"],
-a[href$="expressions.html#top"],
-a[href$="templateString.html#top"]
+a[href$="expressions.html#filters"],
+a[href$="expressions.html#operators"]
 {
   font-weight: bolder;
   color: #3372b9 !important;
@@ -27,10 +27,15 @@ a[href$="templateString.html#top"]
 
 a[href$="tags.html#top"] i,
 a[href$="directives.html#top"] i,
-a[href$="expressions.html#top"] i,
-a[href$="templateString.html#top"] i
+a[href$="expressions.html#filters"] i,
+a[href$="expressions.html#operators"] i
 {
   color: #364149 !important;
+}
+
+li[data-level="1.8.1"] span,
+li[data-level="1.8.2"] span {
+  color: #a1a1a1 !important;
 }
 
 @media screen and (max-width: 480px) {
