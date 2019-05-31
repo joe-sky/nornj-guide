@@ -238,11 +238,15 @@ import { observable } from 'mobx';
 class TestComponent extends Component {
   @observable inputValue = '';
 
+  onChange = e => {
+    console.log(e.target.value);
+  };
+
   render() {
     return (
       <>
-        <input n-mobxBind-debounce={this.inputValue} />
-        <input n-mobxBind-debounce$200={this.inputValue} />
+        <input n-mobxBind-debounce={this.inputValue} onChange={this.onChange} />
+        <input n-mobxBind-debounce$200={this.inputValue} onChange={this.onChange} />
       </>
     );
   }

@@ -5,7 +5,7 @@
     * [工作原理](getting-started/why-nornj.md)
 * 快速起步
     * [使用JSX扩展](getting-started/use-it-in-jsx.md)
-    * [使用tagged templates表达式](getting-started/use-tagged-templates.md)
+    * [使用tagged template表达式](getting-started/use-tagged-templates.md)
 * [JSX扩展语法](jsx-syntax/index.md)
     * [标签](jsx-syntax/tags.md#top)
         * [与React组件的区别](jsx-syntax/tags.md#different-from-react)
@@ -44,7 +44,7 @@
             * [最简单的指令](jsx-syntax/directives.md#a-simple-directive)
             * [更复杂的指令](jsx-syntax/directives.md#more-complex-directive)
             * [数据绑定指令](jsx-syntax/directives.md#data-binding-directive)
-* [Tagged templates表达式语法](tagged-templates-syntax/expressions.md#top)
+* [Tagged template表达式语法](tagged-templates-syntax/expressions.md#top)
     * [表达式能做什么](tagged-templates-syntax/expressions.md#what-can-expressions-do)
     * [基础语法](tagged-templates-syntax/expressions.md#basic-syntax)
     * [过滤器](tagged-templates-syntax/expressions.md#filters)
