@@ -2,6 +2,7 @@
 
 * [概述](README.md)
     * [为什么要开发NornJ](getting-started/why-nornj.md)
+    * [工作原理](getting-started/why-nornj.md)
 * 快速起步
     * [使用JSX扩展](getting-started/use-it-in-jsx.md)
     * [使用tagged templates表达式](getting-started/use-tagged-templates.md)
@@ -43,7 +44,7 @@
             * [最简单的指令](jsx-syntax/directives.md#a-simple-directive)
             * [更复杂的指令](jsx-syntax/directives.md#more-complex-directive)
             * [数据绑定指令](jsx-syntax/directives.md#data-binding-directive)
-* [Tagged templates表达式语法](tagged-templates-syntax/expressions.md)
+* [Tagged templates表达式语法](tagged-templates-syntax/expressions.md#top)
     * [表达式能做什么](tagged-templates-syntax/expressions.md#what-can-expressions-do)
     * [基础语法](tagged-templates-syntax/expressions.md#basic-syntax)
     * [过滤器](tagged-templates-syntax/expressions.md#filters)
@@ -85,6 +86,6 @@
 * 性能
     * [渲染效率测试](classic-template-engine/index.md)
 * 更多
-    * 可替代JSX的使用方式(文档待完成)
-    * 渲染字符串的使用方式(文档待完成)
+    * 替代JSX(文档待完成)
+    * 渲染字符串(文档待完成)
     * [Css渲染工具](tools-adaptation/css-render-tool.md)
