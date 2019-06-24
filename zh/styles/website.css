@@ -22,16 +22,16 @@ a[href$="expressions.html#filters"],
 a[href$="expressions.html#operators"]
 {
   font-weight: bolder;
-  color: #3372b9 !important;
+  /* color: #3372b9 !important; */
 }
 
-a[href$="tags.html#top"] i,
+/* a[href$="tags.html#top"] i,
 a[href$="directives.html#top"] i,
 a[href$="expressions.html#filters"] i,
 a[href$="expressions.html#operators"] i
 {
   color: #364149 !important;
-}
+} */
 
 li[data-level="1.8.1"] span,
 li[data-level="1.8.2"] span {
