@@ -125,6 +125,8 @@ const Test = () => {
 };
 ```
 
+> 我们不妨对比一下过滤器的`管道形式`与`函数形式`写法，可发现`管道形式`的主要优势在于对于数据过滤看起来更为直观。
+
 ### 表达式内目前不支持的语法
 
 `NornJ`表达式虽然适配性很强，但当前还是有一些不支持的语法，如下：
@@ -144,3 +146,89 @@ const Test = props => (
 不过，日后不排除`NornJ`会支持上述语法的可能性，已支持的语法已足够支撑常规开发使用。
 
 > 另外，`NornJ`表达式的目标定位是为现有 JS 语法做增强，故它的内部或许并不需要实现全部的 JS 表达式。 
+
+## 过滤器 {#filters}
+
+`NornJ`过滤器提供了一些常用内置功能，且完全可以支持用户扩展。
+
+### 过滤器的管道与函数形式
+
+`NornJ`的过滤器除了支持`管道形式`写法外，还可以支持用`函数形式`写法，效果是一样的：
+
+```js
+const Test = () => {
+  const str = 'abc';
+
+  return (
+    <>
+      {/* 管道形式 */}
+      <i>{n`str.trim() | capitalize`}</i>
+      <i>{n`12345678 | currency`}</i>
+
+      {/* 函数形式 */}
+      <i>{n`capitalize(str.trim())`}</i>
+      <i>{n`currency(12345678)`}</i>
+    </>
+  );
+};
+```
+
+## 内置过滤器
+
+> 注意，内置过滤器只包含一些基础功能，例如很大一部分是NornJ底层必要使用的工具函数。NornJ的定位并不是一个类似Lodash的工具函数库，它的目标只是为常规JS开发提供过滤器这种新的扩展方式而已。
+
+### capitalize
+
+`capitalize`可以实现首字母大写：
+
+```js
+const Test = () => (
+  <>
+    <i>{n`'jack' | capitalize`}</i>
+  </>
+);
+
+//输出：<i>Jack</i>
+```
+
+### lowerFirst
+
+`lowerFirst`可以实现首字母小写：
+
+```js
+const Test = () => (
+  <>
+    <i>{n`'Jack' | lowerFirst`}</i>
+  </>
+);
+
+//输出：<i>jack</i>
+```
+
+### camelCase
+
+`camelCase`可以将`kebab-case`字符串转换为`camel-case`：
+
+```js
+const Test = () => (
+  <>
+    <i>{n`'margin-left' | camelCase`}</i>
+  </>
+);
+
+//输出：<i>marginLeft</i>
+```
+
+### isObject
+
+### isNumber
+
+### isString
+
+### isArrayLike
+
+### currency
+
+### 开发新的过滤器 {#create-new-filter}
+
+## 运算符 {#operators}
