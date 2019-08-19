@@ -49,7 +49,7 @@ ReactDOM.render(
 
 如上，此类自定义运算符是可以在`NornJ`表达式中同常规的JS语法一起运作。同过滤器一样，运算符也可以支持扩展出新的。
 
-## JS 适配常规 JS 表达式 {#js-expression-compatibility}
+## 适配常规 JS 表达式 {#js-expression-compatibility}
 
 `NornJ`表达式对于常规的 JS 语法有非常好的适配性，例如下面列举的这些常用场景都可以支持：
 
