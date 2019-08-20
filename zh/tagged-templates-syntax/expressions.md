@@ -26,7 +26,7 @@ ReactDOM.render(
 `NornJ`过滤器的基本用法：
 
 ```js
-<i>{n`1234.567 | currency(2.05 | int) | isString`}</i>
+<i>{n`1234.567 | currency(2.05 | toInteger) | isString`}</i>
 /*
   例中先执行currency过滤器返回"$1234.57"，然后再执行isString过滤器判断是否字符串。
   渲染结果：<i>true</i>
@@ -117,7 +117,7 @@ const Test = () => {
 
   return (
     <>
-      <i>{n`str.trim() | capitalize`}</i>
+      <i>{n`str.trim() | upperFirst`}</i>
       <i>{n`12345678 | currency`}</i>
       <i>{n`(1 .. 100).length * 100`}</i>
     </>
@@ -147,11 +147,11 @@ const Test = props => (
 
 > 另外，`NornJ`表达式的目标定位是为现有 JS 语法做增强，故它的内部或许并不需要实现全部的 JS 表达式。 
 
-## 过滤器 {#filters}
+# 过滤器 {#filters}
 
 `NornJ`过滤器提供了一些常用内置功能，且完全可以支持用户扩展。
 
-### 过滤器的管道与函数形式
+## 过滤器的管道与函数形式
 
 `NornJ`的过滤器除了支持`管道形式`写法外，还可以支持用`函数形式`写法，效果是一样的：
 
@@ -162,29 +162,31 @@ const Test = () => {
   return (
     <>
       {/* 管道形式 */}
-      <i>{n`str.trim() | capitalize`}</i>
+      <i>{n`str.trim() | upperFirst`}</i>
       <i>{n`12345678 | currency`}</i>
 
       {/* 函数形式 */}
-      <i>{n`capitalize(str.trim())`}</i>
+      <i>{n`upperFirst(str.trim())`}</i>
       <i>{n`currency(12345678)`}</i>
     </>
   );
 };
 ```
 
-## 内置过滤器
+# 内置过滤器
 
 > 注意，内置过滤器只包含一些基础功能，例如很大一部分是NornJ底层必要使用的工具函数。NornJ的定位并不是一个类似Lodash的工具函数库，它的目标只是为常规JS开发提供过滤器这种新的扩展方式而已。
 
-### capitalize
+## 字符串处理 {#string}
 
-`capitalize`可以实现首字母大写：
+### upperFirst
+
+`upperFirst`可以实现首字母大写：
 
 ```js
 const Test = () => (
   <>
-    <i>{n`'jack' | capitalize`}</i>
+    <i>{n`'jack' | upperFirst`}</i>
   </>
 );
 
@@ -219,13 +221,63 @@ const Test = () => (
 //输出：<i>marginLeft</i>
 ```
 
+## 类型测定 {#type-determination}
+
 ### isObject
+
+`isObject`用于检查类型是否为对象：
+
+```js
+const Test = ({ children }) => (
+  <>
+    <i>{n`children | isObject`}</i>
+  </>
+);
+
+//输出：<i>true</i>
+```
 
 ### isNumber
 
+`isNumber`用于检查类型是否为数字：
+
+```js
+const Test = ({ children }) => (
+  <>
+    <i>{n`children.length | isNumber`}</i>
+  </>
+);
+
+//输出：<i>true</i>
+```
+
 ### isString
 
+`isString`用于检查类型是否为字符串：
+
+```js
+const Test = ({ children }) => (
+  <>
+    <i>{n`children.length | isString`}</i>
+  </>
+);
+
+//输出：<i>false</i>
+```
+
 ### isArrayLike
+
+`isArrayLike`用于检查类型是否为类数组：
+
+```js
+const Test = ({ children }) => (
+  <>
+    <i>{n`children | isArrayLike`}</i>
+  </>
+);
+
+//输出：<i>true</i>
+```
 
 ### currency
 
