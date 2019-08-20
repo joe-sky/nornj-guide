@@ -173,7 +173,7 @@ const Test = () => {
 };
 ```
 
-# 内置过滤器
+下面是`NornJ`的内置过滤器：
 
 > 注意，内置过滤器只包含一些基础功能，例如很大一部分是NornJ底层必要使用的工具函数。NornJ的定位并不是一个类似Lodash的工具函数库，它的目标只是为常规JS开发提供过滤器这种新的扩展方式而已。
 
@@ -279,8 +279,76 @@ const Test = ({ children }) => (
 //输出：<i>true</i>
 ```
 
-### currency
+## currency
 
-### 开发新的过滤器 {#create-new-filter}
+`currency`可以将数字转换货币形式：
 
-## 运算符 {#operators}
+```js
+const Test = () => (
+  <>
+    <i>{n`98765 | currency`}</i>                 {/* '$98,765.00' */}
+    <i>{n`98765.32132 | currency(2)`}</i>        {/* '$98,765.32' */}
+    <i>{n`98765.321 | currency(0, '￥')`}</i>    {/* '￥98,765' */}
+    <i>{n`'abc' | currency(2, '$', '-')`}</i>    {/* '-' */}
+  </>
+);
+```
+
+| 参数               | 用法            | 类型             | 默认值          | 作用            |
+|:-------------------|:----------------|:----------------|:----------------|:----------------|
+| decimals           | <code>98765 &#124; currency(decimals)</code> | Int | 2           | 小数位 |
+| symbol           | <code>98765 &#124; currency(2, symbol)</code> | String | '$'         | 钱币符号 |
+| placeholder      | <code>98765 &#124; currency(2, '￥', placeholder)</code> | String | ''  | 如传入非数字，则输出占位符 |
+
+另外，`symbol`和`placeholder`还可以进行全局配置：
+
+```js
+import nj from 'nornj';
+
+nj.filterConfig.currency.symbol = '￥';
+nj.filterConfig.currency.placeholder = '-';
+```
+
+## toJS
+
+`toJS`即为`Mobx`的`toJS`方法：
+
+```js
+const Test = () => {
+  const view = useLocalStore(() => ({
+    texts: ['abc', 'def']
+  }));
+
+  return (
+    <>
+      <i>{JSON.stringify(n`view | toJS`)}</i>
+    </>
+  );
+};
+```
+
+## 使用 Lodash {#lodash}
+
+`NornJ`的过滤器可以使用`Lodash`库的全部工具函数。它是一个过滤器的扩展，需要先这样全局引入一次：
+
+```js
+import 'nornj/lib/filter/lodash';
+```
+
+然后就可以在`NornJ`表达式中使用了：
+
+```js
+const Test = () => (
+  <>
+    <i>{n`'-abc-' | repeat(3)`}</i>        {/* '-abc--abc--abc-' */}
+    <i>{n`'-abc-' | endsWith('bc-')`}</i>  {/* true */}
+    <i>{n`'Foo Bar' | snakeCase`}</i>      {/* 'foo_bar' */}
+  </>
+);
+```
+
+更多`Lodash`过滤器的使用方法请查看[Lodash 文档](https://www.lodashjs.com/docs/latest)。
+
+## 开发新的过滤器 {#create-new-filter}
+
+# 运算符 {#operators}

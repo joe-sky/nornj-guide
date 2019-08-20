@@ -58,7 +58,7 @@
             * [foo | isString](tagged-templates-syntax/expressions.md#isstring)
             * [foo | isArrayLike](tagged-templates-syntax/expressions.md#isarraylike)
         * [foo | currency](tagged-templates-syntax/expressions.md#currency)
-        * [foo | toJS](tagged-templates-syntax/expressions.md#currency)
+        * [foo | toJS](tagged-templates-syntax/expressions.md#tojs)
         * [使用 Lodash](tagged-templates-syntax/expressions.md#lodash)
         * [开发新的过滤器](tagged-templates-syntax/expressions.md#tojs)
     * [运算符](tagged-templates-syntax/expressions.md#operators)
