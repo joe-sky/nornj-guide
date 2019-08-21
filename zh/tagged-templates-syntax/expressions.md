@@ -351,11 +351,49 @@ const Test = () => (
 
 ## 开发新的过滤器 {#create-new-filter}
 
+`NornJ`的过滤器都是支持可扩展的，可以自行封装各种新功能。
+
+* 每个过滤器实际上是一个扩展函数，使用`nj.registerFilter`方法注册：
+
+```js
+import nj from 'nornj';
+
+nj.registerFilter('2x', num => num * 2);
+
+//支持一次注册过个过滤器
+nj.registerFilter({
+  '3x': num => num * 3,
+  '4x': num => num * 4
+});
+
+console.log(n`100 | 2x | 3x | 4x`);
+//输出：2400
+```
+
+* 过滤器可以支持参数：
+
+```js
+import nj from 'nornj';
+
+//从扩展函数的第二个参数开始定义过滤器的每个参数
+nj.registerFilter('times', (num, times) => num * times);
+
+console.log(n`100 | times(10)`);
+//输出：1000
+```
+
+* 过滤器还可以支持嵌套：
+
+```js
+console.log(n`100 | times((10 * 2) | 3x)`);
+//输出：6000
+```
+
+上例中`(10 * 2) | 3x`的乘法运算需要加括号，是因为过滤器的运算优先级是最高的，并从左到右按顺序执行。
+
 # 运算符 {#operators}
 
 `NornJ`表达式中除了可以使用常规 JS 运算符外，还内置支持一些自定义的运算符，如`%%`、`..`等，并且还支持扩展出新的运算符。
-
-> NornJ中的运算符本质上其实是过滤器的一种语法糖形式，目前可以做到自定义扩展出各种`二元运算符`。
 
 ## 可选链 {#optional-chaining}
 
@@ -452,3 +490,135 @@ const Test = () => (
 ```
 
 ## 开发新的运算符 {#create-new-operator}
+
+`NornJ`的运算符也都是支持可扩展的，可以自行封装各种新功能。
+
+> NornJ中的运算符本质上其实是过滤器的一种语法糖形式，目前可以做到自定义扩展出各种`二元运算符`。
+
+* 每个运算符实际上是一个扩展函数，和过滤器一样使用`nj.registerFilter`方法注册：
+
+```js
+import nj from 'nornj';
+
+//注册***运算符，功能为先进行乘法运算后，再乘上3倍
+nj.registerFilter('***', (num, times) => num * times * 3);
+
+//支持一次注册过个运算符，功能和***类似
+nj.registerFilter({
+  '****': (num, times) => num * times * 4,
+  '*****': (num, times) => num * times * 5
+});
+```
+
+然后需要配置一下`.babelrc`：
+
+```js
+{
+  ...
+  "plugins": [
+    [
+      "nornj-in-jsx",
+      {
+        "filterConfig": {
+          "***": {
+            isOperator: true
+          },
+          "****": {
+            isOperator: true
+          },
+          "*****": {
+            isOperator: true
+          }
+        }
+      }
+    ]
+  ]
+}
+```
+
+接着就可以在`NornJ`表达式中使用了：
+
+```js
+console.log(n`100***10`);               //输出：100 * 10 * 3 = 3000
+console.log(n`100***10****10`);         //输出：100 * 10 * 3 * 10 * 4 = 120000
+console.log(n`100***10****10*****10`);  //输出：100 * 10 * 3 * 10 * 4 * 10 * 5 = 6000000
+```
+
+* 运算符的命名目前是有限制的，如包含下列字符则需要做特殊处理：
+
+```js
+[
+  '_',
+  '#',
+  '.',
+  '>',
+  '<',
+  '|'
+]
+```
+
+如运算符名称中包名含上述字符，则需要这样注册：
+
+```js
+import nj from 'nornj';
+
+nj.registerFilter(
+  '*.*',
+  (num, times) => num * times * 3,
+  {
+    alias: '3x'  //添加别名
+  }
+);
+
+nj.registerFilter({
+  '*..*': {
+    filter: (num, times) => num * times * 4,
+    options: {
+      alias: '4x'
+    }
+  },
+  '*...*': {
+    filter: (num, times) => num * times * 5,
+    options: {
+      alias: '5x'
+    }
+  }
+});
+```
+
+然后需要配置一下`.babelrc`：
+
+```js
+{
+  ...
+  "plugins": [
+    [
+      "nornj-in-jsx",
+      {
+        "filterConfig": {
+          "*.*": {
+            isOperator: true,
+            alias: '3x'
+          },
+          "*..*": {
+            isOperator: true,
+            alias: '4x'
+          },
+          "*...*": {
+            isOperator: true,
+            alias: '5x'
+          }
+        }
+      }
+    ]
+  ]
+}
+```
+
+接着就可以在`NornJ`表达式中使用了：
+
+```js
+console.log(n`100*.*10`);               //输出：100 * 10 * 3 = 3000
+console.log(n`100*.*10*..*10`);         //输出：100 * 10 * 3 * 10 * 4 = 120000
+console.log(n`100*.*10*..*10*...*10`);  //输出：100 * 10 * 3 * 10 * 4 * 10 * 5 = 6000000
+```
