@@ -404,7 +404,7 @@ const Test = () => {
 };
 ```
 
-## 闭区间范围运算符 {#semi-closed-interval-range}
+## 半闭区间范围运算符 {#semi-closed-interval-range}
 
 `..`是闭区间的，`NornJ`还提供了它的半闭区间版本：
 

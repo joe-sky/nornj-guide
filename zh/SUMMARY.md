@@ -39,7 +39,7 @@
             * [绑定组件](jsx-syntax/directives.md#n-mobxbind-component)
                 * [注册组件](jsx-syntax/directives.md#n-mobxbind-register-component)
                 * [已预置注册的组件](jsx-syntax/directives.md#n-mobxbind-component-preset)
-            * [n-mstBind](jsx-syntax/directives.md#n-mstbind)
+            <!-- * [n-mstBind](jsx-syntax/directives.md#n-mstbind) -->
         * [开发新的指令](jsx-syntax/directives.md#create-new-directive)
             * [最简单的指令](jsx-syntax/directives.md#a-simple-directive)
             * [更复杂的指令](jsx-syntax/directives.md#more-complex-directive)

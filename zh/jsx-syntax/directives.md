@@ -275,12 +275,12 @@ class TestComponent extends Component {
   }
 
   render() {
-    return <input n-mobxBind-action={this.inputValue} />;
+    return <input n-mobxBind={this.inputValue} />;
   }
 }
 ```
 
-当有`action`参数时，`n-mobxBind`会默认执行camel命名法(`set + 变量名`)定义的`action`，上例中为`setInputValue`。
+如存在camel命名法(`set + 首字母大写的observable变量名`)定义的`action`时，`n-mobxBind`会默认执行它来更新数据。上例中为`setInputValue`。
 
 接下来我们来按控件分类列举下`n-mobxBind`指令可支持的场景：
 
@@ -575,7 +575,7 @@ class TestComponent extends Component {
 }
 ```
 
-# n-mstBind
+<!-- # n-mstBind
 
 `n-mstBind`即为`n-mobxBind`的默认使用action来更新值的版本，用来配合`mobx-state-tree`的变量使用：
 
@@ -608,7 +608,7 @@ class TestComponent extends Component {
 }
 ```
 
-如上，`n-mstBind`会默认执行camel命名法(`set + 变量名`)定义的`action`来更新值，上例中为`setInputValue`。除此外`n-mstBind`的其他特性与上述的`n-mobxBind`完全相同。
+如上，`n-mstBind`会默认执行camel命名法(`set + 变量名`)定义的`action`来更新值，上例中为`setInputValue`。除此外`n-mstBind`的其他特性与上述的`n-mobxBind`完全相同。 -->
 
 # 开发新的指令 {#create-new-directive}
 
