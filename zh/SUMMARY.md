@@ -2,10 +2,10 @@
 
 * [概述](README.md)
     * [为什么要开发 NornJ](getting-started/why-nornj.md)
-    * [工作原理](getting-started/why-nornj.md)
+    * [工作原理](getting-started/how-it-works.md)
 * 快速起步
-    * [使用 JSX 扩展](getting-started/use-it-in-jsx.md)
-    * [使用表达式扩展](getting-started/use-tagged-templates.md)
+    * [使用 JSX 扩展语法](getting-started/use-it-in-jsx.md)
+    * [使用表达式扩展语法](getting-started/use-tagged-templates.md)
 * [JSX 扩展语法](jsx-syntax/index.md)
     * [标签](jsx-syntax/tags.md#top)
         * [与 React 组件的区别](jsx-syntax/tags.md#different-from-react)
@@ -72,7 +72,7 @@
     * [nj.registerExtension](api/nj-compile-h.md)
     * [nj.registerFilter](api/nj-render-h.md)
     * [nj.registerComponent](api/nj-render-h.md)
-    * [nj.config](api/config.md)
+    * [nj.config](api/config1.md)
 * 生态 & 工具
     * [语法高亮插件](tools-adaptation/react-native.md)
     * [单元测试](tools-adaptation/react-native.md)
@@ -81,8 +81,8 @@
     * [Css in Js](tools-adaptation/css-in-js.md)
     * [Mobx](tools-adaptation/mobx.md)
     * [Ant Design](tools-adaptation/react-ui.md)
-* 性能
-    * 渲染效率测试
+<!-- * 性能 -->
+<!--    * 渲染效率测试 -->
 * 更多
     * 替代 JSX (文档待完成)
     * 渲染 Html 字符串(文档待完成)

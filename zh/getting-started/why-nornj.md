@@ -41,12 +41,12 @@ const test = props => (
 
 * [在线Playground(codesandbox)](https://codesandbox.io/s/z2nj54r3wx)
 
-# NornJ有哪些主要的语法糖
+<!-- # NornJ有哪些主要的语法糖
 
 # 这些语法糖是如何工作的
 
 # 扩展新的语法糖
 
-# NornJ其实是个完整的模板引擎
+# NornJ其实是个完整的模板引擎 -->
 
 {% endraw %}

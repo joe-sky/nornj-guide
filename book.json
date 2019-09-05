@@ -15,7 +15,8 @@
     "-search",
     "search-plus",
     "expandable-chapters-revised",
-    "anchor-navigation-ex"
+    "anchor-navigation-ex",
+    "versions-select"
   ],
   "pluginsConfig": {
     "jsfiddle": {
@@ -43,6 +44,18 @@
     "anchor-navigation-ex": {
       "showLevel": false,
       "showGoTop": false
+    },
+    "versions": {
+      "options": [
+        {
+          "value": "https://joe-sky.gitbooks.io/nornj-guide/content/zh/",
+          "text": "v5.0.0"
+        },
+        {
+          "value": "https://joe-sky.github.io/nornj-guide/",
+          "text": "v0.4.18"
+        }
+      ]
     }
   }
 }
