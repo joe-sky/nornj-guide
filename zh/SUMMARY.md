@@ -56,7 +56,7 @@
         * [foo | currency](tagged-templates-syntax/expressions.md#currency)
         * [foo | toJS](tagged-templates-syntax/expressions.md#tojs)
         * [使用 Lodash](tagged-templates-syntax/expressions.md#lodash)
-        * [开发新的过滤器](tagged-templates-syntax/expressions.md#tojs)
+        * [开发新的过滤器](tagged-templates-syntax/expressions.md#create-new-filter)
     * [运算符](tagged-templates-syntax/expressions.md#operators)
         * [foo.bar[baz]](tagged-templates-syntax/expressions.md#optional-chaining)
         * [foo .. bar](tagged-templates-syntax/expressions.md#range)
