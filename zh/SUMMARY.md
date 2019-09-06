@@ -2,10 +2,7 @@
 
 * [概述](README.md)
     * [为什么要开发 NornJ](getting-started/why-nornj.md)
-    * [工作原理](getting-started/how-it-works.md)
-* 快速起步
-    * [使用 JSX 扩展语法](getting-started/use-it-in-jsx.md)
-    * [使用表达式扩展语法](getting-started/use-tagged-templates.md)
+    * [快速起步](getting-started/use-it-in-jsx.md)
 * [JSX 扩展语法](jsx-syntax/index.md)
     * [标签](jsx-syntax/tags.md#top)
         * [与 React 组件的区别](jsx-syntax/tags.md#different-from-react)
@@ -39,7 +36,6 @@
             * [绑定组件](jsx-syntax/directives.md#n-mobxbind-component)
                 * [注册组件](jsx-syntax/directives.md#n-mobxbind-register-component)
                 * [已预置注册的组件](jsx-syntax/directives.md#n-mobxbind-component-preset)
-            <!-- * [n-mstBind](jsx-syntax/directives.md#n-mstbind) -->
         * [开发新的指令](jsx-syntax/directives.md#create-new-directive)
             * [最简单的指令](jsx-syntax/directives.md#a-simple-directive)
             * [更复杂的指令](jsx-syntax/directives.md#more-complex-directive)
