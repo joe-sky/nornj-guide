@@ -1,0 +1,58 @@
+/* CSS for website */
+.page-wrapper h1,
+.page-wrapper h2 {
+  border-bottom: 1px solid #eeeeee;
+}
+@media screen and (max-width: 480px) {
+  a.btn.pull-left.js-toolbar-action:nth-of-type(2) {
+    width: 42px;
+    overflow: hidden;
+  }
+}
+
+ul.summary > li.chapter > span:first-child,
+ul.summary > li.chapter > a:first-child {
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+a[href$="tags.html#top"],
+a[href$="directives.html#top"],
+a[href$="expressions.html#filters"],
+a[href$="expressions.html#operators"]
+{
+  font-weight: bolder;
+  /* color: #3372b9 !important; */
+}
+
+/* a[href$="tags.html#top"] i,
+a[href$="directives.html#top"] i,
+a[href$="expressions.html#filters"] i,
+a[href$="expressions.html#operators"] i
+{
+  color: #364149 !important;
+} */
+
+li[data-level="1.4.1"] span,
+li[data-level="1.4.2"] span,
+li[data-level="1.4.3"] span,
+li[data-level="1.4.4"] span,
+li[data-level="1.5.1"] span,
+li[data-level="1.5.2"] span,
+li[data-level="1.5.3"] span,
+li[data-level="1.5.4"] span,
+li[data-level="1.5.5"] span,
+li[data-level="1.5.6"] span,
+li[data-level="1.5.7"] span,
+li[data-level="1.6.1"] span,
+li[data-level="1.6.2"] span,
+li[data-level="1.6.3"] span {
+  color: #a1a1a1 !important;
+}
+
+@media screen and (max-width: 480px) {
+  div#anchor-navigation-ex-navbar {
+    top: 48px;
+    right: 25px;
+  }
+}

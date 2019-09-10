@@ -1,0 +1,1982 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>表达式扩展语法 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-revised/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions-select-revised/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="expressions.html" />
+    
+    
+    <link rel="prev" href="../jsx-syntax/directives.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../getting-started/why-nornj.html">
+            
+                <a href="../getting-started/why-nornj.html">
+            
+                    
+                    为什么要开发 NornJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../getting-started/use-it-in-jsx.html">
+            
+                <a href="../getting-started/use-it-in-jsx.html">
+            
+                    
+                    快速起步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../jsx-syntax/">
+            
+                <a href="../jsx-syntax/">
+            
+                    
+                    JSX 扩展语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#top">
+            
+                    
+                    标签
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#different-from-react">
+            
+                    
+                    与 React 组件的区别
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#lazy-render-children">
+            
+                    
+                    延迟渲染子节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#generate-new-variable">
+            
+                    
+                    生成子节点可用的新变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#if">
+            
+                    
+                    If
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#else">
+            
+                    
+                    Else
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.2" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#elseif">
+            
+                    
+                    Elseif
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#each">
+            
+                    
+                    Each
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.3.1" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#for">
+            
+                    
+                    For
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#switch">
+            
+                    
+                    Switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#with">
+            
+                    
+                    With
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#mobxobserver">
+            
+                    
+                    MobxObserver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#create-new-tag">
+            
+                    
+                    开发新的标签
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.7.1" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#a-simple-tag">
+            
+                    
+                    最简单的标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7.2" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#more-complex-tag">
+            
+                    
+                    更复杂的标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7.3" data-path="../jsx-syntax/tags.html">
+            
+                <a href="../jsx-syntax/tags.html#subsidiary-tag">
+            
+                    
+                    子标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#top">
+            
+                    
+                    指令
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#what-can-directives-do">
+            
+                    
+                    指令能做什么
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1.1" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#set-component-props">
+            
+                    
+                    操作将传入组件的 props 值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.1.2" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#encapsulate-wrapped-component">
+            
+                    
+                    封装包装组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#n-show">
+            
+                    
+                    n-show
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#n-style">
+            
+                    
+                    n-style
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#n-debounce">
+            
+                    
+                    n-debounce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#n-mobxbind">
+            
+                    
+                    n-mobxBind
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.5.1" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#n-mobxbind-formitem">
+            
+                    
+                    绑定原生表单控件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.5.1.1" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#n-mobxbind-input">
+            
+                    
+                    文本框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5.1.2" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#n-mobxbind-checkbox">
+            
+                    
+                    复选框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5.1.3" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#n-mobxbind-radio">
+            
+                    
+                    单选按钮
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5.1.4" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#n-mobxbind-select">
+            
+                    
+                    选择框
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5.2" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#n-mobxbind-component">
+            
+                    
+                    绑定组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.5.2.1" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#n-mobxbind-register-component">
+            
+                    
+                    注册组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5.2.2" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#n-mobxbind-component-preset">
+            
+                    
+                    已预置注册的组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#create-new-directive">
+            
+                    
+                    开发新的指令
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.6.1" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#a-simple-directive">
+            
+                    
+                    最简单的指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6.2" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#more-complex-directive">
+            
+                    
+                    更复杂的指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6.3" data-path="../jsx-syntax/directives.html">
+            
+                <a href="../jsx-syntax/directives.html#data-binding-directive">
+            
+                    
+                    数据绑定指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="expressions.html">
+            
+                <a href="expressions.html#top">
+            
+                    
+                    表达式扩展语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="expressions.html">
+            
+                <a href="expressions.html#what-can-expressions-do">
+            
+                    
+                    表达式能做什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="expressions.html">
+            
+                <a href="expressions.html#js-expression-compatibility">
+            
+                    
+                    适配常规 JS 表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="expressions.html">
+            
+                <a href="expressions.html#filters">
+            
+                    
+                    过滤器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="expressions.html">
+            
+                <a href="expressions.html#string">
+            
+                    
+                    字符串处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1.1" data-path="expressions.html">
+            
+                <a href="expressions.html#upperfirst">
+            
+                    
+                    foo | upperFirst
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.1.2" data-path="expressions.html">
+            
+                <a href="expressions.html#lowerfirst">
+            
+                    
+                    foo | lowerFirst
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.1.3" data-path="expressions.html">
+            
+                <a href="expressions.html#camelcase">
+            
+                    
+                    foo | camelCase
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="expressions.html">
+            
+                <a href="expressions.html#type-determination">
+            
+                    
+                    类型测定
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.2.1" data-path="expressions.html">
+            
+                <a href="expressions.html#isobject">
+            
+                    
+                    foo | isObject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2.2" data-path="expressions.html">
+            
+                <a href="expressions.html#isnumber">
+            
+                    
+                    foo | isNumber
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2.3" data-path="expressions.html">
+            
+                <a href="expressions.html#isstring">
+            
+                    
+                    foo | isString
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2.4" data-path="expressions.html">
+            
+                <a href="expressions.html#isarraylike">
+            
+                    
+                    foo | isArrayLike
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="expressions.html">
+            
+                <a href="expressions.html#currency">
+            
+                    
+                    foo | currency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="expressions.html">
+            
+                <a href="expressions.html#tojs">
+            
+                    
+                    foo | toJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="expressions.html">
+            
+                <a href="expressions.html#lodash">
+            
+                    
+                    使用 Lodash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="expressions.html">
+            
+                <a href="expressions.html#create-new-filter">
+            
+                    
+                    开发新的过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="expressions.html">
+            
+                <a href="expressions.html#operators">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="expressions.html">
+            
+                <a href="expressions.html#optional-chaining">
+            
+                    
+                    foo.bar[baz]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="expressions.html">
+            
+                <a href="expressions.html#range">
+            
+                    
+                    foo .. bar
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.2.1" data-path="expressions.html">
+            
+                <a href="expressions.html#semi-closed-interval-range">
+            
+                    
+                    foo ..< bar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="expressions.html">
+            
+                <a href="expressions.html#spaceship">
+            
+                    
+                    foo <=> bar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="expressions.html">
+            
+                <a href="expressions.html#rounding-down">
+            
+                    
+                    foo %% bar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="expressions.html">
+            
+                <a href="expressions.html#create-new-operator">
+            
+                    
+                    开发新的运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    API 参考
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../api/nj-compile-h.md">
+            
+                <span>
+            
+                    
+                    nj.registerExtension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../api/nj-render-h.md">
+            
+                <span>
+            
+                    
+                    nj.registerFilter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../api/nj-render-h.md">
+            
+                <span>
+            
+                    
+                    nj.registerComponent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../api/config1.md">
+            
+                <span>
+            
+                    
+                    nj.config
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    生态 & 工具
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../tools-adaptation/react-native.md">
+            
+                <span>
+            
+                    
+                    语法高亮插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../tools-adaptation/react-native.md">
+            
+                <span>
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../tools-adaptation/react-native.md">
+            
+                <span>
+            
+                    
+                    TypeScript 支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../tools-adaptation/react-native.md">
+            
+                <span>
+            
+                    
+                    React-Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../tools-adaptation/css-in-js.md">
+            
+                <span>
+            
+                    
+                    Css in Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../tools-adaptation/mobx.md">
+            
+                <span>
+            
+                    
+                    Mobx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../tools-adaptation/react-ui.md">
+            
+                <span>
+            
+                    
+                    Ant Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    更多
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    替代 JSX (文档待完成)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    渲染 Html 字符串(文档待完成)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../tools-adaptation/css-render-tool.md">
+            
+                <span>
+            
+                    
+                    Css 渲染工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >表达式扩展语法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#top"><b></b>&#x8868;&#x8FBE;&#x5F0F;&#x6269;&#x5C55;&#x8BED;&#x6CD5; </a></li><ul><li><span class="title-icon "></span><a href="#what-can-expressions-do"><b></b>&#x8868;&#x8FBE;&#x5F0F;&#x80FD;&#x505A;&#x4EC0;&#x4E48; </a></li><ul><li><span class="title-icon "></span><a href="#&#x8FC7;&#x6EE4;&#x5668;"><b></b>&#x8FC7;&#x6EE4;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x8FD0;&#x7B97;&#x7B26;"><b></b>&#x8FD0;&#x7B97;&#x7B26;</a></li></ul><li><span class="title-icon "></span><a href="#js-expression-compatibility"><b></b>&#x9002;&#x914D;&#x5E38;&#x89C4; JS &#x8868;&#x8FBE;&#x5F0F; </a></li><ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x53D8;&#x91CF;"><b></b>&#x4F7F;&#x7528;&#x53D8;&#x91CF;</a></li><li><span class="title-icon "></span><a href="#&#x63D2;&#x5165;&#x8FC7;&#x6EE4;&#x5668;&#x7B49;&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x6CD5;"><b></b>&#x63D2;&#x5165;&#x8FC7;&#x6EE4;&#x5668;&#x7B49;&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;"><b></b>&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;</a></li></ul></ul><li><span class="title-icon "></span><a href="#filters"><b></b>&#x8FC7;&#x6EE4;&#x5668; </a></li><ul><li><span class="title-icon "></span><a href="#&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x7BA1;&#x9053;&#x4E0E;&#x51FD;&#x6570;&#x5F62;&#x5F0F;"><b></b>&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x7BA1;&#x9053;&#x4E0E;&#x51FD;&#x6570;&#x5F62;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#string"><b></b>&#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406; </a></li><ul><li><span class="title-icon "></span><a href="#upperfirst"><b></b>upperFirst</a></li><li><span class="title-icon "></span><a href="#lowerfirst"><b></b>lowerFirst</a></li><li><span class="title-icon "></span><a href="#camelcase"><b></b>camelCase</a></li></ul><li><span class="title-icon "></span><a href="#type-determination"><b></b>&#x7C7B;&#x578B;&#x6D4B;&#x5B9A; </a></li><ul><li><span class="title-icon "></span><a href="#isobject"><b></b>isObject</a></li><li><span class="title-icon "></span><a href="#isnumber"><b></b>isNumber</a></li><li><span class="title-icon "></span><a href="#isstring"><b></b>isString</a></li><li><span class="title-icon "></span><a href="#isarraylike"><b></b>isArrayLike</a></li></ul><li><span class="title-icon "></span><a href="#currency"><b></b>currency</a></li><li><span class="title-icon "></span><a href="#tojs"><b></b>toJS</a></li><li><span class="title-icon "></span><a href="#lodash"><b></b>&#x4F7F;&#x7528; Lodash </a></li><li><span class="title-icon "></span><a href="#create-new-filter"><b></b>&#x5F00;&#x53D1;&#x65B0;&#x7684;&#x8FC7;&#x6EE4;&#x5668; </a></li></ul><li><span class="title-icon "></span><a href="#operators"><b></b>&#x8FD0;&#x7B97;&#x7B26; </a></li><ul><li><span class="title-icon "></span><a href="#optional-chaining"><b></b>&#x53EF;&#x9009;&#x94FE; </a></li><li><span class="title-icon "></span><a href="#range"><b></b>&#x8303;&#x56F4;&#x8FD0;&#x7B97;&#x7B26; </a></li><li><span class="title-icon "></span><a href="#semi-closed-interval-range"><b></b>&#x534A;&#x95ED;&#x533A;&#x95F4;&#x8303;&#x56F4;&#x8FD0;&#x7B97;&#x7B26; </a></li><li><span class="title-icon "></span><a href="#spaceship"><b></b>&#x98DE;&#x8239;&#x8FD0;&#x7B97;&#x7B26; </a></li><li><span class="title-icon "></span><a href="#rounding-down"><b></b>&#x5411;&#x4E0B;&#x53D6;&#x6574;&#x8FD0;&#x7B97;&#x7B26; </a></li><li><span class="title-icon "></span><a href="#create-new-operator"><b></b>&#x5F00;&#x53D1;&#x65B0;&#x7684;&#x8FD0;&#x7B97;&#x7B26; </a></li></ul></ul></div><h1 id="top"><a name="top" class="anchor-navigation-ex-anchor" href="#top"><i class="fa fa-link" aria-hidden="true"></i></a><a name="top" class="plugin-anchor" href="#top"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8868;&#x8FBE;&#x5F0F;&#x6269;&#x5C55;&#x8BED;&#x6CD5; </h1>
+<p><code>NornJ</code>&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x5728;<code>tagged templates</code>&#x8BED;&#x6CD5;&#x4E2D;&#x5199;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x79F0;&#x4E3A;<code>NornJ &#x8868;&#x8FBE;&#x5F0F;</code>&#x3002;&#x4E3B;&#x8981;&#x7528;&#x4F5C;<code>&#x589E;&#x5F3A;&#x73B0;&#x6709;&#x7684;JS&#x8868;&#x8FBE;&#x5F0F;</code>&#xFF0C;&#x5E76;&#x5B9E;&#x73B0;<code>&#x8FC7;&#x6EE4;&#x5668;</code>&#x7B49;&#x5185;&#x5EFA;&#x7684;&#x65B0;&#x8BED;&#x6CD5;&#x3002;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5373;&#x6807;&#x7B7E;&#x540D;&#x4E3A;<code>n</code>&#x7684;<code>tagged templates</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>input value<span class="token operator">=</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`&apos;Jack&apos; | lowerFirst`</span></span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>input value<span class="token operator">=</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`(1 .. 5).join(&apos;-&apos;)`</span></span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span>
+<span class="token comment">/*
+  &#x6E32;&#x67D3;&#x7ED3;&#x679C;&#xFF1A;&lt;input value=&quot;jack&quot; /&gt;&lt;input value=&quot;1-2-3-4-5&quot; /&gt;
+*/</span>
+</code></pre>
+<h2 id="what-can-expressions-do"><a name="what-can-expressions-do" class="anchor-navigation-ex-anchor" href="#what-can-expressions-do"><i class="fa fa-link" aria-hidden="true"></i></a><a name="what-can-expressions-do" class="plugin-anchor" href="#what-can-expressions-do"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8868;&#x8FBE;&#x5F0F;&#x80FD;&#x505A;&#x4EC0;&#x4E48; </h2>
+<p>&#x7B80;&#x5355;&#x5730;&#x8BF4;&#xFF0C;<code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x5185;&#x5EFA;&#x4E86;&#x4E00;&#x4E9B;&#x5E38;&#x89C4;JS&#x8BED;&#x6CD5;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x7279;&#x6027;&#xFF1A;</p>
+<h3 id="&#x8FC7;&#x6EE4;&#x5668;"><a name="&#x8FC7;&#x6EE4;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x8FC7;&#x6EE4;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8FC7;&#x6EE4;&#x5668;" class="plugin-anchor" href="#&#x8FC7;&#x6EE4;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FC7;&#x6EE4;&#x5668;</h3>
+<blockquote>
+<p>&#x8FC7;&#x6EE4;&#x5668;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x662F;&#x4E00;&#x79CD;&#x5728;&#x6A21;&#x677F;&#x5F15;&#x64CE;(&#x6216;&#x542B;&#x6709;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x7684;&#x6846;&#x67B6;&#xFF0C;&#x5982;Vue)&#x4E2D;&#x5E38;&#x89C1;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x8FC7;&#x6EE4;&#x5C55;&#x793A;&#x6570;&#x636E;&#x3002;&#x53EF;&#x53C2;&#x8003;Nunjucks&#x7684;&#x6587;&#x6863;&#xFF1A;<a href="https://mozilla.github.io/nunjucks/templating.html#filters&#x3002;" target="_blank">https://mozilla.github.io/nunjucks/templating.html#filters&#x3002;</a></p>
+</blockquote>
+<p><code>NornJ</code>&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x57FA;&#x672C;&#x7528;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`1234.567 | currency(2.05 | toInteger) | isString`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+<span class="token comment">/*
+  &#x4F8B;&#x4E2D;&#x5148;&#x6267;&#x884C;currency&#x8FC7;&#x6EE4;&#x5668;&#x8FD4;&#x56DE;&quot;$1234.57&quot;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6267;&#x884C;isString&#x8FC7;&#x6EE4;&#x5668;&#x5224;&#x65AD;&#x662F;&#x5426;&#x5B57;&#x7B26;&#x4E32;&#x3002;
+  &#x6E32;&#x67D3;&#x7ED3;&#x679C;&#xFF1A;&lt;i&gt;true&lt;/i&gt;
+*/</span>
+</code></pre>
+<p>&#x5982;&#x4E0A;&#xFF0C;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x8BED;&#x6CD5;&#x7684;&#x5E38;&#x89C4;&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x4E00;&#x81F4;&#x4F7F;&#x7528;<code>|</code>&#x7B26;&#x53F7;&#x4F5C;&#x4E3A;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x5E76;&#x4E14;&#x8FD8;&#x652F;&#x6301;<code>&#x4E3A;&#x8FC7;&#x6EE4;&#x5668;&#x4F20;&#x53C2;&#x6570;</code>&#x548C;<code>&#x5D4C;&#x5957;&#x8FC7;&#x6EE4;&#x5668;</code>&#x3002;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x51FA;&#x65B0;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x3002;</p>
+<h3 id="&#x8FD0;&#x7B97;&#x7B26;"><a name="&#x8FD0;&#x7B97;&#x7B26;" class="anchor-navigation-ex-anchor" href="#&#x8FD0;&#x7B97;&#x7B26;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8FD0;&#x7B97;&#x7B26;" class="plugin-anchor" href="#&#x8FD0;&#x7B97;&#x7B26;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD0;&#x7B97;&#x7B26;</h3>
+<p><code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x9664;&#x4E86;&#x652F;&#x6301;&#x5E38;&#x89C4;&#x8FD0;&#x7B97;&#x7B26;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x4E00;&#x4E9B;&#x5728;&#x5E38;&#x89C4;JS&#x8BED;&#x6CD5;&#x4E2D;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x6BD4;&#x5982;&#x8303;&#x56F4;&#x8FD0;&#x7B97;&#x7B26;<code>..</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`(1 .. 5).join(&apos;-&apos;)`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+<span class="token comment">/*
+  &#x4F8B;&#x4E2D;&quot;1 .. 5&quot;&#x7684;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x4E2A;&#x542B;1-5&#x7684;&#x6570;&#x7EC4;(&#x5373;&quot;[1, 2, 3, 4, 5]&quot;)&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6267;&#x884C;&#x6570;&#x7EC4;&#x7684;join&#x65B9;&#x6CD5;&#x7528;&quot;-&quot;&#x8FDE;&#x63A5;&#x6BCF;&#x9879;&#x3002;
+  &#x6E32;&#x67D3;&#x7ED3;&#x679C;&#xFF1A;&lt;i&gt;1-2-3-4-5&lt;/i&gt;
+*/</span>
+</code></pre>
+<p>&#x5982;&#x4E0A;&#xFF0C;&#x6B64;&#x7C7B;&#x81EA;&#x5B9A;&#x4E49;&#x8FD0;&#x7B97;&#x7B26;&#x662F;&#x53EF;&#x4EE5;&#x5728;<code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x540C;&#x5E38;&#x89C4;&#x7684;JS&#x8BED;&#x6CD5;&#x4E00;&#x8D77;&#x8FD0;&#x4F5C;&#x3002;&#x540C;&#x8FC7;&#x6EE4;&#x5668;&#x4E00;&#x6837;&#xFF0C;&#x8FD0;&#x7B97;&#x7B26;&#x4E5F;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x6269;&#x5C55;&#x51FA;&#x65B0;&#x7684;&#x3002;</p>
+<h2 id="js-expression-compatibility"><a name="js-expression-compatibility" class="anchor-navigation-ex-anchor" href="#js-expression-compatibility"><i class="fa fa-link" aria-hidden="true"></i></a><a name="js-expression-compatibility" class="plugin-anchor" href="#js-expression-compatibility"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9002;&#x914D;&#x5E38;&#x89C4; JS &#x8868;&#x8FBE;&#x5F0F; </h2>
+<p><code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x5BF9;&#x4E8E;&#x5E38;&#x89C4;&#x7684; JS &#x8BED;&#x6CD5;&#x6709;&#x975E;&#x5E38;&#x597D;&#x7684;&#x9002;&#x914D;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x5217;&#x4E3E;&#x7684;&#x8FD9;&#x4E9B;&#x5E38;&#x7528;&#x573A;&#x666F;&#x90FD;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`1 + 2 * 3 - 4 / 5`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`1 &lt; (2 + 1) &amp;&amp; !(5 &gt; 4)`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`&apos;abc&apos;.trim() + &apos;def&apos;.substr(1).length`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;&#x53D8;&#x91CF;"><a name="&#x4F7F;&#x7528;&#x53D8;&#x91CF;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4F7F;&#x7528;&#x53D8;&#x91CF;" class="plugin-anchor" href="#&#x4F7F;&#x7528;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x53D8;&#x91CF;</h3>
+<p>&#x501F;&#x52A9;&#x4E8E;<code>Babel &#x63D2;&#x4EF6;</code>&#x7684;&#x8F6C;&#x6362;&#x80FD;&#x529B;&#xFF0C;<code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x53EF;&#x7528;&#x7684;&#x53D8;&#x91CF;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> props <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">&apos;abc&apos;</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> str2 <span class="token operator">=</span> <span class="token string">&apos;def&apos;</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`props.a &gt; (2 + 1) &amp;&amp; !props.b &lt; 4`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`str.trim() + str2.substr(1).length`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x9664;&#x4E86;&#x4E0A;&#x8FF0;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5916;&#xFF0C;&#x53D8;&#x91CF;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>tagged templates</code>&#x53C2;&#x6570;&#x65B9;&#x5F0F;&#x4F20;&#x5165;&#xFF0C;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> props <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">&apos;abc&apos;</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> str2 <span class="token operator">=</span> <span class="token string">&apos;def&apos;</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>props<span class="token punctuation">.</span>a<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> &gt; (2 + 1) &amp;&amp; </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>props<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.b &lt; 4`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>str<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.trim() + </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>str2<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.substr(1).length`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x6BCF;&#x4E2A;<code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x8BA1;&#x7B97;&#x540E;&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;&#x6B63;&#x786E;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x4E5F;&#x53EF;&#x4EE5;&#x548C;&#x5916;&#x90E8; JS &#x8BED;&#x6CD5;&#x6DF7;&#x5408;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> props <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>props<span class="token punctuation">.</span>a<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> &gt; (2 + 1)`</span></span> <span class="token operator">&amp;&amp;</span> n<span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>props<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.b &lt; 4`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="&#x63D2;&#x5165;&#x8FC7;&#x6EE4;&#x5668;&#x7B49;&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x6CD5;"><a name="&#x63D2;&#x5165;&#x8FC7;&#x6EE4;&#x5668;&#x7B49;&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x63D2;&#x5165;&#x8FC7;&#x6EE4;&#x5668;&#x7B49;&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x63D2;&#x5165;&#x8FC7;&#x6EE4;&#x5668;&#x7B49;&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x6CD5;" class="plugin-anchor" href="#&#x63D2;&#x5165;&#x8FC7;&#x6EE4;&#x5668;&#x7B49;&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63D2;&#x5165;&#x8FC7;&#x6EE4;&#x5668;&#x7B49;&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x6CD5;</h3>
+<p><code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x4F7F;&#x7528;<code>&#x5E38;&#x89C4; JS &#x8BED;&#x6CD5;</code>&#x548C;<code>&#x8FC7;&#x6EE4;&#x5668;&#x7B49;&#x81EA;&#x5B9A;&#x4E49;&#x8BED;&#x6CD5;</code>&#xFF0C;&#x8FD9;&#x6B63;&#x662F;&#x5B83;&#x7684;&#x7279;&#x8272;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">&apos;abc&apos;</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`str.trim() | upperFirst`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`12345678 | currency`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`(1 .. 100).length * 100`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;"><a name="&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;" class="plugin-anchor" href="#&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;</h3>
+<p><code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x867D;&#x7136;&#x9002;&#x914D;&#x6027;&#x5F88;&#x5F3A;&#xFF0C;&#x4F46;&#x5F53;&#x524D;&#x8FD8;&#x662F;&#x6709;&#x4E00;&#x4E9B;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">//&#x6CE8;&#x610F;&#xFF0C;&#x4EE5;&#x4E0B;&#x4E3A;&#x4E00;&#x4E9B;&#x76EE;&#x524D;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> props <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`!!12345`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>  <span class="token punctuation">{</span><span class="token comment">/* &#x53EA;&#x6709;1&#x4E2A;!&#x662F;&#x652F;&#x6301;&#x7684;&#xFF1B;&#x591A;&#x4E2A;!&#x6682;&#x4E0D;&#x652F;&#x6301; */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`12345++`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>  <span class="token punctuation">{</span><span class="token comment">/* &#x6682;&#x4E0D;&#x652F;&#x6301;&#x81EA;&#x589E;&#x7B49;&#x8FD0;&#x7B97; */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`+12345`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>  <span class="token punctuation">{</span><span class="token comment">/* &#x6682;&#x4E0D;&#x652F;&#x6301;&#x4E00;&#x5143;&#x8FD0;&#x7B97;(!&#x9664;&#x5916;) */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`&apos;12345&apos;.map((item, i) =&gt; item)`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>  <span class="token punctuation">{</span><span class="token comment">/* &#x6682;&#x4E0D;&#x652F;&#x6301;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x4F53; */</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x4E0A;&#x9762;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;&#x53EF;&#x4EE5;&#x7528;&#x539F;&#x751F;JS&#x8BED;&#x6CD5;&#x5F25;&#x8865;&#xFF0C;&#x8FD9;&#x6837;&#x6539;&#x5199;&#xFF1A;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">Test2</span> <span class="token operator">=</span> props <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token operator">!</span>n<span class="token template-string"><span class="token string">`!12345`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`12345`</span></span><span class="token operator">++</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token operator">+</span>n<span class="token template-string"><span class="token string">`12345`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`&apos;12345&apos;.map(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> item<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">)`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x65E5;&#x540E;&#x4E0D;&#x6392;&#x9664;<code>NornJ</code>&#x4F1A;&#x652F;&#x6301;&#x4E0A;&#x8FF0;&#x8BED;&#x6CD5;&#x7684;&#x53EF;&#x80FD;&#x6027;&#xFF0C;&#x5DF2;&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;&#x5DF2;&#x8DB3;&#x591F;&#x652F;&#x6491;&#x5E38;&#x89C4;&#x5F00;&#x53D1;&#x4F7F;&#x7528;&#x3002;</p>
+<blockquote>
+<p>&#x53E6;&#x5916;&#xFF0C;<code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x76EE;&#x6807;&#x5B9A;&#x4F4D;&#x662F;&#x4E3A;&#x73B0;&#x6709; JS &#x8BED;&#x6CD5;&#x505A;&#x589E;&#x5F3A;&#xFF0C;&#x6545;&#x5B83;&#x7684;&#x5185;&#x90E8;&#x6216;&#x8BB8;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x5168;&#x90E8;&#x7684; JS &#x8868;&#x8FBE;&#x5F0F;&#x3002; </p>
+</blockquote>
+<h1 id="filters"><a name="filters" class="anchor-navigation-ex-anchor" href="#filters"><i class="fa fa-link" aria-hidden="true"></i></a><a name="filters" class="plugin-anchor" href="#filters"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FC7;&#x6EE4;&#x5668; </h1>
+<p><code>NornJ</code>&#x8FC7;&#x6EE4;&#x5668;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x5185;&#x7F6E;&#x529F;&#x80FD;&#xFF0C;&#x4E14;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x7528;&#x6237;&#x6269;&#x5C55;&#x3002;</p>
+<h2 id="&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x7BA1;&#x9053;&#x4E0E;&#x51FD;&#x6570;&#x5F62;&#x5F0F;"><a name="&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x7BA1;&#x9053;&#x4E0E;&#x51FD;&#x6570;&#x5F62;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x7BA1;&#x9053;&#x4E0E;&#x51FD;&#x6570;&#x5F62;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x7BA1;&#x9053;&#x4E0E;&#x51FD;&#x6570;&#x5F62;&#x5F0F;" class="plugin-anchor" href="#&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x7BA1;&#x9053;&#x4E0E;&#x51FD;&#x6570;&#x5F62;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x7BA1;&#x9053;&#x4E0E;&#x51FD;&#x6570;&#x5F62;&#x5F0F;</h2>
+<p><code>NornJ</code>&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x9664;&#x4E86;&#x652F;&#x6301;<code>&#x7BA1;&#x9053;&#x5F62;&#x5F0F;</code>&#x5199;&#x6CD5;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x7528;<code>&#x51FD;&#x6570;&#x5F62;&#x5F0F;</code>&#x5199;&#x6CD5;&#xFF0C;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">&apos;abc&apos;</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span><span class="token comment">/* &#x7BA1;&#x9053;&#x5F62;&#x5F0F; */</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`str.trim() | upperFirst`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`12345678 | currency`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+
+      <span class="token punctuation">{</span><span class="token comment">/* &#x51FD;&#x6570;&#x5F62;&#x5F0F; */</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`upperFirst(str.trim())`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`currency(12345678)`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>&#x6211;&#x4EEC;&#x4E0D;&#x59A8;&#x5BF9;&#x6BD4;&#x4E00;&#x4E0B;&#x8FC7;&#x6EE4;&#x5668;&#x7684;<code>&#x7BA1;&#x9053;&#x5F62;&#x5F0F;</code>&#x4E0E;<code>&#x51FD;&#x6570;&#x5F62;&#x5F0F;</code>&#x5199;&#x6CD5;&#xFF0C;&#x53EF;&#x53D1;&#x73B0;<code>&#x7BA1;&#x9053;&#x5F62;&#x5F0F;</code>&#x7684;&#x4E3B;&#x8981;&#x4F18;&#x52BF;&#x5728;&#x4E8E;&#x5BF9;&#x4E8E;&#x6570;&#x636E;&#x8FC7;&#x6EE4;&#x770B;&#x8D77;&#x6765;&#x66F4;&#x4E3A;&#x76F4;&#x89C2;&#x3002;</p>
+</blockquote>
+<p>&#x4E0B;&#x9762;&#x662F;<code>NornJ</code>&#x7684;&#x5185;&#x7F6E;&#x8FC7;&#x6EE4;&#x5668;&#xFF1A;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x5185;&#x7F6E;&#x8FC7;&#x6EE4;&#x5668;&#x53EA;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x529F;&#x80FD;&#xFF0C;&#x4F8B;&#x5982;&#x5F88;&#x5927;&#x4E00;&#x90E8;&#x5206;&#x662F;NornJ&#x5E95;&#x5C42;&#x5FC5;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x5DE5;&#x5177;&#x51FD;&#x6570;&#x3002;NornJ&#x7684;&#x5B9A;&#x4F4D;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;Lodash&#x7684;&#x5DE5;&#x5177;&#x51FD;&#x6570;&#x5E93;&#xFF0C;&#x5B83;&#x7684;&#x76EE;&#x6807;&#x53EA;&#x662F;&#x4E3A;&#x5E38;&#x89C4;JS&#x5F00;&#x53D1;&#x63D0;&#x4F9B;&#x8FC7;&#x6EE4;&#x5668;&#x8FD9;&#x79CD;&#x65B0;&#x7684;&#x6269;&#x5C55;&#x65B9;&#x5F0F;&#x800C;&#x5DF2;&#x3002;</p>
+</blockquote>
+<h2 id="string"><a name="string" class="anchor-navigation-ex-anchor" href="#string"><i class="fa fa-link" aria-hidden="true"></i></a><a name="string" class="plugin-anchor" href="#string"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406; </h2>
+<h3 id="upperfirst"><a name="upperfirst" class="anchor-navigation-ex-anchor" href="#upperfirst"><i class="fa fa-link" aria-hidden="true"></i></a><a name="upperfirst" class="plugin-anchor" href="#upperfirst"><i class="fa fa-link" aria-hidden="true"></i></a>upperFirst</h3>
+<p><code>upperFirst</code>&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`&apos;jack&apos; | upperFirst`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;i&gt;Jack&lt;/i&gt;</span>
+</code></pre>
+<h3 id="lowerfirst"><a name="lowerfirst" class="anchor-navigation-ex-anchor" href="#lowerfirst"><i class="fa fa-link" aria-hidden="true"></i></a><a name="lowerfirst" class="plugin-anchor" href="#lowerfirst"><i class="fa fa-link" aria-hidden="true"></i></a>lowerFirst</h3>
+<p><code>lowerFirst</code>&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x9996;&#x5B57;&#x6BCD;&#x5C0F;&#x5199;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`&apos;Jack&apos; | lowerFirst`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;i&gt;jack&lt;/i&gt;</span>
+</code></pre>
+<h3 id="camelcase"><a name="camelcase" class="anchor-navigation-ex-anchor" href="#camelcase"><i class="fa fa-link" aria-hidden="true"></i></a><a name="camelcase" class="plugin-anchor" href="#camelcase"><i class="fa fa-link" aria-hidden="true"></i></a>camelCase</h3>
+<p><code>camelCase</code>&#x53EF;&#x4EE5;&#x5C06;<code>kebab-case</code>&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;<code>camel-case</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`&apos;margin-left&apos; | camelCase`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;i&gt;marginLeft&lt;/i&gt;</span>
+</code></pre>
+<h2 id="type-determination"><a name="type-determination" class="anchor-navigation-ex-anchor" href="#type-determination"><i class="fa fa-link" aria-hidden="true"></i></a><a name="type-determination" class="plugin-anchor" href="#type-determination"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x578B;&#x6D4B;&#x5B9A; </h2>
+<h3 id="isobject"><a name="isobject" class="anchor-navigation-ex-anchor" href="#isobject"><i class="fa fa-link" aria-hidden="true"></i></a><a name="isobject" class="plugin-anchor" href="#isobject"><i class="fa fa-link" aria-hidden="true"></i></a>isObject</h3>
+<p><code>isObject</code>&#x7528;&#x4E8E;&#x68C0;&#x67E5;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x4E3A;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> children <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`children | isObject`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;i&gt;true&lt;/i&gt;</span>
+</code></pre>
+<h3 id="isnumber"><a name="isnumber" class="anchor-navigation-ex-anchor" href="#isnumber"><i class="fa fa-link" aria-hidden="true"></i></a><a name="isnumber" class="plugin-anchor" href="#isnumber"><i class="fa fa-link" aria-hidden="true"></i></a>isNumber</h3>
+<p><code>isNumber</code>&#x7528;&#x4E8E;&#x68C0;&#x67E5;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x4E3A;&#x6570;&#x5B57;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> children <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`children.length | isNumber`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;i&gt;true&lt;/i&gt;</span>
+</code></pre>
+<h3 id="isstring"><a name="isstring" class="anchor-navigation-ex-anchor" href="#isstring"><i class="fa fa-link" aria-hidden="true"></i></a><a name="isstring" class="plugin-anchor" href="#isstring"><i class="fa fa-link" aria-hidden="true"></i></a>isString</h3>
+<p><code>isString</code>&#x7528;&#x4E8E;&#x68C0;&#x67E5;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> children <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`children.length | isString`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;i&gt;false&lt;/i&gt;</span>
+</code></pre>
+<h3 id="isarraylike"><a name="isarraylike" class="anchor-navigation-ex-anchor" href="#isarraylike"><i class="fa fa-link" aria-hidden="true"></i></a><a name="isarraylike" class="plugin-anchor" href="#isarraylike"><i class="fa fa-link" aria-hidden="true"></i></a>isArrayLike</h3>
+<p><code>isArrayLike</code>&#x7528;&#x4E8E;&#x68C0;&#x67E5;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x4E3A;&#x7C7B;&#x6570;&#x7EC4;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> children <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`children | isArrayLike`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;&lt;i&gt;true&lt;/i&gt;</span>
+</code></pre>
+<h2 id="currency"><a name="currency" class="anchor-navigation-ex-anchor" href="#currency"><i class="fa fa-link" aria-hidden="true"></i></a><a name="currency" class="plugin-anchor" href="#currency"><i class="fa fa-link" aria-hidden="true"></i></a>currency</h2>
+<p><code>currency</code>&#x53EF;&#x4EE5;&#x5C06;&#x6570;&#x5B57;&#x8F6C;&#x6362;&#x8D27;&#x5E01;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`98765 | currency`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>                 <span class="token punctuation">{</span><span class="token comment">/* &apos;$98,765.00&apos; */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`98765.32132 | currency(2)`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>        <span class="token punctuation">{</span><span class="token comment">/* &apos;$98,765.32&apos; */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`98765.321 | currency(0, &apos;&#xFFE5;&apos;)`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>    <span class="token punctuation">{</span><span class="token comment">/* &apos;&#xFFE5;98,765&apos; */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`&apos;abc&apos; | currency(2, &apos;$&apos;, &apos;-&apos;)`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>    <span class="token punctuation">{</span><span class="token comment">/* &apos;-&apos; */</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7528;&#x6CD5;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x9ED8;&#x8BA4;&#x503C;</th>
+<th style="text-align:left">&#x4F5C;&#x7528;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">decimals</td>
+<td style="text-align:left"><code>98765 | currency(decimals)</code></td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">&#x5C0F;&#x6570;&#x4F4D;</td>
+</tr>
+<tr>
+<td style="text-align:left">symbol</td>
+<td style="text-align:left"><code>98765 | currency(2, symbol)</code></td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&apos;$&apos;</td>
+<td style="text-align:left">&#x94B1;&#x5E01;&#x7B26;&#x53F7;</td>
+</tr>
+<tr>
+<td style="text-align:left">placeholder</td>
+<td style="text-align:left"><code>98765 | currency(2, &apos;&#xFFE5;&apos;, placeholder)</code></td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&apos;&apos;</td>
+<td style="text-align:left">&#x5982;&#x4F20;&#x5165;&#x975E;&#x6570;&#x5B57;&#xFF0C;&#x5219;&#x8F93;&#x51FA;&#x5360;&#x4F4D;&#x7B26;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x53E6;&#x5916;&#xFF0C;<code>symbol</code>&#x548C;<code>placeholder</code>&#x8FD8;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> nj <span class="token keyword">from</span> <span class="token string">&apos;nornj&apos;</span><span class="token punctuation">;</span>
+
+nj<span class="token punctuation">.</span>filterConfig<span class="token punctuation">.</span>currency<span class="token punctuation">.</span>symbol <span class="token operator">=</span> <span class="token string">&apos;&#xFFE5;&apos;</span><span class="token punctuation">;</span>
+nj<span class="token punctuation">.</span>filterConfig<span class="token punctuation">.</span>currency<span class="token punctuation">.</span>placeholder <span class="token operator">=</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="tojs"><a name="tojs" class="anchor-navigation-ex-anchor" href="#tojs"><i class="fa fa-link" aria-hidden="true"></i></a><a name="tojs" class="plugin-anchor" href="#tojs"><i class="fa fa-link" aria-hidden="true"></i></a>toJS</h2>
+<p><code>toJS</code>&#x5373;&#x4E3A;<code>Mobx</code>&#x7684;<code>toJS</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> view <span class="token operator">=</span> <span class="token function">useLocalStore</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    texts<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;abc&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;def&apos;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>n<span class="token template-string"><span class="token string">`view | toJS`</span></span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="lodash"><a name="lodash" class="anchor-navigation-ex-anchor" href="#lodash"><i class="fa fa-link" aria-hidden="true"></i></a><a name="lodash" class="plugin-anchor" href="#lodash"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528; Lodash </h2>
+<p><code>NornJ</code>&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>Lodash</code>&#x5E93;&#x7684;&#x5168;&#x90E8;&#x5DE5;&#x5177;&#x51FD;&#x6570;&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x8FD9;&#x6837;&#x5168;&#x5C40;&#x5F15;&#x5165;&#x4E00;&#x6B21;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token string">&apos;nornj/lib/filter/lodash&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x5728;<code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`&apos;-abc-&apos; | repeat(3)`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>        <span class="token punctuation">{</span><span class="token comment">/* &apos;-abc--abc--abc-&apos; */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`&apos;-abc-&apos; | endsWith(&apos;bc-&apos;)`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>  <span class="token punctuation">{</span><span class="token comment">/* true */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`&apos;Foo Bar&apos; | snakeCase`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>      <span class="token punctuation">{</span><span class="token comment">/* &apos;foo_bar&apos; */</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x66F4;&#x591A;<code>Lodash</code>&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x8BF7;&#x67E5;&#x770B;<a href="https://www.lodashjs.com/docs/latest" target="_blank">Lodash &#x6587;&#x6863;</a>&#x3002;</p>
+<h2 id="create-new-filter"><a name="create-new-filter" class="anchor-navigation-ex-anchor" href="#create-new-filter"><i class="fa fa-link" aria-hidden="true"></i></a><a name="create-new-filter" class="plugin-anchor" href="#create-new-filter"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F00;&#x53D1;&#x65B0;&#x7684;&#x8FC7;&#x6EE4;&#x5668; </h2>
+<p><code>NornJ</code>&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x90FD;&#x662F;&#x652F;&#x6301;&#x53EF;&#x6269;&#x5C55;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x5C01;&#x88C5;&#x5404;&#x79CD;&#x65B0;&#x529F;&#x80FD;&#x3002;</p>
+<ul>
+<li>&#x6BCF;&#x4E2A;&#x8FC7;&#x6EE4;&#x5668;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x6269;&#x5C55;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528;<code>nj.registerFilter</code>&#x65B9;&#x6CD5;&#x6CE8;&#x518C;&#xFF1A;</li>
+</ul>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> nj <span class="token keyword">from</span> <span class="token string">&apos;nornj&apos;</span><span class="token punctuation">;</span>
+
+nj<span class="token punctuation">.</span><span class="token function">registerFilter</span><span class="token punctuation">(</span><span class="token string">&apos;2x&apos;</span><span class="token punctuation">,</span> num <span class="token operator">=&gt;</span> num <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x652F;&#x6301;&#x4E00;&#x6B21;&#x6CE8;&#x518C;&#x8FC7;&#x4E2A;&#x8FC7;&#x6EE4;&#x5668;</span>
+nj<span class="token punctuation">.</span><span class="token function">registerFilter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">&apos;3x&apos;</span><span class="token punctuation">:</span> num <span class="token operator">=&gt;</span> num <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;4x&apos;</span><span class="token punctuation">:</span> num <span class="token operator">=&gt;</span> num <span class="token operator">*</span> <span class="token number">4</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token template-string"><span class="token string">`100 | 2x | 3x | 4x`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;2400</span>
+</code></pre>
+<ul>
+<li>&#x8FC7;&#x6EE4;&#x5668;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x53C2;&#x6570;&#xFF1A;</li>
+</ul>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> nj <span class="token keyword">from</span> <span class="token string">&apos;nornj&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x4ECE;&#x6269;&#x5C55;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x5F00;&#x59CB;&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;</span>
+nj<span class="token punctuation">.</span><span class="token function">registerFilter</span><span class="token punctuation">(</span><span class="token string">&apos;times&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>num<span class="token punctuation">,</span> times<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> num <span class="token operator">*</span> times<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token template-string"><span class="token string">`100 | times(10)`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;1000</span>
+</code></pre>
+<ul>
+<li>&#x8FC7;&#x6EE4;&#x5668;&#x8FD8;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x5D4C;&#x5957;&#xFF1A;</li>
+</ul>
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token template-string"><span class="token string">`100 | times((10 * 2) | 3x)`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;6000</span>
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x4E2D;<code>(10 * 2) | 3x</code>&#x7684;&#x4E58;&#x6CD5;&#x8FD0;&#x7B97;&#x9700;&#x8981;&#x52A0;&#x62EC;&#x53F7;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x8FD0;&#x7B97;&#x4F18;&#x5148;&#x7EA7;&#x662F;&#x6700;&#x9AD8;&#x7684;&#xFF0C;&#x5E76;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x6309;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x3002;</p>
+<h1 id="operators"><a name="operators" class="anchor-navigation-ex-anchor" href="#operators"><i class="fa fa-link" aria-hidden="true"></i></a><a name="operators" class="plugin-anchor" href="#operators"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD0;&#x7B97;&#x7B26; </h1>
+<p><code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5E38;&#x89C4; JS &#x8FD0;&#x7B97;&#x7B26;&#x5916;&#xFF0C;&#x8FD8;&#x5185;&#x7F6E;&#x652F;&#x6301;&#x4E00;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5982;<code>%%</code>&#x3001;<code>..</code>&#x7B49;&#xFF0C;&#x5E76;&#x4E14;&#x8FD8;&#x652F;&#x6301;&#x6269;&#x5C55;&#x51FA;&#x65B0;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
+<h2 id="optional-chaining"><a name="optional-chaining" class="anchor-navigation-ex-anchor" href="#optional-chaining"><i class="fa fa-link" aria-hidden="true"></i></a><a name="optional-chaining" class="plugin-anchor" href="#optional-chaining"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53EF;&#x9009;&#x94FE; </h2>
+<p><code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x7684;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x8BED;&#x6CD5;&#xFF0C;&#x9ED8;&#x8BA4;&#x5168;&#x90E8;&#x90FD;&#x662F;<code>&#x53EF;&#x9009;&#x94FE;</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> props <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`props.abc.length &gt; 1`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>  <span class="token punctuation">{</span><span class="token comment">/* &#x4E0D;&#x4F1A;&#x62A5;&#x9519; */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span>abc<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>     <span class="token punctuation">{</span><span class="token comment">/* &#x62A5; props.abc &#x4E3A; undefined &#x9519;&#x8BEF; */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>props<span class="token operator">?</span><span class="token punctuation">.</span>abc<span class="token operator">?</span><span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>   <span class="token punctuation">{</span><span class="token comment">/* &#x4E0D;&#x4F1A;&#x62A5;&#x9519;(&#x4F7F;&#x7528; Babel &#x8F6C;&#x6362;&#x53EF;&#x9009;&#x94FE;&#x8BED;&#x6CD5;) */</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><code>NornJ</code>&#x7684;&#x53EF;&#x9009;&#x94FE;&#x8FD0;&#x7B97;&#x7B26;&#x5728;&#x4EE5;&#x4E0B;&#x5404;&#x79CD;&#x573A;&#x666F;&#x90FD;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> props <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`props[abc].length &gt; 1`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`props.abc.substr(1) &gt; 1`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`props[abc]().length &gt; 1`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li><p>&#x4E0E; Babel &#x8F6C;&#x6362;&#x7684;&#x53EF;&#x9009;&#x94FE;&#x8BED;&#x6CD5;(<code>?.</code>)&#x76F8;&#x6BD4;&#xFF0C;<code>NornJ</code>&#x7684;&#x53EF;&#x9009;&#x94FE;&#x8FD0;&#x7B97;&#x7B26;&#x7531;&#x4E8E;&#x4E0D;&#x987B;&#x8981;&#x5199;<code>?</code>&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;&#x548C;&#x9605;&#x8BFB;&#x90FD;&#x4F1A;&#x5F88;&#x4FBF;&#x6377;&#x3002;</p>
+</li>
+<li><p>&#x4F46;&#x7531;&#x4E8E;<code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x90E8;&#x76EE;&#x524D;&#x4E0D;&#x80FD;&#x652F;&#x6301;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x4F53;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x51FD;&#x6570;&#x7684;&#x573A;&#x666F;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x4F7F;&#x7528;&#xFF1A;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> props <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token comment">/* &#x5C06;&#x51FD;&#x6570;&#x4F53;&#x4F5C;&#x4E3A;&#x5916;&#x90E8;&#x53C2;&#x6570;&#x4F20;&#x5165; NornJ &#x8868;&#x8FBE;&#x5F0F; */</span><span class="token punctuation">}</span>
+    <span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`props.data.map(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>item<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/i&gt;
+    }})`</span></span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="range"><a name="range" class="anchor-navigation-ex-anchor" href="#range"><i class="fa fa-link" aria-hidden="true"></i></a><a name="range" class="plugin-anchor" href="#range"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8303;&#x56F4;&#x8FD0;&#x7B97;&#x7B26; </h2>
+<p><code>&#x8303;&#x56F4;&#x8FD0;&#x7B97;&#x7B26;</code>&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x751F;&#x6210;&#x6570;&#x7EC4;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span>
+    b <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`1 .. 10`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>                         <span class="token punctuation">{</span><span class="token comment">/* [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] */</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`(1 .. 10).length`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>                <span class="token punctuation">{</span><span class="token comment">/* 10 */</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`(a .. b).length | includes(15)`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>  <span class="token punctuation">{</span><span class="token comment">/* true */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="semi-closed-interval-range"><a name="semi-closed-interval-range" class="anchor-navigation-ex-anchor" href="#semi-closed-interval-range"><i class="fa fa-link" aria-hidden="true"></i></a><a name="semi-closed-interval-range" class="plugin-anchor" href="#semi-closed-interval-range"><i class="fa fa-link" aria-hidden="true"></i></a>&#x534A;&#x95ED;&#x533A;&#x95F4;&#x8303;&#x56F4;&#x8FD0;&#x7B97;&#x7B26; </h2>
+<p><code>..</code>&#x662F;&#x95ED;&#x533A;&#x95F4;&#x7684;&#xFF0C;<code>NornJ</code>&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x5B83;&#x7684;&#x534A;&#x95ED;&#x533A;&#x95F4;&#x7248;&#x672C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span>
+    b <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`1 ..&lt; 10`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>                         <span class="token punctuation">{</span><span class="token comment">/* [1, 2, 3, 4, 5, 6, 7, 8, 9] */</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`(1 ..&lt; 10).length`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>                <span class="token punctuation">{</span><span class="token comment">/* 9 */</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`(a ..&lt; b).length | includes(20)`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>  <span class="token punctuation">{</span><span class="token comment">/* false */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="spaceship"><a name="spaceship" class="anchor-navigation-ex-anchor" href="#spaceship"><i class="fa fa-link" aria-hidden="true"></i></a><a name="spaceship" class="plugin-anchor" href="#spaceship"><i class="fa fa-link" aria-hidden="true"></i></a>&#x98DE;&#x8239;&#x8FD0;&#x7B97;&#x7B26; </h2>
+<p><code>&#x98DE;&#x8239;&#x8FD0;&#x7B97;&#x7B26;</code>&#x662F;&#x4E00;&#x79CD;&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#xFF0C;&#x5B83;&#x6309;&#x7167;<code>&#x5927;&#x4E8E;</code>&#x3001;<code>&#x5C0F;&#x4E8E;</code>&#x3001;<code>&#x7B49;&#x4E8E;</code>&#x4E09;&#x79CD;&#x7ED3;&#x679C;&#xFF0C;&#x5206;&#x522B;&#x8FD4;&#x56DE;<code>1</code>&#x3001;<code>-1</code>&#xFF0C;<code>0</code>&#x4E09;&#x79CD;&#x503C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`1 &lt;=&gt; 10`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>  <span class="token punctuation">{</span><span class="token comment">/* -1 */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`1 &lt;=&gt; 1`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>   <span class="token punctuation">{</span><span class="token comment">/* 0 */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`10 &lt;=&gt; 1`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>  <span class="token punctuation">{</span><span class="token comment">/* 1 */</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="rounding-down"><a name="rounding-down" class="anchor-navigation-ex-anchor" href="#rounding-down"><i class="fa fa-link" aria-hidden="true"></i></a><a name="rounding-down" class="plugin-anchor" href="#rounding-down"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5411;&#x4E0B;&#x53D6;&#x6574;&#x8FD0;&#x7B97;&#x7B26; </h2>
+<p><code>NornJ</code>&#x5185;&#x7F6E;&#x4E86;&#x4E00;&#x79CD;&#x53EF;&#x5B9E;&#x73B0;&#x5411;&#x4E0B;&#x53D6;&#x6574;&#x7684;&#x9664;&#x6CD5;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5B83;&#x7684;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x662F;<code>Math.floor(value1 / value2)</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`100 %% 30`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>    <span class="token punctuation">{</span><span class="token comment">/* 3 */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`56.78 %% 5`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>   <span class="token punctuation">{</span><span class="token comment">/* 11 */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span><span class="token punctuation">{</span>n<span class="token template-string"><span class="token string">`-56.78 %% 5`</span></span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>  <span class="token punctuation">{</span><span class="token comment">/* -12 */</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="create-new-operator"><a name="create-new-operator" class="anchor-navigation-ex-anchor" href="#create-new-operator"><i class="fa fa-link" aria-hidden="true"></i></a><a name="create-new-operator" class="plugin-anchor" href="#create-new-operator"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F00;&#x53D1;&#x65B0;&#x7684;&#x8FD0;&#x7B97;&#x7B26; </h2>
+<p><code>NornJ</code>&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x4E5F;&#x90FD;&#x662F;&#x652F;&#x6301;&#x53EF;&#x6269;&#x5C55;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x5C01;&#x88C5;&#x5404;&#x79CD;&#x65B0;&#x529F;&#x80FD;&#x3002;</p>
+<blockquote>
+<p>NornJ&#x4E2D;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x672C;&#x8D28;&#x4E0A;&#x5176;&#x5B9E;&#x662F;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x4E00;&#x79CD;&#x8BED;&#x6CD5;&#x7CD6;&#x5F62;&#x5F0F;&#xFF0C;&#x76EE;&#x524D;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x51FA;&#x5404;&#x79CD;<code>&#x4E8C;&#x5143;&#x8FD0;&#x7B97;&#x7B26;</code>&#x3002;</p>
+</blockquote>
+<ul>
+<li>&#x6BCF;&#x4E2A;&#x8FD0;&#x7B97;&#x7B26;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x6269;&#x5C55;&#x51FD;&#x6570;&#xFF0C;&#x548C;&#x8FC7;&#x6EE4;&#x5668;&#x4E00;&#x6837;&#x4F7F;&#x7528;<code>nj.registerFilter</code>&#x65B9;&#x6CD5;&#x6CE8;&#x518C;&#xFF1A;</li>
+</ul>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> nj <span class="token keyword">from</span> <span class="token string">&apos;nornj&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x6CE8;&#x518C;***&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x529F;&#x80FD;&#x4E3A;&#x5148;&#x8FDB;&#x884C;&#x4E58;&#x6CD5;&#x8FD0;&#x7B97;&#x540E;&#xFF0C;&#x518D;&#x4E58;&#x4E0A;3&#x500D;</span>
+nj<span class="token punctuation">.</span><span class="token function">registerFilter</span><span class="token punctuation">(</span><span class="token string">&apos;***&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>num<span class="token punctuation">,</span> times<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> num <span class="token operator">*</span> times <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x652F;&#x6301;&#x4E00;&#x6B21;&#x6CE8;&#x518C;&#x8FC7;&#x4E2A;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x529F;&#x80FD;&#x548C;***&#x7C7B;&#x4F3C;</span>
+nj<span class="token punctuation">.</span><span class="token function">registerFilter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">&apos;****&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>num<span class="token punctuation">,</span> times<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> num <span class="token operator">*</span> times <span class="token operator">*</span> <span class="token number">4</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;*****&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>num<span class="token punctuation">,</span> times<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> num <span class="token operator">*</span> times <span class="token operator">*</span> <span class="token number">5</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4E00;&#x4E0B;<code>.babelrc</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token string">&quot;plugins&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span>
+      <span class="token string">&quot;nornj-in-jsx&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;filterConfig&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;***&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            isOperator<span class="token punctuation">:</span> <span class="token boolean">true</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;****&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            isOperator<span class="token punctuation">:</span> <span class="token boolean">true</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;*****&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            isOperator<span class="token punctuation">:</span> <span class="token boolean">true</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x63A5;&#x7740;&#x5C31;&#x53EF;&#x4EE5;&#x5728;<code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token template-string"><span class="token string">`100***10`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;100 * 10 * 3 = 3000</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token template-string"><span class="token string">`100***10****10`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;100 * 10 * 3 * 10 * 4 = 120000</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token template-string"><span class="token string">`100***10****10*****10`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;100 * 10 * 3 * 10 * 4 * 10 * 5 = 6000000</span>
+</code></pre>
+<ul>
+<li>&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x547D;&#x540D;&#x76EE;&#x524D;&#x662F;&#x6709;&#x9650;&#x5236;&#x7684;&#xFF0C;&#x5982;&#x5305;&#x542B;&#x4E0B;&#x5217;&#x5B57;&#x7B26;&#x5219;&#x9700;&#x8981;&#x505A;&#x7279;&#x6B8A;&#x5904;&#x7406;&#xFF1A;</li>
+</ul>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">[</span>
+  <span class="token string">&apos;_&apos;</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;#&apos;</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;.&apos;</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;&gt;&apos;</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;&lt;&apos;</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;|&apos;</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<p>&#x5982;&#x8FD0;&#x7B97;&#x7B26;&#x540D;&#x79F0;&#x4E2D;&#x5305;&#x540D;&#x542B;&#x4E0A;&#x8FF0;&#x5B57;&#x7B26;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x8FD9;&#x6837;&#x6CE8;&#x518C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> nj <span class="token keyword">from</span> <span class="token string">&apos;nornj&apos;</span><span class="token punctuation">;</span>
+
+nj<span class="token punctuation">.</span><span class="token function">registerFilter</span><span class="token punctuation">(</span>
+  <span class="token string">&apos;*.*&apos;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>num<span class="token punctuation">,</span> times<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> num <span class="token operator">*</span> times <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    alias<span class="token punctuation">:</span> <span class="token string">&apos;3x&apos;</span>  <span class="token comment">//&#x6DFB;&#x52A0;&#x522B;&#x540D;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+nj<span class="token punctuation">.</span><span class="token function">registerFilter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">&apos;*..*&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    filter<span class="token punctuation">:</span> <span class="token punctuation">(</span>num<span class="token punctuation">,</span> times<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> num <span class="token operator">*</span> times <span class="token operator">*</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      alias<span class="token punctuation">:</span> <span class="token string">&apos;4x&apos;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;*...*&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    filter<span class="token punctuation">:</span> <span class="token punctuation">(</span>num<span class="token punctuation">,</span> times<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> num <span class="token operator">*</span> times <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">,</span>
+    options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      alias<span class="token punctuation">:</span> <span class="token string">&apos;5x&apos;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4E00;&#x4E0B;<code>.babelrc</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token string">&quot;plugins&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span>
+      <span class="token string">&quot;nornj-in-jsx&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;filterConfig&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;*.*&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            isOperator<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            alias<span class="token punctuation">:</span> <span class="token string">&apos;3x&apos;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;*..*&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            isOperator<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            alias<span class="token punctuation">:</span> <span class="token string">&apos;4x&apos;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;*...*&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            isOperator<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            alias<span class="token punctuation">:</span> <span class="token string">&apos;5x&apos;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x63A5;&#x7740;&#x5C31;&#x53EF;&#x4EE5;&#x5728;<code>NornJ</code>&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token template-string"><span class="token string">`100*.*10`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;100 * 10 * 3 = 3000</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token template-string"><span class="token string">`100*.*10*..*10`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;100 * 10 * 3 * 10 * 4 = 120000</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token template-string"><span class="token string">`100*.*10*..*10*...*10`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x8F93;&#x51FA;&#xFF1A;100 * 10 * 3 * 10 * 4 * 10 * 5 = 6000000</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../jsx-syntax/directives.html#data-binding-directive" class="navigation navigation-prev " aria-label="Previous page: 数据绑定指令">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="expressions.html#what-can-expressions-do" class="navigation navigation-next " aria-label="Next page: 表达式能做什么">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"表达式扩展语法","level":"1.3","depth":1,"next":{"title":"表达式能做什么","level":"1.3.1","depth":2,"anchor":"#what-can-expressions-do","path":"tagged-templates-syntax/expressions.md","ref":"tagged-templates-syntax/expressions.md#what-can-expressions-do","articles":[]},"previous":{"title":"数据绑定指令","level":"1.2.2.6.3","depth":4,"anchor":"#data-binding-directive","path":"jsx-syntax/directives.md","ref":"jsx-syntax/directives.md#data-binding-directive","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","jsfiddle","edit-link","github","prism","advanced-emoji","i18n-revised","-sharing","back-to-top-button","theme-default","-lunr","-search","search-plus","expandable-chapters-revised","anchor-navigation-ex","versions-select-revised"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"versions-select-revised":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":false,"showLevel":false},"back-to-top-button":{},"versions":{"options":[{"value":"https://joe-sky.gitbooks.io/nornj-guide/content/zh/","text":"v5.0.0"},{"value":"https://joe-sky.github.io/nornj-guide/","text":"v0.4.18"}]},"advanced-emoji":{"embedEmojis":false},"i18n-revised":{"ChineseUrl":"../zh-CN","EnglishUrl":"../en-US","all":["chinese","english"]},"edit-link":{"label":"Edit this page","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"i18n":{"all":["english","chinese"],"ChineseUrl":"/zh/","EnglishUrl":"/en/"},"expandable-chapters-revised":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh","gitbook":"*"},"file":{"path":"tagged-templates-syntax/expressions.md","mtime":"2019-08-23T04:42:07.437Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-09-10T07:00:42.723Z"},"basePath":"..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-jsfiddle/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-i18n-revised/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-revised/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions-select-revised/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
