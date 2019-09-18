@@ -48,11 +48,11 @@
     "versions": {
       "options": [
         {
-          "value": "https://joe-sky.gitbooks.io/nornj-guide/content/zh/",
+          "value": "https://joe-sky.github.io/nornj-guide/zh/",
           "text": "v5.0.0"
         },
         {
-          "value": "https://joe-sky.github.io/nornj-guide/",
+          "value": "https://joe-sky.github.io/nornj-guide-v0.4/",
           "text": "v0.4.18"
         }
       ]
