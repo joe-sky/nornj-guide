@@ -21,7 +21,7 @@ const test = props => (
 ## 安装
 
 ```sh
-npm install babel-plugin-nornj-in-jsx@next  #or yarn add babel-plugin-nornj-in-jsx@next
+npm install babel-plugin-nornj-in-jsx  #or yarn add babel-plugin-nornj-in-jsx
 ```
 
 然后配置`.babelrc`:
