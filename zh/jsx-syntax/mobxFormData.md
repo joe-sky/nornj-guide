@@ -2,7 +2,7 @@
 
 # MobxFormData {#top}
 
-基于`Mobx`的响应式`React`表单数据管理与验证解决方案
+基于`Mobx`的轻量级响应式`React`表单数据管理方案
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][npm-url]
@@ -11,27 +11,28 @@
 
 - :sparkles: 简洁的 JSX API
 - :star: 基于 [async-validator](https://github.com/yiminghe/async-validator) 的轻量级封装
-- :dizzy: 完整的可观察类型数据驱动表单
-- :star2: 支持全部原生表单组件与 [Ant Design](https://ant.design/) 组件
-- :zap: 局部渲染 `Form.Item` 组件
+- :dizzy: 完整的 `Mobx` 可观察类型数据驱动表单
+- :star2: 完美支持 [Ant Design](https://ant.design/) 表单控件（v3 或 v4）
+- :zap: 支持局部渲染 `Form.Item` 组件
 - :fire: 可脱离 `Form` 组件独立运作
+- :rocket: 易于处理跨组件表单数据通信场景
 
-## 对比其他表单验证方案 {#contrast}
+## 对比其他表单数据管理方案 {#contrast}
 
-|                        |      Ant-Design v3       |      Ant-Design v4       |  Formily（UForm）  |               MobxFormData                |
-| :--------------------- | :----------------------: | :----------------------: | :----------------: | :---------------------------------------: |
-| 底层验证框架           |    `async-validator`     |    `async-validator`     | @formily/validator |             `async-validator`             |
-| API 上手难度           |           一般           |           容易           |        较难        |                   容易                    |
-| 组件外管理表单数据     | :heavy_multiplication_x: |    :o:（官方不推荐）     |        :o:         |                    :o:                    |
-| 跨组件表单数据联动     |           较难           |           容易           |        较难        |                   容易                    |
-| 更新只渲染表单控件自身 | :heavy_multiplication_x: |           :o:            |        :o:         |                    :o:                    |
-| 自定义表单控件逻辑     |           一般           |           一般           |        一般        |     **容易（不必创建新的表单组件）**      |
-| Mobx 数据适配性        |           一般           |           一般           |        一般        | **好（直接读写可观察值、无需手工 toJS）** |
-| 多重验证规则           |           :o:            |           :o:            |        :o:         |   :heavy_multiplication_x:（暂未实现）    |
-| 自动滚动至验证出错处   |           :o:            |           :o:            |        :o:         |         :heavy_multiplication_x:          |
-| 表单生命周期           | :heavy_multiplication_x: | :heavy_multiplication_x: |        :o:         |         :heavy_multiplication_x:          |
-| json 配置化生成        | :heavy_multiplication_x: | :heavy_multiplication_x: |        :o:         |         :heavy_multiplication_x:          |
-| 适配多个组件库         | :heavy_multiplication_x: | :heavy_multiplication_x: |        :o:         |                    :o:                    |
+|                        |      Ant-Design v3       |      Ant-Design v4       |  Formily（UForm）  |             MobxFormData              |
+| :--------------------- | :----------------------: | :----------------------: | :----------------: | :-----------------------------------: |
+| 底层验证框架           |    `async-validator`     |    `async-validator`     | @formily/validator |           `async-validator`           |
+| API 上手难度           |           一般           |           容易           |        较难        |                 容易                  |
+| 组件外管理表单数据     | :heavy_multiplication_x: |    :o:（官方不推荐）     |        :o:         |                  :o:                  |
+| 跨组件表单数据联动     |           较难           |           容易           |        一般        |                 容易                  |
+| 更新只渲染表单控件自身 | :heavy_multiplication_x: |           :o:            |        :o:         |                  :o:                  |
+| 自定义表单控件逻辑     |           一般           |           一般           |        一般        |     容易（不必创建新的表单组件）      |
+| Mobx 数据适配性        |           一般           |           一般           |        一般        | 好（直接读写可观察值、无需手工 toJS） |
+| 多重验证规则           |           :o:            |           :o:            |        :o:         |                  :o:                  |
+| 自动滚动至验证出错处   |           :o:            |           :o:            |        :o:         |       :heavy_multiplication_x:        |
+| 完整表单生命周期       | :heavy_multiplication_x: | :heavy_multiplication_x: |        :o:         |       :heavy_multiplication_x:        |
+| json 配置化生成        | :heavy_multiplication_x: | :heavy_multiplication_x: |        :o:         |       :heavy_multiplication_x:        |
+| 适配多个组件库         | :heavy_multiplication_x: | :heavy_multiplication_x: |        :o:         |           :o:（未来可实现）           |
 
 ## 快速开始 {#quick-start}
 
@@ -240,6 +241,26 @@ formData.validate(["userName", "age"]);
 formData.validate();
 ```
 
+- 多重验证规则
+
+可以在 `MobxFieldData` 标签的 `rules` 属性上设置多个验证规则（类型为 [RuleItem](#ruleitem)），它们会依次进行验证并输出各自的错误信息：
+
+```js
+const { formData } = (
+  <MobxFormData observable>
+    <MobxFieldData
+      name="userName"
+      value="joe_sky"
+      rules={[
+        { type: "string", required: true, message: "不能为空" },
+        { type: "string", min: 3, message: "至少输入3个字符" }
+      ]}
+      trigger="onChange"
+    />
+  </MobxFormData>
+);
+```
+
 ### n-mobxField {#mobxfield}
 
 使用 `n-mobxField` 指令将 `formData` 实例绑定到 `Form.Item` 组件，将指令的值设置为 `formData#fieldName` 即可：
@@ -363,8 +384,8 @@ const TestForm = observer(props => {
 ```js
 @observer
 class TestForm extends React.Component {
-  formDataUser = (
-    <MobxFormData observable>
+  @observable formDataUser = (
+    <MobxFormData>
       <MobxFieldData name="userName" value="joe_sky" type="string" />
       <MobxFieldData name="age" value="33" type="number" />
     </MobxFormData>
@@ -392,8 +413,8 @@ class TestForm extends React.Component {
 ```js
 @observer
 class TestForm extends React.Component {
-  formDataUser = (
-    <MobxFormData observable>
+  @observable formDataUser = (
+    <MobxFormData>
       <MobxFieldData name="userName" value="joe_sky" type="string" />
       <MobxFieldData name="age" value="33" type="number" />
     </MobxFormData>
@@ -431,25 +452,295 @@ class TestStore {
 }
 ```
 
+然后在组件中绑定到 `Form.Item` 就可以了：
+
+```js
+@observer
+class TestForm extends React.Component {
+  render() {
+    const { formDataUser } = this.props.store.testStore;
+
+    return (
+      <>
+        <Form.Item n-mobxField={formDataUser.userName} label="User Name">
+          <Input />
+        </Form.Item>
+        <Form.Item n-mobxField={formDataUser.age} label="Age">
+          <Input />
+        </Form.Item>
+      </>
+    );
+  }
+}
+```
+
 ## API
 
 ### 设置值 {#set-value}
 
+通常我们直接对 `formData` 实例上的表单值进行写操作即可，与 `Mobx` 可观察类型行为完全一致：
+
+```js
+formData.name = "joe";
+```
+
+也可以一次设置多个值：
+
+```js
+formData.setValue({ userName: "joe", age: 34 });
+```
+
+> 另外，即使是在 `Mobx` 严格模式下，直接进行写操作也不会出现错误，因为内部使用了 `action` 进行赋值。
+
 ### 验证 {#validate}
+
+调用 `formData` 实例上的 `validate` 方法可进行手工验证操作：
+
+```js
+//验证单个域
+formData.validate("userName");
+
+//验证多个域
+formData.validate(["userName", "age"]);
+
+//验证全部域
+formData.validate();
+```
+
+返回值为 `Promise`：
+
+```js
+formData
+  .validate()
+  .then(values => {
+    console.log(values);
+    /*
+    {
+      userName: 'joe',
+      age: 33
+    }
+  */
+  })
+  .catch(errorInfo => {
+    console.log(errorInfo);
+    /*
+    {
+      values: {
+        userName: 'joe',
+        age: 33
+      },
+      errors: [ { message: 'age is not a number', field: 'age' } ]
+    }
+  */
+  });
+```
 
 ### 重置 {#reset}
 
+重置会使表单域恢复到初始值，并且清除错误状态：
+
+```js
+//重置单个域
+formData.reset("userName");
+
+//重置多个域
+formData.reset(["userName", "age"]);
+
+//重置全部域
+formData.reset();
+```
+
+各表单域初始值即为在 `MobxFieldData` 标签上设置的 `value` 参数：
+
+```js
+<MobxFieldData name="userName" value="joe_sky" />
+```
+
 ### 清除状态 {#clear}
+
+清除表单域的错误状态：
+
+```js
+//清除单个域
+formData.clear("userName");
+
+//清除多个域
+formData.clear(["userName", "age"]);
+
+//清除全部域
+formData.clear();
+```
+
+### 设置错误状态 {#error}
+
+可以手工设置表单域为错误状态及自定义错误信息：
+
+```js
+formData.error("userName", "用户名已存在");
+```
 
 ### 自定义验证 {#custom-validate}
 
+在 `MobxFieldData` 标签的 `validator` 参数的函数内部编写逻辑即可实现自定义验证：
+
+```js
+<MobxFieldData
+  name="userName"
+  value="joe_sky"
+  type="string"
+  required
+  validator={(rule, value) => {
+    if (value == "joe") {
+      return new Error("用户名已存在");
+    }
+    return true;
+  }}
+/>
+```
+
+具体可参考 [async-validator](https://github.com/yiminghe/async-validator#validator)。
+
 ### 异步自定义验证 {#async-custom-validate}
 
-### 触发验证方式 {#trigger-validate}
+在 `MobxFieldData` 标签的 `asyncValidator` 参数的函数内部编写逻辑即可实现异步自定义验证：
+
+```js
+<MobxFieldData
+  name="userName"
+  value="joe_sky"
+  type="string"
+  required
+  asyncValidator={(rule, value, callback) => {
+    api.getUserName().then(userName => {
+      if (userName == "joe") {
+        callback(new Error("用户名已存在"));
+      } else {
+        callback();
+      }
+    });
+  }}
+/>
+```
+
+具体可参考 [async-validator](https://github.com/yiminghe/async-validator#asyncvalidator)。
+
+### 触发验证时机 {#trigger-validate}
+
+使用 `MobxFieldData` 标签的 `trigger` 参数可设置触发表单域验证的时机，默认值为 `valueChange`，即在 `formData` 实例上的表单域值改变时触发。
+
+我们也可以将 `trigger` 设置为表单控件的事件名称来改变触发验证时机，如 `onBlur` ：
+
+```js
+<MobxFieldData
+  name="userName"
+  value="joe_sky"
+  type="string"
+  required
+  trigger="onBlur"
+/>
+```
+
+如果想完全手工控制触发验证，则可以设置为 `none`：
+
+```js
+<MobxFieldData
+  name="userName"
+  value="joe_sky"
+  type="string"
+  required
+  trigger="none"
+/>
+```
 
 ### 动态创建/删除 {#add-delete}
 
+有时候我们需要动态生成 `MobxFormData` 标签，可以这样做：
+
+```js
+class TestStore {
+  @observable userList = ["joe", "sky"];
+  formDataUser;
+
+  constructor() {
+    this.formDataUser = (
+      <MobxFormData observable>
+        <each of={this.userList}>
+          <MobxFieldData name={`user${index}`} value={item} type="string" />
+        </each>
+      </MobxFormData>
+    ).formData;
+  }
+}
+```
+
+已生成好的 `formData` 实例，也可以使用 `add` 或 `delete` 方法添加/删除 `MobxFieldData` 标签：
+
+```js
+class TestStore {
+  @observable userList = ["joe", "sky"];
+  @observable formDataUser = (
+    <MobxFormData>
+      <MobxFieldData name="userName" value="joe_sky" type="string" />
+      <MobxFieldData name="age" value="33" type="number" />
+    </MobxFormData>
+  ).formData;
+
+  add() {
+    this.formDataUser.add(
+      <MobxFieldData name="worked" value={true} type="boolean" />
+    );
+  }
+
+  delete() {
+    this.formDataUser.delete("age");
+  }
+}
+```
+
 ### 查找/遍历 {#select-loop}
+
+`formData` 实例中有一个名为 `fieldDatas` 的 Map 类型成员，它里面保存了所有 `MobxFieldData` 标签生成的 `fieldData` 实例（类型为 [MobxFieldDataInstance](#mobxfielddatainstance)）。
+
+我们可以这样找某个表单域实例：
+
+```js
+formData.fieldDatas.get("userName");
+formData.fieldDatas.has("age");
+```
+
+还可以这样遍历表单域实例生成 `Form.Item` 组件：
+
+```js
+@observer
+class TestForm extends React.Component {
+  render() {
+    const { formDataUser } = this.props.store.testStore;
+
+    return (
+      <each of={[...formDataUser.fieldDatas.keys]}>
+        <Form.Item n-mobxField={`formDataUser[item]`} label={item}>
+          <Input />
+        </Form.Item>
+      </each>
+    );
+  }
+}
+```
+
+如果遍历生成的 `Form.Item` 组件的子节点中存在逻辑判断，则需要使用 `n-mobxBind` 手工绑定表单控件：
+
+```js
+<each of={[...formDataUser.fieldDatas.keys]}>
+  <Form.Item n-mobxField-noBind={`formDataUser[item]`} label={item}>
+    <if condition={item == "userName"}>
+      <Input n-mobxBind={`formDataUser[item]`} />
+      <else>
+        <Input.TextArea n-mobxBind={`formDataUser[item]`} />
+      </else>
+    </if>
+  </Form.Item>
+</each>
+```
 
 ## Types
 
@@ -519,6 +810,7 @@ interface MobxFieldDataProps extends RuleItem {
   name: string;
   value?: any;
   trigger?: string;
+  rules?: RuleItem[];
   [key: string]: any;
 }
 ```
@@ -546,7 +838,7 @@ interface MobxFieldDataInstance extends MobxFieldDataProps, IObservableObject {
 
 ```js
 interface MobxFormDataProps {
-  observable?: boolean;
+  observable?: boolean; //为true则默认生成Mobx可观察类型，否则只返回原生对象
 }
 ```
 
