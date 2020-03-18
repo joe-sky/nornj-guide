@@ -16,6 +16,7 @@
         * [Switch](jsx-syntax/tags.md#switch)
         * [With](jsx-syntax/tags.md#with)
         * [MobxObserver](jsx-syntax/tags.md#mobxobserver)
+        * [MobxFormData](jsx-syntax/mobxFormData.md)
         * [开发新的标签](jsx-syntax/tags.md#create-new-tag)
             * [最简单的标签](jsx-syntax/tags.md#a-simple-tag)
             * [更复杂的标签](jsx-syntax/tags.md#more-complex-tag)
