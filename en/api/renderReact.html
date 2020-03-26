@@ -1112,11 +1112,11 @@
 <h2 id="&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;"><a name="&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;" class="plugin-anchor" href="#&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C06;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;</h2>
 <p>&#x4F8B;&#xFF1A;</p>
 <pre class="language-"><code class="lang-js"><span class="token comment">//&#x5B9A;&#x4E49;&#x6A21;&#x677F;</span>
-<span class="token keyword">const</span> tmpl <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+<span class="token keyword">const</span> tmpl <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
 &lt;div id=test1&gt;
   this the test demo{no}.
   &lt;i&gt;test{no}&lt;/i&gt;
-&lt;/div&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+&lt;/div&gt;`</span></span><span class="token punctuation">;</span>
 
 <span class="token comment">//&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;</span>
 <span class="token keyword">const</span> tmplFn <span class="token operator">=</span> nj<span class="token punctuation">.</span><span class="token function">compileH</span><span class="token punctuation">(</span>tmpl<span class="token punctuation">,</span> <span class="token string">&apos;tmpl1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1131,11 +1131,11 @@
 <span class="token keyword">import</span> <span class="token punctuation">{</span> renderToStaticMarkup <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-dom/server&apos;</span><span class="token punctuation">;</span>
 
 <span class="token comment">//&#x5B9A;&#x4E49;&#x6A21;&#x677F;</span>
-<span class="token keyword">const</span> tmpl <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+<span class="token keyword">const</span> tmpl <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
 &lt;div id=test1&gt;
   this the test demo{no}.
   &lt;i&gt;test{no}&lt;/i&gt;
-&lt;/div&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+&lt;/div&gt;`</span></span><span class="token punctuation">;</span>
 
 <span class="token comment">//&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;</span>
 <span class="token keyword">const</span> template <span class="token operator">=</span> <span class="token function">compileH</span><span class="token punctuation">(</span>tmpl<span class="token punctuation">,</span> <span class="token string">&apos;tmpl1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1144,7 +1144,7 @@
 <span class="token keyword">class</span> <span class="token class-name">TestComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token function">template</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-      no<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>no
+      no<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>no
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
@@ -1175,21 +1175,21 @@
 <li>&#x6A21;&#x677F;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x591A;&#x4E2A;json&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</li>
 </ul>
 <pre class="language-"><code class="lang-js"><span class="token comment">//&#x5B9A;&#x4E49;&#x6A21;&#x677F;</span>
-<span class="token keyword">const</span> tmpl <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+<span class="token keyword">const</span> tmpl <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
 &lt;div id=test1&gt;
   this the test demo{no}.
   &lt;i&gt;test{no2}&lt;/i&gt;
-&lt;/div&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+&lt;/div&gt;`</span></span><span class="token punctuation">;</span>
 
 <span class="token comment">//&#x7F16;&#x8BD1;&#x4E3A;&#x6A21;&#x677F;&#x51FD;&#x6570;</span>
 <span class="token keyword">const</span> tmplFn <span class="token operator">=</span> nj<span class="token punctuation">.</span><span class="token function">compileH</span><span class="token punctuation">(</span>tmpl<span class="token punctuation">,</span> <span class="token string">&apos;tmpl1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">//&#x6E32;&#x67D3;</span>
 <span class="token keyword">let</span> comp <span class="token operator">=</span> <span class="token function">tmplFn</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  no<span class="token operator">:</span> <span class="token number">100</span>
+  no<span class="token punctuation">:</span> <span class="token number">100</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-  no<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>  <span class="token comment">//&#x76F8;&#x540C;&#x7684;&#x503C;&#x4F18;&#x5148;&#x91C7;&#x7528;&#x987A;&#x5E8F;&#x9760;&#x524D;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x7684;(1)</span>
-  no2<span class="token operator">:</span> <span class="token number">300</span>  <span class="token comment">//&#x5982;&#x679C;&#x6570;&#x7EC4;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x6CA1;&#x6709;no2&#x5C5E;&#x6027;&#xFF0C;&#x5C31;&#x4F1A;&#x5C1D;&#x8BD5;&#x4ECE;&#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x83B7;&#x53D6;(2)</span>
+  no<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>  <span class="token comment">//&#x76F8;&#x540C;&#x7684;&#x503C;&#x4F18;&#x5148;&#x91C7;&#x7528;&#x987A;&#x5E8F;&#x9760;&#x524D;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x7684;(1)</span>
+  no2<span class="token punctuation">:</span> <span class="token number">300</span>  <span class="token comment">//&#x5982;&#x679C;&#x6570;&#x7EC4;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x6CA1;&#x6709;no2&#x5C5E;&#x6027;&#xFF0C;&#x5C31;&#x4F1A;&#x5C1D;&#x8BD5;&#x4ECE;&#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x83B7;&#x53D6;(2)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> html <span class="token operator">=</span> <span class="token function">renderToStaticMarkup</span><span class="token punctuation">(</span>comp<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1205,12 +1205,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ul>
 <li>&#x53E6;&#x5916;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;<code>nj.renderH</code>&#x65B9;&#x6CD5;&#x6765;&#x6267;&#x884C;&#x6E32;&#x67D3;&#xFF0C;&#x5B83;&#x4E0E;<code>nj.compileH</code>&#x76F8;&#x6BD4;&#x5219;&#x662F;&#x81EA;&#x52A8;&#x5305;&#x542B;&#x4E86;&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x7684;&#x6B65;&#x9AA4;&#xFF1A;</li>
 </ul>
-<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> comp <span class="token operator">=</span> nj<span class="token punctuation">.</span><span class="token function">renderH</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> comp <span class="token operator">=</span> nj<span class="token punctuation">.</span><span class="token function">renderH</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`
 &lt;div id=test1&gt;
   this the test demo{no}.
   &lt;i&gt;test{no}&lt;/i&gt;
-&lt;/div&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-  no<span class="token operator">:</span> <span class="token number">100</span>
+&lt;/div&gt;`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  no<span class="token punctuation">:</span> <span class="token number">100</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">let</span> html <span class="token operator">=</span> <span class="token function">renderToStaticMarkup</span><span class="token punctuation">(</span>comp<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1231,11 +1231,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token keyword">class</span> <span class="token class-name">TestComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> nj<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    <span class="token keyword">return</span> nj<span class="token template-string"><span class="token string">`
       &lt;div id=test1&gt;
         this the test demo{no}.
         &lt;i&gt;test{no}&lt;/i&gt;
-      &lt;/div&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> no<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      &lt;/div&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> no<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
@@ -1256,17 +1256,17 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">import</span> <span class="token punctuation">{</span> registerTmpl <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;nornj-react&apos;</span><span class="token punctuation">;</span>
 
 @<span class="token function">registerTmpl</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  name<span class="token operator">:</span> <span class="token string">&apos;TestComponent&apos;</span><span class="token punctuation">,</span>  <span class="token comment">//&#x53EF;&#x4F20;&#x5165;&#x7EC4;&#x4EF6;&#x540D;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x8C03;&#x7528;&#x4E86;nj.registerComponent&#x6CE8;&#x518C;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x9009;&#x53C2;&#x6570;</span>
-  template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">             &lt;!--&#x53EF;&#x4F20;&#x5165;&#x6A21;&#x677F;&#xFF0C;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x4EE5;nj&#x4E3A;&#x524D;&#x7F6E;&#x6807;&#x7B7E;&#x7684;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x90FD;&#x53EF;&#x4EE5;&#xFF0C;&#x53EF;&#x9009;&#x53C2;&#x6570;--&gt;
+  name<span class="token punctuation">:</span> <span class="token string">&apos;TestComponent&apos;</span><span class="token punctuation">,</span>  <span class="token comment">//&#x53EF;&#x4F20;&#x5165;&#x7EC4;&#x4EF6;&#x540D;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x8C03;&#x7528;&#x4E86;nj.registerComponent&#x6CE8;&#x518C;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x9009;&#x53C2;&#x6570;</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`             &lt;!--&#x53EF;&#x4F20;&#x5165;&#x6A21;&#x677F;&#xFF0C;&#x7EAF;&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x4EE5;nj&#x4E3A;&#x524D;&#x7F6E;&#x6807;&#x7B7E;&#x7684;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x90FD;&#x53EF;&#x4EE5;&#xFF0C;&#x53EF;&#x9009;&#x53C2;&#x6570;--&gt;
     &lt;div id=test1&gt;
       this the test demo{no}.
       &lt;i&gt;test{no}&lt;/i&gt;
     &lt;/div&gt;
-  </span><span class="token template-punctuation string">`</span></span>
+  `</span></span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token keyword">class</span> <span class="token class-name">TestComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">template</span><span class="token punctuation">(</span><span class="token punctuation">{</span> no<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x4F7F;&#x7528;this.template&#x65B9;&#x6CD5;&#x6E32;&#x67D3;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x548C;nj.compileH&#x7F16;&#x8BD1;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x6837;&#x7684;</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">template</span><span class="token punctuation">(</span><span class="token punctuation">{</span> no<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&#x4F7F;&#x7528;this.template&#x65B9;&#x6CD5;&#x6E32;&#x67D3;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x548C;nj.compileH&#x7F16;&#x8BD1;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x6837;&#x7684;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
@@ -1276,19 +1276,19 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <pre class="language-"><code class="lang-js"><span class="token keyword">import</span> Icon <span class="token keyword">from</span> <span class="token string">&apos;react-native-vector-icons/FontAwesome&apos;</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> Button <span class="token keyword">from</span> <span class="token string">&apos;antd-mobile/lib/button&apos;</span><span class="token punctuation">;</span>
 
-nj<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+nj<span class="token template-string"><span class="token string">`
 &lt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Button<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> type=&quot;primary&quot; size=&quot;small&quot; inline&gt;
   &lt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Icon<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> name=&quot;rocket&quot; size={30} color=&quot;#900&quot; /&gt;small
-&lt;/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Button<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+&lt;/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Button<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>(2) &#x5728;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#xFF0C;&#x76F4;&#x63A5;&#x4F20;&#x5165;&#x7EC4;&#x4EF6;&#x5BF9;&#x8C61;&#xFF1A;</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">import</span> Icon <span class="token keyword">from</span> <span class="token string">&apos;react-native-vector-icons/FontAwesome&apos;</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> Button <span class="token keyword">from</span> <span class="token string">&apos;antd-mobile/lib/button&apos;</span><span class="token punctuation">;</span>
 
-nj<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+nj<span class="token template-string"><span class="token string">`
 &lt;{Button} type=&quot;primary&quot; size=&quot;small&quot; inline&gt;
   &lt;{Icon} name=&quot;rocket&quot; size={30} color=&quot;#900&quot; /&gt;small
-&lt;/{Button}&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>  <span class="token comment">//&#x6807;&#x7B7E;&#x540D;&#x683C;&#x5F0F;&#x4E3A;&quot;{tagName}&quot;</span>
+&lt;/{Button}&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>  <span class="token comment">//&#x6807;&#x7B7E;&#x540D;&#x683C;&#x5F0F;&#x4E3A;&quot;{tagName}&quot;</span>
   Button&#xFF0C;
   Icon
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1297,11 +1297,11 @@ nj<span class="token template-string"><span class="token template-punctuation st
 <pre class="language-"><code class="lang-js"><span class="token keyword">import</span> Icon <span class="token keyword">from</span> <span class="token string">&apos;react-native-vector-icons/FontAwesome&apos;</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> Button <span class="token keyword">from</span> <span class="token string">&apos;antd-mobile/lib/button&apos;</span><span class="token punctuation">;</span>
 
-nj<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+nj<span class="token template-string"><span class="token string">`
 &lt;Button type=&quot;primary&quot; size=&quot;small&quot; inline&gt;
   &lt;Icon name=&quot;rocket&quot; size={30} color=&quot;#900&quot; /&gt;small
-&lt;/Button&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>  <span class="token comment">//&#x6807;&#x7B7E;&#x540D;&#x683C;&#x5F0F;&#x548C;&#x4E00;&#x822C;&#x6807;&#x7B7E;&#x76F8;&#x540C;</span>
-  components<span class="token operator">:</span> <span class="token punctuation">{</span>
+&lt;/Button&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>  <span class="token comment">//&#x6807;&#x7B7E;&#x540D;&#x683C;&#x5F0F;&#x548C;&#x4E00;&#x822C;&#x6807;&#x7B7E;&#x76F8;&#x540C;</span>
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
     Button<span class="token punctuation">,</span>
     Icon
   <span class="token punctuation">}</span>
@@ -1310,11 +1310,11 @@ nj<span class="token template-string"><span class="token template-punctuation st
 <p><code>components</code>&#x53C2;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x6570;&#x7EC4;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre class="language-"><code class="lang-js"><span class="token operator">...</span>
 
-nj<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+nj<span class="token template-string"><span class="token string">`
 &lt;Button type=&quot;primary&quot; size=&quot;small&quot; inline&gt;
   &lt;Icon name=&quot;rocket&quot; size={30} color=&quot;#900&quot; /&gt;small
-&lt;/Button&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  components<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+&lt;/Button&gt;`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  components<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
     Button
   <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
     Icon
@@ -1364,7 +1364,7 @@ nj<span class="token template-string"><span class="token template-punctuation st
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"nj.renderH","level":"1.5.2","depth":2,"next":{"title":"nj.config","level":"1.5.3","depth":2,"path":"api/config.md","ref":"api/config.md","articles":[]},"previous":{"title":"nj.compileH","level":"1.5.1","depth":2,"path":"api/renderString.md","ref":"api/renderString.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","jsfiddle","edit-link","github","prism","advanced-emoji","i18n-revised","-sharing","back-to-top-button","theme-default","-lunr","-search","search-plus","expandable-chapters-revised","anchor-navigation-ex","versions-select-revised"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"versions-select-revised":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":false,"showLevel":false},"back-to-top-button":{},"versions":{"options":[{"value":"https://joe-sky.github.io/nornj-guide/zh/","text":"v5.0.0"},{"value":"https://joe-sky.github.io/nornj-guide-v0.4/","text":"v0.4.18"}]},"advanced-emoji":{"embedEmojis":false},"i18n-revised":{"ChineseUrl":"../zh-CN","EnglishUrl":"../en-US","all":["chinese","english"]},"edit-link":{"label":"Edit this page","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"i18n":{"all":["english","chinese"],"ChineseUrl":"/zh/","EnglishUrl":"/en/"},"expandable-chapters-revised":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"api/renderReact.md","mtime":"2020-02-06T14:32:40.492Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-03-18T17:20:38.128Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"nj.renderH","level":"1.5.2","depth":2,"next":{"title":"nj.config","level":"1.5.3","depth":2,"path":"api/config.md","ref":"api/config.md","articles":[]},"previous":{"title":"nj.compileH","level":"1.5.1","depth":2,"path":"api/renderString.md","ref":"api/renderString.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","jsfiddle","edit-link","github","prism","advanced-emoji","i18n-revised","-sharing","back-to-top-button","theme-default","-lunr","-search","search-plus","expandable-chapters-revised","anchor-navigation-ex","versions-select-revised"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"versions-select-revised":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":false,"showLevel":false},"back-to-top-button":{},"versions":{"options":[{"value":"https://joe-sky.github.io/nornj-guide/zh/","text":"v5.0.0"},{"value":"https://joe-sky.github.io/nornj-guide-v0.4/","text":"v0.4.18"}]},"advanced-emoji":{"embedEmojis":false},"i18n-revised":{"ChineseUrl":"../zh-CN","EnglishUrl":"../en-US","all":["chinese","english"]},"edit-link":{"label":"Edit this page","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"i18n":{"all":["english","chinese"],"ChineseUrl":"/zh/","EnglishUrl":"/en/"},"expandable-chapters-revised":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"api/renderReact.md","mtime":"2018-04-19T11:47:19.421Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-03-26T04:20:04.150Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

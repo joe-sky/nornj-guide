@@ -10,7 +10,6 @@ pre[class*="language-"] {
 	background: none;
 	text-shadow: 0 1px white;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -77,7 +76,7 @@ pre[class*="language-"] {
 	color: #999;
 }
 
-.token.namespace {
+.namespace {
 	opacity: .7;
 }
 

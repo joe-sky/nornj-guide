@@ -1121,11 +1121,11 @@
 </ul>
 <h3 id="show"><a name="show" class="anchor-navigation-ex-anchor" href="#show"><i class="fa fa-link" aria-hidden="true"></i></a><a name="show" class="plugin-anchor" href="#show"><i class="fa fa-link" aria-hidden="true"></i></a>show</h3>
 <p>&#x7C7B;&#x4F3C;&#x4E8E;<code>Vue</code>&#x7684;<code>v-show</code>&#x6307;&#x4EE4;&#xFF0C;<code>#show</code>&#x7528;&#x4E8E;&#x5207;&#x6362;&#x5143;&#x7D20;&#x662F;&#x5426;&#x663E;&#x793A;&#xFF0C;&#x539F;&#x7406;&#x4E3A;&#x4FEE;&#x6539;style&#xFF1A;</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> html <span class="token operator">=</span> nj<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> html <span class="token operator">=</span> nj<span class="token template-string"><span class="token string">`
 &lt;div #show=&quot;{{isShow}}&quot;&gt;
   test inline extension tag
 &lt;/div&gt;
-</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> isShow<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> isShow<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//&lt;div style=&quot;display:none&quot;&gt;test inline extension tag&lt;/div&gt;</span>
 </code></pre>
@@ -1149,9 +1149,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
   @observable inputValue <span class="token operator">=</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">;</span>
 
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> nj<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    <span class="token keyword">return</span> nj<span class="token template-string"><span class="token string">`
       &lt;input :#mobx-bind=&quot;inputValue&quot;&gt;
-    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    `</span></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
@@ -1162,14 +1162,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">TestComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   @observable inputValue <span class="token operator">=</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">;</span>
   @autobind
-  <span class="token function">onChange</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">onChange</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>inputValue <span class="token operator">=</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> nj<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    <span class="token keyword">return</span> nj<span class="token template-string"><span class="token string">`
       &lt;input value={inputValue} {onChange}&gt;
-    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    `</span></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
@@ -1179,16 +1179,16 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token string">&apos;nornj-react/mobx&apos;</span><span class="token punctuation">;</span>
 </code></pre>
 <p>&#x53E6;&#x5916;&#x5982;&#x679C;&#x4F7F;&#x7528;<code>nornj-loader</code>&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5728;<code>Webpack</code>&#x7684;&#x914D;&#x7F6E;&#x4E2D;&#x5F15;&#x5165;<code>&#x76F8;&#x5E94;&#x7684;&#x6269;&#x5C55;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</code>&#xFF1A;</p>
-<pre class="language-"><code class="lang-js">module<span class="token operator">:</span> <span class="token punctuation">{</span>
-  rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+<pre class="language-"><code class="lang-js">module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span>
-      test<span class="token operator">:</span> <span class="token regex">/\.t.html(\?[\s\S]+)*$/</span><span class="token punctuation">,</span>
-      use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-        loader<span class="token operator">:</span> <span class="token string">&apos;nornj-loader&apos;</span><span class="token punctuation">,</span>
-        options<span class="token operator">:</span> <span class="token punctuation">{</span>
-          outputH<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-          delimiters<span class="token operator">:</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">,</span>
-          extensionConfig<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;nornj-react/mobx/extensionConfig&apos;</span><span class="token punctuation">)</span>
+      test<span class="token punctuation">:</span> <span class="token regex">/\.t.html(\?[\s\S]+)*$/</span><span class="token punctuation">,</span>
+      use<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        loader<span class="token punctuation">:</span> <span class="token string">&apos;nornj-loader&apos;</span><span class="token punctuation">,</span>
+        options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          outputH<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          delimiters<span class="token punctuation">:</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">,</span>
+          extensionConfig<span class="token punctuation">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;nornj-react/mobx/extensionConfig&apos;</span><span class="token punctuation">)</span>
         <span class="token punctuation">}</span>
       <span class="token punctuation">}</span><span class="token punctuation">]</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -1204,14 +1204,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
   @observable inputValue <span class="token operator">=</span> <span class="token string">&apos;1&apos;</span><span class="token punctuation">;</span>
 
   @autobind
-  <span class="token function">onChange</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">onChange</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> nj<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    <span class="token keyword">return</span> nj<span class="token template-string"><span class="token string">`
       &lt;input :#mobx-bind=&quot;inputValue&quot; {onChange}&gt;
-    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    `</span></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
@@ -1223,20 +1223,20 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> observable<span class="token punctuation">,</span> action<span class="token punctuation">,</span> configure <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;mobx&apos;</span><span class="token punctuation">;</span>
 
 <span class="token comment">// don&apos;t allow state modifications outside actions</span>
-<span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">{</span>enforceActions<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">configure</span><span class="token punctuation">(</span><span class="token punctuation">{</span>enforceActions<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">class</span> <span class="token class-name">TestComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   @observable inputValue <span class="token operator">=</span> <span class="token string">&apos;1&apos;</span><span class="token punctuation">;</span>
 
   @action<span class="token punctuation">.</span>bound
-  <span class="token function">setInputValue</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">setInputValue</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>inputValue <span class="token operator">=</span> v<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> nj<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    <span class="token keyword">return</span> nj<span class="token template-string"><span class="token string">`
       &lt;input :#mobx-bind.action=&quot;inputValue&quot;&gt;
-    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    `</span></span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
@@ -1248,10 +1248,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token keyword">const</span> TestStore <span class="token operator">=</span> types<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&quot;TestStore&quot;</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>  
-    inputValue<span class="token operator">:</span> <span class="token string">&apos;1&apos;</span>
+    inputValue<span class="token punctuation">:</span> <span class="token string">&apos;1&apos;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">actions</span><span class="token punctuation">(</span><span class="token parameter">self</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
-    <span class="token function">setInputValue</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">.</span><span class="token function">actions</span><span class="token punctuation">(</span>self <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function">setInputValue</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       self<span class="token punctuation">.</span>inputValue <span class="token operator">=</span> v<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1261,10 +1261,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 @observer
 <span class="token keyword">class</span> <span class="token class-name">TestComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> nj<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    <span class="token keyword">return</span> nj<span class="token template-string"><span class="token string">`
       &lt;input :#mst-bind=&quot;testStore.inputValue&quot;&gt;
-    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-      testStore<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>rootStore<span class="token punctuation">.</span>testStore
+    `</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      testStore<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>rootStore<span class="token punctuation">.</span>testStore
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
@@ -1445,7 +1445,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Directives","level":"1.3.2","depth":2,"next":{"title":"n-show","level":"1.3.2.1","depth":3,"anchor":"#n-show","path":"jsx-syntax/directives.md","ref":"jsx-syntax/directives.md#n-show","articles":[]},"previous":{"title":"Subsidiary tag","level":"1.3.1.7.3","depth":4,"anchor":"#subsidiary-tag","path":"jsx-syntax/tags.md","ref":"jsx-syntax/tags.md#subsidiary-tag","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","jsfiddle","edit-link","github","prism","advanced-emoji","i18n-revised","-sharing","back-to-top-button","theme-default","-lunr","-search","search-plus","expandable-chapters-revised","anchor-navigation-ex","versions-select-revised"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"versions-select-revised":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":false,"showLevel":false},"back-to-top-button":{},"versions":{"options":[{"value":"https://joe-sky.github.io/nornj-guide/zh/","text":"v5.0.0"},{"value":"https://joe-sky.github.io/nornj-guide-v0.4/","text":"v0.4.18"}]},"advanced-emoji":{"embedEmojis":false},"i18n-revised":{"ChineseUrl":"../zh-CN","EnglishUrl":"../en-US","all":["chinese","english"]},"edit-link":{"label":"Edit this page","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"i18n":{"all":["english","chinese"],"ChineseUrl":"/zh/","EnglishUrl":"/en/"},"expandable-chapters-revised":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"jsx-syntax/directives.md","mtime":"2020-02-06T14:32:40.587Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-03-18T17:20:38.128Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Directives","level":"1.3.2","depth":2,"next":{"title":"n-show","level":"1.3.2.1","depth":3,"anchor":"#n-show","path":"jsx-syntax/directives.md","ref":"jsx-syntax/directives.md#n-show","articles":[]},"previous":{"title":"Subsidiary tag","level":"1.3.1.7.3","depth":4,"anchor":"#subsidiary-tag","path":"jsx-syntax/tags.md","ref":"jsx-syntax/tags.md#subsidiary-tag","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","jsfiddle","edit-link","github","prism","advanced-emoji","i18n-revised","-sharing","back-to-top-button","theme-default","-lunr","-search","search-plus","expandable-chapters-revised","anchor-navigation-ex","versions-select-revised"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/joe-sky/nornj"},"jsfiddle":{"type":"frame","tabs":["result","html","js","css"],"height":"200","width":"500","fontColor":"00FF00"},"versions-select-revised":{"type":"branches"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":false,"showLevel":false},"back-to-top-button":{},"versions":{"options":[{"value":"https://joe-sky.github.io/nornj-guide/zh/","text":"v5.0.0"},{"value":"https://joe-sky.github.io/nornj-guide-v0.4/","text":"v0.4.18"}]},"advanced-emoji":{"embedEmojis":false},"i18n-revised":{"ChineseUrl":"../zh-CN","EnglishUrl":"../en-US","all":["chinese","english"]},"edit-link":{"label":"Edit this page","base":"https://github.com/joe-sky/nornj-guide/blob/master"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"anchors":{},"i18n":{"all":["english","chinese"],"ChineseUrl":"/zh/","EnglishUrl":"/en/"},"expandable-chapters-revised":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"jsx-syntax/directives.md","mtime":"2019-04-23T10:45:34.541Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-03-26T04:20:04.150Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
