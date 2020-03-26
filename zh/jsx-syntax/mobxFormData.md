@@ -422,7 +422,7 @@ class TestForm extends React.Component {
 
   componentDidMount() {
     api.getUserInfo().then(values => {
-      formDataUser.setValue(values);
+      this.formDataUser.setValue(values);
     });
   }
 
